@@ -1,0 +1,935 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="1">
+      <Connection Ref="2" type="Stimulsoft.Report.Dictionary.StiMySqlDatabase" isKey="true">
+        <Alias>Connection</Alias>
+        <ConnectionStringEncrypted>42DXCddMsO3pRrXAywDhXot4m+tDXXukcROh8WFxdzPGcM0CzVHrjMNJnDTlbDty0Wx9y8hc04BDFaGYZHCtatla2WBmA9O8Qg==</ConnectionStringEncrypted>
+        <Name>Connection</Name>
+      </Connection>
+    </Databases>
+    <DataSources isList="true" count="1">
+      <DataSource1 Ref="3" type="Stimulsoft.Report.Dictionary.StiMySqlSource" isKey="true">
+        <Alias>DataSource1</Alias>
+        <Columns isList="true" count="24">
+          <value>candidate_name,System.String</value>
+          <value>registration_id,System.String</value>
+          <value>candidate_id,System.UInt32</value>
+          <value>disability_type,System.String</value>
+          <value>disability_sub_type,System.String</value>
+          <value>company_name,System.String</value>
+          <value>Parent_company_name,System.String</value>
+          <value>vacancy_name,System.String</value>
+          <value>Got_placed_by_EI,System.String</value>
+          <value>Employment_Project,System.String</value>
+          <value>date_of_join,System.DateTime</value>
+          <value>salary,System.Decimal</value>
+          <value>industry_segment,System.String</value>
+          <value>job_Type,System.String</value>
+          <value>recommended_job_role,System.String</value>
+          <value>No_of_cand_got_job,System.Int64</value>
+          <value>No_of_VI,System.Int64</value>
+          <value>No_of_HI,System.Int64</value>
+          <value>No_of_PD,System.Int64</value>
+          <value>No_of_MI,System.Int64</value>
+          <value>No_of_MR,System.Int64</value>
+          <value>No_of_CP,System.Int64</value>
+          <value>No_of_DB,System.Int64</value>
+          <value>No_of_Others_disb,System.Int64</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>DataSource1</Name>
+        <NameInSource>Connection</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select cand_other_detl.candidate_name_with_status as candidate_name,cand.registration_id,cand.candidate_id,disability.disability_type,
+	disab_sub_type.disability_sub_type, 
+	(case when cand_work_expr.company_id='-1' then cand_work_expr.unlisted_company when cand_work_expr.company_id &gt; 0 then comp.company_code else comp.company_code end) as company_name, 
+ (case when cand_work_expr.parent_company_id='-1' then ''  when cand_work_expr.parent_company_id &gt; 0 then par_comp.company_name else par_comp.company_name end) as Parent_company_name,
+ vac.vacancy_name, (case when cand_work_expr.is_entered_from_employment_project &gt;'0' then 'YES'  when cand_work_expr.is_entered_from_employment_project &lt;'1'then 'NO ' end ) as Got_placed_by_EI,
+  (case when cand_work_expr.company_id='-1' then ''  when cand_work_expr.company_id &gt; 0 then emp_proj.employment_project_name else emp_proj.employment_project_name  end ) as Employment_Project, 
+  cand_work_expr.designation_from_date as date_of_join,cand_work_expr.monthly_salary as salary,ind.industry_segment,
+ (case when jobs.job_id &gt;'0'  then jobs.job_name  when jobs.job_name &lt;'1' then 'Unlisted' else 'Unlisted' end ) as job_Type, 
+ cand.recommended_job_roles as recommended_job_role,  count(distinct cand.candidate_id ) as No_of_cand_got_job,
+(SELECT  count(*)  FROM disability_types disability where cand.disability_id=1 and cand.disability_id=disability.disability_id)as No_of_VI, 
+(SELECT  count(*)  FROM disability_types disability where cand.disability_id=2 and cand.disability_id=disability.disability_id)as No_of_HI, 
+(SELECT  count(*)  FROM disability_types disability where cand.disability_id=3 and cand.disability_id=disability.disability_id)as No_of_PD, 
+(SELECT  count(*)  FROM disability_types disability where cand.disability_id=4 and cand.disability_id=disability.disability_id)as No_of_MI, 
+(SELECT  count(*)  FROM disability_types disability where cand.disability_id=5 and cand.disability_id=disability.disability_id)as No_of_MR, 
+(SELECT  count(*)  FROM disability_types disability where cand.disability_id=6 and cand.disability_id=disability.disability_id)as No_of_CP, 
+(SELECT  count(*)  FROM disability_types disability where cand.disability_id=7 and cand.disability_id=disability.disability_id)as No_of_DB, 
+(SELECT  count(*)  FROM disability_types disability where cand.disability_id=8 and cand.disability_id=disability.disability_id)as No_of_Others_disb  
+FROM (select * from candidate_work_experience where mark_deleted=0    and designation_to_date ='5000-01-01') as cand_work_expr
+  left join   candidates cand on cand_work_expr.candidate_id= cand.candidate_id
+ and is_registration_completed=1 and cand.is_active=1 
+ left JOIN candidate_other_details cand_other_detl ON cand_other_detl.candidate_id=cand.candidate_id  
+ left JOIN ngos ngo ON cand.ngo_id=ngo.ngo_id 
+ left JOIN disability_types disability ON cand.disability_id=disability.disability_id 
+ left JOIN disability_sub_types disab_sub_type ON cand.disability_sub_type_id=disab_sub_type.disability_sub_type_id  
+ left JOIN states state ON cand.present_address_state_id=state.state_id
+ left JOIN cities city ON cand.present_address_city_id=city.city_id 
+ left join candidate_recommended_roles c_rol on cand.candidate_id= c_rol.candidate_id 
+ left join job_roles jb_rl on cand_work_expr.job_role_id=jb_rl.job_role_id 
+ left join jobs on jb_rl.job_id=jobs.job_id  
+ left join companies comp on cand_work_expr.company_id=comp.company_id  
+ left join parent_companies par_comp on cand_work_expr.parent_company_id=par_comp.company_id 
+ left join industry_segments ind on comp.industry_segment_id=ind.industry_segment_id 
+  left join candidates_assigned_to_employment_project   cand_ass_emp_proj on cand_work_expr.candidate_id=cand_ass_emp_proj.candidate_id 
+  and cand_ass_emp_proj.employment_project_id
+ left join employment_projects emp_proj on cand_ass_emp_proj.employment_project_id=emp_proj.employment_project_id and emp_proj.is_closed=0
+ or (cand_work_expr.company_id=emp_proj.company_id and cand_work_expr.parent_company_id=emp_proj.parent_company_id and cand_work_expr.job_role_id=emp_proj.job_role_id )
+left join vacancies vac on emp_proj.vacancy_id=vac.vacancy_id
+where cand.registration_id is not null and cand_work_expr.designation_to_date &gt; curdate()
+group by cand_work_expr.candidate_id  order by cand.first_name</SqlCommand>
+      </DataSource1>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="0" />
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="4" type="Page" isKey="true">
+      <Border>Top, Bottom;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="2">
+        <PageHeaderBand1 Ref="5" type="PageHeaderBand" isKey="true">
+          <Brush>White</Brush>
+          <ClientRectangle>0,0.2,53.22,0.8</ClientRectangle>
+          <Components isList="true" count="25">
+            <Text1 Ref="6" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.1,2.5,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,14</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>Got Job</Text>
+              <TextBrush>Black</TextBrush>
+            </Text1>
+            <Text2 Ref="7" type="Text" isKey="true">
+              <Border>Top, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.6,3.8,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text2</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>Candidate Name</Text>
+              <TextBrush>Black</TextBrush>
+            </Text2>
+            <Text3 Ref="8" type="Text" isKey="true">
+              <Border>Top, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.8,0.6,0.9,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text3</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>Regn Id</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text3>
+            <Text4 Ref="9" type="Text" isKey="true">
+              <Border>Top, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4.6,0.6,0.9,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Guid>4b3b8a3698e74176b0cb4578ec326dcb</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text4</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>Cand Id</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text4>
+            <Text5 Ref="10" type="Text" isKey="true">
+              <Border>Top, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>5.4,0.6,3.6,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Guid>ae1698b8e4934283a4fa6f77d4cfe3d5</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text5</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>Disability Type</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text5>
+            <Text6 Ref="11" type="Text" isKey="true">
+              <Border>Top, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>9,0.6,3.6,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Guid>8e37a140497e4a2badd3a9e4d1e07f51</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text6</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>Disability Type</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text6>
+            <Text7 Ref="12" type="Text" isKey="true">
+              <Border>Top, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>12.6,0.6,2.8,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Guid>138c2cf7ccee4103a942b64f438d8f40</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text7</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>Company Name</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text7>
+            <Text8 Ref="13" type="Text" isKey="true">
+              <Border>Top, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>15.4,0.6,3,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Guid>4153fc10c8734aeaa4aaba47a50720c9</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text8</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>Parent Company Name</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text8>
+            <Text9 Ref="14" type="Text" isKey="true">
+              <Border>Top, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>18.4,0.6,5,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Guid>7e209efd2f55436289d49b4c64d07094</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text9</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>Vacancy Name</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text9>
+            <Text10 Ref="15" type="Text" isKey="true">
+              <Border>Top, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>23.4,0.6,1.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Guid>334fe7c9140d491cadbac808f6d806e2</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text10</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>Plcd EI</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text10>
+            <Text11 Ref="16" type="Text" isKey="true">
+              <Border>Top, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>24.6,0.6,5,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Guid>e91338361dba496191f10f2102bf31cd</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text11</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>Employment Project</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text11>
+            <Text12 Ref="17" type="Text" isKey="true">
+              <Border>Top, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>29.6,0.6,1.8,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Guid>c2204c899e2942968cbe82605d12a152</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text12</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>Date Join</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text12>
+            <Text13 Ref="18" type="Text" isKey="true">
+              <Border>Top, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>31.4,0.6,1.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Guid>ab1d2dba80c14e5185551f3315b88065</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text13</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>Salary</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text13>
+            <Text14 Ref="19" type="Text" isKey="true">
+              <Border>Top, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>32.6,0.6,2.9,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Guid>dbb00b223e854444a72256cc3c891e24</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text14</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>Industry Segment</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text14>
+            <Text15 Ref="20" type="Text" isKey="true">
+              <Border>Top, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>35.5,0.6,4.9,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Guid>8738099052ec4325b377c120a639dd0e</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text15</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>Job Type</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text15>
+            <Text16 Ref="21" type="Text" isKey="true">
+              <Border>Top, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>40.4,0.6,5,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Guid>755abbe39669446ba0c088f90f62ae9f</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text16</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>Recomd Job Role</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text16>
+            <Text17 Ref="22" type="Text" isKey="true">
+              <Border>Top, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>45.4,0.6,0.8,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Guid>ba2a5f386b424501a3598416d0fd0055</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text17</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>Job EI</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text17>
+            <Text18 Ref="23" type="Text" isKey="true">
+              <Border>Top, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>46.2,0.6,1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Guid>ef215fb615084b4d887c8f0fdc3d5c5c</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text18</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>No Of VI</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text18>
+            <Text19 Ref="24" type="Text" isKey="true">
+              <Border>Top, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>47.2,0.6,0.8,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Guid>2283090257884e7da526840e1545243f</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text19</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>NO HI</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text19>
+            <Text20 Ref="25" type="Text" isKey="true">
+              <Border>Top, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>48,0.6,0.7,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Guid>4799f7ee1c8a41ad828358cb8c133031</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text20</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>No MI</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text20>
+            <Text21 Ref="26" type="Text" isKey="true">
+              <Border>Top, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>48.7,0.6,0.8,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Guid>cd3be5ae02e744dea25f319ad9c9cc89</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text21</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>No PD</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text21>
+            <Text22 Ref="27" type="Text" isKey="true">
+              <Border>Top, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>49.5,0.6,0.8,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Guid>896413272f05457db9544e47444558ce</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text22</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>No Of MR</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text22>
+            <Text23 Ref="28" type="Text" isKey="true">
+              <Border>Top, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>50.3,0.6,0.8,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Guid>235a55de3ce04abcb4a23e4b5e2de04d</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text23</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>No Of CP</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text23>
+            <Text24 Ref="29" type="Text" isKey="true">
+              <Border>Top, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>51.1,0.6,1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Guid>09c1c645dcc145d89417fb1b3c96e121</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text24</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>No Of DB</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text24>
+            <Text25 Ref="30" type="Text" isKey="true">
+              <Border>Top, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>52.1,0.6,0.9,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <Guid>5500acc636c94f92ad18e9ed2ee3b6cb</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text25</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>No Oth Disb</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </Text25>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>PageHeaderBand1</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+        </PageHeaderBand1>
+        <DataDataSource1 Ref="31" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,1.4,53.22,0.3</ClientRectangle>
+          <Components isList="true" count="24">
+            <DataDataSource1_candidate_name Ref="32" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,3.9,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataDataSource1_candidate_name</Name>
+              <Page isRef="4" />
+              <Parent isRef="31" />
+              <Text>{DataSource1.candidate_name}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataDataSource1_candidate_name>
+            <DataDataSource1_registration_id Ref="33" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>3.8,0,0.9,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataDataSource1_registration_id</Name>
+              <Page isRef="4" />
+              <Parent isRef="31" />
+              <Text>{DataSource1.registration_id}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataDataSource1_registration_id>
+            <DataDataSource1_candidate_id Ref="34" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>4.7,0,1,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataDataSource1_candidate_id</Name>
+              <Page isRef="4" />
+              <Parent isRef="31" />
+              <Text>{DataSource1.candidate_id}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataDataSource1_candidate_id>
+            <DataDataSource1_disability_type Ref="35" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>5.6,0,3.4,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataDataSource1_disability_type</Name>
+              <Page isRef="4" />
+              <Parent isRef="31" />
+              <Text>{DataSource1.disability_type}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataDataSource1_disability_type>
+            <DataDataSource1_disability_sub_type Ref="36" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>9,0,3.6,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataDataSource1_disability_sub_type</Name>
+              <Page isRef="4" />
+              <Parent isRef="31" />
+              <Text>{DataSource1.disability_sub_type}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataDataSource1_disability_sub_type>
+            <DataDataSource1_company_name Ref="37" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>12.6,0,2.8,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataDataSource1_company_name</Name>
+              <Page isRef="4" />
+              <Parent isRef="31" />
+              <Text>{DataSource1.company_name}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataDataSource1_company_name>
+            <DataDataSource1_Parent_company_name Ref="38" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>15.4,0,3,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataDataSource1_Parent_company_name</Name>
+              <Page isRef="4" />
+              <Parent isRef="31" />
+              <Text>{DataSource1.Parent_company_name}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataDataSource1_Parent_company_name>
+            <DataDataSource1_vacancy_name Ref="39" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>18.4,0,5,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataDataSource1_vacancy_name</Name>
+              <Page isRef="4" />
+              <Parent isRef="31" />
+              <Text>{DataSource1.vacancy_name}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataDataSource1_vacancy_name>
+            <DataDataSource1_Got_placed_by_EI Ref="40" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>23.4,0,1.2,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataDataSource1_Got_placed_by_EI</Name>
+              <Page isRef="4" />
+              <Parent isRef="31" />
+              <Text>{DataSource1.Got_placed_by_EI}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataDataSource1_Got_placed_by_EI>
+            <DataDataSource1_Employment_Project Ref="41" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>24.6,0,5,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataDataSource1_Employment_Project</Name>
+              <Page isRef="4" />
+              <Parent isRef="31" />
+              <Text>{DataSource1.Employment_Project}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataDataSource1_Employment_Project>
+            <DataDataSource1_date_of_join Ref="42" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>29.6,0,1.8,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataDataSource1_date_of_join</Name>
+              <Page isRef="4" />
+              <Parent isRef="31" />
+              <Text>{DataSource1.date_of_join}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataDataSource1_date_of_join>
+            <DataDataSource1_salary Ref="43" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>31.4,0,1.2,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataDataSource1_salary</Name>
+              <Page isRef="4" />
+              <Parent isRef="31" />
+              <Text>{DataSource1.salary}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataDataSource1_salary>
+            <DataDataSource1_industry_segment Ref="44" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>32.6,0,2.8,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataDataSource1_industry_segment</Name>
+              <Page isRef="4" />
+              <Parent isRef="31" />
+              <Text>{DataSource1.industry_segment}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataDataSource1_industry_segment>
+            <DataDataSource1_job_Type Ref="45" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>35.4,0,5,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataDataSource1_job_Type</Name>
+              <Page isRef="4" />
+              <Parent isRef="31" />
+              <Text>{DataSource1.job_Type}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataDataSource1_job_Type>
+            <DataDataSource1_recommended_job_role Ref="46" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>40.4,0,5,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataDataSource1_recommended_job_role</Name>
+              <Page isRef="4" />
+              <Parent isRef="31" />
+              <Text>{DataSource1.recommended_job_role}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataDataSource1_recommended_job_role>
+            <DataDataSource1_No_of_cand_got_job Ref="47" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>45.4,0,0.9,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataDataSource1_No_of_cand_got_job</Name>
+              <Page isRef="4" />
+              <Parent isRef="31" />
+              <Text>{DataSource1.No_of_cand_got_job}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataDataSource1_No_of_cand_got_job>
+            <DataDataSource1_No_of_VI Ref="48" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>46.2,0,1,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataDataSource1_No_of_VI</Name>
+              <Page isRef="4" />
+              <Parent isRef="31" />
+              <Text>{DataSource1.No_of_VI}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataDataSource1_No_of_VI>
+            <DataDataSource1_No_of_HI Ref="49" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>47.2,0,0.8,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataDataSource1_No_of_HI</Name>
+              <Page isRef="4" />
+              <Parent isRef="31" />
+              <Text>{DataSource1.No_of_HI}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataDataSource1_No_of_HI>
+            <DataDataSource1_No_of_PD Ref="50" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>48.7,0,0.8,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataDataSource1_No_of_PD</Name>
+              <Page isRef="4" />
+              <Parent isRef="31" />
+              <Text>{DataSource1.No_of_PD}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataDataSource1_No_of_PD>
+            <DataDataSource1_No_of_MI Ref="51" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>48,0,0.7,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataDataSource1_No_of_MI</Name>
+              <Page isRef="4" />
+              <Parent isRef="31" />
+              <Text>{DataSource1.No_of_MI}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataDataSource1_No_of_MI>
+            <DataDataSource1_No_of_MR Ref="52" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>49.5,0,0.8,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataDataSource1_No_of_MR</Name>
+              <Page isRef="4" />
+              <Parent isRef="31" />
+              <Text>{DataSource1.No_of_MR}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataDataSource1_No_of_MR>
+            <DataDataSource1_No_of_CP Ref="53" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>50.3,0,0.8,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataDataSource1_No_of_CP</Name>
+              <Page isRef="4" />
+              <Parent isRef="31" />
+              <Text>{DataSource1.No_of_CP}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataDataSource1_No_of_CP>
+            <DataDataSource1_No_of_DB Ref="54" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>51.1,0,0.9,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataDataSource1_No_of_DB</Name>
+              <Page isRef="4" />
+              <Parent isRef="31" />
+              <Text>{DataSource1.No_of_DB}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataDataSource1_No_of_DB>
+            <DataDataSource1_No_of_Others_disb Ref="55" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>52,0,1,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataDataSource1_No_of_Others_disb</Name>
+              <Page isRef="4" />
+              <Parent isRef="31" />
+              <Text>{DataSource1.No_of_Others_disb}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataDataSource1_No_of_Others_disb>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>DataSource1</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Name>DataDataSource1</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Sort isList="true" count="0" />
+        </DataDataSource1>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>f25e47aba92b4d42a5429401b9beeee1</Guid>
+      <Margins>0.39,0.39,0.39,0.39</Margins>
+      <Name>Page1</Name>
+      <Orientation>Landscape</Orientation>
+      <PageHeight>11</PageHeight>
+      <PageWidth>54</PageWidth>
+      <Report isRef="0" />
+      <Watermark Ref="56" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings Ref="57" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>8/10/2013 7:35:16 PM</ReportChanged>
+  <ReportCreated>8/10/2013 6:22:35 PM</ReportCreated>
+  <ReportFile>J:\vijaytest\EnableIndia\EnableIndia\Reports\CandidatesGotJob.mrt</ReportFile>
+  <ReportGuid>7fedde2de9504a44941814b7f0360e5f</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Inches</ReportUnit>
+  <ReportVersion>2013.1.1600</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

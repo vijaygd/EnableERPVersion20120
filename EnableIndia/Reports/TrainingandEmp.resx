@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="sqlDataSource1.SelectCommand" xml:space="preserve">
+    <value>select cand.candidate_id,
+cand.registration_id,
+cand.registration_date,
+cand_oth_detl.candidate_name_with_status As candidate_name,
+YEAR(CURDATE()) - YEAR(date_of_birth) AS age,
+cand.gender,
+st.state_name,
+ct.city_name,
+ngos.ngo_name,
+disb.disability_type,
+disb_sub.disability_sub_type,
+(case when cand.is_profiled ='0' then 'To Be Profiled' 
+when cand.is_profiled &gt;'0' then 'Profiled' end )as Prof_status,
+
+null as Training_Project,
+null as Training_Program,
+
+null as Candidate_Job_Roles,
+
+
+jr.job_role_name as Recommended_job_role,
+
+comp.company_code AS company_name, 
+ par_comp.company_name AS Parent_company_name,
+
+null as Joining_date,
+null AS Candidate_completed_training,
+null as End_DATE_Training_project, 
+null as Employment_project_name,
+null as  Got_placed_by_EI
+
+
+from candidates cand
+
+left join candidate_other_details cand_oth_detl on cand.candidate_id=cand_oth_detl.candidate_id
+left join disability_types disb on cand.disability_id=disb.disability_id
+left join disability_sub_types disb_sub on cand.disability_sub_type_id=disb_sub.disability_sub_type_id
+left join ngos on cand.ngo_id=ngos.ngo_id
+left join states st on cand.present_address_state_id=st.state_id
+left join cities ct on cand.present_address_city_id=ct.city_id
+left join candidate_recommended_roles cand_rl on cand.candidate_id=cand_rl.candidate_id
+left Join job_roles jr on cand_rl.job_role_id=jr.job_role_id
+left JOIN candidate_work_experience cand_work_expr ON cand.candidate_id = cand_work_expr.candidate_id 
+		 AND cand_work_expr.mark_deleted=0 
+ 
+ LEFT JOIN candidates_assigned_to_employment_project cand_emp ON cand_work_expr.candidate_id=cand_emp.candidate_id
+	LEFT JOIN employment_projects emp ON cand_emp.employment_project_id=emp.employment_project_id
+    
+LEFT JOIN companies comp ON cand_work_expr.company_id=comp.company_id 
+LEFT JOIN parent_companies par_comp ON cand_work_expr.parent_company_id=par_comp.company_id 
+left join candidates_assigned_to_training_projects cand_tran on cand.candidate_id= cand_tran.candidate_id
+AND cand_tran.is_candidate_deleted=0 
+
+left join training_projects tran on cand_tran.training_project_id=tran.training_project_id
+left join training_programs tram on  tran.training_program_id= tram.training_program_id
+
+
+group by cand_rl.recommended_job_role_id 
+#having  cand.candidate_id=15500
+
+
+union all 
+
+
+
+select cand.candidate_id,
+cand.registration_id,
+cand.registration_date,
+cand_oth_detl.candidate_name_with_status As candidate_name,
+
+YEAR(CURDATE()) - YEAR(date_of_birth) AS age,
+cand.gender,
+st.state_name,
+ct.city_name,
+ngos.ngo_name,
+disb.disability_type,
+disb_sub.disability_sub_type,
+
+(case when cand.is_profiled ='0' then 'To Be Profiled' 
+when cand.is_profiled &gt;'0' then 'Profiled' end )as Prof_status,
+
+
+null as Training_Project,
+null as Training_Program,
+
+
+case 
+WHEN cand_work_expr.job_role_id='-1' THEN cand_work_expr.unlisted_job_role 
+					WHEN cand_work_expr.job_role_id &gt; 0 THEN jr.job_role_name END
+		 AS Candidate_Job_Roles,
+
+null as Recommended_job_role,
+
+CASE
+
+
+					WHEN cand_work_expr.company_id='-1' THEN cand_work_expr.unlisted_company 
+					WHEN cand_work_expr.company_id &gt; 0 THEN comp.company_code END
+		 AS company_name,
+CASE 
+					WHEN cand_work_expr.parent_company_id='-1' THEN '' 
+					WHEN cand_work_expr.parent_company_id &gt; 0 THEN par_comp.company_name END
+				 AS Parent_company_name,
+ 
+
+cand_work_expr.designation_from_date as Joining_date,
+null AS Candidate_completed_training,
+null as End_DATE_Training_project, 
+IF(cand_work_expr.is_entered_from_employment_project=0,'',emp.employment_project_name)AS employment_project_name,
+(case when cand_work_expr.is_entered_from_employment_project &gt;'0' then 'YES' 
+when cand_work_expr.is_entered_from_employment_project &lt;'1'then 'NO ' end )as Got_placed_by_EI
+
+from candidates cand
+
+left join candidate_other_details cand_oth_detl on cand.candidate_id=cand_oth_detl.candidate_id
+left join disability_types disb on cand.disability_id=disb.disability_id
+left join disability_sub_types disb_sub on cand.disability_sub_type_id=disb_sub.disability_sub_type_id
+left join ngos on cand.ngo_id=ngos.ngo_id
+left join states st on cand.present_address_state_id=st.state_id
+left join cities ct on cand.present_address_city_id=ct.city_id
+left join candidate_recommended_roles cand_rl on cand.candidate_id=cand_rl.candidate_id
+left JOIN candidate_work_experience cand_work_expr ON cand.candidate_id = cand_work_expr.candidate_id 
+		 AND cand_work_expr.mark_deleted=0 
+  LEFT JOIN candidates_assigned_to_employment_project cand_emp ON cand_work_expr.candidate_id=cand_emp.candidate_id
+	LEFT JOIN employment_projects emp ON cand_emp.employment_project_id=emp.employment_project_id
+
+ left Join job_roles jr on cand_work_expr.job_role_id=jr.job_role_id
+LEFT JOIN companies comp ON cand_work_expr.company_id=comp.company_id 
+LEFT JOIN parent_companies par_comp ON cand_work_expr.parent_company_id=par_comp.company_id 
+left join candidates_assigned_to_training_projects cand_tran on cand.candidate_id= cand_tran.candidate_id
+AND cand_tran.is_candidate_deleted=0 
+left join training_projects tran on cand_tran.training_project_id=tran.training_project_id
+left join training_programs tram on  tran.training_program_id= tram.training_program_id
+ group by cand_work_expr.candidate_work_experience_id 
+ #having  cand.candidate_id=15500
+ 
+ union all 
+ 
+ 
+ select cand.candidate_id,
+cand.registration_id,
+cand.registration_date,
+cand_oth_detl.candidate_name_with_status As candidate_name,
+YEAR(CURDATE()) - YEAR(date_of_birth) AS age,
+cand.gender,
+st.state_name,
+ct.city_name,
+ngos.ngo_name,
+disb.disability_type,
+disb_sub.disability_sub_type,
+ 
+ (case when cand.is_profiled ='0' then 'To Be Profiled' 
+when cand.is_profiled &gt;'0' then 'Profiled' end )as Prof_status,
+
+tran.training_project_name as Training_Project,
+tram.training_program_name as Training_Program,
+
+
+
+
+null as Candidate_Job_Roles,
+null as Recommended_job_role, 
+null as company_name,
+null as Parent_company_name,
+null as Joining_date,
+
+CASE 
+					WHEN cand_tran.completed_training &lt;'1' THEN 'NO' 
+					WHEN cand_tran.completed_training &gt; 0 THEN 'YES' END
+				 AS Candidate_completed_training,
+
+tran.end_date_time as End_DATE_Training_project, 
+null as Employment_project_name,
+null as  Got_placed_by_EI
+
+
+
+ from candidates cand
+ 
+ left join candidate_other_details cand_oth_detl on cand.candidate_id=cand_oth_detl.candidate_id
+left join disability_types disb on cand.disability_id=disb.disability_id
+left join disability_sub_types disb_sub on cand.disability_sub_type_id=disb_sub.disability_sub_type_id
+left join ngos on cand.ngo_id=ngos.ngo_id
+left join states st on cand.present_address_state_id=st.state_id
+left join cities ct on cand.present_address_city_id=ct.city_id
+left join candidate_recommended_roles cand_rl on cand.candidate_id=cand_rl.candidate_id
+left Join job_roles jr on cand_rl.job_role_id=jr.job_role_id
+left JOIN candidate_work_experience cand_work_expr ON cand.candidate_id = cand_work_expr.candidate_id 
+		 AND cand_work_expr.mark_deleted=0 
+ 
+ LEFT JOIN candidates_assigned_to_employment_project cand_emp ON cand_work_expr.candidate_id=cand_emp.candidate_id
+	LEFT JOIN employment_projects emp ON cand_emp.employment_project_id=emp.employment_project_id
+LEFT JOIN companies comp ON cand_work_expr.company_id=comp.company_id 
+LEFT JOIN parent_companies par_comp ON cand_work_expr.parent_company_id=par_comp.company_id 
+left join candidates_assigned_to_training_projects cand_tran on cand.candidate_id= cand_tran.candidate_id
+AND cand_tran.is_candidate_deleted=0 
+left join training_projects tran on cand_tran.training_project_id=tran.training_project_id
+left join training_programs tram on  tran.training_program_id= tram.training_program_id
+
+group by cand_tran.assigned_training_project_id 
+
+
+
+
+</value>
+  </data>
+</root>

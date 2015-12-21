@@ -1,0 +1,439 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<enable_india>
+    
+    <enable_ind_cand>
+        <title>Mandatory fields are shown in capitals. </title>
+        <More_Help>You can register candidate online, or take a print-out of this page, fill it <u>offline</u>
+            and later update registration into this page on the system.</More_Help>
+        <More_Helpa>To enter more than 2 phone numbers in a single text-box, use a comma to separate the phone numbers. </More_Helpa>
+        <More_Helpac>If phone number is unknown, put 0000.</More_Helpac>
+        <More_Helpaf>'Last reachable on this phone/address' means, the latest contact with this candidate was established through this phone/address.</More_Helpaf>
+    </enable_ind_cand>
+
+    <other_ngo_cand>
+        <title>Mandatory fields are shown in capitals.</title>
+        <More_Help>You can register candidate online, or take a print-out of this page, fill it <u>offline</u>
+            and later update registration into this page on the system.</More_Help>
+        <More_Helpba>To enter more than 2 phone numbers in a single text-box, use a comma to separate the phone numbers. </More_Helpba>
+        <More_Helpad>If phone number is unknown, put 00000 or 00 0000.</More_Helpad>
+        <More_Helpafm>'Last reachable on this phone/address' means, the latest contact with this candidate was established through this phone/address.</More_Helpafm>
+    </other_ngo_cand>
+
+    <unreg_blank_form>
+        <crete_form>Creation and printing of new blank forms:</crete_form>
+        <title>Create multiple new registration forms and print them if needed by using functionality below.</title>
+        <titlea>It is possible to print a blank registration form any number of times.</titlea>
+        <form_status>Un-used blank registration forms (forms with status as 'To be Registered') are displayed below.</form_status>
+        <blank></blank>
+        <existing_form>Creation and printing of new blank forms:</existing_form>
+        <More_Help>To Print a form, select Registration IDs using check-boxes and click 'Print' button.</More_Help>
+        <reg_cand> To Register a candidate, click on row number (No.) to reach the Registration Form. </reg_cand>
+    </unreg_blank_form>
+
+    <to_be_profile>
+        <title>Search for 'To Be Profiled' candidates, using this page.</title>
+        <recom_job>Search results show 'To be Profiled' candidates. </recom_job>
+        <job_type>Candidates whose Recommended Job Type is blank (in Profile page) are candidates who have not been profiled as yet.</job_type>
+        <blank></blank>
+        <cand_prof>Click on Candidate Name to view and update Candidate Profile.</cand_prof>
+        <cand_RID> Click on Candidate RID to view and update Candidate History.</cand_RID>
+        <blank></blank>
+
+        <cand_call>
+            To add candidates to candidate calling, select Candidates names using radio-buttons and click on 'Add to Candidate Calling' button.
+        </cand_call>
+        <more_help>LEGEND:</more_help>
+        <cand_name>
+            Candidate name in capitals indicates 'unemployed candidate'. If candidate is a priority candidate, then a * appears before candidate name.
+        </cand_name>
+    </to_be_profile>
+
+    <act_cand>
+        <title>Search for 'All Active Profiled' candidates, using this page.</title>
+        <recom_job>Search results show 'All Active Profiled' candidates. </recom_job>
+        <job_type>Candidates whose Recommended Job Type is filled (in Profile page) are considered as profiled.</job_type>
+        <blank></blank>
+        <cand_name>Click on Candidate Name to view and update Candidate Profile. </cand_name>
+        <cand_rid>Click on Candidate R I D to view and update Candidate History.</cand_rid>
+        <blank></blank>
+        <more_inst>LEGEND:</more_inst>
+        <name>Candidate name in capitals indicates 'unemployed candidate'.</name>
+        <pri_cand> If candidate is a priority candidate, then a * appears before candidate name.</pri_cand>
+        <assign>If candidate is already assigned to some employment project, then a $ appears before the candidate name.</assign>
+        <training_pro>If candidate is assigned to some training program, then a # appears before the candidate name.</training_pro>
+        <need>If candidate is a needy candidate, then a % appears before candidate name.</need>
+    </act_cand>
+
+
+
+    <registration>
+        <title>Mandatory fields are shown in capitals.</title>
+    </registration>
+
+    <edu_qulification>
+        <data>Educational Qualifications of candidate are displayed here.</data>
+        <title>Click on row number (No.) to edit that row.</title>
+    </edu_qulification>
+
+    <work_exp>
+        <data>Work Experience of candidate is displayed here.</data>
+        <title>Click on row number (No.) to edit that row.</title>
+    </work_exp>
+
+    <Knowlege_train>
+        <data>Knowledge and Training of the candidate is displayed here.</data>
+        <title>Click on row number (No.) to edit that row.</title>
+    </Knowlege_train>
+
+    <job_proflie>
+        <data>Details of job profile of the candidate are displayed here.</data>
+        <reason>Note that 'priority' candidates are those candidates who are elite or are already employed but deserve a better job.</reason>
+        <title>Needy candidates are those who urgently need a job.</title>
+    </job_proflie>
+
+    <add_view_cand_hist>
+        <data>Details of history of the candidate are displayed here.</data>
+        <title>Click on row number (No.) for any row of history with 'open' status to update that row.</title>
+    </add_view_cand_hist>
+
+    <task_manage>
+        <title>Use the Search functionalities below to get a list of specific open tasks for candidates.</title>
+        <update_prof>Click on row number (No.) for any row of task to update the details of that task or to close that task. </update_prof>
+        <blank></blank>
+        <cand_name>Click on Candidate Name to view and update Candidate Profile.</cand_name>
+        <cand_rid>Click on Candidate RID to view and update Candidate History.</cand_rid>
+        <blank></blank>
+        <b></b>
+        <leg>LEGEND:</leg>
+        <name>Candidate name in capitals indicates 'unemployed candidate'.</name>
+        <pri_cand> If candidate is a priority candidate, then a * appears before candidate name.</pri_cand>
+        <assign>If candidate is already assigned to some employment project, then a $ appears before the candidate name.</assign>
+        <training_pro>If candidate is assigned to some training program, then a # appears before the candidate name.</training_pro>
+        <need>If candidate is a needy candidate, then a % appears before candidate name.</need>
+    </task_manage>
+
+
+    <add_train_program>
+        <title>Create new training programs by filling this form. Mandatory fields are shown in capitals. </title>
+    </add_train_program>
+
+
+    <add_train_project>
+        <title>Each instance of a Training Program is a Training Project.</title>
+        <batch>Create a Training Project for a given batch of candidates here.</batch>
+        <man_field>   Mandatory fields are shown in capitals.</man_field>
+    </add_train_project>
+
+    <list_of_train_proj>
+    <batch>This page displays the list of Open Training Projects. You can use Search parameters to filter the list.</batch>
+        <title>To start the training project cycle for a given project, select a Training Project using radio-button and click on the 'Enter Training Project Cycle' button below.</title>
+        <blank></blank>
+            <active>OTHER ACTIVITIES YOU CAN DO ON THIS SCREEN:</active>
+            <view>To view Assigned List for a given Training Project, select the training Project using radio-button and</view>
+            <click>click on 'View Assigned List' button.</click>
+            <delete_pro>Delete a Training Project by selecting it using radio-button and click on 'Delete Project' button.</delete_pro>
+            <update_prog>Click on the Training Program name to view and update details of the same.</update_prog>
+            <update_proj> Click on the Training Project name to view and update details of the same.</update_proj>
+    </list_of_train_proj>
+
+    <recommended_cand_train_proj>
+        <view>ERP system does automatic matching and displays the recommended candidates for this Training Project. </view>
+        <title>Select candidates for this Training Project using check-box selection and click 'Add to Assigned List'</title>
+        <title_remain>to transfer candidates to the Assigned List.</title_remain>
+        <blank></blank>
+        <active>OTHER ACTIVITIES YOU CAN DO ON THIS SCREEN:</active>
+        <search_cand>You can search for a given candidate in the below list by using Control+F function of the browser.</search_cand>
+        <view_profile>Click on Candidate name to view Candidate Profile.</view_profile>
+        <view_history>Click on Candidate ID to view Candidate History.</view_history>
+        <blank></blank>
+        <legend>LEGEND:</legend>
+        <unemp_cand>Candidate name in capitals indicates 'unemployed candidate'.</unemp_cand>
+        <assign_cand>If candidate is already assigned to some employment project, then a $ appears before the candidate name.</assign_cand>
+        <priority_cand>If candidate is a priority candidate, then a * appears before candidate name.</priority_cand>
+        <assign_train_prog>If candidate is already assigned to some training program, then a # appears before the candidate name.</assign_train_prog>
+        <needy_cand>If candidate is a needy candidate, then a % appears before candidate name.</needy_cand>
+    </recommended_cand_train_proj>
+        
+    <non_recommeneded_cand_train_proj>
+        <title>This page shows list of those candidates who did not show up in the Auto-Recommended candidates list.</title>
+        <search_cand>Use Search functionality to filter through the list. </search_cand>
+        <cand_select>From the list of candidates, select candidates for this Training Project using check-box selection and click 'Add to Assigned List' button</cand_select>
+        <cand_select_remain>to transfer candidates to the Assigned List.</cand_select_remain>
+        <blank></blank>
+        <active>OTHER ACTIVITIES YOU CAN DO ON THIS SCREEN:</active>
+        <search_cand>You can search for a given candidate in the below list by using Control+F function of the browser.</search_cand>
+        <view_profile>Click on Candidate name to view  Candidate Profile.</view_profile>
+        <view_history>Click on Candidate ID to view Candidate History.</view_history>
+        <blank></blank>
+        <legend>LEGEND:</legend>
+        <unemp_cand>Candidate name in capitals indicates 'unemployed candidate'.</unemp_cand>
+        <assign_cand>If candidate is already assigned to some employment project, then a $ appears before the candidate name.</assign_cand>
+        <priority_cand>If candidate is a priority candidate, then a * appears before candidate name.</priority_cand>
+        <assign_train_prog>If candidate is already assigned to some training program, then a # appears before the candidate name.</assign_train_prog>
+        <needy_cand>If candidate is a needy candidate, then a % appears before candidate name.</needy_cand>
+    </non_recommeneded_cand_train_proj>
+
+    <assign_train_proj>
+            <title>This page displays all candidates assigned to this Training Project.</title>
+            <title_remain>Close the training cycle step for each candidate, by using the drop-down selection and hitting 'Submit'.</title_remain>
+            <title_remainsa>When training cycle has been closed for all candidates, the 'Update Data and Close Project' button appears. Click it to close the project.</title_remainsa>
+        
+            <blank></blank>
+            <search_cand>You can search for a given candidate in the below list by using Control+F function of the browser.</search_cand>
+            <view_profile>Click on Candidate name to view Candidate Profile.</view_profile>
+            <view_history>Click on Candidate ID to view Candidate History.</view_history>
+            <cand_calling>To add candidates to 'Candidate Calling', select candidates using check-box selection and click on 'Add to Candidate Calling' button.</cand_calling>
+            <cand_cala>To view candidate calling list, click on 'View Candidate Calling' button.</cand_cala>
+            <cand_calaa>To print candidate calling list, click on 'Print Candidate Calling' button.</cand_calaa>
+            <blank></blank>
+            <del_cadidate>To delete candidates from the list, select candidates using check-box selection and click 'Delete Candidates'.</del_cadidate>
+            <reset_detail>To re-set all details on this page for the given candidate, select candidate and use 'Reset' button.</reset_detail>
+            <note>To add notes for any candidate, click on 'N' button for that candidate. </note>
+            <njob>To add job details for any candidate, click on 'J' button for that candidate. </njob>
+            <blank></blank>
+            <legend>LEGEND:</legend>
+            <unemp_cand>Candidate name in capitals indicates 'unemployed candidate'.</unemp_cand>
+            <assign_cand>If candidate is already assigned to some employment project, then a $ appears before the candidate name.</assign_cand>
+            <priority_cand>If candidate is a priority candidate, then a * appears before candidate name.</priority_cand>
+            <assign_train_prog>If candidate is already assigned to some training program, then a # appears before the candidate name.</assign_train_prog>
+            <needy_cand>If candidate is a needy candidate, then a % appears before candidate name.</needy_cand>
+    </assign_train_proj>
+    
+    <!--company module-->
+    <add_parent>
+        <title>Create new parent company by filling this form. Mandatory fields are shown in capitals. </title>
+    </add_parent>
+    
+    <add_comp>
+        <title>Create new company by filling this form. Mandatory fields are shown in capitals.</title>
+        <comp_code>For Company name, use Name-Location combination. Eg. TCS in Electronic city in Bangalore could be TCS-BLR-ECITY.</comp_code>
+        <comp_details>For 'Company Details', enter some details about the company or write document path here.</comp_details>
+    </add_comp>
+
+    <add_vac>
+        <title>Create new vacancy by filling this form. Mandatory fields are shown in capitals.</title>
+        <training_candidates>TRAINING CANDIDATE SHOULD HAVE PASSED:Candidates who have been marked as 'Employable Without Training' will bypass this parameter.</training_candidates>
+    </add_vac>
+    
+    <add_emp_proj>
+        <title>Create a new employment project by combining Company and Vacancy. Mandatory fields are shown in capitals.</title>
+        <emp_proj_contacts>Contacts from Company Details page are displayed here.</emp_proj_contacts>
+    </add_emp_proj>
+
+    <list_of_emp_proj>
+        <title> Use the Search functionality to get a list of Open Employment Projects. </title>
+        <titlea>Select an Employment Project using radio-button and click on the 'Enter Employment Project Cycle' button </titlea>
+        <title_remain>to start the Employment Project cycle.</title_remain>
+        <blank></blank>
+        <active>OTHER ACTIVITIES YOU CAN DO ON THIS SCREEN:</active>
+        <assign_list>To view 'Assigned List' for any Employment Project, click on 'View Assigned List' button.</assign_list>
+        <delete_proj>Delete an Employment Project by selecting it using radio-button and click on 'Delete Project' button.</delete_proj>
+        <delete_proja>Only those projects where no one is currently assigned in Assigned List can be deleted.</delete_proja>
+        <blank></blank>
+        <view_comp>To view and update Parent Company Details, click on Parent Company name.</view_comp>
+        <view>To view and update Company Details, click on Company name.</view>
+        <view_vac>To update details about Vacancy, click on Vacancy name.</view_vac>
+        <emp_proj>
+            To update details of the Employment Project, click on Employment Project name.
+        </emp_proj>
+        <blank> </blank>
+            <rule>
+                Rules:
+            </rule>
+            <rulesu>
+                'Unassigned' means Zero candidates assigned
+            </rulesu>
+            <rulesa>
+                'Assigned'=atleast 1 candidate assigned
+            </rulesa>
+            <ruless>
+                'Started'=For atleast 1 candidate, in Step 3, if 'Candidate interested in the job?'=yes
+            </ruless>
+            <rulesc>
+                'Completed'=when all steps are marked for all assigned candidates
+            </rulesc>
+    </list_of_emp_proj>
+
+    <recommended_cand_emp_proj>
+        <view>ERP system does automatic matching and displays the recommended candidates for this Employment Project.</view>
+        <title>Select candidates for this Employment Project using check-box selection and click 'Add to Assigned List'</title>
+        <title_remain>to transfer candidates to the Assigned List.</title_remain>
+        <blank></blank>
+        <active>OTHER ACTIVITIES YOU CAN DO ON THIS SCREEN:</active>
+        <search_cand>You can search for a given candidate in the below list by using Control+F function of the browser.</search_cand>
+        <view_profile>Click on Candidate name to view Candidate Profile.</view_profile>
+        <view_history>Click on Candidate ID to view Candidate History.</view_history>
+        <blank></blank>
+        <legend>LEGEND:</legend>
+        <unemp_cand>Candidate name in capitals indicates 'unemployed candidate'.</unemp_cand>
+        <assign_cand>If candidate is already assigned to some employment project, then a $ appears before the candidate name.</assign_cand>
+        <priority_cand>If candidate is a priority candidate, then a * appears before candidate name.</priority_cand>
+        <assign_train_prog>If candidate is already assigned to some training Project, then a # appears before the candidate name.</assign_train_prog>
+        <needy_cand>If candidate is a needy candidate, then a % appears before candidate name.</needy_cand>
+    </recommended_cand_emp_proj>
+    
+
+    <non_recommeneded_cand_emp_proj>
+        <title>This page shows list of those candidates who did not show up in the Auto-Recommended candidates list.</title>
+        <search_cand>Use Search functionality to filter through the list. </search_cand>
+        <cand_select>From the list of candidates, select candidates for this Employment Project using check-box selection and click 'Add to Assigned List' button</cand_select>
+        <cand_select_remain>to transfer candidates to the Assigned List.</cand_select_remain>
+        <blank></blank>
+        <active>OTHER ACTIVITIES YOU CAN DO ON THIS SCREEN:</active>
+        <search_cand>You can search for a given candidate in the below list by using Control+F function of the browser.</search_cand>
+        <view_profile>Click on Candidate name to view Candidate Profile.</view_profile>
+        <view_history>Click on Candidate ID to view Candidate History.</view_history>
+        <blank></blank>
+        <legend>LEGEND:</legend>
+        <unemp_cand>Candidate name in capitals indicates 'unemployed candidate'.</unemp_cand>
+        <assign_cand>If candidate is already assigned to some employment project, then a $ appears before the candidate name.</assign_cand>
+        <priority_cand>If candidate is a priority candidate, then a * appears before candidate name.</priority_cand>
+        <assign_train_prog>If candidate is already assigned to some training program, then a # appears before the candidate name.</assign_train_prog>
+        <needy_cand>If candidate is a needy candidate, then a % appears before candidate name.</needy_cand>
+    </non_recommeneded_cand_emp_proj>
+
+    <assign_emp_proj>
+        
+        <title>This page displays all candidates assigned to this Employment Project.</title>
+        <title_remain>Close the employment cycle step for each candidate, by using the drop-down selection and hitting 'Submit'.</title_remain>
+        <title_remains>Use button 'J' to update 'Got Job' details.</title_remains>
+        <title_remainsa>When employment cycle has been closed for all candidates, the 'Close Project' button appears. Click it to close the project.</title_remainsa>
+        
+        <blank></blank>
+        <search_cand>You can search for a given candidate in the below list by using Control+F function of the browser.</search_cand>
+        <view_profile>Click on Candidate name to view Candidate Profile.</view_profile>
+        <view_history>Click on Candidate ID to view Candidate History.</view_history>
+        <cand_calling>To add candidates to 'Candidate Calling', select candidates using check-box selection and click on 'Add to Candidate Calling' button.</cand_calling>
+        <cand_cala>To view candidate calling list, click on 'View Candidate Calling' button.</cand_cala>
+        <cand_calaa>To print candidate calling list, click on 'Print Candidate Calling' button.</cand_calaa>
+
+        <del_cadidate>To delete candidates from the list, select candidates using check-box selection and click 'Delete Candidates'.</del_cadidate>
+        <reset_detail>To re-set all details on this page for the given candidate, select candidate and use 'Reset' button.</reset_detail>
+        <note>To add notes for any candidate, click on 'N' button for that candidate. </note>
+        <blank></blank>
+        <legend>LEGEND:</legend>
+        <unemp_cand>Candidate name in capitals indicates 'unemployed candidate'.</unemp_cand>
+        <assign_cand>If candidate is already assigned to some employment project, then a $ appears before the candidate name.</assign_cand>
+        <priority_cand>If candidate is a priority candidate, then a * appears before candidate name.</priority_cand>
+        <assign_train_prog>If candidate is already assigned to some training program, then a # appears before the candidate name.</assign_train_prog>
+        <needy_cand>If candidate is a needy candidate, then a % appears before candidate name.</needy_cand>
+    </assign_emp_proj>
+    <add_view_comp_hist>
+        <data>Details of history of the company are displayed here.</data>
+        <title>Click on row number (No.) for any row of history with 'open' status to update that row.</title>
+        <addacomp>Use 'Add New History' button to add new history for a company.</addacomp>
+    </add_view_comp_hist>
+    <task_manage_company>
+        <title>Use the Search functionalities below to get a list of specific open tasks for companies.</title>
+        <update_prof>Click on row number (No.) for any row of task to update the details of that task or to close that task.</update_prof>
+        <cand_name>Click on Company Name to view and update Company details.</cand_name>
+
+    </task_manage_company>
+
+    <manage_open>
+        <title>Step 5:</title>
+        <comp_page>This page displays all candidates who are successful at getting the job.</comp_page>
+        <comp_submit>Close each step in the employment cycle using drop-down selection and hitting 'Submit'.</comp_submit>
+        <comp_close>After closing all steps, you can close this Employment Project by hitting the 'Close this Employment Project' button.</comp_close>
+        <comp_more>
+            Note that if candidate is attached to another employment project also, and gets a job through that employment project,
+        </comp_more>
+        <drop_proj>then the candidate is automatically dropped from this employment project.</drop_proj>
+        <oth_activity>OTHER ACTIVITIES YOU CAN DO ON THIS SCREEN:</oth_activity>
+        <view_name>Click on Candidate Name to view Profile.</view_name>
+        <view_id>Click on Candidate ID to view History.</view_id>
+        <search_cand>You can search for a given candidate in the below list by using Control+F function of the browser.</search_cand>
+        <cand_call>To add candidates to 'Candidate Calling', select candidates using check-box selection and click on 'Add to Candidate Calling' button.</cand_call>
+        <del_cand>To delete candidates from the list, select candidates using check-box selection and click 'Delete Candidates'.</del_cand>
+        <res_details>To re-set all details on this page for the given candidate, select candidate and use 'Reset' button.</res_details>
+        <add_notes>To add notes for any candidate, then select candidate using check-box selection and click on 'Notes' button.</add_notes>
+        <sel_cand>To select all candidates present on this page, use 'Select All' button.</sel_cand>
+        <leg> LEGEND:</leg>
+        <cand_name>Candidate name in capitals indicates 'unemployed candidate'.</cand_name>
+        <assign_cand>If candidate is already assigned to some other employment project, then a $ appears before the candidate name.</assign_cand>
+        <cand_pri>If candidate is a priority candidate, then a * appears before candidate name.</cand_pri>
+        <assigm_train_prog>If candidate is already assigned to some training program, then a # appears before the candidate name.</assigm_train_prog>
+        <need_cand>If candidate is a needy candidate, then a % appears before candidate name.</need_cand>
+
+    </manage_open>
+    
+    <add_ngo>
+        <title>Add new NGO by filling this form. Mandatory fields are shown in capitals.</title>
+        <ngo_details>NGO Details textbox: Enter some details about the NGO Or write document path here.</ngo_details>
+    </add_ngo>
+
+    <update_ngo>
+        <title>Update NGO by filling this form. Mandatory fields are shown in capitals. </title>
+        <ngo_details>NGO Details textbox: Enter some details about the NGO Or write document path here.</ngo_details>
+    </update_ngo>
+  
+    <ngo_list>
+        <title>In the NGO List below, click on NGO name to access Update NGO page.</title>
+    </ngo_list>
+  
+    <add_enable_emp>
+        <title>Add new Employee by filling this form. Mandatory fields are shown in capitals.</title>
+    </add_enable_emp>
+
+    <update_enable_emp>
+        <title>Update Employee details by filling this form. Mandatory fields are shown in capitals.</title>
+    </update_enable_emp>
+
+    <emp_list>
+        <title>In the Enable India Employee List below, click on Employee name to access Update Employee Details page.</title>
+    </emp_list>
+
+    <add_dropdown>
+        <title>The options that you add into each selected parameter are reflected throughout the ERP system. Mandatory fields are shown in capitals.</title>
+        <viewpara>To view all existing data for a given parameter, select that parameter and click on 'View Existing' button.</viewpara>
+    </add_dropdown>
+
+    <set_age>
+        <title>Candidate Lists in Training and Employment pages will be set at a default age.</title>
+        <age>Use this page to update the default age setting to a different default age.</age>
+    </set_age>
+        <AllActiveRegisteredCandidate>
+            <title>View all Registered candidates who are active in the system.</title>
+        </AllActiveRegisteredCandidate>
+        <CandidateWiseTrainingAndEmploymentRelation>
+            <title>For each candidate, you can see employment status, as well as the training passed, training recommended as well</title>
+            <titleae>as recommended training not done.</titleae>
+        </CandidateWiseTrainingAndEmploymentRelation>
+        <CandidateTask>
+                <title>You can view Open as well as Closed candidate tasks here, for all candidates.</title>
+        </CandidateTask>
+        <EmploymentProofNotGotFromCandidate>
+            <title>This page shows all candidates who have been marked as employed/got job, but have not submitted employment proof.</title>
+        </EmploymentProofNotGotFromCandidate>
+        <TrainingPrograms>
+            <title>This page lists all Training programs with details, as well as open and closed training projects for each.</title>
+        </TrainingPrograms>
+        <TrainingProjects>
+            <title>This page lists all Training projects with details and split up of passed and failed candidates according to disability.</title>
+        </TrainingProjects>
+        <AssignedListPageForClosedTrainingProjects>
+            <title>This page shows the final status of assigned list page for closed training projects.</title>
+        </AssignedListPageForClosedTrainingProjects>
+
+        <ListOfParentCompanies>
+            <title>This page lists all Parent Companies in the system.</title>
+        </ListOfParentCompanies>
+        <ListOfCompanies>
+            <title>This page lists all Companies in the system.</title>
+        </ListOfCompanies>
+        <Vacancy>
+            <title>This page lists all Vacancies in the system.</title>
+        </Vacancy>
+        <EmploymentProjectsWithEmploymentStatus>
+            <title>This page lists the Employment Projects with the break-up of successful candidates by Disability Types.</title>
+        </EmploymentProjectsWithEmploymentStatus>
+        <AssignedListPageForClosedEmploymentProjects>
+            <title>This page shows the final status of assigned list page for closed employment projects.</title>
+        </AssignedListPageForClosedEmploymentProjects>
+        <CompanyTask>
+            <title>This page lists open as well as closed company tasks.</title>
+        </CompanyTask>
+        <RejectionDataForCandidates>
+            <title>This page shows the various points at which candidate was dropped from the training and employment cycles.</title>
+        </RejectionDataForCandidates>
+</enable_india>

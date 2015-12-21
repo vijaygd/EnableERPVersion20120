@@ -1,0 +1,45 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="EnableIndia.Popup" Codebehind="Popup.master.cs" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us">
+<head runat="server">
+<base target="_self"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<meta http-equiv="Page-Enter" content="Alpha(opacity=100)"/>
+    <title></title>
+  <%--  <meta name="language" content="EN" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="-1" />--%>
+    <base target="_self" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="cache-control" content="no-store" />
+    <meta http-equiv="cache-control" content="private" />
+    <meta http-equiv="cache-control" content="max-age=0, must-revalidate" />
+    <meta http-equiv="expires" content="now-1" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <link href="StyleSheets/addStyles.css" rel="stylesheet" type="text/css" />
+    <link href="App_Themes/Default/StyleSheet.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="Scripts/jquery-1.7.1-vsdoc.js"></script>
+    <script type="text/javascript" src="Scripts/jquery-2.1.4.min.js"></script>
+    <script src='<%= ResolveClientUrl("~")%>Scripts/Common.js' type="text/javascript"></script>
+
+</head>
+<body class="popup">
+    <form id="form1" runat="server">
+    <asp:ScriptManager runat="server" ID="scm1"></asp:ScriptManager>
+    <table id="TblContentBody" style="margin-top:10px;margin-left:10px">
+        <tr>
+            <td>
+                <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server" />
+            </td>
+        </tr>
+    </table>
+    </form>
+<%--    <script type="text/javascript" language="javascript">
+        SetTableStyle();
+    </script>
+--%>
+</body>
+
+</html>

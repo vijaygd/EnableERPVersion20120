@@ -1,0 +1,613 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="1">
+      <MySqlConnection Ref="2" type="Stimulsoft.Report.Dictionary.StiMySqlDatabase" isKey="true">
+        <Alias>MySqlConnection</Alias>
+        <ConnectionStringEncrypted>426ta0RdAdlvePm9xD3hP8l40WDFVlGZb0f9leIN4S/Cet8P5lkx7eoV0MxnJaS72W7fSOcIu6TiW6Hc</ConnectionStringEncrypted>
+        <Name>MySqlConnection</Name>
+      </MySqlConnection>
+    </Databases>
+    <DataSources isList="true" count="1">
+      <cndGotJob Ref="3" type="Stimulsoft.Report.Dictionary.StiMySqlSource" isKey="true">
+        <Alias>cndGotJob</Alias>
+        <Columns isList="true" count="24">
+          <value>candidate_name,System.String</value>
+          <value>registration_id,System.String</value>
+          <value>candidate_id,System.UInt32</value>
+          <value>disability_type,System.String</value>
+          <value>disability_sub_type,System.String</value>
+          <value>company_name,System.String</value>
+          <value>Parent_company_name,System.String</value>
+          <value>vacancy_name,System.String</value>
+          <value>Got_placed_by_EI,System.String</value>
+          <value>Employment_Project,System.String</value>
+          <value>date_of_join,System.DateTime</value>
+          <value>salary,System.Decimal</value>
+          <value>industry_segment,System.String</value>
+          <value>job_Type,System.String</value>
+          <value>recommended_job_role,System.String</value>
+          <value>No_of_cand_got_job,System.Int64</value>
+          <value>No_of_VI,System.Int64</value>
+          <value>No_of_HI,System.Int64</value>
+          <value>No_of_PD,System.Int64</value>
+          <value>No_of_MI,System.Int64</value>
+          <value>No_of_MR,System.Int64</value>
+          <value>No_of_CP,System.Int64</value>
+          <value>No_of_DB,System.Int64</value>
+          <value>No_of_Others_disb,System.Int64</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>cndGotJob</Name>
+        <NameInSource>MySqlConnection</NameInSource>
+        <Parameters isList="true" count="0" />
+        <SqlCommand>select cand_other_detl.candidate_name_with_status as candidate_name,cand.registration_id,cand.candidate_id,disability.disability_type,
+	disab_sub_type.disability_sub_type, 
+	(case when cand_work_expr.company_id='-1' then cand_work_expr.unlisted_company when cand_work_expr.company_id &gt; 0 then comp.company_code else comp.company_code end) as company_name, 
+ (case when cand_work_expr.parent_company_id='-1' then ''  when cand_work_expr.parent_company_id &gt; 0 then par_comp.company_name else par_comp.company_name end) as Parent_company_name,
+ vac.vacancy_name, (case when cand_work_expr.is_entered_from_employment_project &gt;'0' then 'YES'  when cand_work_expr.is_entered_from_employment_project &lt;'1'then 'NO ' end ) as Got_placed_by_EI,
+  (case when cand_work_expr.company_id='-1' then ''  when cand_work_expr.company_id &gt; 0 then emp_proj.employment_project_name else emp_proj.employment_project_name  end ) as Employment_Project, 
+  cand_work_expr.designation_from_date as date_of_join,cand_work_expr.monthly_salary as salary,ind.industry_segment,
+ (case when jobs.job_id &gt;'0'  then jobs.job_name  when jobs.job_name &lt;'1' then 'Unlisted' else 'Unlisted' end ) as job_Type, 
+ cand.recommended_job_roles as recommended_job_role,  count(distinct cand.candidate_id ) as No_of_cand_got_job,
+(SELECT  count(*)  FROM disability_types disability where cand.disability_id=1 and cand.disability_id=disability.disability_id)as No_of_VI, 
+(SELECT  count(*)  FROM disability_types disability where cand.disability_id=2 and cand.disability_id=disability.disability_id)as No_of_HI, 
+(SELECT  count(*)  FROM disability_types disability where cand.disability_id=3 and cand.disability_id=disability.disability_id)as No_of_PD, 
+(SELECT  count(*)  FROM disability_types disability where cand.disability_id=4 and cand.disability_id=disability.disability_id)as No_of_MI, 
+(SELECT  count(*)  FROM disability_types disability where cand.disability_id=5 and cand.disability_id=disability.disability_id)as No_of_MR, 
+(SELECT  count(*)  FROM disability_types disability where cand.disability_id=6 and cand.disability_id=disability.disability_id)as No_of_CP, 
+(SELECT  count(*)  FROM disability_types disability where cand.disability_id=7 and cand.disability_id=disability.disability_id)as No_of_DB, 
+(SELECT  count(*)  FROM disability_types disability where cand.disability_id=8 and cand.disability_id=disability.disability_id)as No_of_Others_disb  
+FROM (select * from candidate_work_experience where mark_deleted=0    and designation_to_date ='5000-01-01') as cand_work_expr
+  left join   candidates cand on cand_work_expr.candidate_id= cand.candidate_id
+ and is_registration_completed=1 and cand.is_active=1 
+ left JOIN candidate_other_details cand_other_detl ON cand_other_detl.candidate_id=cand.candidate_id  
+ left JOIN ngos ngo ON cand.ngo_id=ngo.ngo_id 
+ left JOIN disability_types disability ON cand.disability_id=disability.disability_id 
+ left JOIN disability_sub_types disab_sub_type ON cand.disability_sub_type_id=disab_sub_type.disability_sub_type_id  
+ left JOIN states state ON cand.present_address_state_id=state.state_id
+ left JOIN cities city ON cand.present_address_city_id=city.city_id 
+ left join candidate_recommended_roles c_rol on cand.candidate_id= c_rol.candidate_id 
+ left join job_roles jb_rl on cand_work_expr.job_role_id=jb_rl.job_role_id 
+ left join jobs on jb_rl.job_id=jobs.job_id  
+ left join companies comp on cand_work_expr.company_id=comp.company_id  
+ left join parent_companies par_comp on cand_work_expr.parent_company_id=par_comp.company_id 
+ left join industry_segments ind on comp.industry_segment_id=ind.industry_segment_id 
+  left join candidates_assigned_to_employment_project   cand_ass_emp_proj on cand_work_expr.candidate_id=cand_ass_emp_proj.candidate_id 
+  and cand_ass_emp_proj.employment_project_id
+ left join employment_projects emp_proj on cand_ass_emp_proj.employment_project_id=emp_proj.employment_project_id and emp_proj.is_closed=0
+ or (cand_work_expr.company_id=emp_proj.company_id and cand_work_expr.parent_company_id=emp_proj.parent_company_id and cand_work_expr.job_role_id=emp_proj.job_role_id )
+left join vacancies vac on emp_proj.vacancy_id=vac.vacancy_id
+where cand.registration_id is not null and cand_work_expr.designation_to_date &gt; curdate()
+group by cand_work_expr.candidate_id  order by cand.first_name
+</SqlCommand>
+      </cndGotJob>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="0" />
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="4" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="3">
+        <ReportTitle Ref="5" type="ReportTitleBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.2,59.22,0.5</ClientRectangle>
+          <Components isList="true" count="1">
+            <ReportTitleText Ref="6" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,7.72,0.5</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,20,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>ReportTitleText</Name>
+              <Page isRef="4" />
+              <Parent isRef="5" />
+              <Text>cndGotJob</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </ReportTitleText>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>ReportTitle</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+        </ReportTitle>
+        <Data Ref="7" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,1.1,59.22,0.2</ClientRectangle>
+          <Components isList="true" count="24">
+            <DataText1 Ref="8" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,0.3,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataText1</Name>
+              <Page isRef="4" />
+              <Parent isRef="7" />
+              <Text>{cndGotJob.candidate_name}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <VertAlignment>Center</VertAlignment>
+            </DataText1>
+            <DataText2 Ref="9" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0.3,0,0.3,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataText2</Name>
+              <Page isRef="4" />
+              <Parent isRef="7" />
+              <Text>{cndGotJob.registration_id}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <VertAlignment>Center</VertAlignment>
+            </DataText2>
+            <DataText3 Ref="10" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0.6,0,0.3,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataText3</Name>
+              <Page isRef="4" />
+              <Parent isRef="7" />
+              <Text>{cndGotJob.candidate_id}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <VertAlignment>Center</VertAlignment>
+            </DataText3>
+            <DataText4 Ref="11" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0.9,0,0.3,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataText4</Name>
+              <Page isRef="4" />
+              <Parent isRef="7" />
+              <Text>{cndGotJob.disability_type}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <VertAlignment>Center</VertAlignment>
+            </DataText4>
+            <DataText5 Ref="12" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1.2,0,0.3,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataText5</Name>
+              <Page isRef="4" />
+              <Parent isRef="7" />
+              <Text>{cndGotJob.disability_sub_type}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <VertAlignment>Center</VertAlignment>
+            </DataText5>
+            <DataText6 Ref="13" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1.5,0,0.3,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataText6</Name>
+              <Page isRef="4" />
+              <Parent isRef="7" />
+              <Text>{cndGotJob.company_name}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <VertAlignment>Center</VertAlignment>
+            </DataText6>
+            <DataText7 Ref="14" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1.8,0,0.3,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataText7</Name>
+              <Page isRef="4" />
+              <Parent isRef="7" />
+              <Text>{cndGotJob.Parent_company_name}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <VertAlignment>Center</VertAlignment>
+            </DataText7>
+            <DataText8 Ref="15" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>2.1,0,0.3,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataText8</Name>
+              <Page isRef="4" />
+              <Parent isRef="7" />
+              <Text>{cndGotJob.vacancy_name}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <VertAlignment>Center</VertAlignment>
+            </DataText8>
+            <DataText9 Ref="16" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>2.4,0,0.3,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataText9</Name>
+              <Page isRef="4" />
+              <Parent isRef="7" />
+              <Text>{cndGotJob.Got_placed_by_EI}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <VertAlignment>Center</VertAlignment>
+            </DataText9>
+            <DataText10 Ref="17" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>2.7,0,0.3,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataText10</Name>
+              <Page isRef="4" />
+              <Parent isRef="7" />
+              <Text>{cndGotJob.Employment_Project}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <VertAlignment>Center</VertAlignment>
+            </DataText10>
+            <DataText11 Ref="18" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>3,0,0.3,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataText11</Name>
+              <Page isRef="4" />
+              <Parent isRef="7" />
+              <Text>{cndGotJob.date_of_join}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <VertAlignment>Center</VertAlignment>
+            </DataText11>
+            <DataText12 Ref="19" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>3.3,0,0.3,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataText12</Name>
+              <Page isRef="4" />
+              <Parent isRef="7" />
+              <Text>{cndGotJob.salary}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <VertAlignment>Center</VertAlignment>
+            </DataText12>
+            <DataText13 Ref="20" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>3.6,0,0.3,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataText13</Name>
+              <Page isRef="4" />
+              <Parent isRef="7" />
+              <Text>{cndGotJob.industry_segment}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <VertAlignment>Center</VertAlignment>
+            </DataText13>
+            <DataText14 Ref="21" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>3.9,0,0.3,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataText14</Name>
+              <Page isRef="4" />
+              <Parent isRef="7" />
+              <Text>{cndGotJob.job_Type}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <VertAlignment>Center</VertAlignment>
+            </DataText14>
+            <DataText15 Ref="22" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>4.2,0,0.3,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataText15</Name>
+              <Page isRef="4" />
+              <Parent isRef="7" />
+              <Text>{cndGotJob.recommended_job_role}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <VertAlignment>Center</VertAlignment>
+            </DataText15>
+            <DataText16 Ref="23" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>4.5,0,0.3,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataText16</Name>
+              <Page isRef="4" />
+              <Parent isRef="7" />
+              <Text>{cndGotJob.No_of_cand_got_job}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <VertAlignment>Center</VertAlignment>
+            </DataText16>
+            <DataText17 Ref="24" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>4.8,0,0.3,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataText17</Name>
+              <Page isRef="4" />
+              <Parent isRef="7" />
+              <Text>{cndGotJob.No_of_VI}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <VertAlignment>Center</VertAlignment>
+            </DataText17>
+            <DataText18 Ref="25" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>5.1,0,0.3,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataText18</Name>
+              <Page isRef="4" />
+              <Parent isRef="7" />
+              <Text>{cndGotJob.No_of_HI}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <VertAlignment>Center</VertAlignment>
+            </DataText18>
+            <DataText19 Ref="26" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>5.4,0,0.3,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataText19</Name>
+              <Page isRef="4" />
+              <Parent isRef="7" />
+              <Text>{cndGotJob.No_of_PD}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <VertAlignment>Center</VertAlignment>
+            </DataText19>
+            <DataText20 Ref="27" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>5.7,0,0.3,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataText20</Name>
+              <Page isRef="4" />
+              <Parent isRef="7" />
+              <Text>{cndGotJob.No_of_MI}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <VertAlignment>Center</VertAlignment>
+            </DataText20>
+            <DataText21 Ref="28" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>6,0,0.3,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataText21</Name>
+              <Page isRef="4" />
+              <Parent isRef="7" />
+              <Text>{cndGotJob.No_of_MR}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <VertAlignment>Center</VertAlignment>
+            </DataText21>
+            <DataText22 Ref="29" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>6.3,0,0.3,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataText22</Name>
+              <Page isRef="4" />
+              <Parent isRef="7" />
+              <Text>{cndGotJob.No_of_CP}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <VertAlignment>Center</VertAlignment>
+            </DataText22>
+            <DataText23 Ref="30" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>6.6,0,0.3,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataText23</Name>
+              <Page isRef="4" />
+              <Parent isRef="7" />
+              <Text>{cndGotJob.No_of_DB}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <VertAlignment>Center</VertAlignment>
+            </DataText23>
+            <DataText24 Ref="31" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>6.9,0,0.8,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Margins>0,0,0,0</Margins>
+              <Name>DataText24</Name>
+              <Page isRef="4" />
+              <Parent isRef="7" />
+              <Text>{cndGotJob.No_of_Others_disb}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <TextQuality>Wysiwyg</TextQuality>
+              <VertAlignment>Center</VertAlignment>
+            </DataText24>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>cndGotJob</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Name>Data</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+          <Sort isList="true" count="0" />
+        </Data>
+        <Footer Ref="32" type="FooterBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,1.7,59.22,0.2</ClientRectangle>
+          <Components isList="true" count="0" />
+          <Conditions isList="true" count="0" />
+          <Name>Footer</Name>
+          <Page isRef="4" />
+          <Parent isRef="4" />
+        </Footer>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>130d26be9b3841d7a5ad9018ac917d30</Guid>
+      <Margins>0.39,0.39,0.39,0.39</Margins>
+      <Name>Page1</Name>
+      <PageHeight>11</PageHeight>
+      <PageWidth>60</PageWidth>
+      <Report isRef="0" />
+      <Watermark Ref="33" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings Ref="34" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>8/10/2013 10:10:23 PM</ReportChanged>
+  <ReportCreated>8/10/2013 9:49:36 PM</ReportCreated>
+  <ReportFile>J:\vijaytest\EnableIndia\EnableIndia\Reports\Test1.mrt</ReportFile>
+  <ReportGuid>e7c013b681e1415ca0bc5a53d6ed27c7</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Inches</ReportUnit>
+  <ReportVersion>2013.1.1600</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

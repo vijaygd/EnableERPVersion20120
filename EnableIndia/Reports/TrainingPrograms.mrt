@@ -1,0 +1,603 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.0" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <Databases isList="true" count="0" />
+    <DataSources isList="true" count="1">
+      <DsTrainingPrograms Ref="2" type="DataTableSource" isKey="true">
+        <Alias>DsTrainingPrograms</Alias>
+        <Columns isList="true" count="10">
+          <value>training_program_name,System.String</value>
+          <value>disability_types,System.String</value>
+          <value>job_type,System.String</value>
+          <value>eligible_groups,System.String</value>
+          <value>qualification,System.String</value>
+          <value>recommended_role,System.String</value>
+          <value>required_language,System.String</value>
+          <value>training_passed,System.String</value>
+          <value>open_count,System.String</value>
+          <value>closed_count,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>DsTrainingPrograms</Name>
+        <NameInSource />
+      </DsTrainingPrograms>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="0" />
+  </Dictionary>
+  <GlobalizationStrings isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="3" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="2">
+        <Header1 Ref="4" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.2,8.29,0.3</ClientRectangle>
+          <Components isList="true" count="11">
+            <Text1 Ref="5" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0.4,0,0.9,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Bold,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <HorAlignment>Center</HorAlignment>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text1</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>Traning program</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="6" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text1>
+            <Text2 Ref="7" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1.3,0,0.8,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Bold,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <HorAlignment>Center</HorAlignment>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text2</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>  Dissability types</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="8" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text2>
+            <Text3 Ref="9" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>2.1,0,0.8,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Bold,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <HorAlignment>Center</HorAlignment>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text3</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>Recommended Job Types</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="10" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text3>
+            <Text4 Ref="11" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>2.9,0,0.8,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Bold,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <HorAlignment>Center</HorAlignment>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text4</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>Eligible Groups</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="12" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text4>
+            <Text5 Ref="13" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>3.7,0,0.9,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Bold,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <HorAlignment>Center</HorAlignment>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text5</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>Eligible Educational Qualification</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="14" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text5>
+            <Text6 Ref="15" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>4.6,0,0.8,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Bold,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <HorAlignment>Center</HorAlignment>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text6</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>Recommended Roles</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="16" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text6>
+            <Text7 Ref="17" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>5.4,0,0.8,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Bold,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <HorAlignment>Center</HorAlignment>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text7</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>Required Languages</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="18" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text7>
+            <Text8 Ref="19" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>6.2,0,0.7,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Bold,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <HorAlignment>Center</HorAlignment>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text8</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>Pre-requisite/Training Candidate should have passed</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="20" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text8>
+            <Text9 Ref="21" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>6.9,0,0.7,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Bold,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <HorAlignment>Center</HorAlignment>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text9</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>Open Training Projects</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="22" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text9>
+            <Text10 Ref="23" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>7.6,0,0.7,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Bold,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <HorAlignment>Center</HorAlignment>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text10</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>Closed Training Projects</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="24" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text10>
+            <Text21 Ref="25" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,0.4,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Bold,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text21</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>No.</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="26" type="GeneralFormat" isKey="true" />
+              <VertAlignment>Bottom</VertAlignment>
+            </Text21>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <MaxHeight>0</MaxHeight>
+          <MinHeight>0</MinHeight>
+          <Name>Header1</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <PrintIfEmpty>True</PrintIfEmpty>
+        </Header1>
+        <Data1 Ref="27" type="DataBand" isKey="true">
+          <Border>Top;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.9,8.29,0.2</ClientRectangle>
+          <Components isList="true" count="11">
+            <Text11 Ref="28" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0.4,0,0.9,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Regular,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,4,4,4</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text11</Name>
+              <Page isRef="3" />
+              <Parent isRef="27" />
+              <Text>{DsTrainingPrograms.training_program_name}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="29" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Text11>
+            <Text12 Ref="30" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1.3,0,0.8,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Regular,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,4,4,4</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text12</Name>
+              <Page isRef="3" />
+              <Parent isRef="27" />
+              <Text>{DsTrainingPrograms.disability_types}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="31" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Text12>
+            <Text13 Ref="32" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>2.1,0,0.8,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Regular,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,4,4,4</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text13</Name>
+              <Page isRef="3" />
+              <Parent isRef="27" />
+              <Text>{DsTrainingPrograms.job_type}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="33" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Text13>
+            <Text14 Ref="34" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>2.9,0,0.8,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Regular,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,4,4,4</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text14</Name>
+              <Page isRef="3" />
+              <Parent isRef="27" />
+              <Text>{DsTrainingPrograms.eligible_groups}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="35" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Text14>
+            <Text15 Ref="36" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>3.7,0,0.9,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Regular,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,4,4,4</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text15</Name>
+              <Page isRef="3" />
+              <Parent isRef="27" />
+              <Text>{DsTrainingPrograms.qualification}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="37" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Text15>
+            <Text16 Ref="38" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>4.6,0,0.8,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Regular,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,4,4,4</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text16</Name>
+              <Page isRef="3" />
+              <Parent isRef="27" />
+              <Text>{DsTrainingPrograms.recommended_role}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="39" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Text16>
+            <Text17 Ref="40" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>5.4,0,0.8,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Regular,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,4,4,4</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text17</Name>
+              <Page isRef="3" />
+              <Parent isRef="27" />
+              <Text>{DsTrainingPrograms.required_language}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="41" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Text17>
+            <Text18 Ref="42" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>6.2,0,0.7,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Regular,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,4,4,4</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text18</Name>
+              <Page isRef="3" />
+              <Parent isRef="27" />
+              <Text>{DsTrainingPrograms.training_passed}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="43" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Text18>
+            <Text19 Ref="44" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>6.9,0,0.7,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Regular,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,4,4,4</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text19</Name>
+              <Page isRef="3" />
+              <Parent isRef="27" />
+              <Text>{DsTrainingPrograms.open_count}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="45" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Text19>
+            <Text20 Ref="46" type="Text" isKey="true">
+              <Border>Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>7.6,0,0.7,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Regular,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,4,4,4</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text20</Name>
+              <Page isRef="3" />
+              <Parent isRef="27" />
+              <Text>{DsTrainingPrograms.closed_count}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="47" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Text20>
+            <Text22 Ref="48" type="Text" isKey="true">
+              <Border>Left, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,0.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Regular,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,4,4,4</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text22</Name>
+              <Page isRef="3" />
+              <Parent isRef="27" />
+              <Text>{Line}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="49" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>SystemVariables</Type>
+            </Text22>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName />
+          <DataSourceName>DsTrainingPrograms</DataSourceName>
+          <Filters isList="true" count="0" />
+          <MaxHeight>0</MaxHeight>
+          <MinHeight>0</MinHeight>
+          <Name>Data1</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Sort isList="true" count="0" />
+        </Data1>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>5c0d2f0c7267400ca5c4bc408bfba763</Guid>
+      <Margins>0.39,0.39,0.39,0.39</Margins>
+      <Name>Page1</Name>
+      <Page isRef="3" />
+      <PageHeight>11.69</PageHeight>
+      <PageWidth>9.07</PageWidth>
+      <Report isRef="0" />
+      <Watermark Ref="50" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings Ref="51" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>7/8/2009 8:49:44 PM</ReportChanged>
+  <ReportCreated>6/30/2009 7:20:42 PM</ReportCreated>
+  <ReportGuid>da02bc6beaca4a24837e9062572ad2d3</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Inches</ReportUnit>
+  <ReportVersion>2008.1.200</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        
+        public Report()
+        {
+            this.InitializeComponent();
+        }
+        #region StiReport Designer generated code - do not modify#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

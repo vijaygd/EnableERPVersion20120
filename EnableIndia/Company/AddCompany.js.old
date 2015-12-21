@@ -1,0 +1,29 @@
+﻿/// <reference path="../Scripts/jquery-2.1.4.min.js" />
+/// <reference path='../Scripts/common.js' />
+
+$(document).ready(function () {
+    InsertRecordNumber("TblAddCompany");
+    $("#BtnHelp").click(function () {
+        ShowPopUp("../ITextPopup.aspx?page=add_comp", 900, 150);
+    });
+    FilterCityStates($("#DdlStates").val(), 'StateID', 'DdlCities', 'DdlHiddenCities');
+    $("#DdlCities").val($("#SpnHiddenCityID").html());
+    $("#DdlCities").change();
+});
+
+function ShowCompanyContactPopup(strContactID,strLinkButtonID) {
+    var companyID = "";
+    if(document.URL.indexOf("msg")==-1){
+        companyID = document.URL.substring(document.URL.indexOf("=") + 1, document.URL.length);
+    }
+    else{
+        companyID = document.URL.substring(document.URL.indexOf("=") + 1, document.URL.indexOf("&msg"));
+    }
+    
+    var url = "AddCompanyContact.aspx?comp=" + companyID;
+    if (strContactID != "-1") {
+        url += "&cont="+ $("#TblAddCompany #" +strLinkButtonID ).attr("CompanyContactID");
+    }
+    ShowPopUp(url, 600, 200);
+}
+

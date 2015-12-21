@@ -1,0 +1,41 @@
+﻿@import url("MobileStyles.css");
+
+.labelStyle
+{
+    font-family: Consolas, Monaco, monospace !important;
+    font-size: 10pt !important;
+    font-weight:bold !important;
+}
+.textBoxStyle
+{
+    font-family:Consolas, Monaco, monospace !important;
+    font-size:10pt !important;
+}
+.select
+{
+    font-family: Consolas, Monaco, monospace !important;
+    font-size:10pt;
+    color:darkblue;
+}
+.custom-label label
+{
+    font-family: Consolas, Monaco, monospace !important;
+    font-size: 10pt !important;
+    font-weight:bold !important;
+
+}
+.custom-textbox input
+{
+    font-family:Consolas, Monaco, monospace !important;
+    font-size:10pt !important;
+
+}
+.skiplink{
+    margin-left:-100px;
+    margin-top:-10px;
+    text-decoration:none;
+    border:none;
+    color:#CCFFFF;
+    background:transparent;
+    font-size:0px;
+}

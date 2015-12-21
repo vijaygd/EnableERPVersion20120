@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="_UpgradeWizard_Files\UpgradeWizardLog.xslt"?>
+<log>
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Admin\AddDropDownOptions.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Admin\AddDropDownOptions.aspx" />
+  <event action="Analyze" type="Success" name="AddDropDownOptions.aspx" path="K:\VijayTest\EnableIndiaN\Admin\AddDropDownOptions.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Admin\Admin.master" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Admin\Admin.master" />
+  <event action="Analyze" type="Success" name="Admin.master" path="K:\VijayTest\EnableIndiaN\Admin\Admin.master" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Admin\DefaultAgeForCandidatesInSearch.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Admin\DefaultAgeForCandidatesInSearch.aspx" />
+  <event action="Analyze" type="Success" name="DefaultAgeForCandidatesInSearch.aspx" path="K:\VijayTest\EnableIndiaN\Admin\DefaultAgeForCandidatesInSearch.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Admin\DropdownTest.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Admin\DropdownTest.aspx" />
+  <event action="Analyze" type="Success" name="DropdownTest.aspx" path="K:\VijayTest\EnableIndiaN\Admin\DropdownTest.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Admin\EmployeeList.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Admin\EmployeeList.aspx" />
+  <event action="Analyze" type="Success" name="EmployeeList.aspx" path="K:\VijayTest\EnableIndiaN\Admin\EmployeeList.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Admin\RegisterEmployee.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Admin\RegisterEmployee.aspx" />
+  <event action="Analyze" type="Success" name="RegisterEmployee.aspx" path="K:\VijayTest\EnableIndiaN\Admin\RegisterEmployee.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Admin\ViewParameters.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Admin\ViewParameters.aspx" />
+  <event action="Analyze" type="Success" name="ViewParameters.aspx" path="K:\VijayTest\EnableIndiaN\Admin\ViewParameters.aspx" />
+  <event action="Analyze" type="Success" name="Binary References" path="K:\VijayTest\EnableIndiaN\Bin\" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Candidate\Candidate.master" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Candidate\Candidate.master" />
+  <event action="Analyze" type="Success" name="Candidate.master" path="K:\VijayTest\EnableIndiaN\Candidate\Candidate.master" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Candidate\CandidateCallingListPrintForm.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Candidate\CandidateCallingListPrintForm.aspx" />
+  <event action="Analyze" type="Success" name="CandidateCallingListPrintForm.aspx" path="K:\VijayTest\EnableIndiaN\Candidate\CandidateCallingListPrintForm.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Candidate\CandidatesList.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Candidate\CandidatesList.aspx" />
+  <event action="Analyze" type="Success" name="CandidatesList.aspx" path="K:\VijayTest\EnableIndiaN\Candidate\CandidatesList.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Candidate\EducationalQualificationsPopUp.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Candidate\EducationalQualificationsPopUp.aspx" />
+  <event action="Analyze" type="Success" name="EducationalQualificationsPopUp.aspx" path="K:\VijayTest\EnableIndiaN\Candidate\EducationalQualificationsPopUp.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Candidate\ProfileHistory\AddViewCandidateHistory.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Candidate\ProfileHistory\AddViewCandidateHistory.aspx" />
+  <event action="Analyze" type="Success" name="AddViewCandidateHistory.aspx" path="K:\VijayTest\EnableIndiaN\Candidate\ProfileHistory\AddViewCandidateHistory.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Candidate\ProfileHistory\AddViewCandidateHistoryPopup.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Candidate\ProfileHistory\AddViewCandidateHistoryPopup.aspx" />
+  <event action="Analyze" type="Success" name="AddViewCandidateHistoryPopup.aspx" path="K:\VijayTest\EnableIndiaN\Candidate\ProfileHistory\AddViewCandidateHistoryPopup.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Candidate\ProfileHistory\AllActiveCandidates.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Candidate\ProfileHistory\AllActiveCandidates.aspx" />
+  <event action="Analyze" type="Success" name="AllActiveCandidates.aspx" path="K:\VijayTest\EnableIndiaN\Candidate\ProfileHistory\AllActiveCandidates.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Candidate\ProfileHistory\CandidateJobProfile.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Candidate\ProfileHistory\CandidateJobProfile.aspx" />
+  <event action="Analyze" type="Success" name="CandidateJobProfile.aspx" path="K:\VijayTest\EnableIndiaN\Candidate\ProfileHistory\CandidateJobProfile.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Candidate\ProfileHistory\CandidateKnowledgeTraining.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Candidate\ProfileHistory\CandidateKnowledgeTraining.aspx" />
+  <event action="Analyze" type="Success" name="CandidateKnowledgeTraining.aspx" path="K:\VijayTest\EnableIndiaN\Candidate\ProfileHistory\CandidateKnowledgeTraining.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Candidate\ProfileHistory\CandidateKnowledgeTrainingPopUp.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Candidate\ProfileHistory\CandidateKnowledgeTrainingPopUp.aspx" />
+  <event action="Analyze" type="Success" name="CandidateKnowledgeTrainingPopUp.aspx" path="K:\VijayTest\EnableIndiaN\Candidate\ProfileHistory\CandidateKnowledgeTrainingPopUp.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Candidate\ProfileHistory\CandidatePhoneAddressHistory.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Candidate\ProfileHistory\CandidatePhoneAddressHistory.aspx" />
+  <event action="Analyze" type="Success" name="CandidatePhoneAddressHistory.aspx" path="K:\VijayTest\EnableIndiaN\Candidate\ProfileHistory\CandidatePhoneAddressHistory.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Candidate\ProfileHistory\CandidateWorkExperience.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Candidate\ProfileHistory\CandidateWorkExperience.aspx" />
+  <event action="Analyze" type="Success" name="CandidateWorkExperience.aspx" path="K:\VijayTest\EnableIndiaN\Candidate\ProfileHistory\CandidateWorkExperience.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Candidate\ProfileHistory\Default.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Candidate\ProfileHistory\Default.aspx" />
+  <event action="Analyze" type="Success" name="Default.aspx" path="K:\VijayTest\EnableIndiaN\Candidate\ProfileHistory\Default.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Candidate\ProfileHistory\EducationalQualifications.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Candidate\ProfileHistory\EducationalQualifications.aspx" />
+  <event action="Analyze" type="Success" name="EducationalQualifications.aspx" path="K:\VijayTest\EnableIndiaN\Candidate\ProfileHistory\EducationalQualifications.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Candidate\ProfileHistory\Recommended Job Type.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Candidate\ProfileHistory\Recommended Job Type.aspx" />
+  <event action="Analyze" type="Success" name="Recommended Job Type.aspx" path="K:\VijayTest\EnableIndiaN\Candidate\ProfileHistory\Recommended Job Type.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Candidate\ProfileHistory\Registration.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Candidate\ProfileHistory\Registration.aspx" />
+  <event action="Analyze" type="Success" name="Registration.aspx" path="K:\VijayTest\EnableIndiaN\Candidate\ProfileHistory\Registration.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Candidate\ProfileHistory\ToBeProfiledCandidates.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Candidate\ProfileHistory\ToBeProfiledCandidates.aspx" />
+  <event action="Analyze" type="Success" name="ToBeProfiledCandidates.aspx" path="K:\VijayTest\EnableIndiaN\Candidate\ProfileHistory\ToBeProfiledCandidates.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Candidate\Registration\EnableIndiaCandidate.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Candidate\Registration\EnableIndiaCandidate.aspx" />
+  <event action="Analyze" type="Success" name="EnableIndiaCandidate.aspx" path="K:\VijayTest\EnableIndiaN\Candidate\Registration\EnableIndiaCandidate.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Candidate\Registration\OtherNGOCandidate.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Candidate\Registration\OtherNGOCandidate.aspx" />
+  <event action="Analyze" type="Success" name="OtherNGOCandidate.aspx" path="K:\VijayTest\EnableIndiaN\Candidate\Registration\OtherNGOCandidate.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Candidate\Registration\UnregisteredBlankForm.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Candidate\Registration\UnregisteredBlankForm.aspx" />
+  <event action="Analyze" type="Success" name="UnregisteredBlankForm.aspx" path="K:\VijayTest\EnableIndiaN\Candidate\Registration\UnregisteredBlankForm.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Candidate\Registration\UnregisteredBlankPrintForm.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Candidate\Registration\UnregisteredBlankPrintForm.aspx" />
+  <event action="Analyze" type="Success" name="UnregisteredBlankPrintForm.aspx" path="K:\VijayTest\EnableIndiaN\Candidate\Registration\UnregisteredBlankPrintForm.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Candidate\Registration\ViewDataOptionReport.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Candidate\Registration\ViewDataOptionReport.aspx" />
+  <event action="Analyze" type="Success" name="ViewDataOptionReport.aspx" path="K:\VijayTest\EnableIndiaN\Candidate\Registration\ViewDataOptionReport.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Candidate\Registration\ViewDataOptions.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Candidate\Registration\ViewDataOptions.aspx" />
+  <event action="Analyze" type="Success" name="ViewDataOptions.aspx" path="K:\VijayTest\EnableIndiaN\Candidate\Registration\ViewDataOptions.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Candidate\TaskManagement.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Candidate\TaskManagement.aspx" />
+  <event action="Analyze" type="Success" name="TaskManagement.aspx" path="K:\VijayTest\EnableIndiaN\Candidate\TaskManagement.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Candidate\ViewCandidateCallingList.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Candidate\ViewCandidateCallingList.aspx" />
+  <event action="Analyze" type="Success" name="ViewCandidateCallingList.aspx" path="K:\VijayTest\EnableIndiaN\Candidate\ViewCandidateCallingList.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Candidate\WorkExperiencePopup.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Candidate\WorkExperiencePopup.aspx" />
+  <event action="Analyze" type="Success" name="WorkExperiencePopup.aspx" path="K:\VijayTest\EnableIndiaN\Candidate\WorkExperiencePopup.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Company\AddCompany.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Company\AddCompany.aspx" />
+  <event action="Analyze" type="Success" name="AddCompany.aspx" path="K:\VijayTest\EnableIndiaN\Company\AddCompany.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Company\AddCompanyContact.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Company\AddCompanyContact.aspx" />
+  <event action="Analyze" type="Success" name="AddCompanyContact.aspx" path="K:\VijayTest\EnableIndiaN\Company\AddCompanyContact.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Company\AddEmploymentProjects.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Company\AddEmploymentProjects.aspx" />
+  <event action="Analyze" type="Success" name="AddEmploymentProjects.aspx" path="K:\VijayTest\EnableIndiaN\Company\AddEmploymentProjects.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Company\AddNonRecommendedCandidate.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Company\AddNonRecommendedCandidate.aspx" />
+  <event action="Analyze" type="Success" name="AddNonRecommendedCandidate.aspx" path="K:\VijayTest\EnableIndiaN\Company\AddNonRecommendedCandidate.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Company\AddNotesPopup.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Company\AddNotesPopup.aspx" />
+  <event action="Analyze" type="Success" name="AddNotesPopup.aspx" path="K:\VijayTest\EnableIndiaN\Company\AddNotesPopup.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Company\AddParentCompany.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Company\AddParentCompany.aspx" />
+  <event action="Analyze" type="Success" name="AddParentCompany.aspx" path="K:\VijayTest\EnableIndiaN\Company\AddParentCompany.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Company\AddRecommendedCandidate.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Company\AddRecommendedCandidate.aspx" />
+  <event action="Analyze" type="Success" name="AddRecommendedCandidate.aspx" path="K:\VijayTest\EnableIndiaN\Company\AddRecommendedCandidate.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Company\AddVacancy.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Company\AddVacancy.aspx" />
+  <event action="Analyze" type="Success" name="AddVacancy.aspx" path="K:\VijayTest\EnableIndiaN\Company\AddVacancy.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Company\AddViewCompanyHistory.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Company\AddViewCompanyHistory.aspx" />
+  <event action="Analyze" type="Success" name="AddViewCompanyHistory.aspx" path="K:\VijayTest\EnableIndiaN\Company\AddViewCompanyHistory.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Company\AddViewCompanyHistoryPopup.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Company\AddViewCompanyHistoryPopup.aspx" />
+  <event action="Analyze" type="Success" name="AddViewCompanyHistoryPopup.aspx" path="K:\VijayTest\EnableIndiaN\Company\AddViewCompanyHistoryPopup.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Company\AssignedList.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Company\AssignedList.aspx" />
+  <event action="Analyze" type="Success" name="AssignedList.aspx" path="K:\VijayTest\EnableIndiaN\Company\AssignedList.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Company\CandidateNotesForEmploymentProject.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Company\CandidateNotesForEmploymentProject.aspx" />
+  <event action="Analyze" type="Success" name="CandidateNotesForEmploymentProject.aspx" path="K:\VijayTest\EnableIndiaN\Company\CandidateNotesForEmploymentProject.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Company\InterviewList.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Company\InterviewList.aspx" />
+  <event action="Analyze" type="Success" name="InterviewList.aspx" path="K:\VijayTest\EnableIndiaN\Company\InterviewList.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Company\ListOfOpenEmploymentProject.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Company\ListOfOpenEmploymentProject.aspx" />
+  <event action="Analyze" type="Success" name="ListOfOpenEmploymentProject.aspx" path="K:\VijayTest\EnableIndiaN\Company\ListOfOpenEmploymentProject.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Company\ManageCompanyTask.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Company\ManageCompanyTask.aspx" />
+  <event action="Analyze" type="Success" name="ManageCompanyTask.aspx" path="K:\VijayTest\EnableIndiaN\Company\ManageCompanyTask.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Company\ManageOpenEmploymentProjects.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Company\ManageOpenEmploymentProjects.aspx" />
+  <event action="Analyze" type="Success" name="ManageOpenEmploymentProjects.aspx" path="K:\VijayTest\EnableIndiaN\Company\ManageOpenEmploymentProjects.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Company\SuccessfulCandidateList.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Company\SuccessfulCandidateList.aspx" />
+  <event action="Analyze" type="Success" name="SuccessfulCandidateList.aspx" path="K:\VijayTest\EnableIndiaN\Company\SuccessfulCandidateList.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Default.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Default.aspx" />
+  <event action="Analyze" type="Success" name="Default.aspx" path="K:\VijayTest\EnableIndiaN\Default.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\EVidya\Default.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\EVidya\Default.aspx" />
+  <event action="Analyze" type="Success" name="Default.aspx" path="K:\VijayTest\EnableIndiaN\EVidya\Default.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\EVidya\Home.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\EVidya\Home.aspx" />
+  <event action="Analyze" type="Success" name="Home.aspx" path="K:\VijayTest\EnableIndiaN\EVidya\Home.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\ITextPopup.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\ITextPopup.aspx" />
+  <event action="Analyze" type="Success" name="ITextPopup.aspx" path="K:\VijayTest\EnableIndiaN\ITextPopup.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Login.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Login.aspx" />
+  <event action="Analyze" type="Success" name="Login.aspx" path="K:\VijayTest\EnableIndiaN\Login.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\NGO\Contacts.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\NGO\Contacts.aspx" />
+  <event action="Analyze" type="Success" name="Contacts.aspx" path="K:\VijayTest\EnableIndiaN\NGO\Contacts.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\NGO\NGOList.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\NGO\NGOList.aspx" />
+  <event action="Analyze" type="Success" name="NGOList.aspx" path="K:\VijayTest\EnableIndiaN\NGO\NGOList.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\NGO\NGOMaster.master" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\NGO\NGOMaster.master" />
+  <event action="Analyze" type="Success" name="NGOMaster.master" path="K:\VijayTest\EnableIndiaN\NGO\NGOMaster.master" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\NGO\RegisterNGO.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\NGO\RegisterNGO.aspx" />
+  <event action="Analyze" type="Success" name="RegisterNGO.aspx" path="K:\VijayTest\EnableIndiaN\NGO\RegisterNGO.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Popup.master" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Popup.master" />
+  <event action="Analyze" type="Success" name="Popup.master" path="K:\VijayTest\EnableIndiaN\Popup.master" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\AllActiveRegisteredCandidateReport.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\AllActiveRegisteredCandidateReport.aspx" />
+  <event action="Analyze" type="Success" name="AllActiveRegisteredCandidateReport.aspx" path="K:\VijayTest\EnableIndiaN\ReportSection\AllActiveRegisteredCandidateReport.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\AssignedListClosedEmploymentProject.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\AssignedListClosedEmploymentProject.aspx" />
+  <event action="Analyze" type="Success" name="AssignedListClosedEmploymentProject.aspx" path="K:\VijayTest\EnableIndiaN\ReportSection\AssignedListClosedEmploymentProject.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\AssignedListPageForClosedTrainingProjects.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\AssignedListPageForClosedTrainingProjects.aspx" />
+  <event action="Analyze" type="Success" name="AssignedListPageForClosedTrainingProjects.aspx" path="K:\VijayTest\EnableIndiaN\ReportSection\AssignedListPageForClosedTrainingProjects.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\AssignedListPageFromSearch.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\AssignedListPageFromSearch.aspx" />
+  <event action="Analyze" type="Success" name="AssignedListPageFromSearch.aspx" path="K:\VijayTest\EnableIndiaN\ReportSection\AssignedListPageFromSearch.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\CandidateTask.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\CandidateTask.aspx" />
+  <event action="Analyze" type="Success" name="CandidateTask.aspx" path="K:\VijayTest\EnableIndiaN\ReportSection\CandidateTask.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\CandidateWiseTrainingEmploymentRelation.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\CandidateWiseTrainingEmploymentRelation.aspx" />
+  <event action="Analyze" type="Success" name="CandidateWiseTrainingEmploymentRelation.aspx" path="K:\VijayTest\EnableIndiaN\ReportSection\CandidateWiseTrainingEmploymentRelation.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\CompanyReport.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\CompanyReport.aspx" />
+  <event action="Analyze" type="Success" name="CompanyReport.aspx" path="K:\VijayTest\EnableIndiaN\ReportSection\CompanyReport.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\CompanyTask.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\CompanyTask.aspx" />
+  <event action="Analyze" type="Success" name="CompanyTask.aspx" path="K:\VijayTest\EnableIndiaN\ReportSection\CompanyTask.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\EmploymentProjectDetailFromSearch.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\EmploymentProjectDetailFromSearch.aspx" />
+  <event action="Analyze" type="Success" name="EmploymentProjectDetailFromSearch.aspx" path="K:\VijayTest\EnableIndiaN\ReportSection\EmploymentProjectDetailFromSearch.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\EmploymentProjectsWithEmploymentStatus.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\EmploymentProjectsWithEmploymentStatus.aspx" />
+  <event action="Analyze" type="Success" name="EmploymentProjectsWithEmploymentStatus.aspx" path="K:\VijayTest\EnableIndiaN\ReportSection\EmploymentProjectsWithEmploymentStatus.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\EmploymentProofNotGot.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\EmploymentProofNotGot.aspx" />
+  <event action="Analyze" type="Success" name="EmploymentProofNotGot.aspx" path="K:\VijayTest\EnableIndiaN\ReportSection\EmploymentProofNotGot.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\FlagWiseClosedCandidateTask.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\FlagWiseClosedCandidateTask.aspx" />
+  <event action="Analyze" type="Success" name="FlagWiseClosedCandidateTask.aspx" path="K:\VijayTest\EnableIndiaN\ReportSection\FlagWiseClosedCandidateTask.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\FlagwiseCompanyClosedTask.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\FlagwiseCompanyClosedTask.aspx" />
+  <event action="Analyze" type="Success" name="FlagwiseCompanyClosedTask.aspx" path="K:\VijayTest\EnableIndiaN\ReportSection\FlagwiseCompanyClosedTask.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\FlagwiseCompanyOpenTask.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\FlagwiseCompanyOpenTask.aspx" />
+  <event action="Analyze" type="Success" name="FlagwiseCompanyOpenTask.aspx" path="K:\VijayTest\EnableIndiaN\ReportSection\FlagwiseCompanyOpenTask.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\FlagWiseOpenCandidateTask.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\FlagWiseOpenCandidateTask.aspx" />
+  <event action="Analyze" type="Success" name="FlagWiseOpenCandidateTask.aspx" path="K:\VijayTest\EnableIndiaN\ReportSection\FlagWiseOpenCandidateTask.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\GotJob.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\GotJob.aspx" />
+  <event action="Analyze" type="Success" name="GotJob.aspx" path="K:\VijayTest\EnableIndiaN\ReportSection\GotJob.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\OwnerWiseClosedCandidateTask.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\OwnerWiseClosedCandidateTask.aspx" />
+  <event action="Analyze" type="Success" name="OwnerWiseClosedCandidateTask.aspx" path="K:\VijayTest\EnableIndiaN\ReportSection\OwnerWiseClosedCandidateTask.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\OwnerwiseCompanyClosedTask.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\OwnerwiseCompanyClosedTask.aspx" />
+  <event action="Analyze" type="Success" name="OwnerwiseCompanyClosedTask.aspx" path="K:\VijayTest\EnableIndiaN\ReportSection\OwnerwiseCompanyClosedTask.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\OwnerWiseCompanyOpenTask.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\OwnerWiseCompanyOpenTask.aspx" />
+  <event action="Analyze" type="Success" name="OwnerWiseCompanyOpenTask.aspx" path="K:\VijayTest\EnableIndiaN\ReportSection\OwnerWiseCompanyOpenTask.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\OwnerWiseOpenCandidateTask.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\OwnerWiseOpenCandidateTask.aspx" />
+  <event action="Analyze" type="Success" name="OwnerWiseOpenCandidateTask.aspx" path="K:\VijayTest\EnableIndiaN\ReportSection\OwnerWiseOpenCandidateTask.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\OwnerwiseTrainingWorkDistribution.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\OwnerwiseTrainingWorkDistribution.aspx" />
+  <event action="Analyze" type="Success" name="OwnerwiseTrainingWorkDistribution.aspx" path="K:\VijayTest\EnableIndiaN\ReportSection\OwnerwiseTrainingWorkDistribution.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\ParentCompaniesReport.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\ParentCompaniesReport.aspx" />
+  <event action="Analyze" type="Success" name="ParentCompaniesReport.aspx" path="K:\VijayTest\EnableIndiaN\ReportSection\ParentCompaniesReport.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\Placements.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\Placements.aspx" />
+  <event action="Analyze" type="Success" name="Placements.aspx" path="K:\VijayTest\EnableIndiaN\ReportSection\Placements.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\RegistrationDetaiFromSearch.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\RegistrationDetaiFromSearch.aspx" />
+  <event action="Analyze" type="Success" name="RegistrationDetaiFromSearch.aspx" path="K:\VijayTest\EnableIndiaN\ReportSection\RegistrationDetaiFromSearch.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\RejectionDataForCandidates.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\RejectionDataForCandidates.aspx" />
+  <event action="Analyze" type="Success" name="RejectionDataForCandidates.aspx" path="K:\VijayTest\EnableIndiaN\ReportSection\RejectionDataForCandidates.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\ReportList.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\ReportList.aspx" />
+  <event action="Analyze" type="Success" name="ReportList.aspx" path="K:\VijayTest\EnableIndiaN\ReportSection\ReportList.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\TrainingPrograms.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\TrainingPrograms.aspx" />
+  <event action="Analyze" type="Success" name="TrainingPrograms.aspx" path="K:\VijayTest\EnableIndiaN\ReportSection\TrainingPrograms.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\TrainingProjectReports.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\TrainingProjectReports.aspx" />
+  <event action="Analyze" type="Success" name="TrainingProjectReports.aspx" path="K:\VijayTest\EnableIndiaN\ReportSection\TrainingProjectReports.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\Vacancy.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\ReportSection\Vacancy.aspx" />
+  <event action="Analyze" type="Success" name="Vacancy.aspx" path="K:\VijayTest\EnableIndiaN\ReportSection\Vacancy.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Test.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Test.aspx" />
+  <event action="Analyze" type="Success" name="Test.aspx" path="K:\VijayTest\EnableIndiaN\Test.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Training\AddNonRecommendedCandidate.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Training\AddNonRecommendedCandidate.aspx" />
+  <event action="Analyze" type="Success" name="AddNonRecommendedCandidate.aspx" path="K:\VijayTest\EnableIndiaN\Training\AddNonRecommendedCandidate.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Training\AddRecommendedCandidate.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Training\AddRecommendedCandidate.aspx" />
+  <event action="Analyze" type="Success" name="AddRecommendedCandidate.aspx" path="K:\VijayTest\EnableIndiaN\Training\AddRecommendedCandidate.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Training\AddTrainingProgram.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Training\AddTrainingProgram.aspx" />
+  <event action="Analyze" type="Success" name="AddTrainingProgram.aspx" path="K:\VijayTest\EnableIndiaN\Training\AddTrainingProgram.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Training\AddTrainingProject.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Training\AddTrainingProject.aspx" />
+  <event action="Analyze" type="Success" name="AddTrainingProject.aspx" path="K:\VijayTest\EnableIndiaN\Training\AddTrainingProject.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Training\AssignedList.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Training\AssignedList.aspx" />
+  <event action="Analyze" type="Success" name="AssignedList.aspx" path="K:\VijayTest\EnableIndiaN\Training\AssignedList.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Training\CandidateCalling.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Training\CandidateCalling.aspx" />
+  <event action="Analyze" type="Success" name="CandidateCalling.aspx" path="K:\VijayTest\EnableIndiaN\Training\CandidateCalling.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Training\CandidateNotes.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Training\CandidateNotes.aspx" />
+  <event action="Analyze" type="Success" name="CandidateNotes.aspx" path="K:\VijayTest\EnableIndiaN\Training\CandidateNotes.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Training\ListOfOpenTrainingProjects.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Training\ListOfOpenTrainingProjects.aspx" />
+  <event action="Analyze" type="Success" name="ListOfOpenTrainingProjects.aspx" path="K:\VijayTest\EnableIndiaN\Training\ListOfOpenTrainingProjects.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Training\OffLineCandidateCallingList.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Training\OffLineCandidateCallingList.aspx" />
+  <event action="Analyze" type="Success" name="OffLineCandidateCallingList.aspx" path="K:\VijayTest\EnableIndiaN\Training\OffLineCandidateCallingList.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Training\TrainingProjectAssignedListTrainingCycle.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Training\TrainingProjectAssignedListTrainingCycle.aspx" />
+  <event action="Analyze" type="Success" name="TrainingProjectAssignedListTrainingCycle.aspx" path="K:\VijayTest\EnableIndiaN\Training\TrainingProjectAssignedListTrainingCycle.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Training\TrainingProjectsAddRecommendedCandidates.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Training\TrainingProjectsAddRecommendedCandidates.aspx" />
+  <event action="Analyze" type="Success" name="TrainingProjectsAddRecommendedCandidates.aspx" path="K:\VijayTest\EnableIndiaN\Training\TrainingProjectsAddRecommendedCandidates.aspx" />
+  <event action="Analyze" type="Success" name="Register Directives" path="K:\VijayTest\EnableIndiaN\Training\TrainingProjectsNonRecomendedCandidates.aspx" />
+  <event action="Analyze" type="Success" name="Assembly Directives" path="K:\VijayTest\EnableIndiaN\Training\TrainingProjectsNonRecomendedCandidates.aspx" />
+  <event action="Analyze" type="Success" name="TrainingProjectsNonRecomendedCandidates.aspx" path="K:\VijayTest\EnableIndiaN\Training\TrainingProjectsNonRecomendedCandidates.aspx" />
+  <event action="Analyze" type="Success" name="Assembly References" path="K:\VijayTest\EnableIndiaN\web.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="K:\VijayTest\EnableIndiaN\web.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="K:\VijayTest\EnableIndiaN\web.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="K:\VijayTest\EnableIndiaN\web.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="K:\VijayTest\EnableIndiaN\web.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="K:\VijayTest\EnableIndiaN\web.config" />
+  <event action="Analyze" type="Success" name="web.config" path="K:\VijayTest\EnableIndiaN\web.config" />
+  <event action="Analyze" type="Success" name="K:\...\EnableIndiaN\" path="K:\VijayTest\EnableIndiaN" />
+  <event action="Analyze" type="Success" name="Enable India" path="K:\VijayTest\EnableIndiaN\Enable India.sln" />
+</log>

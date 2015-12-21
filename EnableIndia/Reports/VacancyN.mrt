@@ -1,0 +1,857 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="0" />
+    <DataSources isList="true" count="0" />
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="0" />
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="2" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="2">
+        <ReportTitle Ref="3" type="ReportTitleBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.2,17.22,0.5</ClientRectangle>
+          <Components isList="true" count="1">
+            <ReportTitleText Ref="4" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,10.22,0.5</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,20,Bold</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>ReportTitleText</Name>
+              <Page isRef="2" />
+              <Parent isRef="3" />
+              <Text>Vacancies</Text>
+              <TextBrush>Black</TextBrush>
+              <VertAlignment>Center</VertAlignment>
+            </ReportTitleText>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>ReportTitle</Name>
+          <Page isRef="2" />
+          <Parent isRef="2" />
+        </ReportTitle>
+        <Datavacancies Ref="5" type="Stimulsoft.Report.Components.Table.StiTable" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,1.1,17.22,0.9</ClientRectangle>
+          <ColumnCount>13</ColumnCount>
+          <Components isList="true" count="39">
+            <Datavacancies_Cell1 Ref="6" type="TableCell" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,0.8,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>0</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Datavacancies_Cell1</Name>
+              <Page isRef="2" />
+              <Parent isRef="5" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Vacancy Id
+</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="7" type="NumberFormat" isKey="true">
+                <GroupSeparator>,</GroupSeparator>
+                <NegativePattern>1</NegativePattern>
+              </TextFormat>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Datavacancies_Cell1>
+            <Datavacancies_Cell2 Ref="8" type="TableCell" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.8,0,1.1,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>1</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Datavacancies_Cell2</Name>
+              <Page isRef="2" />
+              <Parent isRef="5" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Vacancy Date</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat isRef="7" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Datavacancies_Cell2>
+            <Datavacancies_Cell3 Ref="9" type="TableCell" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.9,0,2,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>2</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Datavacancies_Cell3</Name>
+              <Page isRef="2" />
+              <Parent isRef="5" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Vacancy Name</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat isRef="7" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Datavacancies_Cell3>
+            <Datavacancies_Cell4 Ref="10" type="TableCell" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.9,0,1.3,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>3</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Datavacancies_Cell4</Name>
+              <Page isRef="2" />
+              <Parent isRef="5" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Job Id</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat isRef="7" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Datavacancies_Cell4>
+            <Datavacancies_Cell5 Ref="11" type="TableCell" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>5.2,0,1.3,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>4</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Datavacancies_Cell5</Name>
+              <Page isRef="2" />
+              <Parent isRef="5" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Job Role Id</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat isRef="7" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Datavacancies_Cell5>
+            <Datavacancies_Cell6 Ref="12" type="TableCell" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6.5,0,0.9,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>5</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Datavacancies_Cell6</Name>
+              <Page isRef="2" />
+              <Parent isRef="5" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Monthly Salary</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat isRef="7" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Datavacancies_Cell6>
+            <Datavacancies_Cell7 Ref="13" type="TableCell" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.4,0,0.9,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>6</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Datavacancies_Cell7</Name>
+              <Page isRef="2" />
+              <Parent isRef="5" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Vacancy Code</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat isRef="7" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Datavacancies_Cell7>
+            <Datavacancies_Cell8 Ref="14" type="TableCell" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>8.3,0,3.1,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>7</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Datavacancies_Cell8</Name>
+              <Page isRef="2" />
+              <Parent isRef="5" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Responsibilities
+</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat isRef="7" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Datavacancies_Cell8>
+            <Datavacancies_Cell9 Ref="15" type="TableCell" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11.4,0,1.4,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>8</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Datavacancies_Cell9</Name>
+              <Page isRef="2" />
+              <Parent isRef="5" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Intervention Required</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat isRef="7" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Datavacancies_Cell9>
+            <Datavacancies_Cell10 Ref="16" type="TableCell" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>12.8,0,1,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>9</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Datavacancies_Cell10</Name>
+              <Page isRef="2" />
+              <Parent isRef="5" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Working Days</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat isRef="7" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Datavacancies_Cell10>
+            <Datavacancies_Cell11 Ref="17" type="TableCell" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>13.8,0,0.9,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>10</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Datavacancies_Cell11</Name>
+              <Page isRef="2" />
+              <Parent isRef="5" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Has Shifts
+</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat isRef="7" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Datavacancies_Cell11>
+            <Datavacancies_Cell12 Ref="18" type="TableCell" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>14.7,0,0.8,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>11</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Datavacancies_Cell12</Name>
+              <Page isRef="2" />
+              <Parent isRef="5" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Working Hours
+</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat isRef="7" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Datavacancies_Cell12>
+            <Datavacancies_Cell13 Ref="19" type="TableCell" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>15.5,0,1.72,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,10,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <ID>12</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Datavacancies_Cell13</Name>
+              <Page isRef="2" />
+              <Parent isRef="5" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>Comments</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat isRef="7" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Datavacancies_Cell13>
+            <Datavacancies_Cell14 Ref="20" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0.3,0.8,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <ID>13</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Datavacancies_Cell14</Name>
+              <Page isRef="2" />
+              <Parent isRef="5" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{vacancies.vacancy_id}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Datavacancies_Cell14>
+            <Datavacancies_Cell15 Ref="21" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0.8,0.3,1.1,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <ID>14</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Datavacancies_Cell15</Name>
+              <Page isRef="2" />
+              <Parent isRef="5" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{vacancies.vacancy_date}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>DataColumn</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Datavacancies_Cell15>
+            <Datavacancies_Cell16 Ref="22" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1.9,0.3,2,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <ID>15</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Datavacancies_Cell16</Name>
+              <Page isRef="2" />
+              <Parent isRef="5" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{vacancies.vacancy_name}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Datavacancies_Cell16>
+            <Datavacancies_Cell17 Ref="23" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>3.9,0.3,1.3,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <ID>16</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Datavacancies_Cell17</Name>
+              <Page isRef="2" />
+              <Parent isRef="5" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{vacancies.job_id}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Datavacancies_Cell17>
+            <Datavacancies_Cell18 Ref="24" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>5.2,0.3,1.3,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <ID>17</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Datavacancies_Cell18</Name>
+              <Page isRef="2" />
+              <Parent isRef="5" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{vacancies.job_role_id}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Datavacancies_Cell18>
+            <Datavacancies_Cell19 Ref="25" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>6.5,0.3,0.9,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <ID>18</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Datavacancies_Cell19</Name>
+              <Page isRef="2" />
+              <Parent isRef="5" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{vacancies.monthly_salary}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Datavacancies_Cell19>
+            <Datavacancies_Cell20 Ref="26" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>7.4,0.3,0.9,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <ID>19</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Datavacancies_Cell20</Name>
+              <Page isRef="2" />
+              <Parent isRef="5" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{vacancies.vacancy_code}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Datavacancies_Cell20>
+            <Datavacancies_Cell21 Ref="27" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>8.3,0.3,3.1,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <ID>20</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Datavacancies_Cell21</Name>
+              <Page isRef="2" />
+              <Parent isRef="5" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{vacancies.responsibilities}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Datavacancies_Cell21>
+            <Datavacancies_Cell22 Ref="28" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>11.4,0.3,1.4,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <ID>21</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Datavacancies_Cell22</Name>
+              <Page isRef="2" />
+              <Parent isRef="5" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{vacancies.intervention_required}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Datavacancies_Cell22>
+            <Datavacancies_Cell23 Ref="29" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>12.8,0.3,1,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <ID>22</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Datavacancies_Cell23</Name>
+              <Page isRef="2" />
+              <Parent isRef="5" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{vacancies.working_days}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Datavacancies_Cell23>
+            <Datavacancies_Cell24 Ref="30" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>13.8,0.3,0.9,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <ID>23</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Datavacancies_Cell24</Name>
+              <Page isRef="2" />
+              <Parent isRef="5" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{vacancies.has_shifts}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Datavacancies_Cell24>
+            <Datavacancies_Cell25 Ref="31" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>14.7,0.3,0.8,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <ID>24</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Datavacancies_Cell25</Name>
+              <Page isRef="2" />
+              <Parent isRef="5" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{vacancies.working_hours}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Datavacancies_Cell25>
+            <Datavacancies_Cell26 Ref="32" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>15.5,0.3,1.72,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <ID>25</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Datavacancies_Cell26</Name>
+              <Page isRef="2" />
+              <Parent isRef="5" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <Text>{vacancies.holiday_leave_policy}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </Datavacancies_Cell26>
+            <Datavacancies_Cell27 Ref="33" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.6,0.8,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <HorAlignment>Right</HorAlignment>
+              <ID>26</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Datavacancies_Cell27</Name>
+              <Page isRef="2" />
+              <Parent isRef="5" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <TextBrush>Black</TextBrush>
+            </Datavacancies_Cell27>
+            <Datavacancies_Cell28 Ref="34" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.8,0.6,1.1,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <HorAlignment>Right</HorAlignment>
+              <ID>27</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Datavacancies_Cell28</Name>
+              <Page isRef="2" />
+              <Parent isRef="5" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <TextBrush>Black</TextBrush>
+            </Datavacancies_Cell28>
+            <Datavacancies_Cell29 Ref="35" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.9,0.6,2,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <HorAlignment>Right</HorAlignment>
+              <ID>28</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Datavacancies_Cell29</Name>
+              <Page isRef="2" />
+              <Parent isRef="5" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <TextBrush>Black</TextBrush>
+            </Datavacancies_Cell29>
+            <Datavacancies_Cell30 Ref="36" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.9,0.6,1.3,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <HorAlignment>Right</HorAlignment>
+              <ID>29</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Datavacancies_Cell30</Name>
+              <Page isRef="2" />
+              <Parent isRef="5" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <TextBrush>Black</TextBrush>
+            </Datavacancies_Cell30>
+            <Datavacancies_Cell31 Ref="37" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>5.2,0.6,1.3,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <HorAlignment>Right</HorAlignment>
+              <ID>30</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Datavacancies_Cell31</Name>
+              <Page isRef="2" />
+              <Parent isRef="5" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <TextBrush>Black</TextBrush>
+            </Datavacancies_Cell31>
+            <Datavacancies_Cell32 Ref="38" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6.5,0.6,0.9,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <HorAlignment>Right</HorAlignment>
+              <ID>31</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Datavacancies_Cell32</Name>
+              <Page isRef="2" />
+              <Parent isRef="5" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <TextBrush>Black</TextBrush>
+            </Datavacancies_Cell32>
+            <Datavacancies_Cell33 Ref="39" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>7.4,0.6,0.9,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <HorAlignment>Right</HorAlignment>
+              <ID>32</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Datavacancies_Cell33</Name>
+              <Page isRef="2" />
+              <Parent isRef="5" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <TextBrush>Black</TextBrush>
+            </Datavacancies_Cell33>
+            <Datavacancies_Cell34 Ref="40" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>8.3,0.6,3.1,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <HorAlignment>Right</HorAlignment>
+              <ID>33</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Datavacancies_Cell34</Name>
+              <Page isRef="2" />
+              <Parent isRef="5" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <TextBrush>Black</TextBrush>
+            </Datavacancies_Cell34>
+            <Datavacancies_Cell35 Ref="41" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11.4,0.6,1.4,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <HorAlignment>Right</HorAlignment>
+              <ID>34</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Datavacancies_Cell35</Name>
+              <Page isRef="2" />
+              <Parent isRef="5" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <TextBrush>Black</TextBrush>
+            </Datavacancies_Cell35>
+            <Datavacancies_Cell36 Ref="42" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>12.8,0.6,1,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <HorAlignment>Right</HorAlignment>
+              <ID>35</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Datavacancies_Cell36</Name>
+              <Page isRef="2" />
+              <Parent isRef="5" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <TextBrush>Black</TextBrush>
+            </Datavacancies_Cell36>
+            <Datavacancies_Cell37 Ref="43" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>13.8,0.6,0.9,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <HorAlignment>Right</HorAlignment>
+              <ID>36</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Datavacancies_Cell37</Name>
+              <Page isRef="2" />
+              <Parent isRef="5" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <TextBrush>Black</TextBrush>
+            </Datavacancies_Cell37>
+            <Datavacancies_Cell38 Ref="44" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>14.7,0.6,0.8,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <HorAlignment>Right</HorAlignment>
+              <ID>37</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Datavacancies_Cell38</Name>
+              <Page isRef="2" />
+              <Parent isRef="5" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <TextBrush>Black</TextBrush>
+            </Datavacancies_Cell38>
+            <Datavacancies_Cell39 Ref="45" type="TableCell" isKey="true">
+              <Border>All;[105:105:105];1;Solid;False;4;[105:105:105]</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>15.5,0.6,1.72,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,9</Font>
+              <HorAlignment>Right</HorAlignment>
+              <ID>38</ID>
+              <JoinCells isList="true" count="0" />
+              <Margins>0,0,0,0</Margins>
+              <Name>Datavacancies_Cell39</Name>
+              <Page isRef="2" />
+              <Parent isRef="5" />
+              <Restrictions>AllowMove, AllowSelect, AllowChange</Restrictions>
+              <TextBrush>Black</TextBrush>
+            </Datavacancies_Cell39>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>vacancies</DataSourceName>
+          <Filters isList="true" count="0" />
+          <FooterRowsCount>1</FooterRowsCount>
+          <HeaderRowsCount>1</HeaderRowsCount>
+          <Name>Datavacancies</Name>
+          <NumberID>39</NumberID>
+          <Page isRef="2" />
+          <Parent isRef="2" />
+          <RowCount>3</RowCount>
+          <Sort isList="true" count="0" />
+        </Datavacancies>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>f853e9d5094a41a19593968051307adc</Guid>
+      <Margins>0.39,0.39,0.39,0.39</Margins>
+      <Name>Page1</Name>
+      <Orientation>Landscape</Orientation>
+      <PageHeight>8.5</PageHeight>
+      <PageWidth>18</PageWidth>
+      <PaperSize>Letter</PaperSize>
+      <Report isRef="0" />
+      <Watermark Ref="46" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings Ref="47" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>11/5/2015 4:30:44 PM</ReportChanged>
+  <ReportCreated>11/5/2015 4:06:44 PM</ReportCreated>
+  <ReportFile>O:\RestFul\enablenew\EnableIndia\Reports\Vacancy.mrt</ReportFile>
+  <ReportGuid>91561731d15947249ceb039e975aa820</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Inches</ReportUnit>
+  <ReportVersion>2014.2.2000</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

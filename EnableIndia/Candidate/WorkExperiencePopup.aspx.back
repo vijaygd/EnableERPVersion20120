@@ -1,0 +1,294 @@
+﻿<%@ Page Title="Work Experience" Language="C#" MasterPageFile="~/Popup.master" AutoEventWireup="true" CodeFile="WorkExperiencePopup.aspx.cs" Inherits="Candidate_WorkExperiencePopup" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<div tabindex="1" style="width:0px;height:0px"></div>
+    <table id="TblEmploymentProjectDetail" runat="server" visible="false">
+        <tr>
+            <td>
+                <table>
+                    <tr>
+                        <td>
+                            <span>Employment Project : </span><span id="SpnEmploymentProjectName" class="readonlyText" runat="server"></span>
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td>
+                            <span>Current Demand : </span><span id="SpnCurrentDemand" class="readonlyText" runat="server"></span>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    
+    <table id="TblCandidateDetail" runat="server" visible="false">
+        <tr>
+            <td>
+                 <table>
+                    <tr>
+                        <td>
+                          <span class="readonly_bold_text">Candidate Name : </span><span id="SpnCandidateName" runat="server" class="readonlyText"></span>
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td>
+                            <span class="readonly_bold_text">RID :</span><span id="SpnCandidateRID" runat="server" class="readonlyText"></span>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <table id="TblCandidateDetailForEmployment" runat="server" visible="false">
+        <tr>
+            <td>
+                 <table>
+                    <tr>
+                        <td>
+                           Candidate Name:<span id="SpnCandidateNameEmployment" runat="server" class="readonlyText"></span>
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td>
+                            RID :<span id="SpnCandidateRIDEmployment" runat="server" class="readonlyText"></span>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table id="TblGotJobDetail" runat="server" visible="false">
+        <tr>
+            <td>
+                <table style="margin-top:10px;font-weight:bold">
+                    <tr>
+                        <td>
+                            Candidate's Current Job As Stored in System:
+                        </td>
+                        <td>
+                            <span id="SpnStatus" runat="server" style="font-weight:bold">Unemployed</span>
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td>
+                            <asp:ListView ID="LstViewExistingWorkExperience" runat="server">
+                                <LayoutTemplate>
+                                    <table id="TblExistingWorkExperience" cellpadding="4" class="tableBorder" cellspacing="0" rules="all"
+                                        bordercolor="#808080" border="1px">
+                                       <thead>
+                                            <tr class="grid-header">
+                                               <th>Company</th> 
+                                               <th>Designation</th> 
+                                               <th>From (MM/YYYY)</th> 
+                                               <th>To (MM/YYYY)</th> 
+                                            </tr>
+                                       </thead>
+                                       <tbody>
+                                            <asp:PlaceHolder ID="itemPlaceHolder" runat="server" />
+                                       </tbody>
+                                    </table>
+                                </LayoutTemplate>
+                                <ItemTemplate>
+                                    <tr>
+                                       <td align="left"><%#Eval("company")%></td> 
+                                       <td align="left"><%#Eval("designation") %></td> 
+                                       <td align="left"><%#Convert.ToDateTime(Eval("designation_from_date")).ToString("MM/yyyy")%></td> 
+                                       <td align="left"><%#Eval("str_to_date")%></td> 
+                                    </tr>
+                                </ItemTemplate>
+                            </asp:ListView>
+                        </td>
+                    </tr>
+                </table>
+                <table style="margin-top:20px;font-weight:bold">
+                    <tr>
+                        <td>
+                            Add New Current Job Details:
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    
+    <table>
+        <tr>
+            <td>
+                <table>
+                    <tr>
+                        <td style="width:103px" id="TdSelectCompany" runat="server"><label for="ctl00_ContentPlaceHolder1_DdlSelectCompany">SELECT COMPANY</label></td>
+                        <td>
+                            <span id="SpnSelectCompany" runat="server" visible="false" />
+                            <select id="DdlSelectCompany" runat="server" class="mandatory" messagetext="Company"
+                                onchange="javascript:DdlSelectCompany_SelectedIndexChanged();">
+                                <option value="-2">Select</option>
+                                <option value="1">Listed Company</option>
+                                <option value="2">Unlisted Company</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+                <table id="TblParentCompanydetail" runat="server">
+                    <tr>
+                        <td style="width:103px" id="TdBlankUnlistedCompany" runat="server"></td>
+                        <td id="TdUnlistedCompany" runat="server" visible="true">
+                            <asp:TextBox ID="TxtUnlistedCompany" runat="server" Width="250px" ToolTip="COMPANY NAME"
+                                messagetext="Unlisted company" />
+                        </td>
+                        <td id="TdParentCompany">
+                            <label for="ctl00_ContentPlaceHolder1_DdlParentCompanies">PARENT COMPANY</label> <span id="SpnParentCompnies" runat="server" visible="false" /><br />
+                            <select id="DdlParentCompanies" runat="server"
+                                title="Select parent company" messagetext="Parent company"
+                                onchange="javascript:FilterCityStatesInPopup(this.value,'ParentCompanyID','DdlCompanies','DdlHiddenCompany');" />
+                            <table style="display:none">
+                                <tr>
+                                    <td>
+                                        <label for="ctl00_ContentPlaceHolder2_DdlHiddenCompany">HiddenCompany</label>
+                                        <select id="DdlHiddenCompany" runat="server" />
+                                        <span id="SpnHiddenCompanyID" runat="server" />
+                                    </td> 
+                                </tr>
+                            </table>        
+                        </td>
+                        <td id="TdCompany" style="padding-left:30px">
+                            <label for="ctl00_ContentPlaceHolder1_DdlCompanies" id="LblCompany" runat="server" >COMPANY</label><br />
+                            <select id="DdlCompanies" runat="server" messagetext="Company" />
+                        </td>
+                    </tr>
+                </table>
+                <table id="TblEmploymentComany" runat="server" visible="false" style="margin-top:5px">
+                    <tr>
+                        <td>COMPANY : <span id="SpnCompanies" runat="server" visible="false" /></td>
+                    </tr>
+                </table>
+                <table id="TblRole" runat="server">
+                    <tr>
+                        <td style="width:103px" id="TdSelectRole" runat="server" ><label for="ctl00_ContentPlaceHolder1_DdlRoles">SELECT ROLE</label></td>
+                        <td>
+                            <span id="SpnSelectRole" runat="server" visible="false" />&nbsp<span id="SpnJobRoles" runat="server" visible="false" />
+                            <select id="DdlRoles" runat="server" class="mandatory" messagetext="Role"
+                                onchange="javascript:DdlRoles_SelectedIndexChanged();">
+                                <option value="-2">Select</option>
+                                <option value="1">Listed Role</option>
+                                <option value="2">Unlisted Role</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td style="padding-left:107px">
+                            <select id="DdlJobRoles" runat="server" messagetext="Role" title="SELECT JOB ROLE" />
+                            <asp:TextBox ID="TxtUnlistedRole" runat="server" Width="250px" ToolTip="ROLE NAME" messagetext="Unlisted role" />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    
+    <table id="TblEmploymentDesignation" runat="server" visible="false" style="margin-top:5px;margin-bottom:5px">
+        <tr>
+            <td>Designation : <span id="SpnDesignation" runat="server" visible="false" /></td>
+        </tr>
+    </table>
+    
+    <table>
+        <tr>
+            <td valign="top"><label for="TxtDesignation">Enter other details</label></td>
+            <td></td>
+            <td valign="top" id="TdDesignation" runat="server">
+                <label for="ctl00_ContentPlaceHolder1_TxtDesignation">Designation</label><br />
+                <asp:TextBox ID="TxtDesignation" runat="server" />
+            </td>
+            <td style="width:10px">&nbsp;</td>
+            <td valign="top">
+                <label for="ctl00_ContentPlaceHolder1_TxtDesignationFrom">FROM (MM/YYYY)</label><br />
+                <asp:TextBox ID="TxtDesignationFrom" runat="server" Width="80px" class="mandatory" messagetext="From date" />
+            </td>
+            <td style="width:10px"></td>
+            <td style="white-space:nowrap">
+                <table type="table" messagetext="Designation end date">
+                    <tr>
+                        <td>
+                            <table cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td>
+                                        <asp:RadioButton ID="RdbDesignationTo" runat="server" GroupName="DesignatrionDate"
+                                             onclick="javascript:ToggleContractExpiryDate();" />
+                                        <label for="ctl00_ContentPlaceHolder1_RdbDesignationTo" class="skiplink">Past Experience</label>
+                                    </td>
+                                    <td>
+                                        <label for="ctl00_ContentPlaceHolder1_TxtDesignationTo">TO (MM/YYYY)</label><br />
+                                        <asp:TextBox ID="TxtDesignationTo" runat="server" class="mandatory" messagetext="End date"
+                                            Width="80px" onblur="javascript:TxtDesignationTo_TextChanged();" />
+                                    </td>
+                                </tr>
+                            </table>
+                            <table>
+                                <tr>
+                                    <td><asp:RadioButton ID="RdbDesignationTillCurrentDate" runat="server" 
+                                            GroupName="DesignatrionDate" Text="Current" 
+                                            onclick="javascript:ToggleContractExpiryDate();" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td valign="top" style="padding-left:10px;padding-right:10px">Years
+                <table>
+                    <tr>
+                        <td>
+                            <span id="SpnYear" runat="server"></span>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td style="width:10px"></td>
+            <td valign="top">
+                <label for="ctl00_ContentPlaceHolder1_TxtMonthlySalary">Monthly Salary (Rs)</label><br />
+                <asp:TextBox ID="TxtMonthlySalary" runat="server" Width="90px" />
+            </td>
+        </tr>
+    </table>
+    
+    <table id="TblContractExpiryDate">
+        <tr>
+            <td>
+                <label for="ctl00_ContentPlaceHolder1_TxtExpiryDate">For candidate on job contract, contract expiry date:</label>
+            </td>
+            <td>
+                <asp:TextBox ID="TxtExpiryDate" runat="server" date="true" yearlength="4" />(DD/MM/YYYY)
+            </td>
+        </tr>
+    </table>
+    
+    <table>
+        <tr>
+            <td>
+                <asp:Button ID="BtnManageWorkExperience" runat="server" Text="Add" ToolTip="Add"  style="margin-left:10px;"
+                    OnClientClick="javascript:return ValidateWorkExperience();" OnClick="BtnManageWorkExperience_Click"  />
+            </td>
+            <td><input type="button" value="Close" style="margin-left:5px;" onclick="javascript:self.close();" />
+            </td>
+            <td>
+                <asp:Button ID="BtnDeleteWorkExperience" runat="server" Text="Delete" Visible="false"
+                    style="margin-left:5px;" OnClick="BtnDeleteWorkExperience_Click"
+                    OnClientClick="javascript:return confirm('Are you sure want to delete work experience ?');" />
+            </td>
+        </tr>
+    </table>
+    <script src="WorkExperiencePopup.js" type="text/javascript"></script>
+</asp:Content>
+

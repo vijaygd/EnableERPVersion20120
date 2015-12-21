@@ -1,0 +1,105 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="mobileMaster.master.cs" Inherits="EnableIndia.MobileDevices.mobileMaster" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI"  %>
+<%@ Register Assembly="BasicFrame.WebControls.BasicDatePicker" Namespace="BasicFrame.WebControls" TagPrefix="BDP" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Enable India</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, user-scalable=yes, initial-scale=1.0, maximum-scale=1.0, minimum-scale=0.1" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="cache-control" content="no-store" />
+    <meta http-equiv="cache-control" content="private" />
+    <meta http-equiv="cache-control" content="max-age=0, must-revalidate" />
+    <meta http-equiv="expires" content="now-1" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="Page-Enter" content="Alpha(opacity=100)"/>
+    <link href="../StyleSheets/contentStyle.css" rel="stylesheet" />
+    <link href="../StyleSheets/MobileStyles.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+        <style type="text/css">
+       .autoStyle
+       {
+           text-align:center;
+       }
+    </style>
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="formMobileMaster" runat="server">
+    <asp:ScriptManager runat="server" ID="scm2" AsyncPostBackTimeout="4800" EnableCdn="true" EnablePageMethods="true" EnablePartialRendering="true">
+      
+      <Scripts>
+        <asp:ScriptReference Path="~/Scripts/jquery-2.1.4.min.js" />
+        <asp:ScriptReference Path="~/Scripts/jquery.cookie.pack.js" />
+        <asp:ScriptReference Path="~/Scripts/Common.js" />
+      </Scripts>
+    </asp:ScriptManager>
+        <div  class="mainContainer">
+            <div class="auxContainer">
+   <table style="height:36px; border-bottom-style:solid; border-bottom-color:Blue; border-width:medium; border-top: thin solid blue; vertical-align:middle;  border-collapse:separate; border-spacing:0px; border-width:1px; width:100%;">  
+       <colgroup>
+           <col style="width:34%;" />
+           <col style="width:33%;" />
+           <col style="width:33%;" />
+       </colgroup>
+  <tr>
+      <td style="background-color:#b9c9fe; width:30%; text-align:left; vertical-align:middle;">
+        <asp:Menu ID="menuMobileMaster" runat="server" OnMenuItemClick="menuMobileMasterClicked" Width="100%"
+                            Orientation="Horizontal" Font-Names="Consolas" Font-Size="16px" 
+                   CssClass="MainMenuClass" Height="22px" 
+                   BorderColor="#b9c9fe" DynamicHorizontalOffset="2" StaticSubMenuIndent="16"  BorderWidth="0" Style="z-index:999;">
+                   <DynamicMenuStyle BackColor="#d4ddfe" BorderColor="#B2C2FE" BorderWidth="1"   />
+                   <StaticMenuItemStyle BorderColor="#B2C2FE" BorderWidth="2" HorizontalPadding="8"  
+                      VerticalPadding="1"  ItemSpacing="3"  />
+             <DynamicMenuItemStyle BorderColor="#B2C2FE" BorderWidth="2" ForeColor="Blue" HorizontalPadding="8" VerticalPadding="2" Font-Bold="true" Font-Italic="true"  Font-Names="Consolas" Font-Size="14px" />
+             <StaticSelectedStyle BackColor="#B2C2FE" BorderColor="#B2C2FE" BorderWidth="2" HorizontalPadding="8" ForeColor="blue" />
+             <DynamicSelectedStyle BackColor="#B2C2FE" BorderColor="#B2C2FE" BorderWidth="2" HorizontalPadding="8" ForeColor="blue"/>
+             <StaticHoverStyle BackColor="#B2C2FE" BorderColor="#B2C2FE" BorderWidth="2"  ForeColor="#d32232" />
+             <DynamicHoverStyle BackColor="#B2C2FE" ForeColor="#000000"/>
+                 <Items>        
+                <asp:MenuItem Text="Candidate" Value="Setup">
+                          <asp:MenuItem Text="Register Candidate" Value="rc" ToolTip="Register a new candidate"></asp:MenuItem>
+                          <asp:MenuItem Text="UnRegister Candidate" Value="urc" ToolTip="Unregister a new candidate"></asp:MenuItem>
+                          <asp:MenuItem Text="All Active Profiled Candidates" Value="acp" ToolTip="Get/Edit all active profiled candidates"></asp:MenuItem>
+                          <asp:MenuItem Text="Candidate Status" Value="cs" ToolTip="Candidate Status"></asp:MenuItem>
+              </asp:MenuItem>
+              <asp:MenuItem Text="Logoff" Value="logOff"></asp:MenuItem>
+           </Items>
+        </asp:Menu>
+         
+        </td>
+           <td style="width:30%;text-align:center; vertical-align:middle;background-color:#b9c9fe;">
+               <asp:Label runat="server" ID="lbHeader" Font-Bold="true" Font-Size="17px" Font-Names="Consolas" ForeColor="#d32232" Text="Enable India"></asp:Label>
+           </td>
+           <td id="TdGlobalButtons" style="vertical-align:middle; text-align:right; width:30%;background-color:#b9c9fe;">
+                     <input id="BtnViewDataOptions"  type="button" value="View Data Options" runat="server"
+                                onclick="javascript:ShowPopUp('ViewDataOptions.aspx',1024,768);" visible="false" />
+                   <asp:Button runat="server" ID="btnHome" Text="Home" OnClick="btnHome_Clicked" Width="50px" Height="24px" Font-Names="Consolas" Font-Bold="true" />
+                   <asp:Button runat="server" ID="btnHelp" Text="Help"  Width="50px" Height="24px" Font-Names="Consolas" Font-Bold="true" />
+           </td>
+        </tr>
+       <tr>
+       </tr>
+       </table>
+        <table style="width:100%; height:100%; border-collapse:separate; border-width:1px; border-color:darkblue; border-spacing:0px;">
+            <tr>
+           <td id="TblContentBody" style="vertical-align:top;">
+               <div style="margin:0 auto;">
+                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1"  runat="server">
+                 </asp:ContentPlaceHolder>
+               </div>
+       </td>
+
+            </tr>
+        </table>
+        </div>
+      </div>
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<configuration>
+  <configSections>
+    <sectionGroup name="businessObjects">
+      <sectionGroup name="crystalReports">
+        <section name="rptBuildProvider" type="CrystalDecisions.Shared.RptBuildProviderHandler, CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, Custom=null" />
+      </sectionGroup>
+    </sectionGroup>
+  </configSections>
+  <system.web>
+    <httpRuntime maxRequestLength="1048576" executionTimeout="3600" requestPathInvalidCharacters="" requestValidationMode="2.0" />
+    <trace localOnly="false" mostRecent="true" pageOutput="true" />
+    <pages controlRenderingCompatibilityVersion="4.0">
+      <controls>
+        <add tagPrefix="asp" namespace="System.Web.UI.DataVisualization.Charting" assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+      </controls>
+    </pages>
+    <httpHandlers>
+      <add path="ChartImg.axd" verb="GET,HEAD,POST" type="System.Web.UI.DataVisualization.Charting.ChartHttpHandler, System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" validate="false" />
+      <add type="Telerik.ReportViewer.WebForms.HttpHandler, Telerik.ReportViewer.WebForms" path="Telerik.ReportViewer.axd" verb="*" />
+    </httpHandlers>
+    <sessionState mode="InProc" timeout="3600" />
+    <compilation debug="true" batch="false" targetFramework="4.0">
+      <assemblies>
+        <add assembly="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089" />
+        <add assembly="Stimulsoft.Report, Version=2013.1.1600.0, Culture=neutral, PublicKeyToken=EBE6666CBA19647A" />
+        <add assembly="Stimulsoft.Base, Version=2013.1.1600.0, Culture=neutral, PublicKeyToken=EBE6666CBA19647A" />
+        <add assembly="Stimulsoft.Report.Web, Version=2013.1.1600.0, Culture=neutral, PublicKeyToken=EBE6666CBA19647A" />
+        <add assembly="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089" />
+        <add assembly="System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B03F5F7F11D50A3A" />
+      </assemblies>
+      <buildProviders>
+        <add extension=".rpt" type="CrystalDecisions.Web.Compilation.RptBuildProvider, CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+      </buildProviders>
+    </compilation>
+    <authentication mode="Forms">
+      <forms loginUrl="~/Login.aspx" timeout="2880" cookieless="UseCookies" />
+    </authentication>
+    <customErrors mode="Off" />
+    <authorization>
+      <deny users="?" />
+    </authorization>
+  </system.web>
+  <appSettings>
+    <add key="BasicDatePicker.LicenseKey" value="8pMpDZoN7/ClIe4FL61L+rU++viBAhuBw2N0AZTJxDeXekCf3cAiAtD0JZv7Vwb1" />
+    <add key="ChartImageHandler" value="storage=file;timeout=20;dir=c:\TempImageFiles\;" />
+    <add key="SMTPClient" value="www.affinity-soft.com" />
+    <add key="SMTPUserName" value="enablesupport" />
+    <add key="SMTPPassword" value="eiadmin1" />
+  </appSettings>
+  <connectionStrings>
+    <!--<add name="EnableIndiaConnectionString" connectionString="Data Source=192.168.100.97;UserID=root;Password=affinity;Initial Catalog=enable_2702;Pooling=false;" providerName="MySql.Data.MySqlClient"/>-->
+    <add name="EnableIndiaConnectionString" connectionString="Data Source=192.168.100.21;UserID=root;Password=affinity;Initial Catalog=enable05042014a;Pooling=true; Max Pool Size = 1024; Min Pool Size = 5;" providerName="MySql.Data.MySqlClient" />
+    <add name="stiConnectionString" connectionString="Server=192.168.100.21;Port=3306;Database=ngo1;Uid=root;Pwd=rootroot;" />
+    <add name="enableindia" connectionString="server=192.168.100.21;User Id=root;password=affinity;Persist Security Info=True;enable05042014a;" providerName="MySql.Data.MySqlClient" />
+  </connectionStrings>
+  <system.webServer>
+    <defaultDocument>
+      <files>
+        <add value="Login.aspx" />
+      </files>
+    </defaultDocument>
+    <modules runAllManagedModulesForAllRequests="true" />
+    <handlers>
+      <add name="ReportViewerWebControlHandler1" verb="*" path="Reserved.ReportViewerWebControl.axd" type="Microsoft.Reporting.WebForms.HttpHandler,   Microsoft.ReportViewer.WebForms, Version=10.0.0.0,  Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" preCondition="integratedMode" />
+      <remove name="ChartImageHandler" />
+      <add name="ChartImageHandler" preCondition="integratedMode" verb="GET,HEAD,POST" path="ChartImg.axd" type="System.Web.UI.DataVisualization.Charting.ChartHttpHandler, System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+      <add name="ReportViewerWebControlHandler" preCondition="integratedMode" verb="*" path="Reserved.ReportViewerWebControl.axd" type="Microsoft.Reporting.WebForms.HttpHandler, Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+      <add name="Telerik.Web.UI.WebResource" path="Telerik.Web.UI.WebResource.axd" verb="*" type="Telerik.Web.UI.WebResource, Telerik.Web.UI" />
+      <add name="Telerik.ReportViewer.axd_*" type="Telerik.ReportViewer.WebForms.HttpHandler, Telerik.ReportViewer.WebForms" path="Telerik.ReportViewer.axd" verb="*" preCondition="integratedMode" />
+    </handlers>
+    <validation validateIntegratedModeConfiguration="false" />
+    <security>
+      <requestFiltering>
+        <requestLimits maxAllowedContentLength="1073741824" />
+      </requestFiltering>
+   </security>
+  </system.webServer>
+  <system.net>
+    <mailSettings>
+      <smtp from="notification@enable-india.info">
+        <network host="Localhost" password="" userName="" />
+      </smtp>
+    </mailSettings>
+  </system.net>
+  <businessObjects>
+    <crystalReports>
+      <rptBuildProvider>
+        <add embedRptInResource="true" />
+      </rptBuildProvider>
+    </crystalReports>
+  </businessObjects>
+  <location path="RecoverPassword.aspx">
+    <system.web>
+      <deployment retail="true" />
+      <authorization>
+        <allow users="?" />
+      </authorization>
+    </system.web>
+  </location>
+</configuration>

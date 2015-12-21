@@ -1,0 +1,1985 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E96E6C9A-FD02-463F-8F09-4E84732F0E49}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EnableIndia</RootNamespace>
+    <AssemblyName>EnableIndia</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DebugSymbols>true</DebugSymbols>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="Admin\AddDropDownOptions.aspx" />
+    <Content Include="Admin\AddDropDownOptions.js" />
+    <Content Include="Admin\AdminMaster.js" />
+    <Content Include="Admin\DefaultAgeForCandidatesInSearch.aspx" />
+    <Content Include="Admin\DefaultAgeForCandidatesInSearch.js" />
+    <Content Include="Admin\DropdownTest.aspx" />
+    <Content Include="Admin\DropDownTest.js" />
+    <Content Include="Admin\EmployeeList.aspx" />
+    <Content Include="Admin\EmployeeList.js" />
+    <Content Include="Admin\RegisterEmployee.aspx" />
+    <Content Include="Admin\RegisterEmployee.js" />
+    <Content Include="Admin\ViewParameters.aspx" />
+    <Content Include="Admin\ViewParameters.js" />
+    <Content Include="App_Themes\Default\app_screen.css" />
+    <Content Include="App_Themes\Default\header.css" />
+    <Content Include="App_Themes\Default\images\222222_11x11_icon_arrows_leftright.gif" />
+    <Content Include="App_Themes\Default\images\222222_11x11_icon_arrows_updown.gif" />
+    <Content Include="App_Themes\Default\images\222222_11x11_icon_close.gif" />
+    <Content Include="App_Themes\Default\images\222222_11x11_icon_doc.gif" />
+    <Content Include="App_Themes\Default\images\222222_11x11_icon_folder_closed.gif" />
+    <Content Include="App_Themes\Default\images\222222_11x11_icon_folder_open.gif" />
+    <Content Include="App_Themes\Default\images\222222_11x11_icon_minus.gif" />
+    <Content Include="App_Themes\Default\images\222222_11x11_icon_plus.gif" />
+    <Content Include="App_Themes\Default\images\222222_11x11_icon_resize_se.gif" />
+    <Content Include="App_Themes\Default\images\222222_35x9_colorpicker_indicator.gif.gif" />
+    <Content Include="App_Themes\Default\images\222222_7x7_arrow_down.gif" />
+    <Content Include="App_Themes\Default\images\222222_7x7_arrow_left.gif" />
+    <Content Include="App_Themes\Default\images\222222_7x7_arrow_right.gif" />
+    <Content Include="App_Themes\Default\images\222222_7x7_arrow_up.gif" />
+    <Content Include="App_Themes\Default\images\454545_11x11_icon_arrows_leftright.gif" />
+    <Content Include="App_Themes\Default\images\454545_11x11_icon_arrows_updown.gif" />
+    <Content Include="App_Themes\Default\images\454545_11x11_icon_close.gif" />
+    <Content Include="App_Themes\Default\images\454545_11x11_icon_doc.gif" />
+    <Content Include="App_Themes\Default\images\454545_11x11_icon_folder_closed.gif" />
+    <Content Include="App_Themes\Default\images\454545_11x11_icon_folder_open.gif" />
+    <Content Include="App_Themes\Default\images\454545_11x11_icon_minus.gif" />
+    <Content Include="App_Themes\Default\images\454545_11x11_icon_plus.gif" />
+    <Content Include="App_Themes\Default\images\454545_7x7_arrow_down.gif" />
+    <Content Include="App_Themes\Default\images\454545_7x7_arrow_left.gif" />
+    <Content Include="App_Themes\Default\images\454545_7x7_arrow_right.gif" />
+    <Content Include="App_Themes\Default\images\454545_7x7_arrow_up.gif" />
+    <Content Include="App_Themes\Default\images\888888_11x11_icon_arrows_leftright.gif" />
+    <Content Include="App_Themes\Default\images\888888_11x11_icon_arrows_updown.gif" />
+    <Content Include="App_Themes\Default\images\888888_11x11_icon_close.gif" />
+    <Content Include="App_Themes\Default\images\888888_11x11_icon_doc.gif" />
+    <Content Include="App_Themes\Default\images\888888_11x11_icon_folder_closed.gif" />
+    <Content Include="App_Themes\Default\images\888888_11x11_icon_folder_open.gif" />
+    <Content Include="App_Themes\Default\images\888888_11x11_icon_minus.gif" />
+    <Content Include="App_Themes\Default\images\888888_11x11_icon_plus.gif" />
+    <Content Include="App_Themes\Default\images\888888_7x7_arrow_down.gif" />
+    <Content Include="App_Themes\Default\images\888888_7x7_arrow_left.gif" />
+    <Content Include="App_Themes\Default\images\888888_7x7_arrow_right.gif" />
+    <Content Include="App_Themes\Default\images\888888_7x7_arrow_up.gif" />
+    <Content Include="App_Themes\Default\images\add-notes.jpg" />
+    <Content Include="App_Themes\Default\images\bullet1.gif" />
+    <Content Include="App_Themes\Default\images\bullet2.gif" />
+    <Content Include="App_Themes\Default\images\bullet3.gif" />
+    <Content Include="App_Themes\Default\images\bullet4.png" />
+    <Content Include="App_Themes\Default\images\bullet_red.gif" />
+    <Content Include="App_Themes\Default\images\buttonedge_left.jpg" />
+    <Content Include="App_Themes\Default\images\buttonedge_right.jpg" />
+    <Content Include="App_Themes\Default\images\button_bg.gif" />
+    <Content Include="App_Themes\Default\images\checkbox.gif" />
+    <Content Include="App_Themes\Default\images\checkbox_onclick.gif" />
+    <Content Include="App_Themes\Default\images\ContentMap.gif" />
+    <Content Include="App_Themes\Default\images\dadada_40x100_textures_02_glass_75.png" />
+    <Content Include="App_Themes\Default\images\e6e6e6_40x100_textures_02_glass_75.png" />
+    <Content Include="App_Themes\Default\images\ExportToExcel.gif" />
+    <Content Include="App_Themes\Default\images\ffffff_40x100_textures_01_flat_0.png" />
+    <Content Include="App_Themes\Default\images\ffffff_40x100_textures_02_glass_65.png" />
+    <Content Include="App_Themes\Default\images\got-job.jpg" />
+    <Content Include="App_Themes\Default\images\left_menu_item_icon.gif" />
+    <Content Include="App_Themes\Default\images\level0_bg.jpg" />
+    <Content Include="App_Themes\Default\images\log-off.png" />
+    <Content Include="App_Themes\Default\images\menupanel_bg.gif" />
+    <Content Include="App_Themes\Default\images\menupanel_bottom.jpg" />
+    <Content Include="App_Themes\Default\images\menupanel_top.jpg" />
+    <Content Include="App_Themes\Default\images\menu_heading_bg.jpg" />
+    <Content Include="App_Themes\Default\images\radiobtn.gif" />
+    <Content Include="App_Themes\Default\images\radiobtn_onclick.gif" />
+    <Content Include="App_Themes\Default\images\Reminder.jpg" />
+    <Content Include="App_Themes\Default\images\rollover_admin.jpg" />
+    <Content Include="App_Themes\Default\images\rollover_candidate.jpg" />
+    <Content Include="App_Themes\Default\images\rollover_company.jpg" />
+    <Content Include="App_Themes\Default\images\rollover_NGO.jpg" />
+    <Content Include="App_Themes\Default\images\rollover_reports.jpg" />
+    <Content Include="App_Themes\Default\images\rollover_training.jpg" />
+    <Content Include="App_Themes\Default\images\spade.gif" />
+    <Content Include="App_Themes\Default\images\topband-bg.jpg" />
+    <Content Include="App_Themes\Default\images\topband.jpg" />
+    <Content Include="App_Themes\Default\jquery-ui-gray.css" />
+    <Content Include="App_Themes\Default\Pager.css" />
+    <Content Include="App_Themes\Default\StyleSheet.css" />
+    <Content Include="Candidate\Candidate.Master.js" />
+    <Content Include="Candidate\CandidateCallingListPrintForm.aspx" />
+    <Content Include="Candidate\CandidateListTableMoreInfo.htm" />
+    <Content Include="Candidate\CandidatesList.aspx" />
+    <Content Include="Candidate\dashBoard.aspx" />
+    <Content Include="Candidate\EducationalQualificationsPopUp.aspx" />
+    <Content Include="Candidate\EducationalQualificationsPopUp.js" />
+    <Content Include="Candidate\eiFirstPage.aspx" />
+    <Content Include="Candidate\ProfileHistory\AddViewCandidateHistory.aspx" />
+    <Content Include="Candidate\ProfileHistory\AddViewCandidateHistory.js" />
+    <Content Include="Candidate\ProfileHistory\AddViewCandidateHistoryPopup.aspx" />
+    <Content Include="Candidate\ProfileHistory\AddViewHistory.js" />
+    <Content Include="Candidate\ProfileHistory\AllActiveCandidates.aspx" />
+    <Content Include="Candidate\ProfileHistory\AllActiveCandidates.js" />
+    <Content Include="Candidate\ProfileHistory\CandidateJobProfile.aspx" />
+    <Content Include="Candidate\ProfileHistory\CandidateJobProfile.js" />
+    <Content Include="Candidate\ProfileHistory\CandidateKnowledgeTraining.aspx" />
+    <Content Include="Candidate\ProfileHistory\CandidateKnowledgeTraining.js" />
+    <Content Include="Candidate\ProfileHistory\CandidateKnowledgeTrainingPopUp.aspx" />
+    <Content Include="Candidate\ProfileHistory\CandidateKnowledgeTrainingPopUp.js" />
+    <Content Include="Candidate\ProfileHistory\CandidatePhoneAddressHistory.aspx" />
+    <Content Include="Candidate\ProfileHistory\CandidateWorkExperience.aspx" />
+    <Content Include="Candidate\ProfileHistory\CandidateWorkExperience.js" />
+    <Content Include="Candidate\ProfileHistory\Default.aspx" />
+    <Content Include="Candidate\ProfileHistory\EducationalQualifications.aspx" />
+    <Content Include="Candidate\ProfileHistory\EducationalQualifications.js" />
+    <Content Include="Candidate\ProfileHistory\Recommended Job Type.aspx" />
+    <Content Include="Candidate\ProfileHistory\Recommended Job Type.js" />
+    <Content Include="Candidate\ProfileHistory\Registration.aspx" />
+    <Content Include="Candidate\ProfileHistory\Registration.js" />
+    <Content Include="Candidate\ProfileHistory\RegistrationEdit.htm" />
+    <Content Include="Candidate\ProfileHistory\SocioEconomicList.js" />
+    <Content Include="Candidate\ProfileHistory\SocioEconomicList.aspx" />
+    <Content Include="Candidate\ProfileHistory\Test.aspx" />
+    <Content Include="Candidate\ProfileHistory\ToBeProfiledCandidates.aspx" />
+    <Content Include="Candidate\ProfileHistory\ToBeProfiledCandidates.js" />
+    <Content Include="Candidate\ProfileHistory\ToBeProfiledCandidatesMoreHelp.htm" />
+    <Content Include="Candidate\Registration\EnableIndiaCandidate.aspx" />
+    <Content Include="Candidate\Registration\EnableIndiaCandidate.js" />
+    <Content Include="Candidate\Registration\EnableIndiaCandidateMoreHelp.htm" />
+    <Content Include="Candidate\Registration\OtherNGOCandidate.aspx" />
+    <Content Include="Candidate\Registration\OtherNgoCandidate.js" />
+    <Content Include="Candidate\Registration\test.aspx" />
+    <Content Include="Candidate\Registration\UnregisteredBlankForm.aspx" />
+    <Content Include="Candidate\Registration\UnregisteredBlankForm.htm" />
+    <Content Include="Candidate\Registration\UnregisteredBlankForm.js" />
+    <Content Include="Candidate\Registration\UnregisteredBlankPrintForm.aspx" />
+    <Content Include="Candidate\Registration\ViewDataOptionReport.aspx" />
+    <Content Include="Candidate\Registration\ViewDataOptions.aspx" />
+    <Content Include="Candidate\Registration\ViewDataOptions.js" />
+    <Content Include="Candidate\SocioEconomicIndicator.aspx" />
+    <Content Include="Candidate\SocioEconomicIndicator.js" />
+    <Content Include="Candidate\TaskManagement.aspx" />
+    <Content Include="Candidate\TaskManagement.js" />
+    <Content Include="Candidate\ViewCandidateCallingList.aspx" />
+    <Content Include="Candidate\ViewCandidateCallingList.js" />
+    <Content Include="Candidate\WorkExperiencePopup.aspx" />
+    <Content Include="Candidate\WorkExperiencePopup.js" />
+    <Content Include="Company\AddCompany.aspx" />
+    <Content Include="App_Data\51Degrees.dat" />
+    <Content Include="51Degrees.config" />
+    <Content Include="App_Browsers\safari.browser" />
+    <None Include="Company\AddCompany.js.old" />
+    <Content Include="Company\AddCompany.js" />
+    <Content Include="Company\AddCompanyContact.aspx" />
+    <Content Include="Company\AddEmploymentProjects.aspx" />
+    <Content Include="Company\AddEmploymentProjects.js" />
+    <Content Include="Company\AddNonRecommendedCandidate.aspx" />
+    <Content Include="Company\AddNonRecommendedCandidate.js" />
+    <Content Include="Company\AddNotesPopup.aspx" />
+    <Content Include="Company\AddParentCompany.aspx" />
+    <Content Include="Company\AddParentCompany.js" />
+    <Content Include="Company\AddRecommendedCandidate.aspx" />
+    <Content Include="Company\AddRecommendedCandidate.js" />
+    <Content Include="Company\AddRecommendedCandidateMoreHelp.htm" />
+    <Content Include="Company\AddVacancy.aspx" />
+    <Content Include="Company\AddVacancy.js" />
+    <Content Include="Company\AddViewCompanyHistory.aspx" />
+    <Content Include="Company\AddViewCompanyHistory.js" />
+    <Content Include="Company\AddViewCompanyHistoryPopup.aspx" />
+    <Content Include="Company\AddViewCompanyHistoryPopup.js" />
+    <Content Include="Company\AssignedList.aspx" />
+    <Content Include="Company\AssignedList.js" />
+    <Content Include="Company\AssignedListMoreHelp.htm" />
+    <Content Include="Company\CandidateNotesForEmploymentProject.aspx" />
+    <Content Include="Company\CandidateNotesForEmploymentProject.js" />
+    <Content Include="Company\InterviewList.aspx" />
+    <Content Include="Company\InterviewListMoreHelp.htm" />
+    <Content Include="Company\ListOfOpenEmploymentProject.aspx" />
+    <Content Include="Company\ListOfOpenEmploymentProject.js" />
+    <Content Include="Company\ListOfOpenEmploymentProjectMoreHelp.htm" />
+    <Content Include="Company\ManageCompanyTask.aspx" />
+    <Content Include="Company\ManageCompanyTask.js" />
+    <Content Include="Company\ManageOpenEmolpymentProject.js" />
+    <Content Include="Company\ManageOpenEmploymentMoreHelp.htm" />
+    <Content Include="Company\ManageOpenEmploymentProjects.aspx" />
+    <Content Include="Company\ManageOpenEmploymentProjects.js" />
+    <Content Include="Company\SuccessfulCandidateList.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Image\AddButton.gif" />
+    <Content Include="Image\ajax-loader.gif" />
+    <Content Include="Image\chart_bar.png" />
+    <Content Include="Image\DeleteSmall.gif" />
+    <Content Include="Image\mobilephone.jpg" />
+    <Content Include="Image\pleasewait.gif" />
+    <Content Include="Image\calendar.gif" />
+    <Content Include="Image\Cancel.gif" />
+    <Content Include="Image\CancelR.gif" />
+    <Content Include="Image\cand_3650934584.gif" />
+    <Content Include="Image\Chart.gif" />
+    <Content Include="Image\ClearButton.gif" />
+    <Content Include="Image\Close.gif" />
+    <Content Include="Image\Get.gif" />
+    <Content Include="Image\LeftArrow.gif" />
+    <Content Include="Image\Login.gif" />
+    <Content Include="Image\Print.gif" />
+    <Content Include="Image\PrintC.gif" />
+    <Content Include="Image\QueryButton.gif" />
+    <Content Include="Image\QueryR.gif" />
+    <Content Include="Image\Refresh.gif" />
+    <Content Include="Image\Reset.gif" />
+    <Content Include="Image\RightArrow.gif" />
+    <Content Include="Image\topband.jpg" />
+    <Content Include="ITextPopup.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="Login.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="mdStyle.css" />
+    <Content Include="MobileDevices\candidateRegistration.aspx" />
+    <Content Include="MobileDevices\candidateRegistration.js" />
+    <Content Include="MobileDevices\mdDefaultPage.aspx" />
+    <Content Include="MobileDevices\mdLogin.aspx" />
+    <Content Include="MobileDevices\mdUnregisterCandidate.aspx" />
+    <Content Include="MobileDevices\mdUnregisterCandidate.js" />
+    <Content Include="MobileDevices\PageProcessor.aspx" />
+    <Content Include="MobileDevices\PageProcessor.js" />
+    <Content Include="MobileDevices\ProfileHistory\mdCandidateKnowledgeTrainingPopUp.js" />
+    <Content Include="MobileDevices\ProfileHistory\mdAddViewCandidateHistory.js" />
+    <Content Include="MobileDevices\ProfileHistory\mdAddViewHistory.js" />
+    <Content Include="MobileDevices\ProfileHistory\mdAddViewCandidateHistory.aspx" />
+    <Content Include="MobileDevices\ProfileHistory\mdCandidateJobProfile.js" />
+    <Content Include="MobileDevices\ProfileHistory\mdCandidateKnowledgeTraining.js" />
+    <Content Include="MobileDevices\ProfileHistory\mdCandidateKnowledgeTrainingPopUp.aspx" />
+    <Content Include="MobileDevices\ProfileHistory\mdCandidateWorkExperience.js" />
+    <Content Include="MobileDevices\ProfileHistory\mdEducationalQualifications.js" />
+    <Content Include="MobileDevices\ProfileHistory\mdEducationalQualification.aspx" />
+    <Content Include="MobileDevices\mdReportsSection\mdRegisteredCandidateGrid.aspx" />
+    <Content Include="MobileDevices\mdReportsSection\mdRptRegisteredCandidates.aspx" />
+    <Content Include="MobileDevices\mdReportsSection\mdRptRegisteredCandidates.js" />
+    <Content Include="MobileDevices\ProfileHistory\mdAllActiveCandidates.js" />
+    <Content Include="MobileDevices\ProfileHistory\mdAllActiveCandidates.aspx" />
+    <Content Include="MobileDevices\ProfileHistory\mdCandidateJobProfile.aspx" />
+    <Content Include="MobileDevices\ProfileHistory\mdCandidateKnowledgeTraining.aspx" />
+    <Content Include="MobileDevices\ProfileHistory\mdCandidateWorkExperience.aspx" />
+    <Content Include="MobileDevices\ProfileHistory\mdRegistration.aspx" />
+    <Content Include="MobileDevices\ProfileHistory\mdRegistration.js" />
+    <Content Include="Mobile\Default.aspx" />
+    <Content Include="NGO\Contacts.aspx" />
+    <Content Include="NGO\NGOList.aspx" />
+    <Content Include="NGO\NGOList.js" />
+    <Content Include="NGO\NGOMaster.js" />
+    <Content Include="NGO\RegisterNGO.aspx" />
+    <Content Include="NGO\RegisterNGO.js" />
+    <Content Include="RecoverPassword.aspx" />
+    <Content Include="ReportSection\AllActiveRegisteredCandidateReport.aspx" />
+    <Content Include="ReportSection\AllActiveRegisteredCandidateReport.js" />
+    <Content Include="ReportSection\AssignedListClosedEmploymentProject.aspx" />
+    <Content Include="ReportSection\AssignedListClosedEmploymentProject.js" />
+    <Content Include="ReportSection\AssignedListPageForClosedTrainingProjects.aspx" />
+    <Content Include="ReportSection\AssignedListPageForClosedTrainingProjects.js" />
+    <Content Include="ReportSection\AssignedListPageFromSearch.aspx" />
+    <Content Include="ReportSection\CandidateTask.aspx" />
+    <Content Include="ReportSection\CandidateTask.js" />
+    <Content Include="ReportSection\CandidateWiseTrainingEmploymentRelation.aspx" />
+    <Content Include="ReportSection\CandidateWiseTrainingEmploymentRelation.js" />
+    <Content Include="ReportSection\CompanyReport.aspx" />
+    <Content Include="ReportSection\CompanyReport.js" />
+    <Content Include="ReportSection\CompanyTask.aspx" />
+    <Content Include="ReportSection\CompanyTask.js" />
+    <Content Include="ReportSection\EmploymentProjectDetailFromSearch.aspx" />
+    <Content Include="ReportSection\EmploymentProjectsWithEmploymentStatus.aspx" />
+    <Content Include="ReportSection\EmploymentProjectsWithEmploymentStatus.js" />
+    <Content Include="ReportSection\EmploymentProofNotGot.aspx" />
+    <Content Include="ReportSection\EmploymentProofNotGot.js" />
+    <Content Include="ReportSection\FlagWiseClosedCandidateTask.aspx" />
+    <Content Include="ReportSection\FlagwiseCompanyClosedTask.aspx" />
+    <Content Include="ReportSection\FlagwiseCompanyOpenTask.aspx" />
+    <Content Include="ReportSection\FlagWiseOpenCandidateTask.aspx" />
+    <Content Include="ReportSection\GotJob.aspx" />
+    <Content Include="ReportSection\GotJobN.aspx" />
+    <Content Include="ReportSection\GotJobWithPlacements.aspx" />
+    <Content Include="ReportSection\OwnerWiseClosedCandidateTask.aspx" />
+    <Content Include="ReportSection\OwnerwiseCompanyClosedTask.aspx" />
+    <Content Include="ReportSection\OwnerWiseCompanyOpenTask.aspx" />
+    <Content Include="ReportSection\OwnerWiseOpenCandidateTask.aspx" />
+    <Content Include="ReportSection\OwnerwiseTrainingWorkDistribution.aspx" />
+    <Content Include="ReportSection\OwnerwiseTrainingWorkDistribution.js" />
+    <Content Include="ReportSection\ParentCompaniesReport.aspx" />
+    <Content Include="ReportSection\ParentCompaniesReport.js" />
+    <Content Include="ReportSection\Placements.aspx" />
+    <Content Include="ReportSection\PlacementsN.aspx" />
+    <Content Include="ReportSection\PlacementWithTrainingProgram.aspx" />
+    <Content Include="ReportSection\PleaseWait.aspx" />
+    <Content Include="ReportSection\RadReport.aspx" />
+    <Content Include="ReportSection\RegistrationDetaiFromSearch.aspx" />
+    <Content Include="ReportSection\RejectionDataForCandidates.aspx" />
+    <Content Include="ReportSection\RejectionDataForCandidates.js" />
+    <Content Include="ReportSection\ReportList.aspx" />
+    <Content Include="ReportSection\SocialEconomicIndicatorReport.js" />
+    <Content Include="ReportSection\statusFullPage.aspx" />
+    <Content Include="ReportSection\TrainingandEmployment.aspx" />
+    <Content Include="ReportSection\TrainingPrograms.aspx" />
+    <Content Include="ReportSection\TrainingPrograms.js" />
+    <Content Include="ReportSection\TrainingProjectReports.aspx" />
+    <Content Include="ReportSection\TrainingProjectReports.js" />
+    <Content Include="ReportSection\tRptAllRegisteredCandidates.aspx" />
+    <Content Include="ReportSection\Vacancy.aspx" />
+    <Content Include="ReportSection\Vacancy.js" />
+    <Content Include="Reports\Exception.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\RadReport.aspx" />
+    <Content Include="Reports\rptJobPlaceCharts.aspx" />
+    <Content Include="ReportSection\SocialEconomicIndicatorReport.aspx" />
+    <Content Include="Reports\tdummy.aspx" />
+    <Content Include="Scripts\Common.js" />
+    <Content Include="Scripts\jquery-1.7.1-vsdoc.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Scripts\jquery-2.0.2-vsdoc.js" />
+    <Content Include="Scripts\jquery-2.0.2.min.js" />
+    <Content Include="MobileDevices\mobileMaster.Master" />
+    <Content Include="Fonts\DroidSansMono.ttf" />
+    <Content Include="Fonts\CutiveMono-Regular.ttf" />
+    <Content Include="Reports\Vacancy.mrt" />
+    <None Include="Scripts\jquery-2.1.4.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.4.js" />
+    <Content Include="Scripts\jquery-2.1.4.min.js" />
+    <Content Include="Scripts\jquery.blockUI.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\jquery.cookie.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\jquery.cookie.pack.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\jquery.easy-paging.js" />
+    <Content Include="Scripts\jquery.pager.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\jquery.paging.min.js" />
+    <Content Include="Scripts\PleaseWait.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\ui\i18n\jquery.ui.i18n.all.js" />
+    <Content Include="Scripts\ui\i18n\ui.datepicker-ar.js" />
+    <Content Include="Scripts\ui\i18n\ui.datepicker-bg.js" />
+    <Content Include="Scripts\ui\i18n\ui.datepicker-ca.js" />
+    <Content Include="Scripts\ui\i18n\ui.datepicker-cs.js" />
+    <Content Include="Scripts\ui\i18n\ui.datepicker-da.js" />
+    <Content Include="Scripts\ui\i18n\ui.datepicker-de.js" />
+    <Content Include="Scripts\ui\i18n\ui.datepicker-eo.js" />
+    <Content Include="Scripts\ui\i18n\ui.datepicker-es.js" />
+    <Content Include="Scripts\ui\i18n\ui.datepicker-fi.js" />
+    <Content Include="Scripts\ui\i18n\ui.datepicker-fr.js" />
+    <Content Include="Scripts\ui\i18n\ui.datepicker-he.js" />
+    <Content Include="Scripts\ui\i18n\ui.datepicker-hr.js" />
+    <Content Include="Scripts\ui\i18n\ui.datepicker-hu.js" />
+    <Content Include="Scripts\ui\i18n\ui.datepicker-hy.js" />
+    <Content Include="Scripts\ui\i18n\ui.datepicker-id.js" />
+    <Content Include="Scripts\ui\i18n\ui.datepicker-is.js" />
+    <Content Include="Scripts\ui\i18n\ui.datepicker-it.js" />
+    <Content Include="Scripts\ui\i18n\ui.datepicker-ja.js" />
+    <Content Include="Scripts\ui\i18n\ui.datepicker-ko.js" />
+    <Content Include="Scripts\ui\i18n\ui.datepicker-lt.js" />
+    <Content Include="Scripts\ui\i18n\ui.datepicker-lv.js" />
+    <Content Include="Scripts\ui\i18n\ui.datepicker-nl.js" />
+    <Content Include="Scripts\ui\i18n\ui.datepicker-no.js" />
+    <Content Include="Scripts\ui\i18n\ui.datepicker-pl.js" />
+    <Content Include="Scripts\ui\i18n\ui.datepicker-pt-BR.js" />
+    <Content Include="Scripts\ui\i18n\ui.datepicker-ro.js" />
+    <Content Include="Scripts\ui\i18n\ui.datepicker-ru.js" />
+    <Content Include="Scripts\ui\i18n\ui.datepicker-sk.js" />
+    <Content Include="Scripts\ui\i18n\ui.datepicker-sl.js" />
+    <Content Include="Scripts\ui\i18n\ui.datepicker-sv.js" />
+    <Content Include="Scripts\ui\i18n\ui.datepicker-th.js" />
+    <Content Include="Scripts\ui\i18n\ui.datepicker-tr.js" />
+    <Content Include="Scripts\ui\i18n\ui.datepicker-uk.js" />
+    <Content Include="Scripts\ui\i18n\ui.datepicker-zh-CN.js" />
+    <Content Include="Scripts\ui\i18n\ui.datepicker-zh-TW.js" />
+    <Content Include="StyleSheets\addStyles.css" />
+    <Content Include="StyleSheets\contentStyle.css" />
+    <Content Include="StyleSheets\MobileStyles.css" />
+    <Content Include="StyleSheets\telContent.css" />
+    <Content Include="Tags\test.aspx" />
+    <Content Include="Test1\Test1.aspx" />
+    <Content Include="Training\AddNonRecommendedCandidate.aspx" />
+    <Content Include="Training\AddNonRecommendedCandidate.js" />
+    <Content Include="Training\AddRecommendedCandidate.aspx" />
+    <Content Include="Training\AddRecommendedCandidate.js" />
+    <Content Include="Training\AddTrainingProgram.aspx" />
+    <Content Include="Training\AddTrainingProgram.js" />
+    <Content Include="Training\AddTrainingProject.aspx" />
+    <Content Include="Training\AddTrainingProject.js" />
+    <Content Include="Training\AssignedList.aspx" />
+    <Content Include="Training\AssignedList.js" />
+    <Content Include="Training\CandidateCalling.aspx" />
+    <Content Include="Training\CandidateNotes.aspx" />
+    <Content Include="Training\ListOfOpenTrainingProjectMoreHelp.htm" />
+    <Content Include="Training\ListOfOpenTrainingProjects.aspx" />
+    <Content Include="Training\ListOfOpenTrainingProjects.js" />
+    <Content Include="Training\OffLineCandidateCallingList.aspx" />
+    <Content Include="Training\OffLineCandidateCallingList.js" />
+    <Content Include="Training\test.aspx" />
+    <Content Include="Training\TrainingProjectAssignedListTrainingCycle.aspx" />
+    <Content Include="Training\TrainingProjectsAddNonRecommendedCandidatesMoreHelp.htm" />
+    <Content Include="Training\TrainingProjectsAddRecommendedCandidates.aspx" />
+    <Content Include="Training\TrainingProjectsAddRecommendedCandidatesMoreHelp.htm" />
+    <Content Include="Training\TrainingProjectsAssignedListTrainingCycleMoreHelp.htm" />
+    <Content Include="Training\TrainingProjectsNonRecomendedCandidates.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery-2.1.4.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\AddDropDownOptions.aspx.cs">
+      <DependentUpon>AddDropDownOptions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddDropDownOptions.aspx.designer.cs">
+      <DependentUpon>AddDropDownOptions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Admin.master.cs">
+      <DependentUpon>Admin.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin.master.designer.cs">
+      <DependentUpon>Admin.master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DefaultAgeForCandidatesInSearch.aspx.cs">
+      <DependentUpon>DefaultAgeForCandidatesInSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DefaultAgeForCandidatesInSearch.aspx.designer.cs">
+      <DependentUpon>DefaultAgeForCandidatesInSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DropdownTest.aspx.cs">
+      <DependentUpon>DropdownTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DropdownTest.aspx.designer.cs">
+      <DependentUpon>DropdownTest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\EmployeeList.aspx.cs">
+      <DependentUpon>EmployeeList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EmployeeList.aspx.designer.cs">
+      <DependentUpon>EmployeeList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\RegisterEmployee.aspx.cs">
+      <DependentUpon>RegisterEmployee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\RegisterEmployee.aspx.designer.cs">
+      <DependentUpon>RegisterEmployee.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ViewParameters.aspx.cs">
+      <DependentUpon>ViewParameters.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ViewParameters.aspx.designer.cs">
+      <DependentUpon>ViewParameters.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate\dashBoard.aspx.cs">
+      <DependentUpon>dashBoard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidate\dashBoard.aspx.designer.cs">
+      <DependentUpon>dashBoard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate\eiFirstPage.aspx.cs">
+      <DependentUpon>eiFirstPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidate\eiFirstPage.aspx.designer.cs">
+      <DependentUpon>eiFirstPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate\ProfileHistory\AllActiveCandidates.aspx.cs">
+      <DependentUpon>AllActiveCandidates.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidate\ProfileHistory\AllActiveCandidates.aspx.designer.cs">
+      <DependentUpon>AllActiveCandidates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate\ProfileHistory\Recommended Job Type.aspx.cs">
+      <DependentUpon>Recommended Job Type.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidate\ProfileHistory\Recommended Job Type.aspx.designer.cs">
+      <DependentUpon>Recommended Job Type.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate\ProfileHistory\SocioEconomicList.aspx.cs">
+      <DependentUpon>SocioEconomicList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidate\ProfileHistory\SocioEconomicList.aspx.designer.cs">
+      <DependentUpon>SocioEconomicList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate\SocioEconomicIndicator.aspx.cs">
+      <DependentUpon>SocioEconomicIndicator.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidate\SocioEconomicIndicator.aspx.designer.cs">
+      <DependentUpon>SocioEconomicIndicator.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Company\AddNonRecommendedCandidate.aspx.cs">
+      <DependentUpon>AddNonRecommendedCandidate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Company\AddNonRecommendedCandidate.aspx.designer.cs">
+      <DependentUpon>AddNonRecommendedCandidate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="eGlobals.cs" />
+    <Compile Include="enableindia.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>enableindia.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MobileDevices\candidateRegistration.aspx.cs">
+      <DependentUpon>candidateRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MobileDevices\candidateRegistration.aspx.designer.cs">
+      <DependentUpon>candidateRegistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MobileDevices\mdDefaultPage.aspx.cs">
+      <DependentUpon>mdDefaultPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MobileDevices\mdDefaultPage.aspx.designer.cs">
+      <DependentUpon>mdDefaultPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MobileDevices\mdLogin.aspx.cs">
+      <DependentUpon>mdLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MobileDevices\mdLogin.aspx.designer.cs">
+      <DependentUpon>mdLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MobileDevices\mdUnregisterCandidate.aspx.cs">
+      <DependentUpon>mdUnregisterCandidate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MobileDevices\mdUnregisterCandidate.aspx.designer.cs">
+      <DependentUpon>mdUnregisterCandidate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MobileDevices\PageProcessor.aspx.cs">
+      <DependentUpon>PageProcessor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MobileDevices\PageProcessor.aspx.designer.cs">
+      <DependentUpon>PageProcessor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MobileDevices\ProfileHistory\mdAddViewCandidateHistory.aspx.cs">
+      <DependentUpon>mdAddViewCandidateHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MobileDevices\ProfileHistory\mdAddViewCandidateHistory.aspx.designer.cs">
+      <DependentUpon>mdAddViewCandidateHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MobileDevices\ProfileHistory\mdCandidateKnowledgeTrainingPopUp.aspx.cs">
+      <DependentUpon>mdCandidateKnowledgeTrainingPopUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MobileDevices\ProfileHistory\mdCandidateKnowledgeTrainingPopUp.aspx.designer.cs">
+      <DependentUpon>mdCandidateKnowledgeTrainingPopUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MobileDevices\ProfileHistory\mdEducationalQualification.aspx.cs">
+      <DependentUpon>mdEducationalQualification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MobileDevices\ProfileHistory\mdEducationalQualification.aspx.designer.cs">
+      <DependentUpon>mdEducationalQualification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MobileDevices\mdReportsSection\mdRegisteredCandidateGrid.aspx.cs">
+      <DependentUpon>mdRegisteredCandidateGrid.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MobileDevices\mdReportsSection\mdRegisteredCandidateGrid.aspx.designer.cs">
+      <DependentUpon>mdRegisteredCandidateGrid.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MobileDevices\mdReportsSection\mdRptRegisteredCandidates.aspx.cs">
+      <DependentUpon>mdRptRegisteredCandidates.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MobileDevices\mdReportsSection\mdRptRegisteredCandidates.aspx.designer.cs">
+      <DependentUpon>mdRptRegisteredCandidates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MobileDevices\mobileMaster.Master.cs">
+      <DependentUpon>mobileMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MobileDevices\mobileMaster.Master.designer.cs">
+      <DependentUpon>mobileMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MobileDevices\ProfileHistory\mdAllActiveCandidates.aspx.cs">
+      <DependentUpon>mdAllActiveCandidates.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MobileDevices\ProfileHistory\mdAllActiveCandidates.aspx.designer.cs">
+      <DependentUpon>mdAllActiveCandidates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MobileDevices\ProfileHistory\mdCandidateJobProfile.aspx.cs">
+      <DependentUpon>mdCandidateJobProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MobileDevices\ProfileHistory\mdCandidateJobProfile.aspx.designer.cs">
+      <DependentUpon>mdCandidateJobProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MobileDevices\ProfileHistory\mdCandidateKnowledgeTraining.aspx.cs">
+      <DependentUpon>mdCandidateKnowledgeTraining.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MobileDevices\ProfileHistory\mdCandidateKnowledgeTraining.aspx.designer.cs">
+      <DependentUpon>mdCandidateKnowledgeTraining.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MobileDevices\ProfileHistory\mdCandidateWorkExperience.aspx.cs">
+      <DependentUpon>mdCandidateWorkExperience.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MobileDevices\ProfileHistory\mdCandidateWorkExperience.aspx.designer.cs">
+      <DependentUpon>mdCandidateWorkExperience.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MobileDevices\ProfileHistory\mdRegistration.aspx.cs">
+      <DependentUpon>mdRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MobileDevices\ProfileHistory\mdRegistration.aspx.designer.cs">
+      <DependentUpon>mdRegistration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Old_App_Code\BAL\SocioEconomicIndicatorBAL.cs" />
+    <Compile Include="Old_App_Code\CommonService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Old_App_Code\BAL\CandidateCallingBAL.cs" />
+    <Compile Include="Old_App_Code\BAL\CandidateComputerKnowledgeBAL.cs" />
+    <Compile Include="Old_App_Code\BAL\CandidateEducationalQualificationsBAL.cs" />
+    <Compile Include="Old_App_Code\BAL\CandidateFlagsBAL.cs" />
+    <Compile Include="Old_App_Code\BAL\CandidateGroupsBAL.cs" />
+    <Compile Include="Old_App_Code\BAL\CandidateHistoryBAL.cs" />
+    <Compile Include="Old_App_Code\BAL\CandidateJobProfileBAL.cs" />
+    <Compile Include="Old_App_Code\BAL\CandidateKnowledgeTrainingBAL.cs" />
+    <Compile Include="Old_App_Code\BAL\CandidateKnownLanguagesBAL.cs" />
+    <Compile Include="Old_App_Code\BAL\CandidatePhoneAddressHistoryBAL.cs" />
+    <Compile Include="Old_App_Code\BAL\CandidateRecommendedRolesBAL.cs" />
+    <Compile Include="Old_App_Code\BAL\CandidateRecommendedTrainingProgramsBAL.cs" />
+    <Compile Include="Old_App_Code\BAL\CandidatesBAL.cs" />
+    <Compile Include="Old_App_Code\BAL\CandidateWorkExperienceBAL.cs" />
+    <Compile Include="Old_App_Code\BAL\CitiesBAL.cs" />
+    <Compile Include="Old_App_Code\BAL\CompaniesBAL.cs" />
+    <Compile Include="Old_App_Code\BAL\CompanyContactsBAL.cs" />
+    <Compile Include="Old_App_Code\BAL\CompanyFlagsBAL.cs" />
+    <Compile Include="Old_App_Code\BAL\ComputerKnowledgeBAL.cs" />
+    <Compile Include="Old_App_Code\BAL\CountriesBAL.cs" />
+    <Compile Include="Old_App_Code\BAL\DefaultsBAL.cs" />
+    <Compile Include="Old_App_Code\BAL\DisabilitySubTypesBAL.cs" />
+    <Compile Include="Old_App_Code\BAL\DisabilityTypesBAL.cs" />
+    <Compile Include="Old_App_Code\BAL\EducationBAL.cs" />
+    <Compile Include="Old_App_Code\BAL\EmployeeBAL.cs" />
+    <Compile Include="Old_App_Code\BAL\EmploymentProjectBAL.cs" />
+    <Compile Include="Old_App_Code\BAL\EmploymentProjectContactBAL.cs" />
+    <Compile Include="Old_App_Code\BAL\JobRolesBAL.cs" />
+    <Compile Include="Old_App_Code\BAL\JobsBAL.cs" />
+    <Compile Include="Old_App_Code\BAL\LanguagesBAL.cs" />
+    <Compile Include="Old_App_Code\BAL\LoginRolesRolesBAL.cs" />
+    <Compile Include="Old_App_Code\BAL\NGOContactsBAL.cs" />
+    <Compile Include="Old_App_Code\BAL\NGOsBAL.cs" />
+    <Compile Include="Old_App_Code\BAL\ParentCompaniesBAL.cs" />
+    <Compile Include="Old_App_Code\BAL\SearchCandidatesBAL.cs" />
+    <Compile Include="Old_App_Code\BAL\StatesBAL.cs" />
+    <Compile Include="Old_App_Code\BAL\TrainingProgramBAL.cs" />
+    <Compile Include="Old_App_Code\BAL\TrainingProjectBAL.cs" />
+    <Compile Include="Old_App_Code\BAL\VacancyBAL.cs" />
+    <Compile Include="Old_App_Code\DAL\CandidateCallingDAL.cs" />
+    <Compile Include="Old_App_Code\DAL\CandidateComputerKnowledgeDAL.cs" />
+    <Compile Include="Old_App_Code\DAL\CandidateEducationalQualificationsDAL.cs" />
+    <Compile Include="Old_App_Code\DAL\CandidateFlagsDAL.cs" />
+    <Compile Include="Old_App_Code\DAL\CandidateGroupsDAL.cs" />
+    <Compile Include="Old_App_Code\DAL\CandidateHistoryDAL.cs" />
+    <Compile Include="Old_App_Code\DAL\CandidateJobProfileDAL.cs" />
+    <Compile Include="Old_App_Code\DAL\CandidateKnowledgeTrainingDAL.cs" />
+    <Compile Include="Old_App_Code\DAL\CandidateKnownLanguagesDAL.cs" />
+    <Compile Include="Old_App_Code\DAL\CandidatePhoneAddressHistoryDAL.cs" />
+    <Compile Include="Old_App_Code\DAL\CandidateRecommendedRolesDAL.cs" />
+    <Compile Include="Old_App_Code\DAL\CandidateRecommendedTrainingProgramsDAL.cs" />
+    <Compile Include="Old_App_Code\DAL\CandidatesDAL.cs" />
+    <Compile Include="Old_App_Code\DAL\CandidateWorkExperienceDAL.cs" />
+    <Compile Include="Old_App_Code\DAL\CitiesDAL.cs" />
+    <Compile Include="Old_App_Code\DAL\CompaniesDAL.cs" />
+    <Compile Include="Old_App_Code\DAL\CompanyContactsDAL.cs" />
+    <Compile Include="Old_App_Code\DAL\CompanyFlagsDAL.cs" />
+    <Compile Include="Old_App_Code\DAL\ComputerKnowledgeDAL.cs" />
+    <Compile Include="Old_App_Code\DAL\CountriesDAL.cs" />
+    <Compile Include="Old_App_Code\DAL\DefaultsDAL.cs" />
+    <Compile Include="Old_App_Code\DAL\DisabilitySubTypesDAL.cs" />
+    <Compile Include="Old_App_Code\DAL\DisabilityTypesDAL.cs" />
+    <Compile Include="Old_App_Code\DAL\EducationDAL.cs" />
+    <Compile Include="Old_App_Code\DAL\EmployeeDAL.cs" />
+    <Compile Include="Old_App_Code\DAL\EmploymentProjectContactDAL.cs" />
+    <Compile Include="Old_App_Code\DAL\EmploymentProjectDAL.cs" />
+    <Compile Include="Old_App_Code\DAL\JobRolesDAL.cs" />
+    <Compile Include="Old_App_Code\DAL\JobsDAL.cs" />
+    <Compile Include="Old_App_Code\DAL\LanguagesDAL.cs" />
+    <Compile Include="Old_App_Code\DAL\LoginRolesDAL.cs" />
+    <Compile Include="Old_App_Code\DAL\NGOContactsDAL.cs" />
+    <Compile Include="Old_App_Code\DAL\NGOsDAL.cs" />
+    <Compile Include="Old_App_Code\DAL\ParentCompaniesDAL.cs" />
+    <Compile Include="Old_App_Code\DAL\SearchCandidatesDAL.cs" />
+    <Compile Include="Old_App_Code\DAL\SocioEconomicIndicatorDAL.cs" />
+    <Compile Include="Old_App_Code\DAL\StatesDAL.cs" />
+    <Compile Include="Old_App_Code\DAL\TestDAL.cs" />
+    <Compile Include="Old_App_Code\DAL\TrainingProgramDAL.cs" />
+    <Compile Include="Old_App_Code\DAL\TrainingProjectDAL.cs" />
+    <Compile Include="Old_App_Code\DAL\VacancyDAL.cs" />
+    <Compile Include="Old_App_Code\BAL\TestBAL.cs" />
+    <Compile Include="Old_App_Code\BAL\TestBAL1.cs" />
+    <Compile Include="DBAccess.cs" />
+    <Compile Include="Candidate\Candidate.master.cs">
+      <DependentUpon>Candidate.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidate\Candidate.master.designer.cs">
+      <DependentUpon>Candidate.master</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate\CandidateCallingListPrintForm.aspx.cs">
+      <DependentUpon>CandidateCallingListPrintForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidate\CandidateCallingListPrintForm.aspx.designer.cs">
+      <DependentUpon>CandidateCallingListPrintForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate\CandidatesList.aspx.cs">
+      <DependentUpon>CandidatesList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidate\CandidatesList.aspx.designer.cs">
+      <DependentUpon>CandidatesList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate\EducationalQualificationsPopUp.aspx.cs">
+      <DependentUpon>EducationalQualificationsPopUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidate\EducationalQualificationsPopUp.aspx.designer.cs">
+      <DependentUpon>EducationalQualificationsPopUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate\ProfileHistory\AddViewCandidateHistory.aspx.cs">
+      <DependentUpon>AddViewCandidateHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidate\ProfileHistory\AddViewCandidateHistory.aspx.designer.cs">
+      <DependentUpon>AddViewCandidateHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate\ProfileHistory\AddViewCandidateHistoryPopup.aspx.cs">
+      <DependentUpon>AddViewCandidateHistoryPopup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidate\ProfileHistory\AddViewCandidateHistoryPopup.aspx.designer.cs">
+      <DependentUpon>AddViewCandidateHistoryPopup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate\ProfileHistory\CandidateJobProfile.aspx.cs">
+      <DependentUpon>CandidateJobProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidate\ProfileHistory\CandidateJobProfile.aspx.designer.cs">
+      <DependentUpon>CandidateJobProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate\ProfileHistory\CandidateKnowledgeTraining.aspx.cs">
+      <DependentUpon>CandidateKnowledgeTraining.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidate\ProfileHistory\CandidateKnowledgeTraining.aspx.designer.cs">
+      <DependentUpon>CandidateKnowledgeTraining.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate\ProfileHistory\CandidateKnowledgeTrainingPopUp.aspx.cs">
+      <DependentUpon>CandidateKnowledgeTrainingPopUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidate\ProfileHistory\CandidateKnowledgeTrainingPopUp.aspx.designer.cs">
+      <DependentUpon>CandidateKnowledgeTrainingPopUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate\ProfileHistory\CandidatePhoneAddressHistory.aspx.cs">
+      <DependentUpon>CandidatePhoneAddressHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidate\ProfileHistory\CandidatePhoneAddressHistory.aspx.designer.cs">
+      <DependentUpon>CandidatePhoneAddressHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate\ProfileHistory\CandidateWorkExperience.aspx.cs">
+      <DependentUpon>CandidateWorkExperience.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidate\ProfileHistory\CandidateWorkExperience.aspx.designer.cs">
+      <DependentUpon>CandidateWorkExperience.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate\ProfileHistory\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidate\ProfileHistory\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate\ProfileHistory\EducationalQualifications.aspx.cs">
+      <DependentUpon>EducationalQualifications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidate\ProfileHistory\EducationalQualifications.aspx.designer.cs">
+      <DependentUpon>EducationalQualifications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate\ProfileHistory\Registration.aspx.cs">
+      <DependentUpon>Registration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidate\ProfileHistory\Registration.aspx.designer.cs">
+      <DependentUpon>Registration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate\ProfileHistory\Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidate\ProfileHistory\Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate\ProfileHistory\ToBeProfiledCandidates.aspx.cs">
+      <DependentUpon>ToBeProfiledCandidates.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidate\ProfileHistory\ToBeProfiledCandidates.aspx.designer.cs">
+      <DependentUpon>ToBeProfiledCandidates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate\Registration\EnableIndiaCandidate.aspx.cs">
+      <DependentUpon>EnableIndiaCandidate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidate\Registration\EnableIndiaCandidate.aspx.designer.cs">
+      <DependentUpon>EnableIndiaCandidate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate\Registration\OtherNGOCandidate.aspx.cs">
+      <DependentUpon>OtherNGOCandidate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidate\Registration\OtherNGOCandidate.aspx.designer.cs">
+      <DependentUpon>OtherNGOCandidate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate\Registration\test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidate\Registration\test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate\Registration\UnregisteredBlankForm.aspx.cs">
+      <DependentUpon>UnregisteredBlankForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidate\Registration\UnregisteredBlankForm.aspx.designer.cs">
+      <DependentUpon>UnregisteredBlankForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate\Registration\UnregisteredBlankPrintForm.aspx.cs">
+      <DependentUpon>UnregisteredBlankPrintForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidate\Registration\UnregisteredBlankPrintForm.aspx.designer.cs">
+      <DependentUpon>UnregisteredBlankPrintForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate\Registration\ViewDataOptionReport.aspx.cs">
+      <DependentUpon>ViewDataOptionReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidate\Registration\ViewDataOptionReport.aspx.designer.cs">
+      <DependentUpon>ViewDataOptionReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate\Registration\ViewDataOptions.aspx.cs">
+      <DependentUpon>ViewDataOptions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidate\Registration\ViewDataOptions.aspx.designer.cs">
+      <DependentUpon>ViewDataOptions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate\TaskManagement.aspx.cs">
+      <DependentUpon>TaskManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidate\TaskManagement.aspx.designer.cs">
+      <DependentUpon>TaskManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate\ViewCandidateCallingList.aspx.cs">
+      <DependentUpon>ViewCandidateCallingList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidate\ViewCandidateCallingList.aspx.designer.cs">
+      <DependentUpon>ViewCandidateCallingList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Candidate\WorkExperiencePopup.aspx.cs">
+      <DependentUpon>WorkExperiencePopup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Candidate\WorkExperiencePopup.aspx.designer.cs">
+      <DependentUpon>WorkExperiencePopup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Company\AddCompany.aspx.cs">
+      <DependentUpon>AddCompany.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Company\AddCompany.aspx.designer.cs">
+      <DependentUpon>AddCompany.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Company\AddCompanyContact.aspx.cs">
+      <DependentUpon>AddCompanyContact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Company\AddCompanyContact.aspx.designer.cs">
+      <DependentUpon>AddCompanyContact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Company\AddEmploymentProjects.aspx.cs">
+      <DependentUpon>AddEmploymentProjects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Company\AddEmploymentProjects.aspx.designer.cs">
+      <DependentUpon>AddEmploymentProjects.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Company\AddNotesPopup.aspx.cs">
+      <DependentUpon>AddNotesPopup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Company\AddNotesPopup.aspx.designer.cs">
+      <DependentUpon>AddNotesPopup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Company\AddParentCompany.aspx.cs">
+      <DependentUpon>AddParentCompany.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Company\AddParentCompany.aspx.designer.cs">
+      <DependentUpon>AddParentCompany.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Company\AddRecommendedCandidate.aspx.cs">
+      <DependentUpon>AddRecommendedCandidate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Company\AddRecommendedCandidate.aspx.designer.cs">
+      <DependentUpon>AddRecommendedCandidate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Company\AddVacancy.aspx.cs">
+      <DependentUpon>AddVacancy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Company\AddVacancy.aspx.designer.cs">
+      <DependentUpon>AddVacancy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Company\AddViewCompanyHistory.aspx.cs">
+      <DependentUpon>AddViewCompanyHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Company\AddViewCompanyHistory.aspx.designer.cs">
+      <DependentUpon>AddViewCompanyHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Company\AddViewCompanyHistoryPopup.aspx.cs">
+      <DependentUpon>AddViewCompanyHistoryPopup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Company\AddViewCompanyHistoryPopup.aspx.designer.cs">
+      <DependentUpon>AddViewCompanyHistoryPopup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Company\AssignedList.aspx.cs">
+      <DependentUpon>AssignedList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Company\AssignedList.aspx.designer.cs">
+      <DependentUpon>AssignedList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Company\CandidateNotesForEmploymentProject.aspx.cs">
+      <DependentUpon>CandidateNotesForEmploymentProject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Company\CandidateNotesForEmploymentProject.aspx.designer.cs">
+      <DependentUpon>CandidateNotesForEmploymentProject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Company\InterviewList.aspx.cs">
+      <DependentUpon>InterviewList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Company\InterviewList.aspx.designer.cs">
+      <DependentUpon>InterviewList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Company\ListOfOpenEmploymentProject.aspx.cs">
+      <DependentUpon>ListOfOpenEmploymentProject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Company\ListOfOpenEmploymentProject.aspx.designer.cs">
+      <DependentUpon>ListOfOpenEmploymentProject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Company\ManageCompanyTask.aspx.cs">
+      <DependentUpon>ManageCompanyTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Company\ManageCompanyTask.aspx.designer.cs">
+      <DependentUpon>ManageCompanyTask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Company\ManageOpenEmploymentProjects.aspx.cs">
+      <DependentUpon>ManageOpenEmploymentProjects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Company\ManageOpenEmploymentProjects.aspx.designer.cs">
+      <DependentUpon>ManageOpenEmploymentProjects.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Company\SuccessfulCandidateList.aspx.cs">
+      <DependentUpon>SuccessfulCandidateList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Company\SuccessfulCandidateList.aspx.designer.cs">
+      <DependentUpon>SuccessfulCandidateList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.cs" />
+    <Compile Include="ITextPopup.aspx.cs">
+      <DependentUpon>ITextPopup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ITextPopup.aspx.designer.cs">
+      <DependentUpon>ITextPopup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NGO\Contacts.aspx.cs">
+      <DependentUpon>Contacts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NGO\Contacts.aspx.designer.cs">
+      <DependentUpon>Contacts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NGO\NGOList.aspx.cs">
+      <DependentUpon>NGOList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NGO\NGOList.aspx.designer.cs">
+      <DependentUpon>NGOList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NGO\NGOMaster.master.cs">
+      <DependentUpon>NGOMaster.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NGO\NGOMaster.master.designer.cs">
+      <DependentUpon>NGOMaster.master</DependentUpon>
+    </Compile>
+    <Compile Include="NGO\RegisterNGO.aspx.cs">
+      <DependentUpon>RegisterNGO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NGO\RegisterNGO.aspx.designer.cs">
+      <DependentUpon>RegisterNGO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Popup.master.cs">
+      <DependentUpon>Popup.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Popup.master.designer.cs">
+      <DependentUpon>Popup.master</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\AssemblyInfo.cs" />
+    <Compile Include="RecoverPassword.aspx.cs">
+      <DependentUpon>RecoverPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RecoverPassword.aspx.designer.cs">
+      <DependentUpon>RecoverPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSection\AllActiveRegisteredCandidateReport.aspx.cs">
+      <DependentUpon>AllActiveRegisteredCandidateReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportSection\AllActiveRegisteredCandidateReport.aspx.designer.cs">
+      <DependentUpon>AllActiveRegisteredCandidateReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSection\AssignedListClosedEmploymentProject.aspx.cs">
+      <DependentUpon>AssignedListClosedEmploymentProject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportSection\AssignedListClosedEmploymentProject.aspx.designer.cs">
+      <DependentUpon>AssignedListClosedEmploymentProject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSection\AssignedListPageForClosedTrainingProjects.aspx.cs">
+      <DependentUpon>AssignedListPageForClosedTrainingProjects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportSection\AssignedListPageForClosedTrainingProjects.aspx.designer.cs">
+      <DependentUpon>AssignedListPageForClosedTrainingProjects.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSection\AssignedListPageFromSearch.aspx.cs">
+      <DependentUpon>AssignedListPageFromSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportSection\AssignedListPageFromSearch.aspx.designer.cs">
+      <DependentUpon>AssignedListPageFromSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSection\CandidateTask.aspx.cs">
+      <DependentUpon>CandidateTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportSection\CandidateTask.aspx.designer.cs">
+      <DependentUpon>CandidateTask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSection\CandidateWiseTrainingEmploymentRelation.aspx.cs">
+      <DependentUpon>CandidateWiseTrainingEmploymentRelation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportSection\CandidateWiseTrainingEmploymentRelation.aspx.designer.cs">
+      <DependentUpon>CandidateWiseTrainingEmploymentRelation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSection\CompanyReport.aspx.cs">
+      <DependentUpon>CompanyReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportSection\CompanyReport.aspx.designer.cs">
+      <DependentUpon>CompanyReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSection\CompanyTask.aspx.cs">
+      <DependentUpon>CompanyTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportSection\CompanyTask.aspx.designer.cs">
+      <DependentUpon>CompanyTask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSection\EmploymentProjectDetailFromSearch.aspx.cs">
+      <DependentUpon>EmploymentProjectDetailFromSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportSection\EmploymentProjectDetailFromSearch.aspx.designer.cs">
+      <DependentUpon>EmploymentProjectDetailFromSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSection\EmploymentProjectsWithEmploymentStatus.aspx.cs">
+      <DependentUpon>EmploymentProjectsWithEmploymentStatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportSection\EmploymentProjectsWithEmploymentStatus.aspx.designer.cs">
+      <DependentUpon>EmploymentProjectsWithEmploymentStatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSection\EmploymentProofNotGot.aspx.cs">
+      <DependentUpon>EmploymentProofNotGot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportSection\EmploymentProofNotGot.aspx.designer.cs">
+      <DependentUpon>EmploymentProofNotGot.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSection\FlagWiseClosedCandidateTask.aspx.cs">
+      <DependentUpon>FlagWiseClosedCandidateTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportSection\FlagWiseClosedCandidateTask.aspx.designer.cs">
+      <DependentUpon>FlagWiseClosedCandidateTask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSection\FlagwiseCompanyClosedTask.aspx.cs">
+      <DependentUpon>FlagwiseCompanyClosedTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportSection\FlagwiseCompanyClosedTask.aspx.designer.cs">
+      <DependentUpon>FlagwiseCompanyClosedTask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSection\FlagwiseCompanyOpenTask.aspx.cs">
+      <DependentUpon>FlagwiseCompanyOpenTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportSection\FlagwiseCompanyOpenTask.aspx.designer.cs">
+      <DependentUpon>FlagwiseCompanyOpenTask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSection\FlagWiseOpenCandidateTask.aspx.cs">
+      <DependentUpon>FlagWiseOpenCandidateTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportSection\FlagWiseOpenCandidateTask.aspx.designer.cs">
+      <DependentUpon>FlagWiseOpenCandidateTask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSection\GotJob.aspx.cs">
+      <DependentUpon>GotJob.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportSection\GotJob.aspx.designer.cs">
+      <DependentUpon>GotJob.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSection\GotJobN.aspx.cs">
+      <DependentUpon>GotJobN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportSection\GotJobN.aspx.designer.cs">
+      <DependentUpon>GotJobN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSection\GotJobWithPlacements.aspx.cs">
+      <DependentUpon>GotJobWithPlacements.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportSection\GotJobWithPlacements.aspx.designer.cs">
+      <DependentUpon>GotJobWithPlacements.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSection\OwnerWiseClosedCandidateTask.aspx.cs">
+      <DependentUpon>OwnerWiseClosedCandidateTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportSection\OwnerWiseClosedCandidateTask.aspx.designer.cs">
+      <DependentUpon>OwnerWiseClosedCandidateTask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSection\OwnerwiseCompanyClosedTask.aspx.cs">
+      <DependentUpon>OwnerwiseCompanyClosedTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportSection\OwnerwiseCompanyClosedTask.aspx.designer.cs">
+      <DependentUpon>OwnerwiseCompanyClosedTask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSection\OwnerWiseCompanyOpenTask.aspx.cs">
+      <DependentUpon>OwnerWiseCompanyOpenTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportSection\OwnerWiseCompanyOpenTask.aspx.designer.cs">
+      <DependentUpon>OwnerWiseCompanyOpenTask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSection\OwnerWiseOpenCandidateTask.aspx.cs">
+      <DependentUpon>OwnerWiseOpenCandidateTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportSection\OwnerWiseOpenCandidateTask.aspx.designer.cs">
+      <DependentUpon>OwnerWiseOpenCandidateTask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSection\OwnerwiseTrainingWorkDistribution.aspx.cs">
+      <DependentUpon>OwnerwiseTrainingWorkDistribution.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportSection\OwnerwiseTrainingWorkDistribution.aspx.designer.cs">
+      <DependentUpon>OwnerwiseTrainingWorkDistribution.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSection\ParentCompaniesReport.aspx.cs">
+      <DependentUpon>ParentCompaniesReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportSection\ParentCompaniesReport.aspx.designer.cs">
+      <DependentUpon>ParentCompaniesReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSection\Placements.aspx.cs">
+      <DependentUpon>Placements.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportSection\Placements.aspx.designer.cs">
+      <DependentUpon>Placements.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSection\PlacementsN.aspx.cs">
+      <DependentUpon>PlacementsN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportSection\PlacementsN.aspx.designer.cs">
+      <DependentUpon>PlacementsN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSection\PlacementWithTrainingProgram.aspx.cs">
+      <DependentUpon>PlacementWithTrainingProgram.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportSection\PlacementWithTrainingProgram.aspx.designer.cs">
+      <DependentUpon>PlacementWithTrainingProgram.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSection\PleaseWait.aspx.cs">
+      <DependentUpon>PleaseWait.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportSection\PleaseWait.aspx.designer.cs">
+      <DependentUpon>PleaseWait.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSection\RadReport.aspx.cs">
+      <DependentUpon>RadReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportSection\RadReport.aspx.designer.cs">
+      <DependentUpon>RadReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSection\RegistrationDetaiFromSearch.aspx.cs">
+      <DependentUpon>RegistrationDetaiFromSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportSection\RegistrationDetaiFromSearch.aspx.designer.cs">
+      <DependentUpon>RegistrationDetaiFromSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSection\RejectionDataForCandidates.aspx.cs">
+      <DependentUpon>RejectionDataForCandidates.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportSection\RejectionDataForCandidates.aspx.designer.cs">
+      <DependentUpon>RejectionDataForCandidates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSection\ReportList.aspx.cs">
+      <DependentUpon>ReportList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportSection\ReportList.aspx.designer.cs">
+      <DependentUpon>ReportList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSection\statusFullPage.aspx.cs">
+      <DependentUpon>statusFullPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportSection\statusFullPage.aspx.designer.cs">
+      <DependentUpon>statusFullPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSection\TrainingandEmployment.aspx.cs">
+      <DependentUpon>TrainingandEmployment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportSection\TrainingandEmployment.aspx.designer.cs">
+      <DependentUpon>TrainingandEmployment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSection\TrainingPrograms.aspx.cs">
+      <DependentUpon>TrainingPrograms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportSection\TrainingPrograms.aspx.designer.cs">
+      <DependentUpon>TrainingPrograms.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSection\TrainingProjectReports.aspx.cs">
+      <DependentUpon>TrainingProjectReports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportSection\TrainingProjectReports.aspx.designer.cs">
+      <DependentUpon>TrainingProjectReports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSection\tRptAllRegisteredCandidates.aspx.cs">
+      <DependentUpon>tRptAllRegisteredCandidates.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportSection\tRptAllRegisteredCandidates.aspx.designer.cs">
+      <DependentUpon>tRptAllRegisteredCandidates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSection\Vacancy.aspx.cs">
+      <DependentUpon>Vacancy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportSection\Vacancy.aspx.designer.cs">
+      <DependentUpon>Vacancy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\nAllActiveRegisteredCandidate.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\nAllActiveRegisteredCandidate.Designer.cs">
+      <DependentUpon>nAllActiveRegisteredCandidate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\RadReport.aspx.cs">
+      <DependentUpon>RadReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\RadReport.aspx.designer.cs">
+      <DependentUpon>RadReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptGotJobN.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptGotJobN.designer.cs">
+      <DependentUpon>rptGotJobN.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reports\rptGotJobPlacements.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptGotJobPlacements.designer.cs">
+      <DependentUpon>rptGotJobPlacements.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reports\rptGotJobWithPlacements.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptGotJobWithPlacements.Designer.cs">
+      <DependentUpon>rptGotJobWithPlacements.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reports\rptGotJobWithPlacementsN.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptGotJobWithPlacementsN.Designer.cs">
+      <DependentUpon>rptGotJobWithPlacementsN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptJobPlaceCharts.aspx.cs">
+      <DependentUpon>rptJobPlaceCharts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\rptJobPlaceCharts.aspx.designer.cs">
+      <DependentUpon>rptJobPlaceCharts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptPlacementsN.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptPlacementsN.Designer.cs">
+      <DependentUpon>rptPlacementsN.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reports\rptPlacementsWithTrainingPrograms.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptPlacementsWithTrainingPrograms.Designer.cs">
+      <DependentUpon>rptPlacementsWithTrainingPrograms.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="ReportSection\SocialEconomicIndicatorReport.aspx.cs">
+      <DependentUpon>SocialEconomicIndicatorReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportSection\SocialEconomicIndicatorReport.aspx.designer.cs">
+      <DependentUpon>SocialEconomicIndicatorReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\tdummy.aspx.cs">
+      <DependentUpon>tdummy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\tdummy.aspx.designer.cs">
+      <DependentUpon>tdummy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\TrainingandEmp.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\TrainingandEmp.Designer.cs">
+      <DependentUpon>TrainingandEmp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tags\test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tags\test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Test1\Test1.aspx.cs">
+      <DependentUpon>Test1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Test1\Test1.aspx.designer.cs">
+      <DependentUpon>Test1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Training\AddNonRecommendedCandidate.aspx.cs">
+      <DependentUpon>AddNonRecommendedCandidate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Training\AddNonRecommendedCandidate.aspx.designer.cs">
+      <DependentUpon>AddNonRecommendedCandidate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Training\AddRecommendedCandidate.aspx.cs">
+      <DependentUpon>AddRecommendedCandidate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Training\AddRecommendedCandidate.aspx.designer.cs">
+      <DependentUpon>AddRecommendedCandidate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Training\AddTrainingProgram.aspx.cs">
+      <DependentUpon>AddTrainingProgram.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Training\AddTrainingProgram.aspx.designer.cs">
+      <DependentUpon>AddTrainingProgram.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Training\AddTrainingProject.aspx.cs">
+      <DependentUpon>AddTrainingProject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Training\AddTrainingProject.aspx.designer.cs">
+      <DependentUpon>AddTrainingProject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Training\AssignedList.aspx.cs">
+      <DependentUpon>AssignedList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Training\AssignedList.aspx.designer.cs">
+      <DependentUpon>AssignedList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Training\CandidateCalling.aspx.cs">
+      <DependentUpon>CandidateCalling.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Training\CandidateCalling.aspx.designer.cs">
+      <DependentUpon>CandidateCalling.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Training\CandidateNotes.aspx.cs">
+      <DependentUpon>CandidateNotes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Training\CandidateNotes.aspx.designer.cs">
+      <DependentUpon>CandidateNotes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Training\ListOfOpenTrainingProjects.aspx.cs">
+      <DependentUpon>ListOfOpenTrainingProjects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Training\ListOfOpenTrainingProjects.aspx.designer.cs">
+      <DependentUpon>ListOfOpenTrainingProjects.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Training\OffLineCandidateCallingList.aspx.cs">
+      <DependentUpon>OffLineCandidateCallingList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Training\OffLineCandidateCallingList.aspx.designer.cs">
+      <DependentUpon>OffLineCandidateCallingList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Training\test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Training\test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Training\TrainingProjectAssignedListTrainingCycle.aspx.cs">
+      <DependentUpon>TrainingProjectAssignedListTrainingCycle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Training\TrainingProjectAssignedListTrainingCycle.aspx.designer.cs">
+      <DependentUpon>TrainingProjectAssignedListTrainingCycle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Training\TrainingProjectsAddRecommendedCandidates.aspx.cs">
+      <DependentUpon>TrainingProjectsAddRecommendedCandidates.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Training\TrainingProjectsAddRecommendedCandidates.aspx.designer.cs">
+      <DependentUpon>TrainingProjectsAddRecommendedCandidates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Training\TrainingProjectsNonRecomendedCandidates.aspx.cs">
+      <DependentUpon>TrainingProjectsNonRecomendedCandidates.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Training\TrainingProjectsNonRecomendedCandidates.aspx.designer.cs">
+      <DependentUpon>TrainingProjectsNonRecomendedCandidates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webMessageBox.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Database scripts\" />
+    <Folder Include="Docs\" />
+    <Folder Include="Image\EVidya\" />
+    <Folder Include="MobileDevices\mdProfileHistory\" />
+    <Folder Include="MobileDevices\mdReports\" />
+    <Folder Include="popup_xml\" />
+    <Folder Include="TempImageFiles\" />
+    <Folder Include="TempImages\" />
+    <Folder Include="TimeSheet\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Candidate\Candidate.master" />
+    <Content Include="Admin\Admin.master" />
+    <None Include="App_Themes\Default\images\_x_" />
+    <None Include="Candidate\WorkExperiencePopup.aspx.back" />
+    <None Include="Candidate\WorkExperiencePopup.aspx.cs.back" />
+    <None Include="Candidate\WorkExperiencePopup.aspx.js.back" />
+    <None Include="Company\AssignedList.aspx.back" />
+    <None Include="Company\AssignedList.aspx.cs.back" />
+    <None Include="Company\AssignedList.js.back" />
+    <Content Include="NGO\NGOMaster.master" />
+    <Content Include="Popup.master" />
+    <Content Include="enableindia.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>enableindia.cs</LastGenOutput>
+    </Content>
+    <None Include="Image\EiAdmin.cb" />
+    <None Include="Image\rptGotJobRaw.xls" />
+    <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\Profile1.pubxml" />
+    <None Include="Reports\AllActiveRegisteredCandidates.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\AssignedListClosedTrainingProject.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\AssignedListForClosedEmploymentProject.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\Blank.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\BlankReport.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\c1.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\candGotJobPlacement.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\candidateCalling.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\candidateCalling.mrt.v1">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\CandidateCalliningListReport.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\CandidateRegistration.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\CandidatesGotJob.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\CandidatesGotJob.mrt.old">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\CandidateTasks.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\CandiTrainingEmployment.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\cgj1.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\ClosedCandidatesFlagwiseWorkDistribution.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\ClosedCandidatesOwnerwiseWorkDistribution.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\CompanyTasks.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\EmploymentProjectEmploymentStatus.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\EmploymentProofNotGotFromCandidate.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\FlagwiseCompanyClosedTask.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\FlagwiseCompanyOpenTask.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\ListOfCompanies.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\ListOParentCompanies.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\OpenCandidatesFlagwiseWorkDistribution.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\OpenCandidatesOwnerWiseWorkDistribution.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\OwnerwiseCompanyClosedTasks.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\OwnerwiseCompanyOpenTasks.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\OwnerwiseTrainingWorkDistribution.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\Reportnot.mrt" />
+    <None Include="Reports\rpt_rejection_data_for_candidates.mrt" />
+    <None Include="Reports\Test1.mrt" />
+    <None Include="Reports\Test2.mrt" />
+    <None Include="Reports\TrainingPrograms.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\TrainingProjectReport.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\TrainingProjects.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Reports\ViewDataOptions.mrt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Reports\nAllActiveRegisteredCandidate.resx">
+      <DependentUpon>nAllActiveRegisteredCandidate.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptGotJobN.resx">
+      <DependentUpon>rptGotJobN.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptGotJobPlacements.resx">
+      <DependentUpon>rptGotJobPlacements.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptGotJobWithPlacements.resx">
+      <DependentUpon>rptGotJobWithPlacements.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptGotJobWithPlacementsN.resx">
+      <DependentUpon>rptGotJobWithPlacementsN.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptPlacementsN.resx">
+      <DependentUpon>rptPlacementsN.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptPlacementsWithTrainingPrograms.resx">
+      <DependentUpon>rptPlacementsWithTrainingPrograms.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\TrainingandEmp.resx">
+      <DependentUpon>TrainingandEmp.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.1.50731.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="BasicFrame.WebControls.BasicDatePicker, Version=1.4.3.40829, Culture=neutral, PublicKeyToken=e1cce521aa9b4849, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\BasicFrame.WebControls.BasicDatePicker.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net40\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FiftyOne.Foundation, Version=3.2.5.6, Culture=neutral, PublicKeyToken=e0b3a8da0bbce49c, processorArchitecture=MSIL">
+      <HintPath>..\packages\51Degrees.mobi.3.2.5.6\lib\NET40\FiftyOne.Foundation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.4.1.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.Practices.EnterpriseLibrary.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.4.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity, Version=6.4.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\MySql.Data.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Web, Version=6.4.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\MySql.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Base, Version=2013.1.1600.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Stimulsoft.Base.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Stimulsoft.Compression, Version=2008.1.200.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Stimulsoft.Compression.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Controls, Version=2013.1.1600.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Stimulsoft.Controls.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Stimulsoft.Editor, Version=2013.1.1600.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Stimulsoft.Editor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Stimulsoft.Report, Version=2013.1.1600.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Stimulsoft.Report.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.MySqlDatabase, Version=2013.1.1600.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Stimulsoft.Report.MySqlDatabase.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.Web, Version=2013.1.1600.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Stimulsoft.Report.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.EnterpriseServices">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DataVisualization">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Entity">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Telerik.Web.Design, Version=2012.2.724.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Telerik.Web.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Web.UI, Version=2012.2.724.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Telerik.Web.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Web.UI.Skins, Version=2012.2.724.40, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Telerik.Web.UI.Skins.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Telerik.Reporting, Version=9.2.15.930, Culture=neutral, PublicKeyToken=a9d7983dfcc261be">
+      <Private>True</Private>
+      <SpecificVersion>True</SpecificVersion>
+    </Reference>
+    <Reference Include="Telerik.Reporting.Service, Version=9.2.15.930, Culture=neutral, PublicKeyToken=a9d7983dfcc261be">
+      <Private>True</Private>
+      <SpecificVersion>True</SpecificVersion>
+    </Reference>
+    <Reference Include="Telerik.ReportViewer.WebForms, Version=9.2.15.930, Culture=neutral, PublicKeyToken=a9d7983dfcc261be">
+      <Private>True</Private>
+      <SpecificVersion>True</SpecificVersion>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61380</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:55332/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>call "$(DevEnvDir)..\..\vc\vcvarsall.bat" x86
+"$(DevEnvDir)..\..\vc\bin\EditBin.exe" "$(TargetPath)"  /LARGEADDRESSAWARE</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

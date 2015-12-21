@@ -1,0 +1,574 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.0" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <Databases isList="true" count="0" />
+    <DataSources isList="true" count="1">
+      <DSCandidateRejectionData Ref="2" type="DataTableSource" isKey="true">
+        <Alias>DSCandidateRejectionData</Alias>
+        <Columns isList="true" count="12">
+          <value>no,System.Nullable`1[System.Int32]</value>
+          <value>candidate_name,System.String</value>
+          <value>rid,System.String</value>
+          <value>disability,System.String</value>
+          <value>candidate_not_interested,System.String</value>
+          <value>candidate_interested_didnot_start_attending,System.String</value>
+          <value>cand_start_attending_didnot_complete,System.String</value>
+          <value>candidate_failed,System.String</value>
+          <value>candidate_not_interested_in_job,System.String</value>
+          <value>cand_didnot_get_job,System.String</value>
+          <value>cand_didnot_accept_the_job,System.String</value>
+          <value>evaluation_not_passed,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>DSCandidateRejectionData</Name>
+        <NameInSource>DSCandidateRejectionData</NameInSource>
+      </DSCandidateRejectionData>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="1">
+      <value>,candidate_count,candidate_count,System.UInt32,,False,False</value>
+    </Variables>
+  </Dictionary>
+  <EngineVersion>EngineV1</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="3" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="3">
+        <Header1 Ref="4" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.2,12.92,1</ClientRectangle>
+          <Components isList="true" count="12">
+            <Text1 Ref="5" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,0.3,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,10,Bold</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>f31f2cb408d8493d8c72e415ff19ac30</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>
+
+
+
+No</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text1>
+            <Text2 Ref="6" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0.3,0,0.9,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,10,Bold</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>7dc388366aee40029f6fc8205a41f00e</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text2</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>Candidate Name</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text2>
+            <Text3 Ref="7" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1.2,0,0.4,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,10,Bold</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>65a4869529344d89826278a7ef605528</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text3</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>RID</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text3>
+            <Text4 Ref="8" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1.6,0,0.9,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,10,Bold</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>e8eb35de50534948a21ecf379e84295d</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text4</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>Disability</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text4>
+            <Text5 Ref="9" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>2.5,0,1.2,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,10,Bold</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>3d4923ce9c3a4da6a073e77e5ffa886b</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text5</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>Training Project that candidate not interested in</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text5>
+            <Text6 Ref="10" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>5.1,0,1.3,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,10,Bold</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>0af478f1ed8844ed92f8ab267b64d3b0</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text6</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>Training Project that candidate was intersted in,but didnot start attending</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text6>
+            <Text7 Ref="11" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>6.4,0,1.3,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,10,Bold</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>5096c8d2d5a94a068462fb80144869e5</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text7</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>Training Project that candidate start attending but didnot complete</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text7>
+            <Text8 Ref="12" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>7.7,0,1.3,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,10,Bold</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>11a278eb51114f4e9a3e1b781275fc8b</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text8</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>Training Project that candidate failed</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text8>
+            <Text10 Ref="13" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>9,0,1.3,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,10,Bold</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>1063620abef24daab18df149114aefe8</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text10</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>Employment Project where candidate not interested in job</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text10>
+            <Text11 Ref="14" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>10.3,0,1.3,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,10,Bold</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>f5546dd1240c4ded964a915c19d4b0f1</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text11</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>Employment Project where candidate didnot get job/got rejected</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text11>
+            <Text12 Ref="15" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>11.6,0,1.3,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,10,Bold</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>a0a1c38467304d5bbbd60003bad34f71</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text12</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>Employment Project where candidate got job, but did not accept job</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text12>
+            <Text24 Ref="16" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>3.7,0,1.4,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,10,Bold</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>732ccbf61d3545e5b31e44c64bb895b0</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text24</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>Evaluation not passed</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text24>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>Header1</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+        </Header1>
+        <Data1 Ref="17" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,1.6,12.92,0.4</ClientRectangle>
+          <Components isList="true" count="12">
+            <Text13 Ref="18" type="Text" isKey="true">
+              <Border>Left, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,0.3,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,8.25,Regular,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>c54719a5b0cb4b42ad96e4d54c9bc19c</Guid>
+              <Margins>4,4,4,4</Margins>
+              <Name>Text13</Name>
+              <Page isRef="3" />
+              <Parent isRef="17" />
+              <Text>{Line}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </Text13>
+            <Text15 Ref="19" type="Text" isKey="true">
+              <Border>Left, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0.3,0,0.9,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,8.25,Regular,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>76a80da5586f404182e845576b9c04cf</Guid>
+              <Margins>4,4,4,4</Margins>
+              <Name>Text15</Name>
+              <Page isRef="3" />
+              <Parent isRef="17" />
+              <Text>{DSCandidateRejectionData.candidate_name}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </Text15>
+            <Text14 Ref="20" type="Text" isKey="true">
+              <Border>Left, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1.2,0,0.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,8.25,Regular,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>1a78760c5c654f699f5f22955f256851</Guid>
+              <Margins>4,4,4,4</Margins>
+              <Name>Text14</Name>
+              <Page isRef="3" />
+              <Parent isRef="17" />
+              <Text>{DSCandidateRejectionData.rid}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </Text14>
+            <Text16 Ref="21" type="Text" isKey="true">
+              <Border>Left, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1.6,0,0.9,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,8.25,Regular,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>da018e470b5a4b7cbf8fbf4b3a4011fd</Guid>
+              <Margins>4,4,4,4</Margins>
+              <Name>Text16</Name>
+              <Page isRef="3" />
+              <Parent isRef="17" />
+              <Text>{DSCandidateRejectionData.disability}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </Text16>
+            <Text17 Ref="22" type="Text" isKey="true">
+              <Border>Left, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>2.5,0,1.2,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,8.25,Regular,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>14ec9626cf46473e9b6cfebe96630f8b</Guid>
+              <Margins>4,4,4,4</Margins>
+              <Name>Text17</Name>
+              <Page isRef="3" />
+              <Parent isRef="17" />
+              <Text>{DSCandidateRejectionData.candidate_not_interested}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </Text17>
+            <Text18 Ref="23" type="Text" isKey="true">
+              <Border>Left, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>5.1,0,1.3,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,8.25,Regular,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>2169c41696fd4d60b6de31b2d10d0dc0</Guid>
+              <Margins>4,4,4,4</Margins>
+              <Name>Text18</Name>
+              <Page isRef="3" />
+              <Parent isRef="17" />
+              <Text>{DSCandidateRejectionData.candidate_interested_didnot_start_attending}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </Text18>
+            <Text19 Ref="24" type="Text" isKey="true">
+              <Border>Left, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>6.4,0,1.3,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,8.25,Regular,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>ef43b0465f9740f4b6c547a968bf4efa</Guid>
+              <Margins>4,4,4,4</Margins>
+              <Name>Text19</Name>
+              <Page isRef="3" />
+              <Parent isRef="17" />
+              <Text>{DSCandidateRejectionData.cand_start_attending_didnot_complete}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </Text19>
+            <Text20 Ref="25" type="Text" isKey="true">
+              <Border>Left, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>7.7,0,1.3,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,8.25,Regular,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>d4f1b6e7ff3f425793917d5dfe096c3c</Guid>
+              <Margins>4,4,4,4</Margins>
+              <Name>Text20</Name>
+              <Page isRef="3" />
+              <Parent isRef="17" />
+              <Text>{DSCandidateRejectionData.candidate_failed}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </Text20>
+            <Text9 Ref="26" type="Text" isKey="true">
+              <Border>Left, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>9,0,1.3,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,8.25,Regular,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>88145cb21238451c9e123fd7350f0215</Guid>
+              <Margins>4,4,4,4</Margins>
+              <Name>Text9</Name>
+              <Page isRef="3" />
+              <Parent isRef="17" />
+              <Text>{DSCandidateRejectionData.candidate_not_interested_in_job}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </Text9>
+            <Text21 Ref="27" type="Text" isKey="true">
+              <Border>Left, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>10.3,0,1.3,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,8.25,Regular,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>b4314706f2704659a6d2b118bdc38590</Guid>
+              <Margins>4,4,4,4</Margins>
+              <Name>Text21</Name>
+              <Page isRef="3" />
+              <Parent isRef="17" />
+              <Text>{DSCandidateRejectionData.cand_didnot_get_job}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </Text21>
+            <Text22 Ref="28" type="Text" isKey="true">
+              <Border>Left, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>11.6,0,1.3,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,8.25,Regular,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>85680822d7e8459fb45c179b51e2a295</Guid>
+              <Margins>4,4,4,4</Margins>
+              <Name>Text22</Name>
+              <Page isRef="3" />
+              <Parent isRef="17" />
+              <Text>{DSCandidateRejectionData.cand_didnot_accept_the_job}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </Text22>
+            <Text25 Ref="29" type="Text" isKey="true">
+              <Border>Left, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>3.7,0,1.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,8.25,Regular,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>eca6586e26ee45719bf3edf9a16fe81f</Guid>
+              <Margins>4,4,4,4</Margins>
+              <Name>Text25</Name>
+              <Page isRef="3" />
+              <Parent isRef="17" />
+              <Text>{DSCandidateRejectionData.evaluation_not_passed}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </Text25>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName>DSCandidateRejectionData</DataSourceName>
+          <EndRenderEvent>candidate_count=candidate_count + 1</EndRenderEvent>
+          <Filters isList="true" count="0" />
+          <Name>Data1</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Sort isList="true" count="0" />
+        </Data1>
+        <FooterBand2 Ref="30" type="FooterBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,2.4,12.92,0.3</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text23 Ref="31" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.1,0.1,6,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,10,Bold</Font>
+              <Guid>31686bc018794c49a0a484eea9c38c25</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text23</Name>
+              <Page isRef="3" />
+              <Parent isRef="30" />
+              <Text>Number of  rejection  candidates: {Count(Data1)} candidates </Text>
+              <TextBrush>Black</TextBrush>
+            </Text23>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Guid>ac80781312394055868a78d9ae9f4071</Guid>
+          <Name>FooterBand2</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <PrintOn>OnlyLastPage</PrintOn>
+        </FooterBand2>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>aaec22bd7ceb46bca2a118a201476aff</Guid>
+      <Margins>0.39,0.39,0.39,0.39</Margins>
+      <Name>Page1</Name>
+      <Page isRef="3" />
+      <PageHeight>11.69</PageHeight>
+      <PageWidth>13.7</PageWidth>
+      <PaperSize>A4</PaperSize>
+      <Report isRef="0" />
+      <Watermark Ref="32" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings Ref="33" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>8/12/2010 11:57:50 AM</ReportChanged>
+  <ReportCreated>8/21/2009 11:39:27 AM</ReportCreated>
+  <ReportFile>D:\Projects\Shailesh\EnableIndia\Reports\rpt_rejection_data_for_candidates.mrt</ReportFile>
+  <ReportGuid>2388ab11ace74dcc902ce1839d7c4cb1</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Inches</ReportUnit>
+  <ReportVersion>2009.3.600</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        
+        public Report()
+        {
+            this.InitializeComponent();
+        }
+        #region StiReport Designer generated code - do not modify#endregion StiReport Designer generated code - do not modify
+    }
+}</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

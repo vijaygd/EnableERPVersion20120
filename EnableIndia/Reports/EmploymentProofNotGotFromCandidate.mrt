@@ -1,0 +1,406 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.0" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <Databases isList="true" count="0" />
+    <DataSources isList="true" count="1">
+      <Emp_Proof_not_got Ref="2" type="DataTableSource" isKey="true">
+        <Alias>Emp_Proof_not_got</Alias>
+        <Columns isList="true" count="6">
+          <value>name_of_candidate,System.String</value>
+          <value>registration_id,System.String</value>
+          <value>disability_type,System.String</value>
+          <value>ngo,System.String</value>
+          <value>phone_numbers,System.String</value>
+          <value>current_company,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>Emp_Proof_not_got</Name>
+        <NameInSource />
+      </Emp_Proof_not_got>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="0" />
+  </Dictionary>
+  <GlobalizationStrings isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="3" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="2">
+        <Header1 Ref="4" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.2,7.49,0.2</ClientRectangle>
+          <Components isList="true" count="7">
+            <Text1 Ref="5" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,0.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Bold,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text1</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>No.</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="6" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </Text1>
+            <Text2 Ref="7" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0.4,0,1.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Bold,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text2</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>Name of Candidate</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="8" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </Text2>
+            <Text3 Ref="9" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1.6,0,1.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Bold,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text3</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>Registration ID(RID)</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="10" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </Text3>
+            <Text4 Ref="11" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>2.8,0,1.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Bold,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text4</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>Disability Type</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="12" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </Text4>
+            <Text5 Ref="13" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>4,0,1.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Bold,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text5</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>NGO</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="14" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </Text5>
+            <Text6 Ref="15" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>5.2,0,1.1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Bold,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text6</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>Phone Numbers</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="16" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </Text6>
+            <Text7 Ref="17" type="Text" isKey="true">
+              <Border>Top, Right, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>6.3,0,1.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Bold,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text7</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>Current Company</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="18" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </Text7>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <MaxHeight>0</MaxHeight>
+          <MinHeight>0</MinHeight>
+          <Name>Header1</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <PrintIfEmpty>True</PrintIfEmpty>
+        </Header1>
+        <Data1 Ref="19" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.8,7.49,0.2</ClientRectangle>
+          <Components isList="true" count="7">
+            <Text8 Ref="20" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,0.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Regular,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text8</Name>
+              <Page isRef="3" />
+              <Parent isRef="19" />
+              <Text>{Line}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="21" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>SystemVariables</Type>
+            </Text8>
+            <Text9 Ref="22" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0.4,0,1.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Regular,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text9</Name>
+              <Page isRef="3" />
+              <Parent isRef="19" />
+              <Text>{Emp_Proof_not_got.name_of_candidate}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="23" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Text9>
+            <Text10 Ref="24" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1.6,0,1.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Regular,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text10</Name>
+              <Page isRef="3" />
+              <Parent isRef="19" />
+              <Text>{Emp_Proof_not_got.registration_id}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="25" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Text10>
+            <Text11 Ref="26" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>2.8,0,1.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Regular,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text11</Name>
+              <Page isRef="3" />
+              <Parent isRef="19" />
+              <Text>{Emp_Proof_not_got.disability_type}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="27" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Text11>
+            <Text12 Ref="28" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>4,0,1.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Regular,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text12</Name>
+              <Page isRef="3" />
+              <Parent isRef="19" />
+              <Text>{Emp_Proof_not_got.ngo}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="29" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Text12>
+            <Text13 Ref="30" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>5.2,0,1.1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Regular,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text13</Name>
+              <Page isRef="3" />
+              <Parent isRef="19" />
+              <Text>{Emp_Proof_not_got.phone_numbers}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="31" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Text13>
+            <Text14 Ref="32" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>6.3,0,1.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Regular,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text14</Name>
+              <Page isRef="3" />
+              <Parent isRef="19" />
+              <Text>{Emp_Proof_not_got.current_company}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="33" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Text14>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName />
+          <DataSourceName>Emp_Proof_not_got</DataSourceName>
+          <Filters isList="true" count="0" />
+          <MaxHeight>0</MaxHeight>
+          <MinHeight>0</MinHeight>
+          <Name>Data1</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Sort isList="true" count="0" />
+        </Data1>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>264cdf4d87d0405a859c5336d6d851d6</Guid>
+      <Margins>0.39,0.39,0.39,0.39</Margins>
+      <Name>Page1</Name>
+      <Page isRef="3" />
+      <PageHeight>11.69</PageHeight>
+      <PageWidth>8.27</PageWidth>
+      <Report isRef="0" />
+      <Watermark Ref="34" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings Ref="35" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>7/14/2009 4:03:14 PM</ReportChanged>
+  <ReportCreated>7/14/2009 12:21:20 PM</ReportCreated>
+  <ReportGuid>f3eaf9e0274f48aba2885a07a0f128c7</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Inches</ReportUnit>
+  <ReportVersion>2008.1.200</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        
+        public Report()
+        {
+            this.InitializeComponent();
+        }
+        #region StiReport Designer generated code - do not modify#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

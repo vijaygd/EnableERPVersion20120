@@ -1,0 +1,394 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="EnableIndia.Candidate.Candidate" EnableViewState="true"  Codebehind="Candidate.master.cs" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI"  %>
+<%@ Register Assembly="BasicFrame.WebControls.BasicDatePicker" Namespace="BasicFrame.WebControls" TagPrefix="BDP" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server" >
+
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<%--<meta http-equiv="Page-Enter" content="blendTrans(Duration=0)"/>
+<meta http-equiv="Page-Exit" content="blendTrans(Duration=0)"/> --%>
+    <meta http-equiv="Page-Enter" content="blendTrans(Duration=.50)" />
+    <meta http-equiv="Page-Exit" content="blendTrans(Duration=.50)" />
+    <%--<meta name="language" content="EN" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="-1" />--%>
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="cache-control" content="no-store" />
+    <meta http-equiv="cache-control" content="private" />
+    <meta http-equiv="cache-control" content="max-age=0, must-revalidate" />
+    <meta http-equiv="expires" content="now-1" />
+    <meta http-equiv="pragma" content="no-cache" />
+
+    <title>Candidate Master</title>
+<style type="text/css">   
+  html#html, body#body, form#form1, div#content, center#center
+  { 
+   border: 0px solid black;
+   padding: 0px;
+   margin: 0px;
+   height: 100%;
+   font-family:Consolas;
+   font-size:11px;
+  }
+</style>
+    <link rel="Stylesheet" type="text/css"  href="~/App_Themes/Default/StyleSheet.css" id="stylesheet" runat="server"  />
+    <link rel="Stylesheet" type="text/css"  href="~/App_Themes/Default/pager.css"      id="pager" runat="server"  />
+    <link href="~/App_Themes/Default/header.css" rel="stylesheet"  id="headerId" runat="server" type="text/css" />
+    <link href="~/StyleSheets/telContent.css" type="text/css" rel="stylesheet" id="telContent" runat="server" />
+    <link href="~/StyleSheets/contentStyle.css" rel="stylesheet" runat="server" id="contentStyle" type="text/css" />
+</head>
+<body style="margin-top:0;">
+    <form id="form1" runat="server">
+      <telerik:RadScriptManager runat="server" ID="scRad" EnableHandlerDetection="false"  EnablePageMethods="true" AsyncPostBackTimeout="36000">
+      <Scripts>
+        <asp:ScriptReference Path="~/Scripts/jquery-1.7.1-vsdoc.js" />
+        <asp:ScriptReference Path="~/Scripts/jquery-2.1.4.min.js" />
+        <asp:ScriptReference Path="~/Scripts/jquery.cookie.pack.js" />
+        <asp:ScriptReference Path="~/Scripts/Common.js" />
+        <asp:ScriptReference Path="~/Candidate/Candidate.Master.js" />
+      </Scripts>
+      </telerik:RadScriptManager>
+     <table style="width:100%">
+            <tr>
+                <td >
+                    <table style='width:100%;height:94px;' class="header-bg"  cellpadding="0" cellspacing="0" >
+                        <tr>
+                            <td id="tbTopBand" style="width:100%;height:83px;" >
+                                <table style="width:100%;" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td><span id="skiplink"><a tabindex="-1" title="skip to content" class="skiplink" href="#skipToTop" >skip to content</a></span><br /></td>
+                                        <td valign="middle" style="padding-left:950px;padding-top:68px"   >
+                                           <asp:Label CssClass="labelStyle" runat="server" ID="lbUser" ForeColor="#d32232" Font-Names="Consolas" Font-Size="12px" Font-Bold="true"></asp:Label>&nbsp;
+                                            <asp:ImageButton ID="BtnLogOff" 
+                                                
+                                                runat="server" ToolTip="log out button"  
+                                                OnClick="BtnLogOff_click" 
+                                                ImageUrl="~/App_Themes/Default/images/log-off.png" /> &nbsp;
+                                            <asp:ImageButton runat="server" ID="imgChart" OnClick="btnClickDashBoard" ImageAlign="Top"
+                                                Width="18px" Height="18px" ImageUrl="~/Image/chart_bar.png" ToolTip="Refresh Chart" />
+                                        
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    
+                    <table id="TblMainTable" style="margin-top:0px;width:100%; height:100%;" cellpadding="0" cellspacing="0"">
+                        <tr>
+                            <td style="width:10px">&nbsp;</td>
+                            <%--Left Menu--%>
+                            <td id="LeftMenu" style="width:200px;border-style:solid;border-width:1.5pt;border-color:#00B1FF" valign="top">
+                                <table style="border-style:solid;border-width:1px;border-color:#8CC2DA;margin:3px;"  cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td>
+                                            <h1 style="text-align:center;font-size:13px;padding-top:10px;padding-bottom:10px">Management Modules</h1>
+<%--                                            <table cellspacing="0" cellpadding="0" style="width:100%">
+                                                <tr class="menu_header">
+                                                    <td>
+                                                        <table>
+                                                            <tr><td><h2>Candidate</h2></td></tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>              
+                                           <table class="level2">
+                                                <tr>
+                                                    <td>
+                                                         <a href='<%= ResolveClientUrl("~")%>Company/ListOfOpenEmploymentProject.aspx'>List of Employment Projects</a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+--%>                                            <table class="level0" style="width:100%">
+                                                <tr>
+                                                    <td>
+                                                        <h3>Registration</h3>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            
+                                            <table class="level2">
+                                                <tr>
+                                                    <td>
+                                                        <a href='<%= ResolveClientUrl("~")%>Candidate/Registration/EnableIndiaCandidate.aspx'>Enable India Candidate</a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                    
+                                            <table class="level2">    
+                                                <tr>
+                                                    <td>
+                                                        <a href='<%= ResolveClientUrl("~")%>Candidate/Registration/OtherNGOCandidate.aspx'>Other NGO Candidate</a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            
+                                            <table class="level2">
+                                                <tr>
+                                                    <td>
+                                                        <a href='<%= ResolveClientUrl("~")%>Candidate/Registration/UnregisteredBlankForm.aspx'>Unregistered Blank Forms</a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            
+                                            <table class="level0" style="width:100%">
+                                                <tr>
+                                                    <td>
+                                                        <h3>Profile and History</h3>
+                                                    </td>
+                                                </tr>
+                                            </table> 
+                                            
+                                            <table class="level2">
+                                                <tr>
+                                                    <td>
+                                                        <a href='<%= ResolveClientUrl("~")%>Candidate/ProfileHistory/ToBeProfiledCandidates.aspx'>To be Profiled Candidates</a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                    
+                                            <table class="level2">
+                                                <tr>
+                                                    <td>
+                                                        <a href='<%= ResolveClientUrl("~")%>Candidate/ProfileHistory/AllActiveCandidates.aspx'>All Active Profiled Candidates</a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            
+                                            <table class="level1">
+                                                <tr>
+                                                    <td>
+                                                       <h3>
+                                                        <a href='<%= ResolveClientUrl("~")%>Candidate/TaskManagement.aspx'>Task Management</a>
+                                                       </h3>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                    
+                                            <table cellspacing="0" style="width:100%">
+                                                <tr class="menu_header">
+                                                    <td>
+                                                        <table>
+                                                            <tr><td><h2>Training</h2></td></tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            
+                                            <table class="level1">
+                                                <tr>
+                                                    <td style="white-space:nowrap">
+                                                        <a href='<%= ResolveClientUrl("~")%>Training/AddTrainingProgram.aspx'>Add Training Program</a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            
+                                            <table class="level1">
+                                                <tr>
+                                                    <td style="white-space:nowrap">
+                                                        <a href='<%= ResolveClientUrl("~")%>Training/AddTrainingProject.aspx'>Add Training Project</a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            
+                                            <table class="level1">
+                                                <tr>
+                                                    <td style="white-space:nowrap">
+                                                        <a href='<%= ResolveClientUrl("~")%>Training/ListOfOpenTrainingProjects.aspx'>Manage Open Training Projects</a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            
+                                            <table cellspacing="0" style="width:100%">
+                                                <tr class="menu_header">
+                                                    <td>
+                                                        <table>
+                                                            <tr><td><h2>Company</h2></td></tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            
+                                            <table class="level1">
+                                                <tr>
+                                                    <td style="white-space:nowrap">
+                                                        <a href='<%= ResolveClientUrl("~")%>Company/AddParentCompany.aspx'>Add Parent Company</a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            
+                                            <table class="level1">
+                                                <tr>
+                                                    <td style="white-space:nowrap">
+                                                        <a href='<%= ResolveClientUrl("~")%>Company/AddCompany.aspx'>Add Company</a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            
+                                            <table class="level1">
+                                                <tr>
+                                                    <td style="white-space:nowrap">
+                                                        <a href='<%= ResolveClientUrl("~")%>Company/AddVacancy.aspx'>Add Vacancy</a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            
+                                            <table class="level1">
+                                                <tr>
+                                                    <td style="white-space:nowrap">
+                                                        <a href='<%= ResolveClientUrl("~")%>Company/AddEmploymentProjects.aspx'>Add Employment Project</a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            
+                                            <table class="level1">
+                                                <tr>
+                                                    <td style="white-space:nowrap">
+                                                        <a href='<%= ResolveClientUrl("~")%>Company/ListOfOpenEmploymentProject.aspx'>Manage Open Employment Project</a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            
+                                            <table class="level1">
+                                                <tr>
+                                                    <td style="white-space:nowrap">
+                                                        <a href='<%= ResolveClientUrl("~")%>Company/AddViewCompanyHistory.aspx'>Add & View Company History</a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                           
+                                            
+                                            <table class="level1">
+                                                <tr>
+                                                    <td style="white-space:nowrap">
+                                                        <a href='<%= ResolveClientUrl("~")%>Company/ManageCompanyTask.aspx'>Manage Company Tasks</a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            
+                                            <table cellspacing="0" style="width:100%">
+                                                <tr class="menu_header">
+                                                    <td>
+                                                        <table>
+                                                            <tr><td><h2>NGO</h2></td></tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            
+                                            <table class="level1">
+                                                <tr>
+                                                    <td><a href='<%= ResolveClientUrl("~")%>NGO/RegisterNGO.aspx'>Add NGO</a></td>
+                                                </tr>
+                                            </table>
+                                           
+                                            <table class="level1">
+                                                <tr>
+                                                    <td style="white-space:nowrap"><a href='<%= ResolveClientUrl("~")%>NGO/NGOList.aspx'>NGO List & Details</a></td>
+                                                </tr>
+                                            </table>
+                                            <%if(Session["role_id"].Equals(0))
+                                              { %>
+                                            <table cellspacing="0" style="width:100%">
+                                                <tr class="menu_header">
+                                                    <td>
+                                                        <table>
+                                                            <tr><td><h2>Administration</h2></td></tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            
+                                            <table class="level1">
+                                                <tr>
+                                                    <td><a href='<%= ResolveClientUrl("~")%>Admin/RegisterEmployee.aspx'>Add Enable India Employees</a></td>
+                                                </tr>
+                                            </table>
+                                            
+                                            <table class="level1">
+                                                <tr>
+                                                    <td style="white-space:nowrap"><a href='<%= ResolveClientUrl("~")%>Admin/EmployeeList.aspx'>Enable India Employee List & Details</a></td>
+                                                </tr>
+                                            </table>
+                                            
+                                            <table class="level1">
+                                                <tr>
+                                                    <td><a href='<%= ResolveClientUrl("~")%>Admin/AddDropDownOptions.aspx'>Add Data Options</a></td>
+                                                </tr>
+                                            </table>
+                                            
+                                            <table class="level1">
+                                                <tr>
+                                                    <td><a href='<%= ResolveClientUrl("~")%>Admin/DefaultAgeForCandidatesInSearch.aspx'>Set Default Age</a></td>
+                                                </tr>
+                                            </table>
+                                            <%} %>
+                                              <table cellspacing="0" style="width:100%">
+                                                <tr class="menu_header">
+                                                    <td>
+                                                        <table>
+                                                            <tr><td><h2><a href='<%= ResolveClientUrl("~")%>ReportSection/ReportList.aspx' style="color:Navy">Reports</a></h2></td></tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td style="width:25px">&nbsp;</td>
+                            
+                            <td id="TblHeader" valign="top" style="margin-top:0;">
+                                <table cellspacing="0" cellpadding="0" style="width:100%; margin-top:0;">
+                                    <tr>
+                                        <td class="subHeader" valign="middle" align="left">
+                                            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server" />
+                                         </td>
+                                        <td id="TdGlobalButtons" valign="bottom" align="right">
+                                            <input id="BtnViewDataOptions"  type="button" value="View Data Options" runat="server"
+                                                onclick="javascript:ShowPopUp('ViewDataOptions.aspx',1024,768);" visible="false" />
+                                                <asp:Button runat="server" ID="btnHome" Text="Home" OnClick="btnHome_Clicked" Width="50px" Height="24px" Font-Names="Consolas" Font-Bold="true" />
+                                                <asp:Button runat="server" ID="btnHelp" Text="Help"  Width="50px" Height="24px" Font-Names="Consolas" Font-Bold="true" />
+
+                                        </td>
+                                    </tr>
+                                </table>
+                                <%--<div style="overflow:scroll">--%>
+                                <table id="TblUnderline" cellpadding="0" cellspacing="0" style="margin-top:2px;margin-left:15px;margin-bottom:20px;">
+                                    <tr>
+                                        <td style="background-color:#003D7E;height:3px;"></td>
+                                    </tr>
+                                </table>
+                                <%--</div>--%>
+                                <table id="TblContentBody" cellspacing="0">
+                                    <tr>
+                                        <td>
+                                            <asp:ContentPlaceHolder id="ContentPlaceHolder2"  runat="server">
+                                               </asp:ContentPlaceHolder>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    
+                    <table style="width:100%; bottom:0;">
+                        <tr align="center" class="footer">
+                            <td>Copyright © Enable India - To Empower People With Disabilities</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <div id="DivMessagesFromServer" runat="server" style="display:none" />
+    </form>
+ <%--   <script type="text/javascript" language="javascript">
+        SetTableStyle();
+    </script>--%>
+</body>
+</html>
+

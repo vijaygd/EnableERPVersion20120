@@ -1,0 +1,254 @@
+﻿<!--<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en-US"> 
+<head>
+<title>The New WebTrack Sample Call Tracking System</title>
+
+<SCRIPT TYPE="text/javascript">
+<!--
+var downStrokeField;
+function autojump(fieldName,nextFieldName,fakeMaxLength)
+{
+var myForm=document.forms[document.forms.length - 1];
+var myField=myForm.elements[fieldName];
+myField.nextField=myForm.elements[nextFieldName];
+
+if (myField.maxLength == null)
+   myField.maxLength=fakeMaxLength;
+
+myField.onkeydown=autojump_keyDown; 
+myField.onkeyup=autojump_keyUp;
+}
+
+function autojump_keyDown()
+{
+this.beforeLength=this.value.length;
+downStrokeField=this;
+}
+
+function autojump_keyUp()
+{
+if (
+   (this == downStrokeField) && 
+   (this.value.length > this.beforeLength) && 
+   (this.value.length >= this.maxLength)
+   )
+   this.nextField.focus();
+downStrokeField=null;
+}
+//-->
+</SCRIPT>
+
+
+
+<META http-equiv="Content-Style-Type" content="text/css">
+<META name="keywords" content="web pages, accessibility, JAWS, screen readers, Freedom Scientific, forms, context help">
+<META name="description" content="This page demonstrates the use of forms with JAWS.">
+<META name="Author" content="Brian J. Walker">
+<META name="date" content="2:52 PM 8/10/2003">
+<STYLE type="text/css">
+
+<!--
+fieldset {
+	padding: 10px;
+	background-color: #FFFFFF;
+}
+-->
+
+</STYLE>
+</head>
+
+<body bgcolor="#003366">
+<h1 align="left"><FONT color="#FFFFCC" size="6" face="Courier New, Courier, mono"><B>The New WebTrack</B></FONT></h1>
+<p align="left"><FONT color="#FFFFCC" size="4" face="Courier New, Courier, mono"><b>Online 
+  Customer Tracking System</b></FONT></p>
+<form action="">
+ <TABLE bgcolor="#FFFFFF" cellpadding="15" cellspacing="0" width="45%" border="1" bordercolor="#000000" rules="none">
+<TR valign="top">
+<TD>
+<fieldset>
+<h2><FONT size="4" face="Arial, Helvetica, sans-serif" color="#000066">Contact Information</FONT></h2>
+
+<p> <FONT face="Arial, Helvetica, sans-serif">
+<label for="cn1"><B>Name:</B></label>
+<input type="text" name="name" id="cn1" value="">
+</FONT> 
+</p>
+
+<p> <FONT face="Arial, Helvetica, sans-serif">
+<label for="cp"><B>Phone Number:</B></label>
+<input type="text" name="phone" id="cp" value="">
+</FONT>
+</p>
+
+<FORM ACTION="../cgi-bin/mycgi.pl" METHOD=POST>
+
+<p><FONT face="Arial, Helvetica, sans-serif">
+
+<label for="first"><strong>SSN1</strong></label>
+<INPUT TYPE="text" NAME="ssn_1" id="first" MAXLENGTH=3 SIZE=3>
+
+<label for="second"><strong>SSN2</strong></label>
+<INPUT TYPE=TEXT NAME="ssn_2" id="second" MAXLENGTH=2 SIZE=2>
+
+<label for="third"><strong>SSN3</strong></label>
+<INPUT TYPE=TEXT NAME="ssn_3" id="third" MAXLENGTH=4 SIZE=4>
+
+</FONT>
+</p>
+
+<table>
+    <tr>
+        <td><label for="first"><strong>SSN1</strong></label></td>
+        <td><INPUT TYPE="text" NAME="ssn_1" id="Text1" MAXLENGTH=3 SIZE=3></td>
+    </tr>
+    <tr>
+        <td><label for="second"><strong>SSN2</strong></label></td>
+        <td><INPUT TYPE=TEXT NAME="ssn_2" id="TEXT2" MAXLENGTH=2 SIZE=2></td>
+    </tr>
+</table>
+
+<p><FONT face="Arial, Helvetica, sans-serif">
+<label for="ce"><B>E-Mail Address:</B></label>
+<input type="text" name="email" id="ce" value="">
+</FONT>
+</p>
+
+</FORM>
+
+<SCRIPT TYPE="text/javascript">
+<!--
+autojump('ssn_1', 'ssn_2', 3);
+autojump('ssn_2', 'ssn_3', 2);
+autojump('ssn_3', 'email', 4);
+//-->
+</SCRIPT>
+
+		<p> <FONT face="Arial, Helvetica, sans-serif">
+		  <input name="mail_address" type="button" id="mail_address" onclick="alert('This is a sample form. Activating this button does not change the form or display additional windows. Press ENTER to close this message.')" value="Mailing Address">
+
+		  <input name="bill_address" type="button" id="bill_address" onclick="alert('This is a sample form. Activating this button does not change the form or display additional windows. Press ENTER to close this message.')" value="Billing Address">
+		  </FONT>
+		</fieldset>
+		<FONT face="Arial, Helvetica, sans-serif"><BR>
+		</FONT>
+		<fieldset>
+		<h2> <FONT face="Arial, Helvetica, sans-serif">
+		  <FONT size="4" color="#000066">Account Information</FONT>
+
+		  </FONT></h2>
+		<p> <FONT face="Arial, Helvetica, sans-serif">
+		  <label for="on"><B>Order Number:</B></label>
+		  <input type="text" name="order_number" id="on" value="246">
+		  </FONT>
+		<p> <FONT face="Arial, Helvetica, sans-serif">
+		  <label for="an"><B>Account Number:</B></label>
+
+		  <input type="text" name="accountnumber" id="an" value="3579">
+		  </FONT>
+
+		<p> <FONT face="Arial, Helvetica, sans-serif">
+		  <label for="op"><B>Ordered Products:</B></label>
+		  <br>
+		  <select name="products" id="op" multiple="multiple" size="5" contexthelp="To select multiple items in this list press INSERT+F8 to switch to extended select mode. Then use SPACEBAR to toggle the selection of the items you wish to choose.">
+<option value="FaceToFace">FaceToFace&trade; deaf-blind communications solution</option>
+
+<option value="FocusBrailleDisplay">Focus braille display</option>
+<option value="FSReader">FSReader&trade; DAISY player</option>
+<option value="JAWS">JAWS&reg; screen reading software</option>
+<option value="MAGic">MAGic&reg; screen magnification software</option>
+<option value="MAGicPro">MAGic&reg; pro scripting edition</option>
+
+<option value="ONYX">ONYX&trade; Swing-arm camera</option>
+<option value="OPAL">OPAL&trade; portable video magnifier</option>
+<option value="OpenBook">OpenBook&trade; scanning and reading software</option>
+<option value="PACMate">PAC Mate Omni&trade; accessible Pocket PC</option>
+<option value="PACMatePBD">PAC Mate&trade; portable braille display</option>
+
+<option value="SARA">SARA&trade; scanning and reading appliance</option>
+<option value="ScanTalker">ScanTalker&trade; accessible bar code reader</option>
+<option value="TestTalker">TestTalker&reg; test-taking software</option>
+<option value="TOPAZ">TOPAZ&trade; desktop video magnifier</option>
+<option value="WYNN">WYNN&trade; literacy software</option>
+
+		  </select>
+		  </FONT>
+<br>
+		<P> <FONT face="Arial, Helvetica, sans-serif">
+		  <legend><B>Product(s) in Warranty:</B></legend>
+		  </FONT></P>
+		<p> <FONT face="Arial, Helvetica, sans-serif">
+		  <input type="radio" checked name="warranty" id="wy" value="yes">
+
+		  <label for="wy">Yes</label>
+		  <br>
+		  <input type="radio" name="warranty" id="wn" value="no">
+		  <label for="wn">No</label>
+		  </FONT></p>
+		</fieldset>
+<p></p>
+<fieldset>
+
+  <h2>
+		 <FONT size="4" face="Arial, Helvetica, sans-serif" color="#000066">Current 
+		  Call</FONT>
+		</h2>
+		<P> <FONT face="Arial, Helvetica, sans-serif">
+		  <label for="ar"><B>Action Taken:</B></label>
+		  <select name="action" size="1" id="ar">
+			<option value="sale">Sale 
+			<option value="hardware" selected>Hardware Issue 
+			<option value="Software">Software Issue 
+			<option value="Refund">Product Refund 
+			<option value="Replacement">Replace Product 
+		  </select>
+
+		  </FONT></P>
+		<P> <FONT face="Arial, Helvetica, sans-serif">
+		  <Label for="cn2"><B>Notes:</B></label>
+		  <br>
+		  <textarea rows="10" cols="40" id="cn2">
+The customer changed a setting and was recording in fast forward. I showed him how to change the setting back, and showed him where to find related directions in the user's guide.
+</textarea>
+		  </FONT></P>
+		<p> <FONT face="Arial, Helvetica, sans-serif">
+
+		  <input name="notes" type="button" id="notes" onclick="alert('This is a sample form. Activating this button does not change the form or display additional windows. Press ENTER to close this message.')" value="Notes History">
+		  <input name="new_order" type="button" id="new_order" onclick="alert('This is a sample form. Activating this button does not change the form or display additional windows. Press ENTER to close this message.')" value="New Order">
+		  </FONT>
+		</fieldset>
+		<FONT face="Arial, Helvetica, sans-serif"><BR>
+		</FONT>
+		<fieldset>
+		<h2><legend><FONT face="Arial, Helvetica, sans-serif" size="4" color="#000066">Receive 
+          Marketing Promotions by</FONT></legend></h2>
+
+		<p> <FONT face="Arial, Helvetica, sans-serif">
+		  <input type="checkbox" name="phone_offers" id="po" contexthelp="We are required by law to honor customer's requests to be removed from our calling list. Notify the customer that it can take 30 to 60 days, and state in the notes field that this has been done.">
+		  <label for="po">Phone</label>
+          <br>
+		  <input type="checkbox" name="email_offers" id="eo">
+		  <label for="eo">E-mail</label>
+          <br>
+
+		  <input type="checkbox" name="mail_offers" id="mo">
+		  <label for="mo">Mail</label>
+          <br>
+		  <input type="checkbox" name="newsletter" id="cn" checked>
+		  <label for="cn">Company Newsletter</label>
+		  </FONT> </p>
+  </fieldset>
+
+		<p align="center"> <FONT face="Arial, Helvetica, sans-serif">
+		  <input name="Submit" type="button" id="Submit" onclick="alert('This is a sample form. If this were a real form, activating the Submit button would send the requested information and clear the form. Activating this sample button does not change the form or display additional windows. Press ENTER to close this message.')" value="Submit">
+</font></p>
+
+</TD>
+</TR>
+</TABLE>
+</form>
+</body>
+</html>
+
+
+-->

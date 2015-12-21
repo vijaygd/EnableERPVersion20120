@@ -1,0 +1,8 @@
+2015-10-23T12:42:10.0698499Z - 5468 - Warn - Exception cleaning temporary files
+2015-10-23T12:42:10.0908526Z - 5468 - Warn - 
+2015-10-23T12:42:10.0908526Z - 5468 - Warn - Could not find a part of the path 'O:\RestFul\enablenew\EnableIndia\App_Data\51Degrees'.
+2015-10-23T12:42:10.1068546Z - 5468 - Warn -    at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileSystemEnumerableIterator`1.CommonInit()
+   at System.IO.FileSystemEnumerableIterator`1..ctor(String path, String originalUserPath, String searchPattern, SearchOption searchOption, SearchResultHandler`1 resultHandler, Boolean checkHost)
+   at System.IO.DirectoryInfo.InternalGetFiles(String searchPattern, SearchOption searchOption)
+   at FiftyOne.Foundation.Mobile.Detection.WebProvider.CleanTemporaryFiles()

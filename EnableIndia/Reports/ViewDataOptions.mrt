@@ -1,0 +1,961 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.0" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <Databases isList="true" count="0" />
+    <DataSources isList="true" count="7">
+      <DsEducation Ref="2" type="DataTableSource" isKey="true">
+        <Alias>DsEducation</Alias>
+        <Columns isList="true" count="2">
+          <value>no,System.String</value>
+          <value>course_qualification_name,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>DsEducation</Name>
+        <NameInSource>DsEducation</NameInSource>
+      </DsEducation>
+      <Dslanguage Ref="3" type="DataTableSource" isKey="true">
+        <Alias>Dslanguage</Alias>
+        <Columns isList="true" count="2">
+          <value>no,System.String</value>
+          <value>language_name,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>Dslanguage</Name>
+        <NameInSource>Dslanguage</NameInSource>
+      </Dslanguage>
+      <DsJobType Ref="4" type="DataTableSource" isKey="true">
+        <Alias>DsJobType</Alias>
+        <Columns isList="true" count="2">
+          <value>no,System.String</value>
+          <value>job_name,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>DsJobType</Name>
+        <NameInSource>DsJobType</NameInSource>
+      </DsJobType>
+      <DsRole Ref="5" type="DataTableSource" isKey="true">
+        <Alias>DsRole</Alias>
+        <Columns isList="true" count="2">
+          <value>no,System.String</value>
+          <value>job_role_name,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>DsRole</Name>
+        <NameInSource>DsRole</NameInSource>
+      </DsRole>
+      <DsCandidateGroup Ref="6" type="DataTableSource" isKey="true">
+        <Alias>DsCandidateGroup</Alias>
+        <Columns isList="true" count="2">
+          <value>no,System.String</value>
+          <value>group_name,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>DsCandidateGroup</Name>
+        <NameInSource>DsCandidateGroup</NameInSource>
+      </DsCandidateGroup>
+      <DsDisibiltySubTypes Ref="7" type="DataTableSource" isKey="true">
+        <Alias>DsDisibiltySubTypes</Alias>
+        <Columns isList="true" count="3">
+          <value>no,System.String</value>
+          <value>disability_type,System.String</value>
+          <value>disability_sub_type,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>DsDisibiltySubTypes</Name>
+        <NameInSource>DsDisibiltySubTypes</NameInSource>
+      </DsDisibiltySubTypes>
+      <DsRecommendedTraining Ref="8" type="DataTableSource" isKey="true">
+        <Alias>DsRecommendedTraining</Alias>
+        <Columns isList="true" count="1">
+          <value>training_program_name,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>DsRecommendedTraining</Name>
+        <NameInSource>DsRecommendedTraining</NameInSource>
+      </DsRecommendedTraining>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="0" />
+  </Dictionary>
+  <GlobalizationStrings isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="9" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="21">
+        <Header1 Ref="10" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.2,7.49,0.2</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text1 Ref="11" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.4,0,0.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Bold</Font>
+              <HorAlignment>Right</HorAlignment>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,4,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text1</Name>
+              <Page isRef="9" />
+              <Parent isRef="10" />
+              <Text>No.</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="12" type="GeneralFormat" isKey="true" />
+            </Text1>
+            <Text2 Ref="13" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.8,0,1.7,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Bold</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,0,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text2</Name>
+              <Page isRef="9" />
+              <Parent isRef="10" />
+              <Text>DisabiltyType</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="14" type="GeneralFormat" isKey="true" />
+            </Text2>
+            <Text3 Ref="15" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.5,0,1.5,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Bold</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,0,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text3</Name>
+              <Page isRef="9" />
+              <Parent isRef="10" />
+              <Text>Disabilty Sub -type</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="16" type="GeneralFormat" isKey="true" />
+            </Text3>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <MaxHeight>0</MaxHeight>
+          <MinHeight>0</MinHeight>
+          <Name>Header1</Name>
+          <Page isRef="9" />
+          <Parent isRef="9" />
+        </Header1>
+        <DsDisablitySubType Ref="17" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.8,7.49,0.2</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text5 Ref="18" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.8,0,1.7,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,0,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text5</Name>
+              <Page isRef="9" />
+              <Parent isRef="17" />
+              <Text>{DsDisibiltySubTypes.disability_type}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="19" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+            </Text5>
+            <Text6 Ref="20" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.5,0,1.5,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,0,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text6</Name>
+              <Page isRef="9" />
+              <Parent isRef="17" />
+              <Text>{DsDisibiltySubTypes.disability_sub_type}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="21" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+            </Text6>
+            <Text4 Ref="22" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.4,0,0.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9</Font>
+              <HorAlignment>Right</HorAlignment>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,4,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text4</Name>
+              <Page isRef="9" />
+              <Parent isRef="17" />
+              <Text>{Line}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="23" type="GeneralFormat" isKey="true" />
+              <Type>SystemVariables</Type>
+            </Text4>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName />
+          <DataSourceName>DsDisibiltySubTypes</DataSourceName>
+          <Filters isList="true" count="0" />
+          <MaxHeight>0</MaxHeight>
+          <MinHeight>0</MinHeight>
+          <Name>DsDisablitySubType</Name>
+          <Page isRef="9" />
+          <Parent isRef="9" />
+          <Sort isList="true" count="0" />
+        </DsDisablitySubType>
+        <Footer2 Ref="24" type="FooterBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,1.4,7.49,0.2</ClientRectangle>
+          <Components isList="true" count="0" />
+          <Conditions isList="true" count="0" />
+          <MaxHeight>0</MaxHeight>
+          <MinHeight>0</MinHeight>
+          <Name>Footer2</Name>
+          <Page isRef="9" />
+          <Parent isRef="9" />
+        </Footer2>
+        <Header2 Ref="25" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,2,7.49,0.2</ClientRectangle>
+          <Components isList="true" count="2">
+            <Text9 Ref="26" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.4,0,0.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Bold</Font>
+              <HorAlignment>Right</HorAlignment>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,4,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text9</Name>
+              <Page isRef="9" />
+              <Parent isRef="25" />
+              <Text>No.</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="27" type="GeneralFormat" isKey="true" />
+            </Text9>
+            <Text10 Ref="28" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.8,0,1.7,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Bold</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,0,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text10</Name>
+              <Page isRef="9" />
+              <Parent isRef="25" />
+              <Text>Education</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="29" type="GeneralFormat" isKey="true" />
+            </Text10>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <MaxHeight>0</MaxHeight>
+          <MinHeight>0</MinHeight>
+          <Name>Header2</Name>
+          <Page isRef="9" />
+          <Parent isRef="9" />
+        </Header2>
+        <Data1 Ref="30" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,2.6,7.49,0.2</ClientRectangle>
+          <Components isList="true" count="2">
+            <Text11 Ref="31" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.4,0,0.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9</Font>
+              <HorAlignment>Right</HorAlignment>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,4,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text11</Name>
+              <Page isRef="9" />
+              <Parent isRef="30" />
+              <Text>{Line}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="32" type="GeneralFormat" isKey="true" />
+              <Type>SystemVariables</Type>
+            </Text11>
+            <Text12 Ref="33" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.8,0,1.7,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,0,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text12</Name>
+              <Page isRef="9" />
+              <Parent isRef="30" />
+              <Text>{DsEducation.course_qualification_name}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="34" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+            </Text12>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName />
+          <DataSourceName>DsEducation</DataSourceName>
+          <Filters isList="true" count="0" />
+          <MaxHeight>0</MaxHeight>
+          <MinHeight>0</MinHeight>
+          <Name>Data1</Name>
+          <Page isRef="9" />
+          <Parent isRef="9" />
+          <Sort isList="true" count="0" />
+        </Data1>
+        <Footer3 Ref="35" type="FooterBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,3.2,7.49,0.2</ClientRectangle>
+          <Components isList="true" count="0" />
+          <Conditions isList="true" count="0" />
+          <MaxHeight>0</MaxHeight>
+          <MinHeight>0</MinHeight>
+          <Name>Footer3</Name>
+          <Page isRef="9" />
+          <Parent isRef="9" />
+        </Footer3>
+        <Header3 Ref="36" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,3.8,7.49,0.2</ClientRectangle>
+          <Components isList="true" count="2">
+            <Text14 Ref="37" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.4,0,0.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Bold</Font>
+              <HorAlignment>Right</HorAlignment>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,4,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text14</Name>
+              <Page isRef="9" />
+              <Parent isRef="36" />
+              <Text>No.</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="38" type="GeneralFormat" isKey="true" />
+            </Text14>
+            <Text15 Ref="39" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.8,0,1.7,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Bold</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,0,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text15</Name>
+              <Page isRef="9" />
+              <Parent isRef="36" />
+              <Text>Languages</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="40" type="GeneralFormat" isKey="true" />
+            </Text15>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <MaxHeight>0</MaxHeight>
+          <MinHeight>0</MinHeight>
+          <Name>Header3</Name>
+          <Page isRef="9" />
+          <Parent isRef="9" />
+        </Header3>
+        <Data2 Ref="41" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,4.4,7.49,0.2</ClientRectangle>
+          <Components isList="true" count="2">
+            <Text16 Ref="42" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.4,0,0.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9</Font>
+              <HorAlignment>Right</HorAlignment>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,4,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text16</Name>
+              <Page isRef="9" />
+              <Parent isRef="41" />
+              <Text>{Line}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="43" type="GeneralFormat" isKey="true" />
+              <Type>SystemVariables</Type>
+            </Text16>
+            <Text17 Ref="44" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.8,0,1.7,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,0,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text17</Name>
+              <Page isRef="9" />
+              <Parent isRef="41" />
+              <Text>{Dslanguage.language_name}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="45" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+            </Text17>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName />
+          <DataSourceName>Dslanguage</DataSourceName>
+          <Filters isList="true" count="0" />
+          <MaxHeight>0</MaxHeight>
+          <MinHeight>0</MinHeight>
+          <Name>Data2</Name>
+          <Page isRef="9" />
+          <Parent isRef="9" />
+          <Sort isList="true" count="0" />
+        </Data2>
+        <Footer4 Ref="46" type="FooterBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,5,7.49,0.2</ClientRectangle>
+          <Components isList="true" count="0" />
+          <Conditions isList="true" count="0" />
+          <MaxHeight>0</MaxHeight>
+          <MinHeight>0</MinHeight>
+          <Name>Footer4</Name>
+          <Page isRef="9" />
+          <Parent isRef="9" />
+        </Footer4>
+        <Header7 Ref="47" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,5.6,7.49,0.2</ClientRectangle>
+          <Components isList="true" count="2">
+            <Text27 Ref="48" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.4,0,0.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Bold</Font>
+              <Guid>f96d681f1c4545b99131588e97edf8e2</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,4,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text27</Name>
+              <Page isRef="9" />
+              <Parent isRef="47" />
+              <Text>No.</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="49" type="GeneralFormat" isKey="true" />
+            </Text27>
+            <Text28 Ref="50" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.8,0,2.8,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Bold</Font>
+              <Guid>a33dcd1e56dd4f049a8011f4fb436437</Guid>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,0,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text28</Name>
+              <Page isRef="9" />
+              <Parent isRef="47" />
+              <Text>Training Program</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="51" type="GeneralFormat" isKey="true" />
+            </Text28>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <MaxHeight>0</MaxHeight>
+          <MinHeight>0</MinHeight>
+          <Name>Header7</Name>
+          <Page isRef="9" />
+          <Parent isRef="9" />
+        </Header7>
+        <Data6 Ref="52" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,6.2,7.49,0.2</ClientRectangle>
+          <Components isList="true" count="2">
+            <Text29 Ref="53" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.4,0,0.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9</Font>
+              <Guid>261ed79b55ee4f8d8991f4ea16c5b23f</Guid>
+              <HorAlignment>Right</HorAlignment>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,4,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text29</Name>
+              <Page isRef="9" />
+              <Parent isRef="52" />
+              <Text>{Line}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="54" type="GeneralFormat" isKey="true" />
+              <Type>SystemVariables</Type>
+            </Text29>
+            <Text30 Ref="55" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.8,0,2.8,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,0,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text30</Name>
+              <Page isRef="9" />
+              <Parent isRef="52" />
+              <Text>{DsRecommendedTraining.training_program_name}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="56" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+            </Text30>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName />
+          <DataSourceName>DsRecommendedTraining</DataSourceName>
+          <Filters isList="true" count="0" />
+          <MaxHeight>0</MaxHeight>
+          <MinHeight>0</MinHeight>
+          <Name>Data6</Name>
+          <Page isRef="9" />
+          <Parent isRef="9" />
+          <Sort isList="true" count="0" />
+        </Data6>
+        <Footer7 Ref="57" type="FooterBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,6.8,7.49,0.2</ClientRectangle>
+          <Components isList="true" count="0" />
+          <Conditions isList="true" count="0" />
+          <MaxHeight>0</MaxHeight>
+          <MinHeight>0</MinHeight>
+          <Name>Footer7</Name>
+          <Page isRef="9" />
+          <Parent isRef="9" />
+        </Footer7>
+        <Header4 Ref="58" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,7.4,7.49,0.2</ClientRectangle>
+          <Components isList="true" count="2">
+            <Text19 Ref="59" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.4,0,0.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Bold</Font>
+              <HorAlignment>Right</HorAlignment>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,4,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text19</Name>
+              <Page isRef="9" />
+              <Parent isRef="58" />
+              <Text>No.</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="60" type="GeneralFormat" isKey="true" />
+            </Text19>
+            <Text20 Ref="61" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.8,0,2.8,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Bold</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,0,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text20</Name>
+              <Page isRef="9" />
+              <Parent isRef="58" />
+              <Text>JobType</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="62" type="GeneralFormat" isKey="true" />
+            </Text20>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <MaxHeight>0</MaxHeight>
+          <MinHeight>0</MinHeight>
+          <Name>Header4</Name>
+          <Page isRef="9" />
+          <Parent isRef="9" />
+        </Header4>
+        <Data3 Ref="63" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,8,7.49,0.2</ClientRectangle>
+          <Components isList="true" count="2">
+            <Text7 Ref="64" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.4,0,0.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9</Font>
+              <HorAlignment>Right</HorAlignment>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,4,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text7</Name>
+              <Page isRef="9" />
+              <Parent isRef="63" />
+              <Text>{Line}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="65" type="GeneralFormat" isKey="true" />
+              <Type>SystemVariables</Type>
+            </Text7>
+            <Text8 Ref="66" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.8,0,2.8,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,0,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text8</Name>
+              <Page isRef="9" />
+              <Parent isRef="63" />
+              <Text>{DsJobType.job_name}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="67" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+            </Text8>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName />
+          <DataSourceName>DsJobType</DataSourceName>
+          <Filters isList="true" count="0" />
+          <MaxHeight>0</MaxHeight>
+          <MinHeight>0</MinHeight>
+          <Name>Data3</Name>
+          <Page isRef="9" />
+          <Parent isRef="9" />
+          <Sort isList="true" count="0" />
+        </Data3>
+        <Footer5 Ref="68" type="FooterBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,8.6,7.49,0.2</ClientRectangle>
+          <Components isList="true" count="0" />
+          <Conditions isList="true" count="0" />
+          <MaxHeight>0</MaxHeight>
+          <MinHeight>0</MinHeight>
+          <Name>Footer5</Name>
+          <Page isRef="9" />
+          <Parent isRef="9" />
+        </Footer5>
+        <Header5 Ref="69" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,9.2,7.49,0.2</ClientRectangle>
+          <Components isList="true" count="2">
+            <Text13 Ref="70" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.4,0,0.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Bold</Font>
+              <HorAlignment>Right</HorAlignment>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,4,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text13</Name>
+              <Page isRef="9" />
+              <Parent isRef="69" />
+              <Text>No.</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="71" type="GeneralFormat" isKey="true" />
+            </Text13>
+            <Text18 Ref="72" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.8,0,1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Bold</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,0,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text18</Name>
+              <Page isRef="9" />
+              <Parent isRef="69" />
+              <Text>Role</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="73" type="GeneralFormat" isKey="true" />
+            </Text18>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <MaxHeight>0</MaxHeight>
+          <MinHeight>0</MinHeight>
+          <Name>Header5</Name>
+          <Page isRef="9" />
+          <Parent isRef="9" />
+        </Header5>
+        <Data4 Ref="74" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,9.8,7.49,0.2</ClientRectangle>
+          <Components isList="true" count="2">
+            <Text21 Ref="75" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.4,0,0.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9</Font>
+              <HorAlignment>Right</HorAlignment>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,4,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text21</Name>
+              <Page isRef="9" />
+              <Parent isRef="74" />
+              <Text>{Line}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="76" type="GeneralFormat" isKey="true" />
+              <Type>SystemVariables</Type>
+            </Text21>
+            <Text22 Ref="77" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.8,0,1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,0,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text22</Name>
+              <Page isRef="9" />
+              <Parent isRef="74" />
+              <Text>{DsRole.job_role_name}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="78" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+            </Text22>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName />
+          <DataSourceName>DsRole</DataSourceName>
+          <Filters isList="true" count="0" />
+          <MaxHeight>0</MaxHeight>
+          <MinHeight>0</MinHeight>
+          <Name>Data4</Name>
+          <Page isRef="9" />
+          <Parent isRef="9" />
+          <Sort isList="true" count="0" />
+        </Data4>
+        <Footer6 Ref="79" type="FooterBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,10.4,7.49,0.2</ClientRectangle>
+          <Components isList="true" count="0" />
+          <Conditions isList="true" count="0" />
+          <MaxHeight>0</MaxHeight>
+          <MinHeight>0</MinHeight>
+          <Name>Footer6</Name>
+          <Page isRef="9" />
+          <Parent isRef="9" />
+        </Footer6>
+        <Header6 Ref="80" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,11,7.49,0.2</ClientRectangle>
+          <Components isList="true" count="2">
+            <Text23 Ref="81" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.4,0,0.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Bold</Font>
+              <HorAlignment>Right</HorAlignment>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,4,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text23</Name>
+              <Page isRef="9" />
+              <Parent isRef="80" />
+              <Text>No.</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="82" type="GeneralFormat" isKey="true" />
+            </Text23>
+            <Text24 Ref="83" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.8,0,2.8,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Bold</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,0,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text24</Name>
+              <Page isRef="9" />
+              <Parent isRef="80" />
+              <Text>CandidateGroups</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="84" type="GeneralFormat" isKey="true" />
+            </Text24>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <MaxHeight>0</MaxHeight>
+          <MinHeight>0</MinHeight>
+          <Name>Header6</Name>
+          <Page isRef="9" />
+          <Parent isRef="9" />
+        </Header6>
+        <Data5 Ref="85" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,11.6,7.49,0.2</ClientRectangle>
+          <Components isList="true" count="2">
+            <Text25 Ref="86" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.4,0,0.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9</Font>
+              <HorAlignment>Right</HorAlignment>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,4,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text25</Name>
+              <Page isRef="9" />
+              <Parent isRef="85" />
+              <Text>{Line}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="87" type="GeneralFormat" isKey="true" />
+              <Type>SystemVariables</Type>
+            </Text25>
+            <Text26 Ref="88" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.8,0,2.8,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,0,0,0</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text26</Name>
+              <Page isRef="9" />
+              <Parent isRef="85" />
+              <Text>{DsCandidateGroup.group_name}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="89" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+            </Text26>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName />
+          <DataSourceName>DsCandidateGroup</DataSourceName>
+          <Filters isList="true" count="0" />
+          <MaxHeight>0</MaxHeight>
+          <MinHeight>0</MinHeight>
+          <Name>Data5</Name>
+          <Page isRef="9" />
+          <Parent isRef="9" />
+          <Sort isList="true" count="0" />
+        </Data5>
+        <Footer1 Ref="90" type="FooterBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,12.2,7.49,0.1</ClientRectangle>
+          <Components isList="true" count="0" />
+          <Conditions isList="true" count="0" />
+          <MaxHeight>0</MaxHeight>
+          <MinHeight>0</MinHeight>
+          <Name>Footer1</Name>
+          <Page isRef="9" />
+          <Parent isRef="9" />
+        </Footer1>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>2f41409f2e5e40ddb79c22e12d077991</Guid>
+      <Margins>0.39,0.39,0.39,0.39</Margins>
+      <Name>Page1</Name>
+      <Page isRef="9" />
+      <PageHeight>11.69</PageHeight>
+      <PageWidth>8.27</PageWidth>
+      <Report isRef="0" />
+      <Watermark Ref="91" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings Ref="92" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>5/1/2009 11:40:43 AM</ReportChanged>
+  <ReportCreated>2/17/2009 5:22:36 PM</ReportCreated>
+  <ReportGuid>3c66f8eb417d45a380240043ab50bf32</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Inches</ReportUnit>
+  <ReportVersion>2008.1.200</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        
+        public Report()
+        {
+            this.InitializeComponent();
+        }
+        #region StiReport Designer generated code - do not modify#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

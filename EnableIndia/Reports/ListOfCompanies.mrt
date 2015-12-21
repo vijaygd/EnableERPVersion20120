@@ -1,0 +1,587 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.0" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <Databases isList="true" count="0" />
+    <DataSources isList="true" count="1">
+      <Co Ref="2" type="DataTableSource" isKey="true">
+        <Alias>Co</Alias>
+        <Columns isList="true" count="11">
+          <value>company,System.String</value>
+          <value>parent_company,System.String</value>
+          <value>landline_of_office,System.String</value>
+          <value>fax,System.String</value>
+          <value>website,System.String</value>
+          <value>address,System.String</value>
+          <value>state,System.String</value>
+          <value>city,System.String</value>
+          <value>company_details,System.String</value>
+          <value>industry_segment,System.String</value>
+          <value>phone,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>Co</Name>
+        <NameInSource />
+      </Co>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="0" />
+  </Dictionary>
+  <GlobalizationStrings isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="3" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="2">
+        <Header1 Ref="4" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.2,12.49,0.2</ClientRectangle>
+          <Components isList="true" count="11">
+            <Text1 Ref="5" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,0.3,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Bold,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,4,4,4</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text1</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>No.</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="6" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </Text1>
+            <Text2 Ref="7" type="Text" isKey="true">
+              <Border>Top, Left, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0.3,0,1.5,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Bold,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,4,4,4</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text2</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>Company</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="8" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </Text2>
+            <Text3 Ref="9" type="Text" isKey="true">
+              <Border>Top, Left, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1.8,0,1.1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Bold,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,4,4,4</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text3</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>Parent Company</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="10" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </Text3>
+            <Text4 Ref="11" type="Text" isKey="true">
+              <Border>Top, Left, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>2.9,0,1.1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Bold,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,4,4,4</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text4</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>Phone/Landline of Office</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="12" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Text4>
+            <Text6 Ref="13" type="Text" isKey="true">
+              <Border>Top, Left, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>4,0,1.1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Bold,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,4,4,4</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text6</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>Fax</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="14" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </Text6>
+            <Text7 Ref="15" type="Text" isKey="true">
+              <Border>Top, Left, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>5.1,0,1.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Bold,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,4,4,4</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text7</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>Website</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="16" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </Text7>
+            <Text8 Ref="17" type="Text" isKey="true">
+              <Border>Top, Left, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>6.5,0,1.6,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Bold,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,4,4,4</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text8</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>Address</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="18" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </Text8>
+            <Text9 Ref="19" type="Text" isKey="true">
+              <Border>Top, Left, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>8.1,0,1.1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Bold,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,4,4,4</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text9</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>State</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="20" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </Text9>
+            <Text10 Ref="21" type="Text" isKey="true">
+              <Border>Top, Left, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>9.2,0,1.1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Bold,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,4,4,4</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text10</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>City</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="22" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </Text10>
+            <Text11 Ref="23" type="Text" isKey="true">
+              <Border>Top, Left, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>10.3,0,1.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Bold,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,4,4,4</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text11</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>Company Details</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="24" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </Text11>
+            <Text12 Ref="25" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>11.5,0,1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Bold,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,4,4,4</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text12</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>Industry Segment</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="26" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+            </Text12>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <MaxHeight>0</MaxHeight>
+          <MinHeight>0</MinHeight>
+          <Name>Header1</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <PrintIfEmpty>True</PrintIfEmpty>
+        </Header1>
+        <Data1 Ref="27" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.8,12.49,0.2</ClientRectangle>
+          <Components isList="true" count="11">
+            <Text13 Ref="28" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,0.3,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Regular,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>e6c1ef2c20224d9da49da7ed81b6d7a8</Guid>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,4,4,4</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text13</Name>
+              <Page isRef="3" />
+              <Parent isRef="27" />
+              <Text>{Line}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="29" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>SystemVariables</Type>
+            </Text13>
+            <Text14 Ref="30" type="Text" isKey="true">
+              <Border>Top, Left, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0.3,0,1.5,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Regular,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>74a11981f663485e873f87818695dd5e</Guid>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,4,4,4</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text14</Name>
+              <Page isRef="3" />
+              <Parent isRef="27" />
+              <Text>{Co.company}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="31" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Text14>
+            <Text15 Ref="32" type="Text" isKey="true">
+              <Border>Top, Left, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1.8,0,1.1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Regular,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>c486241e3a964bf9a111f3f41a597233</Guid>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,4,4,4</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text15</Name>
+              <Page isRef="3" />
+              <Parent isRef="27" />
+              <Text>{Co.parent_company}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="33" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Text15>
+            <Text16 Ref="34" type="Text" isKey="true">
+              <Border>Top, Left, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>2.9,0,1.1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Regular,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>0d254138caf94505b06b552a5abe8c38</Guid>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,4,4,4</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text16</Name>
+              <Page isRef="3" />
+              <Parent isRef="27" />
+              <Text>{Co.phone}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="35" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Text16>
+            <Text18 Ref="36" type="Text" isKey="true">
+              <Border>Top, Left, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>4,0,1.1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Regular,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>9ca8c73237dd4f859d67a80c46f0647c</Guid>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,4,4,4</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text18</Name>
+              <Page isRef="3" />
+              <Parent isRef="27" />
+              <Text>{Co.fax}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="37" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Text18>
+            <Text19 Ref="38" type="Text" isKey="true">
+              <Border>Top, Left, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>5.1,0,1.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Regular,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>6162394d1f5d46e88cf475744f124811</Guid>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,4,4,4</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text19</Name>
+              <Page isRef="3" />
+              <Parent isRef="27" />
+              <Text>{Co.website}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="39" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Text19>
+            <Text20 Ref="40" type="Text" isKey="true">
+              <Border>Top, Left, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>6.5,0,1.6,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Regular,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>7fb5b58f83694c34abefda2f2277d45c</Guid>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,4,4,4</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text20</Name>
+              <Page isRef="3" />
+              <Parent isRef="27" />
+              <Text>{Co.address}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="41" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Text20>
+            <Text21 Ref="42" type="Text" isKey="true">
+              <Border>Top, Left, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>8.1,0,1.1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Regular,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>c5b062ccb8584fd3ae5c4cf9be295179</Guid>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,4,4,4</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text21</Name>
+              <Page isRef="3" />
+              <Parent isRef="27" />
+              <Text>{Co.state}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="43" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Text21>
+            <Text22 Ref="44" type="Text" isKey="true">
+              <Border>Top, Left, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>9.2,0,1.1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Regular,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>b7dcfb9d529547c480ea4b820d23f890</Guid>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,4,4,4</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text22</Name>
+              <Page isRef="3" />
+              <Parent isRef="27" />
+              <Text>{Co.city}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="45" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Text22>
+            <Text23 Ref="46" type="Text" isKey="true">
+              <Border>Top, Left, Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>10.3,0,1.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Regular,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>8da27278d1314d6bb1788df08d2606fe</Guid>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,4,4,4</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text23</Name>
+              <Page isRef="3" />
+              <Parent isRef="27" />
+              <Text>{Co.company_details}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="47" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Text23>
+            <Text24 Ref="48" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>11.5,0,1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,9,Regular,Point,False,0</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <Guid>f8e48a1ee05e40b29ca12be8de974fcf</Guid>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,4,4,4</Margins>
+              <MaxSize>0,0</MaxSize>
+              <MinSize>0,0</MinSize>
+              <Name>Text24</Name>
+              <Page isRef="3" />
+              <Parent isRef="27" />
+              <Text>{Co.industry_segment}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="49" type="GeneralFormat" isKey="true" />
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Text24>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName />
+          <DataSourceName>Co</DataSourceName>
+          <Filters isList="true" count="0" />
+          <MaxHeight>0</MaxHeight>
+          <MinHeight>0</MinHeight>
+          <Name>Data1</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Sort isList="true" count="0" />
+        </Data1>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>8da490bcdc384e37851a36e7d78997e5</Guid>
+      <Margins>0.39,0.39,0.39,0.39</Margins>
+      <Name>Page1</Name>
+      <Page isRef="3" />
+      <PageHeight>11.69</PageHeight>
+      <PageWidth>13.27</PageWidth>
+      <Report isRef="0" />
+      <Watermark Ref="50" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings Ref="51" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>7/24/2009 1:31:52 PM</ReportChanged>
+  <ReportCreated>7/14/2009 2:31:10 PM</ReportCreated>
+  <ReportGuid>793b8d4549aa42349ccc78ef7a768860</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Inches</ReportUnit>
+  <ReportVersion>2008.1.200</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        
+        public Report()
+        {
+            this.InitializeComponent();
+        }
+        #region StiReport Designer generated code - do not modify#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

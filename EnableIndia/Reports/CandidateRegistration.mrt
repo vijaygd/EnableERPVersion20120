@@ -1,0 +1,3482 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.0" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <Databases isList="true" count="0" />
+    <DataSources isList="true" count="4">
+      <DsRegistrationID Ref="2" type="DataTableSource" isKey="true">
+        <Alias>DsRegistrationID</Alias>
+        <Columns isList="true" count="1">
+          <value>registration_id,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>DsRegistrationID</Name>
+        <NameInSource>DsRegistrationID</NameInSource>
+      </DsRegistrationID>
+      <DsComputerKnowledge Ref="3" type="DataTableSource" isKey="true">
+        <Alias>DsComputerKnowledge</Alias>
+        <Columns isList="true" count="1">
+          <value>computer_knowledge_type,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>DsComputerKnowledge</Name>
+        <NameInSource>DsComputerKnowledge</NameInSource>
+      </DsComputerKnowledge>
+      <DsDisabilityTypes Ref="4" type="DataTableSource" isKey="true">
+        <Alias>DsDisabilityTypes</Alias>
+        <Columns isList="true" count="1">
+          <value>disability_type,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>DsDisabilityTypes</Name>
+        <NameInSource>DsDisabilityTypes</NameInSource>
+      </DsDisabilityTypes>
+      <DsBlank Ref="5" type="DataTableSource" isKey="true">
+        <Alias>DsBlank</Alias>
+        <Columns isList="true" count="1">
+          <value>column,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>DsBlank</Name>
+        <NameInSource>DsBlank</NameInSource>
+      </DsBlank>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="0" />
+  </Dictionary>
+  <GlobalizationStrings isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="6" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="9">
+        <Header3 Ref="7" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.2,7.49,0</ClientRectangle>
+          <Components isList="true" count="0" />
+          <Conditions isList="true" count="0" />
+          <Name>Header3</Name>
+          <Page isRef="6" />
+          <Parent isRef="6" />
+        </Header3>
+        <Data1 Ref="8" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.6,7.49,2.6</ClientRectangle>
+          <Components isList="true" count="24">
+            <Text2 Ref="9" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,1,0.9,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text2</Name>
+              <Page isRef="6" />
+              <Parent isRef="8" />
+              <Text>Registration ID :</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="10" type="GeneralFormat" isKey="true" />
+              <VertAlignment>Bottom</VertAlignment>
+            </Text2>
+            <Text5 Ref="11" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.2,1,1.1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text5</Name>
+              <Page isRef="6" />
+              <Parent isRef="8" />
+              <Text>Candidate's NGO :</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="12" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text5>
+            <Text6 Ref="13" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.3,1,0.9,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text6</Name>
+              <Page isRef="6" />
+              <Parent isRef="8" />
+              <Text>{DsRegistrationID.registration_id.Contains("A")?"Enable India" : ""}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="14" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text6>
+            <Text7 Ref="15" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4.5,1,1.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="1">
+                <value>DsRegistrationID.registration_id,Containing,A,,String,Red,Transparent,Arial_x002C_8,False</value>
+              </Conditions>
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text7</Name>
+              <Page isRef="6" />
+              <Parent isRef="8" />
+              <Text>Candidate's ID at NGO :</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="16" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text7>
+            <Text8 Ref="17" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>5.9,1.58,1.1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text8</Name>
+              <Page isRef="6" />
+              <Parent isRef="8" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="18" type="GeneralFormat" isKey="true" />
+            </Text8>
+            <Text9 Ref="19" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,1.58,1.3,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text9</Name>
+              <Page isRef="6" />
+              <Parent isRef="8" />
+              <Text>File Number :</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="20" type="GeneralFormat" isKey="true" />
+              <VertAlignment>Bottom</VertAlignment>
+            </Text9>
+            <Text10 Ref="21" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.4,1.58,1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text10</Name>
+              <Page isRef="6" />
+              <Parent isRef="8" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="22" type="GeneralFormat" isKey="true" />
+            </Text10>
+            <Text11 Ref="23" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>5.9,1,1.1,0.2</ClientRectangle>
+              <Conditions isList="true" count="1">
+                <value>DsRegistrationID.registration_id,Containing,A,,String,Red,Transparent,Arial_x002C_8,False</value>
+              </Conditions>
+              <Font>Arial,8.25</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text11</Name>
+              <Page isRef="6" />
+              <Parent isRef="8" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="24" type="GeneralFormat" isKey="true" />
+            </Text11>
+            <Text12 Ref="25" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4.7,1.58,1.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text12</Name>
+              <Page isRef="6" />
+              <Parent isRef="8" />
+              <Text>REGISTRATION DATE :</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="26" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text12>
+            <Text13 Ref="27" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6.1,1.78,0.8,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text13</Name>
+              <Page isRef="6" />
+              <Parent isRef="8" />
+              <Text>(DD/MM/YYYY)</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="28" type="GeneralFormat" isKey="true" />
+            </Text13>
+            <Text14 Ref="29" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,1.88,1.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text14</Name>
+              <Page isRef="6" />
+              <Parent isRef="8" />
+              <Text>NAME OF CANDIDATE :</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="30" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text14>
+            <Text15 Ref="31" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.3,1.88,1.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text15</Name>
+              <Page isRef="6" />
+              <Parent isRef="8" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="32" type="GeneralFormat" isKey="true" />
+            </Text15>
+            <Text16 Ref="33" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.8,1.88,1.3,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text16</Name>
+              <Page isRef="6" />
+              <Parent isRef="8" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="34" type="GeneralFormat" isKey="true" />
+            </Text16>
+            <Text17 Ref="35" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4.2,1.88,1.5,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text17</Name>
+              <Page isRef="6" />
+              <Parent isRef="8" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="36" type="GeneralFormat" isKey="true" />
+            </Text17>
+            <Text18 Ref="37" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.5,2.08,1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text18</Name>
+              <Page isRef="6" />
+              <Parent isRef="8" />
+              <Text>       First Name</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="38" type="GeneralFormat" isKey="true" />
+            </Text18>
+            <Text19 Ref="39" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.9,2.08,1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text19</Name>
+              <Page isRef="6" />
+              <Parent isRef="8" />
+              <Text>     Middle Name</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="40" type="GeneralFormat" isKey="true" />
+            </Text19>
+            <Text20 Ref="41" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4.5,2.08,1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text20</Name>
+              <Page isRef="6" />
+              <Parent isRef="8" />
+              <Text>     Last Name</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="42" type="GeneralFormat" isKey="true" />
+            </Text20>
+            <Text21 Ref="43" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.1,1,1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text21</Name>
+              <Page isRef="6" />
+              <Parent isRef="8" />
+              <Text>{DsRegistrationID.registration_id}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="44" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text21>
+            <Text22 Ref="45" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,2.28,1.1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text22</Name>
+              <Page isRef="6" />
+              <Parent isRef="8" />
+              <Text>DISABILITY TYPE: </Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="46" type="GeneralFormat" isKey="true" />
+            </Text22>
+            <Text219 Ref="47" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.14,0.4,3.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,12,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text219</Name>
+              <Page isRef="6" />
+              <Parent isRef="8" />
+              <Text>Registration &amp; Profiling of Candidates </Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="48" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+            </Text219>
+            <Text1 Ref="49" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.14,0.6,3.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,11,Italic</Font>
+              <HorAlignment>Center</HorAlignment>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="6" />
+              <Parent isRef="8" />
+              <Text>(for printing of hard-copy)</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="50" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+            </Text1>
+            <Text221 Ref="51" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.8,2.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text221</Name>
+              <Page isRef="6" />
+              <Parent isRef="8" />
+              <Text>Mandatory fields are shown in capitals. </Text>
+              <TextBrush>Red</TextBrush>
+              <TextFormat Ref="52" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+            </Text221>
+            <Text55 Ref="53" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,1.3,1.5,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text55</Name>
+              <Page isRef="6" />
+              <Parent isRef="8" />
+              <Text>Old Registration ID (if any) :</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="54" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text55>
+            <Text74 Ref="55" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.5,1.28,1,0.22</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text74</Name>
+              <Page isRef="6" />
+              <Parent isRef="8" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="56" type="GeneralFormat" isKey="true" />
+            </Text74>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName />
+          <DataSourceName>DsRegistrationID</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Name>Data1</Name>
+          <Page isRef="6" />
+          <Parent isRef="6" />
+          <Sort isList="true" count="0" />
+          <StartNewPage>True</StartNewPage>
+        </Data1>
+        <Data2 Ref="57" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,3.6,7.49,0.2</ClientRectangle>
+          <Components isList="true" count="2">
+            <Text225 Ref="58" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,1.6,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text225</Name>
+              <Page isRef="6" />
+              <Parent isRef="57" />
+              <Text>{DsDisabilityTypes.disability_type}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="59" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+            </Text225>
+            <Text226 Ref="60" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.6,0,0.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text226</Name>
+              <Page isRef="6" />
+              <Parent isRef="57" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="61" type="GeneralFormat" isKey="true" />
+            </Text226>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName />
+          <DataSourceName>DsDisabilityTypes</DataSourceName>
+          <Filters isList="true" count="0" />
+          <MasterComponent isRef="8" />
+          <Name>Data2</Name>
+          <Page isRef="6" />
+          <Parent isRef="6" />
+          <Sort isList="true" count="0" />
+        </Data2>
+        <Footer2 Ref="62" type="FooterBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,4.2,7.49,5.9</ClientRectangle>
+          <Components isList="true" count="67">
+            <Text145 Ref="63" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,0.5,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text145</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <Text>Other :</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="64" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text145>
+            <Text146 Ref="65" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.5,0,2.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text146</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="66" type="GeneralFormat" isKey="true" />
+            </Text146>
+            <Text24 Ref="67" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.3,1.3,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text24</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <Text>DISABILITY SUB-TYPE:</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="68" type="GeneralFormat" isKey="true" />
+              <VertAlignment>Bottom</VertAlignment>
+            </Text24>
+            <Text23 Ref="69" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.3,0.3,1.6,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text23</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="70" type="GeneralFormat" isKey="true" />
+            </Text23>
+            <Text26 Ref="71" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.58,1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text26</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <Text>DATE OF BIRTH:</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="72" type="GeneralFormat" isKey="true" />
+              <VertAlignment>Bottom</VertAlignment>
+            </Text26>
+            <Text25 Ref="73" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.3,0.58,1.6,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,10,Bold</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text25</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="74" type="GeneralFormat" isKey="true" />
+            </Text25>
+            <Text28 Ref="75" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3,0.58,0.9,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text28</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <Text> (DD/MM/YYYY)</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="76" type="GeneralFormat" isKey="true" />
+              <VertAlignment>Bottom</VertAlignment>
+            </Text28>
+            <Text27 Ref="77" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.88,1.6,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text27</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <Text>{DsRegistrationID.registration_id.Contains("A") ? "PHONE NUMBER (PRIMARY)" : "Phone Number (Primary)"}:</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="78" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text27>
+            <Text30 Ref="79" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.7,0.88,2.5,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,10,Bold</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text30</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="80" type="GeneralFormat" isKey="true" />
+            </Text30>
+            <Text29 Ref="81" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,1.48,1.3,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text29</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <Text>{DsRegistrationID.registration_id.Contains("A")? "ADDRESS (PRESENT)" : "Address Present"}:</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="82" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text29>
+            <Text31 Ref="83" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,1.68,1,0.2</ClientRectangle>
+              <Conditions isList="true" count="1">
+                <value>DsRegistrationID.registration_id,Containing,A,,String,Red,Transparent,Arial_x002C_8,False</value>
+              </Conditions>
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text31</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <Text>(City is mandatory)</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="84" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+            </Text31>
+            <Text32 Ref="85" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.3,1.48,3.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,10,Bold</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text32</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="86" type="GeneralFormat" isKey="true" />
+            </Text32>
+            <Text33 Ref="87" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,2.38,1.3,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text33</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <Text>Address(Permanent) :</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="88" type="GeneralFormat" isKey="true" />
+              <VertAlignment>Bottom</VertAlignment>
+            </Text33>
+            <Text34 Ref="89" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.3,2.38,4.1,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,10,Bold</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text34</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="90" type="GeneralFormat" isKey="true" />
+            </Text34>
+            <Text35 Ref="91" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.8,2.98,1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text35</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="92" type="GeneralFormat" isKey="true" />
+            </Text35>
+            <Text36 Ref="93" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.8,3.18,1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <HorAlignment>Center</HorAlignment>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text36</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <Text>(State)</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="94" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+            </Text36>
+            <Text37 Ref="95" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4.2,2.98,1.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text37</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="96" type="GeneralFormat" isKey="true" />
+            </Text37>
+            <Text38 Ref="97" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>5.8,2.98,1.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text38</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="98" type="GeneralFormat" isKey="true" />
+            </Text38>
+            <Text39 Ref="99" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4.2,3.18,1.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <HorAlignment>Center</HorAlignment>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text39</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <Text>(City)</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="100" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+            </Text39>
+            <Text40 Ref="101" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>5.8,3.18,1.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <HorAlignment>Center</HorAlignment>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text40</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <Text>(Pin Code)</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="102" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+            </Text40>
+            <Text41 Ref="103" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,3.48,0.6,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text41</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <Text>GENDER: </Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="104" type="GeneralFormat" isKey="true" />
+            </Text41>
+            <Text42 Ref="105" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.7,3.48,0.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text42</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <Text>  Male </Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="106" type="GeneralFormat" isKey="true" />
+            </Text42>
+            <Text43 Ref="107" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.1,3.48,0.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text43</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="108" type="GeneralFormat" isKey="true" />
+            </Text43>
+            <Text44 Ref="109" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.9,3.48,0.5,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text44</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <Text> Female </Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="110" type="GeneralFormat" isKey="true" />
+            </Text44>
+            <Text45 Ref="111" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.4,3.48,0.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text45</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="112" type="GeneralFormat" isKey="true" />
+            </Text45>
+            <Text46 Ref="113" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,3.78,2.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text46</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <Text>ALL RELEVANT DOCUMENTS SUBMITTED  :</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="114" type="GeneralFormat" isKey="true" />
+            </Text46>
+            <Text47 Ref="115" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.5,3.78,0.3,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text47</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <Text> Yes</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="116" type="GeneralFormat" isKey="true" />
+            </Text47>
+            <Text48 Ref="117" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.5,3.98,0.3,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text48</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <Text>  No</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="118" type="GeneralFormat" isKey="true" />
+            </Text48>
+            <Text49 Ref="119" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.5,3.78,0.5,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text49</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <Text>Details :</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="120" type="GeneralFormat" isKey="true" />
+              <VertAlignment>Bottom</VertAlignment>
+            </Text49>
+            <Text50 Ref="121" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4,3.78,3.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text50</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="122" type="GeneralFormat" isKey="true" />
+            </Text50>
+            <Text51 Ref="123" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.8,3.78,0.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text51</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="124" type="GeneralFormat" isKey="true" />
+            </Text51>
+            <Text52 Ref="125" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.8,3.98,0.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text52</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="126" type="GeneralFormat" isKey="true" />
+            </Text52>
+            <Text56 Ref="127" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.3,2.98,1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text56</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="128" type="GeneralFormat" isKey="true" />
+            </Text56>
+            <Text57 Ref="129" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.3,3.18,1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <HorAlignment>Center</HorAlignment>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text57</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <Text>(Country)</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="130" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+            </Text57>
+            <Text58 Ref="131" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.8,2.08,1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <HorAlignment>Center</HorAlignment>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text58</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <Text>(State)</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="132" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+            </Text58>
+            <Text59 Ref="133" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4.2,1.88,1.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text59</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="134" type="GeneralFormat" isKey="true" />
+            </Text59>
+            <Text60 Ref="135" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>5.8,1.88,1.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text60</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="136" type="GeneralFormat" isKey="true" />
+            </Text60>
+            <Text61 Ref="137" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4.2,2.08,1.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <HorAlignment>Center</HorAlignment>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text61</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <Text>{DsRegistrationID.registration_id.Contains("A")? "(City)" : "(CITY)"}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="138" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+            </Text61>
+            <Text62 Ref="139" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>5.8,2.08,1.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <HorAlignment>Center</HorAlignment>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text62</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <Text>(Pin Code)</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="140" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+            </Text62>
+            <Text63 Ref="141" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.4,1.88,1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text63</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="142" type="GeneralFormat" isKey="true" />
+            </Text63>
+            <Text65 Ref="143" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.4,2.08,1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <HorAlignment>Center</HorAlignment>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text65</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <Text>(Country)</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="144" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+            </Text65>
+            <Text64 Ref="145" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.4,1.68,3.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <HorAlignment>Center</HorAlignment>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text64</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <Text>Building, Lane Details</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="146" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+            </Text64>
+            <Text66 Ref="147" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.8,1.88,1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text66</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="148" type="GeneralFormat" isKey="true" />
+            </Text66>
+            <Text69 Ref="149" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.3,2.68,3.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <HorAlignment>Center</HorAlignment>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text69</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <Text>Building, Lane Details</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="150" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+            </Text69>
+            <Text70 Ref="151" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,4.28,0.6,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text70</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <Text>E-mail :</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="152" type="GeneralFormat" isKey="true" />
+              <VertAlignment>Bottom</VertAlignment>
+            </Text70>
+            <Text71 Ref="153" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.7,4.28,3.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text71</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="154" type="GeneralFormat" isKey="true" />
+            </Text71>
+            <Text72 Ref="155" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,1.2,1.6,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text72</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <Text>Phone Number (Secondary) :</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="156" type="GeneralFormat" isKey="true" />
+              <VertAlignment>Bottom</VertAlignment>
+            </Text72>
+            <Text73 Ref="157" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.7,1.2,2.5,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Verdana,10,Bold</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text73</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="158" type="GeneralFormat" isKey="true" />
+            </Text73>
+            <Text75 Ref="159" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,4.6,0.9,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text75</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <Text>Maritial Status :</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="160" type="GeneralFormat" isKey="true" />
+            </Text75>
+            <Text76 Ref="161" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.6,4.6,0.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text76</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <Text>Single</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="162" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+            </Text76>
+            <Text77 Ref="163" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2,4.6,0.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text77</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="164" type="GeneralFormat" isKey="true" />
+            </Text77>
+            <Text78 Ref="165" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.5,4.6,0.5,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text78</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <Text>Married</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="166" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+            </Text78>
+            <Text79 Ref="167" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3,4.6,0.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text79</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <Text> </Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="168" type="GeneralFormat" isKey="true" />
+            </Text79>
+            <Text80 Ref="169" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,4.9,1.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text80</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <Text>Bio-Data Submitted</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="170" type="GeneralFormat" isKey="true" />
+            </Text80>
+            <Text81 Ref="171" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.4,4.9,0.6,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text81</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <Text>Hard Copy </Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="172" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+            </Text81>
+            <Text82 Ref="173" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2,4.9,0.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text82</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="174" type="GeneralFormat" isKey="true" />
+            </Text82>
+            <Text88 Ref="175" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.4,4.9,0.6,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text88</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <Text>Soft Copy </Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="176" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+            </Text88>
+            <Text89 Ref="177" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3,4.9,0.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text89</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <Text> </Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="178" type="GeneralFormat" isKey="true" />
+            </Text89>
+            <Text94 Ref="179" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,5.2,1.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text94</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <Text>Joining Form Signed :</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="180" type="GeneralFormat" isKey="true" />
+            </Text94>
+            <Text95 Ref="181" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.3,5.2,0.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text95</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="182" type="GeneralFormat" isKey="true" />
+            </Text95>
+            <Text147 Ref="183" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,5.5,1.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text147</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <Text>Photograph Submitted :</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="184" type="GeneralFormat" isKey="true" />
+            </Text147>
+            <Text189 Ref="185" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.7,5.5,0.3,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text189</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <Text> Yes </Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="186" type="GeneralFormat" isKey="true" />
+            </Text189>
+            <Text190 Ref="187" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2,5.5,0.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text190</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="188" type="GeneralFormat" isKey="true" />
+            </Text190>
+            <Text191 Ref="189" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.5,5.5,0.3,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text191</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <Text>  No </Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="190" type="GeneralFormat" isKey="true" />
+            </Text191>
+            <Text192 Ref="191" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.8,5.5,0.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text192</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="192" type="GeneralFormat" isKey="true" />
+            </Text192>
+            <Text53 Ref="193" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.5,5.2,0.5,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text53</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <Text>Types :</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="194" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+              <VertAlignment>Bottom</VertAlignment>
+            </Text53>
+            <Text54 Ref="195" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4,5.2,3.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text54</Name>
+              <Page isRef="6" />
+              <Parent isRef="62" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="196" type="GeneralFormat" isKey="true" />
+            </Text54>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>Footer2</Name>
+          <Page isRef="6" />
+          <Parent isRef="6" />
+        </Footer2>
+        <Header2 Ref="197" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,10.5,7.49,3.8</ClientRectangle>
+          <Components isList="true" count="81">
+            <Text193 Ref="198" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,3.4,7.1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text193</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <Text>********************************************************************** START OF PROFILING ******************************************************************************</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="199" type="GeneralFormat" isKey="true" />
+            </Text193>
+            <Text169 Ref="200" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,3.6,1.3,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text169</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <Text>Computer Knowledge :</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="201" type="GeneralFormat" isKey="true" />
+            </Text169>
+            <Text165 Ref="202" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,1.7,1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text165</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <Text>Work Experience :</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="203" type="GeneralFormat" isKey="true" />
+            </Text165>
+            <Text167 Ref="204" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,1.9,1.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,0,0,0</Margins>
+              <Name>Text167</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <Text>Parent Company </Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="205" type="GeneralFormat" isKey="true" />
+            </Text167>
+            <Text170 Ref="206" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.4,1.9,1.1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,0,0,0</Margins>
+              <Name>Text170</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <Text>Company </Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="207" type="GeneralFormat" isKey="true" />
+            </Text170>
+            <Text194 Ref="208" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.5,1.9,0.7,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,0,0,0</Margins>
+              <Name>Text194</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <Text>Role</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="209" type="GeneralFormat" isKey="true" />
+            </Text194>
+            <Text195 Ref="210" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.2,1.9,0.8,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,0,0,0</Margins>
+              <Name>Text195</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <Text>Designation</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="211" type="GeneralFormat" isKey="true" />
+            </Text195>
+            <Text196 Ref="212" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4,1.9,1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,0,0,0</Margins>
+              <Name>Text196</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <Text>From(MM/YYYY)</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="213" type="GeneralFormat" isKey="true" />
+            </Text196>
+            <Text197 Ref="214" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>5,1.9,0.9,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,0,0,0</Margins>
+              <Name>Text197</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <Text>To(MM/YYYY)</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="215" type="GeneralFormat" isKey="true" />
+            </Text197>
+            <Text198 Ref="216" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>5.9,1.9,0.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,0,0,0</Margins>
+              <Name>Text198</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <Text>Years</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="217" type="GeneralFormat" isKey="true" />
+            </Text198>
+            <Text199 Ref="218" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6.3,1.9,1.1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text199</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <Text>Monthly Salary (Rs)</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="219" type="GeneralFormat" isKey="true" />
+            </Text199>
+            <Text200 Ref="220" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,2.1,1.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text200</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="221" type="GeneralFormat" isKey="true" />
+            </Text200>
+            <Text201 Ref="222" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.4,2.1,1.1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text201</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="223" type="GeneralFormat" isKey="true" />
+            </Text201>
+            <Text202 Ref="224" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.5,2.1,0.7,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text202</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="225" type="GeneralFormat" isKey="true" />
+            </Text202>
+            <Text203 Ref="226" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.2,2.1,0.8,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text203</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="227" type="GeneralFormat" isKey="true" />
+            </Text203>
+            <Text204 Ref="228" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4,2.1,1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text204</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="229" type="GeneralFormat" isKey="true" />
+            </Text204>
+            <Text205 Ref="230" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>5,2.1,0.9,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text205</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="231" type="GeneralFormat" isKey="true" />
+            </Text205>
+            <Text206 Ref="232" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>5.9,2.1,0.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text206</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="233" type="GeneralFormat" isKey="true" />
+            </Text206>
+            <Text207 Ref="234" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6.3,2.1,1.1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text207</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="235" type="GeneralFormat" isKey="true" />
+            </Text207>
+            <Text208 Ref="236" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,3.1,2.8,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text208</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <Text>For candidate on job contract,contract expiry date :</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="237" type="GeneralFormat" isKey="true" />
+              <VertAlignment>Bottom</VertAlignment>
+            </Text208>
+            <Text209 Ref="238" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.8,3.1,2.8,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text209</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="239" type="GeneralFormat" isKey="true" />
+            </Text209>
+            <Text210 Ref="240" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>5.6,3.1,0.9,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text210</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <Text> (DD/MM/YYYY)</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="241" type="GeneralFormat" isKey="true" />
+              <VertAlignment>Bottom</VertAlignment>
+            </Text210>
+            <Text211 Ref="242" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.2,2.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,0,0,0</Margins>
+              <Name>Text211</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <Text>Course/ Qualifications :</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="243" type="GeneralFormat" isKey="true" />
+            </Text211>
+            <Text83 Ref="244" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.4,0.2,0.8,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,0,0,0</Margins>
+              <Name>Text83</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <Text>Passing Year</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="245" type="GeneralFormat" isKey="true" />
+            </Text83>
+            <Text86 Ref="246" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.2,0.2,0.9,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,0,0,0</Margins>
+              <Name>Text86</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <Text>Percentage(%)</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="247" type="GeneralFormat" isKey="true" />
+            </Text86>
+            <Text85 Ref="248" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4.1,0.2,3.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>4,0,0,0</Margins>
+              <Name>Text85</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <Text>Details</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="249" type="GeneralFormat" isKey="true" />
+            </Text85>
+            <Text90 Ref="250" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.4,2.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text90</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="251" type="GeneralFormat" isKey="true" />
+            </Text90>
+            <Text87 Ref="252" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4.1,0.4,3.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text87</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="253" type="GeneralFormat" isKey="true" />
+            </Text87>
+            <Text93 Ref="254" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.2,0.4,0.9,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text93</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="255" type="GeneralFormat" isKey="true" />
+            </Text93>
+            <Text92 Ref="256" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.4,0.4,0.8,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text92</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="257" type="GeneralFormat" isKey="true" />
+            </Text92>
+            <Text112 Ref="258" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.6,2.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text112</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="259" type="GeneralFormat" isKey="true" />
+            </Text112>
+            <Text91 Ref="260" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4.1,0.6,3.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text91</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="261" type="GeneralFormat" isKey="true" />
+            </Text91>
+            <Text148 Ref="262" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.2,0.6,0.9,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text148</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="263" type="GeneralFormat" isKey="true" />
+            </Text148>
+            <Text149 Ref="264" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.4,0.6,0.8,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text149</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="265" type="GeneralFormat" isKey="true" />
+            </Text149>
+            <Text150 Ref="266" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.8,2.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text150</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="267" type="GeneralFormat" isKey="true" />
+            </Text150>
+            <Text151 Ref="268" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4.1,0.8,3.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text151</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="269" type="GeneralFormat" isKey="true" />
+            </Text151>
+            <Text152 Ref="270" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.2,0.8,0.9,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text152</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="271" type="GeneralFormat" isKey="true" />
+            </Text152>
+            <Text153 Ref="272" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.4,0.8,0.8,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text153</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="273" type="GeneralFormat" isKey="true" />
+            </Text153>
+            <Text154 Ref="274" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,2.3,1.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text154</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="275" type="GeneralFormat" isKey="true" />
+            </Text154>
+            <Text67 Ref="276" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.4,2.3,1.1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text67</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="277" type="GeneralFormat" isKey="true" />
+            </Text67>
+            <Text68 Ref="278" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.5,2.3,0.7,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text68</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="279" type="GeneralFormat" isKey="true" />
+            </Text68>
+            <Text96 Ref="280" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.2,2.3,0.8,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text96</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="281" type="GeneralFormat" isKey="true" />
+            </Text96>
+            <Text97 Ref="282" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4,2.3,1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text97</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="283" type="GeneralFormat" isKey="true" />
+            </Text97>
+            <Text98 Ref="284" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>5,2.3,0.9,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text98</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="285" type="GeneralFormat" isKey="true" />
+            </Text98>
+            <Text99 Ref="286" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>5.9,2.3,0.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text99</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="287" type="GeneralFormat" isKey="true" />
+            </Text99>
+            <Text100 Ref="288" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6.3,2.3,1.1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text100</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="289" type="GeneralFormat" isKey="true" />
+            </Text100>
+            <Text101 Ref="290" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,2.5,1.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text101</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="291" type="GeneralFormat" isKey="true" />
+            </Text101>
+            <Text102 Ref="292" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.4,2.5,1.1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text102</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="293" type="GeneralFormat" isKey="true" />
+            </Text102>
+            <Text103 Ref="294" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.5,2.5,0.7,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text103</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="295" type="GeneralFormat" isKey="true" />
+            </Text103>
+            <Text104 Ref="296" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.2,2.5,0.8,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text104</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="297" type="GeneralFormat" isKey="true" />
+            </Text104>
+            <Text105 Ref="298" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4,2.5,1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text105</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="299" type="GeneralFormat" isKey="true" />
+            </Text105>
+            <Text106 Ref="300" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>5,2.5,0.9,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text106</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="301" type="GeneralFormat" isKey="true" />
+            </Text106>
+            <Text107 Ref="302" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>5.9,2.5,0.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text107</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="303" type="GeneralFormat" isKey="true" />
+            </Text107>
+            <Text108 Ref="304" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6.3,2.5,1.1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text108</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="305" type="GeneralFormat" isKey="true" />
+            </Text108>
+            <Text109 Ref="306" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,2.7,1.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text109</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="307" type="GeneralFormat" isKey="true" />
+            </Text109>
+            <Text155 Ref="308" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.4,2.7,1.1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text155</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="309" type="GeneralFormat" isKey="true" />
+            </Text155>
+            <Text156 Ref="310" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.5,2.7,0.7,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text156</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="311" type="GeneralFormat" isKey="true" />
+            </Text156>
+            <Text157 Ref="312" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.2,2.7,0.8,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text157</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="313" type="GeneralFormat" isKey="true" />
+            </Text157>
+            <Text158 Ref="314" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4,2.7,1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text158</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="315" type="GeneralFormat" isKey="true" />
+            </Text158>
+            <Text159 Ref="316" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>5,2.7,0.9,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text159</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="317" type="GeneralFormat" isKey="true" />
+            </Text159>
+            <Text160 Ref="318" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>5.9,2.7,0.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text160</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="319" type="GeneralFormat" isKey="true" />
+            </Text160>
+            <Text161 Ref="320" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6.3,2.7,1.1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text161</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="321" type="GeneralFormat" isKey="true" />
+            </Text161>
+            <Text162 Ref="322" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,2.9,1.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text162</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="323" type="GeneralFormat" isKey="true" />
+            </Text162>
+            <Text163 Ref="324" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.4,2.9,1.1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text163</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="325" type="GeneralFormat" isKey="true" />
+            </Text163>
+            <Text164 Ref="326" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.5,2.9,0.7,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text164</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="327" type="GeneralFormat" isKey="true" />
+            </Text164>
+            <Text173 Ref="328" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.2,2.9,0.8,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text173</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="329" type="GeneralFormat" isKey="true" />
+            </Text173>
+            <Text174 Ref="330" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4,2.9,1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text174</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="331" type="GeneralFormat" isKey="true" />
+            </Text174>
+            <Text175 Ref="332" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>5,2.9,0.9,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text175</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="333" type="GeneralFormat" isKey="true" />
+            </Text175>
+            <Text176 Ref="334" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>5.9,2.9,0.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text176</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="335" type="GeneralFormat" isKey="true" />
+            </Text176>
+            <Text177 Ref="336" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>6.3,2.9,1.1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text177</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="337" type="GeneralFormat" isKey="true" />
+            </Text177>
+            <Text178 Ref="338" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,1,2.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text178</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="339" type="GeneralFormat" isKey="true" />
+            </Text178>
+            <Text179 Ref="340" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4.1,1,3.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text179</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="341" type="GeneralFormat" isKey="true" />
+            </Text179>
+            <Text180 Ref="342" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.2,1,0.9,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text180</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="343" type="GeneralFormat" isKey="true" />
+            </Text180>
+            <Text181 Ref="344" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,1.2,2.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text181</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="345" type="GeneralFormat" isKey="true" />
+            </Text181>
+            <Text183 Ref="346" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4.1,1.2,3.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text183</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="347" type="GeneralFormat" isKey="true" />
+            </Text183>
+            <Text184 Ref="348" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.2,1.2,0.9,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text184</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="349" type="GeneralFormat" isKey="true" />
+            </Text184>
+            <Text185 Ref="350" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.4,1.2,0.8,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text185</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="351" type="GeneralFormat" isKey="true" />
+            </Text185>
+            <Text186 Ref="352" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.4,1,0.8,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text186</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="353" type="GeneralFormat" isKey="true" />
+            </Text186>
+            <Text187 Ref="354" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,2.7,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text187</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <Text>EDUCATIONAL QUALIFICATIONS (Passed Only) :</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="355" type="GeneralFormat" isKey="true" />
+            </Text187>
+            <Text182 Ref="356" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,1.4,3,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text182</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <Text>Other Educational Qualifications(e.g Currently Doing) :</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="357" type="GeneralFormat" isKey="true" />
+            </Text182>
+            <Text84 Ref="358" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3,1.4,4.3,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text84</Name>
+              <Page isRef="6" />
+              <Parent isRef="197" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="359" type="GeneralFormat" isKey="true" />
+            </Text84>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>Header2</Name>
+          <Page isRef="6" />
+          <Parent isRef="6" />
+          <PrintIfEmpty>True</PrintIfEmpty>
+          <StartNewPage>True</StartNewPage>
+        </Header2>
+        <Data6 Ref="360" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,14.7,7.49,0.2</ClientRectangle>
+          <Components isList="true" count="2">
+            <Text188 Ref="361" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,1.6,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text188</Name>
+              <Page isRef="6" />
+              <Parent isRef="360" />
+              <Text>{DsComputerKnowledge.computer_knowledge_type}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="362" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+            </Text188>
+            <Text4 Ref="363" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.6,0,0.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text4</Name>
+              <Page isRef="6" />
+              <Parent isRef="360" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="364" type="GeneralFormat" isKey="true" />
+            </Text4>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName />
+          <DataSourceName>DsComputerKnowledge</DataSourceName>
+          <Filters isList="true" count="0" />
+          <MasterComponent isRef="8" />
+          <Name>Data6</Name>
+          <Page isRef="6" />
+          <Parent isRef="6" />
+          <Sort isList="true" count="0" />
+        </Data6>
+        <Footer3 Ref="365" type="FooterBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,15.3,7.49,0.3</ClientRectangle>
+          <Components isList="true" count="2">
+            <Text168 Ref="366" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,0.5,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text168</Name>
+              <Page isRef="6" />
+              <Parent isRef="365" />
+              <Text>Others :</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="367" type="GeneralFormat" isKey="true" />
+              <VertAlignment>Bottom</VertAlignment>
+            </Text168>
+            <Text3 Ref="368" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.6,0,2.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text3</Name>
+              <Page isRef="6" />
+              <Parent isRef="365" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="369" type="GeneralFormat" isKey="true" />
+            </Text3>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>Footer3</Name>
+          <Page isRef="6" />
+          <Parent isRef="6" />
+        </Footer3>
+        <Header4 Ref="370" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,16,7.49,4.9</ClientRectangle>
+          <Components isList="true" count="47">
+            <Text166 Ref="371" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,1.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text166</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <Text>Languages Known :</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="372" type="GeneralFormat" isKey="true" />
+            </Text166>
+            <Text171 Ref="373" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.8,0.2,0.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text171</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="374" type="GeneralFormat" isKey="true" />
+            </Text171>
+            <Text172 Ref="375" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.2,0.8,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text172</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <Text>English Read</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="376" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+            </Text172>
+            <Text212 Ref="377" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.4,0.8,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text212</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <Text>English Write</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="378" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+            </Text212>
+            <Text213 Ref="379" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.6,0.8,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text213</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <Text>English Speak</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="380" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+            </Text213>
+            <Text214 Ref="381" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.8,0.4,0.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text214</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="382" type="GeneralFormat" isKey="true" />
+            </Text214>
+            <Text215 Ref="383" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.8,0.6,0.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text215</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="384" type="GeneralFormat" isKey="true" />
+            </Text215>
+            <Text216 Ref="385" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.4,0.2,0.6,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text216</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <Text>Kannada</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="386" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+            </Text216>
+            <Text217 Ref="387" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2,0.2,0.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text217</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="388" type="GeneralFormat" isKey="true" />
+            </Text217>
+            <Text218 Ref="389" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.4,0.4,0.6,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text218</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <Text>Hindi</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="390" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+            </Text218>
+            <Text220 Ref="391" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2,0.4,0.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text220</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="392" type="GeneralFormat" isKey="true" />
+            </Text220>
+            <Text222 Ref="393" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.6,0.8,2.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text222</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="394" type="GeneralFormat" isKey="true" />
+            </Text222>
+            <Text223 Ref="395" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.8,0.5,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text223</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <Text>Others :</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="396" type="GeneralFormat" isKey="true" />
+              <VertAlignment>Bottom</VertAlignment>
+            </Text223>
+            <Text224 Ref="397" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.6,1.1,0.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text224</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="398" type="GeneralFormat" isKey="true" />
+            </Text224>
+            <Text110 Ref="399" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,1.1,1.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text110</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <Text>Knows Sign Language :</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="400" type="GeneralFormat" isKey="true" />
+            </Text110>
+            <Text111 Ref="401" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,1.3,0.8,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text111</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <Text>Knows Braille:</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="402" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+            </Text111>
+            <Text113 Ref="403" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,1.5,2.6,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text113</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <Text>Does not need to know Sign Language or Braille:</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="404" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+            </Text113>
+            <Text114 Ref="405" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.6,1.5,0.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text114</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="406" type="GeneralFormat" isKey="true" />
+            </Text114>
+            <Text115 Ref="407" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.6,1.3,0.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text115</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="408" type="GeneralFormat" isKey="true" />
+            </Text115>
+            <Text116 Ref="409" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,1.8,2.7,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text116</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <Text>Need Based Training/Counseling Administered :</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="410" type="GeneralFormat" isKey="true" />
+              <VertAlignment>Bottom</VertAlignment>
+            </Text116>
+            <Text117 Ref="411" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.7,1.8,3.8,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text117</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="412" type="GeneralFormat" isKey="true" />
+            </Text117>
+            <Text118 Ref="413" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,2.1,3.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text118</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <Text>If candidate is employable without training,then tick here :</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="414" type="GeneralFormat" isKey="true" />
+            </Text118>
+            <Text119 Ref="415" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.3,2.1,0.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text119</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="416" type="GeneralFormat" isKey="true" />
+            </Text119>
+            <Text120 Ref="417" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,2.4,1.4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text120</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <Text>Recommended Training :</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="418" type="GeneralFormat" isKey="true" />
+              <VertAlignment>Bottom</VertAlignment>
+            </Text120>
+            <Text121 Ref="419" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.6,2.4,3.7,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text121</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="420" type="GeneralFormat" isKey="true" />
+            </Text121>
+            <Text122 Ref="421" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,2.7,1.5,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text122</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <Text>Recommended Job Type :</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="422" type="GeneralFormat" isKey="true" />
+              <VertAlignment>Bottom</VertAlignment>
+            </Text122>
+            <Text123 Ref="423" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.6,2.7,3.7,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text123</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="424" type="GeneralFormat" isKey="true" />
+            </Text123>
+            <Text124 Ref="425" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,3,1.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text124</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <Text>Recommended Role :</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="426" type="GeneralFormat" isKey="true" />
+              <VertAlignment>Bottom</VertAlignment>
+            </Text124>
+            <Text125 Ref="427" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.6,3,3.7,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text125</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="428" type="GeneralFormat" isKey="true" />
+            </Text125>
+            <Text126 Ref="429" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,3.3,1.6,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text126</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <Text>Preferred Job By Candidate :</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="430" type="GeneralFormat" isKey="true" />
+              <VertAlignment>Bottom</VertAlignment>
+            </Text126>
+            <Text127 Ref="431" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.7,3.3,2.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text127</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="432" type="GeneralFormat" isKey="true" />
+            </Text127>
+            <Text128 Ref="433" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4.1,3.3,1.1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text128</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <Text>Preferred Location :</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="434" type="GeneralFormat" isKey="true" />
+              <VertAlignment>Bottom</VertAlignment>
+            </Text128>
+            <Text129 Ref="435" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.9,3.6,1.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text129</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="436" type="GeneralFormat" isKey="true" />
+            </Text129>
+            <Text130 Ref="437" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,3.6,1.5,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text130</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <Text>Expected Monthly Salary :</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="438" type="GeneralFormat" isKey="true" />
+              <VertAlignment>Bottom</VertAlignment>
+            </Text130>
+            <Text131 Ref="439" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>5.3,3.3,1.8,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text131</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="440" type="GeneralFormat" isKey="true" />
+            </Text131>
+            <Text132 Ref="441" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.6,3.6,0.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text132</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <Text>Rs.</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="442" type="GeneralFormat" isKey="true" />
+              <VertAlignment>Bottom</VertAlignment>
+            </Text132>
+            <Text133 Ref="443" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,3.9,1.9,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text133</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <Text>Groups candidate is assigned to :</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="444" type="GeneralFormat" isKey="true" />
+              <VertAlignment>Bottom</VertAlignment>
+            </Text133>
+            <Text134 Ref="445" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2,3.9,3.1,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text134</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="446" type="GeneralFormat" isKey="true" />
+            </Text134>
+            <Text135 Ref="447" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,4.2,1.6,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text135</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <Text>Mark as Priority Candidate :</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="448" type="GeneralFormat" isKey="true" />
+            </Text135>
+            <Text136 Ref="449" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.6,4.2,0.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text136</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="450" type="GeneralFormat" isKey="true" />
+            </Text136>
+            <Text137 Ref="451" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.5,4.2,0.6,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text137</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <Text>Reason :</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="452" type="GeneralFormat" isKey="true" />
+              <VertAlignment>Bottom</VertAlignment>
+            </Text137>
+            <Text138 Ref="453" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.2,4.2,3.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text138</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="454" type="GeneralFormat" isKey="true" />
+            </Text138>
+            <Text139 Ref="455" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.4,4.4,2.9,0.3</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold| Italic,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text139</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <Text>(Priority candidate are those candidates who are elite
+ or are already employed but deserve a better job.)</Text>
+              <TextBrush>Red</TextBrush>
+              <TextFormat Ref="456" type="GeneralFormat" isKey="true" />
+              <Type>Expression</Type>
+            </Text139>
+            <Text140 Ref="457" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,4.7,1.5,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text140</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <Text>Mark as Needy Candidate :</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="458" type="GeneralFormat" isKey="true" />
+            </Text140>
+            <Text141 Ref="459" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>1.6,4.7,0.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text141</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="460" type="GeneralFormat" isKey="true" />
+            </Text141>
+            <Text142 Ref="461" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.5,4.7,0.6,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Regular,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text142</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <Text>Reason :</Text>
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="462" type="GeneralFormat" isKey="true" />
+              <VertAlignment>Bottom</VertAlignment>
+            </Text142>
+            <Text143 Ref="463" type="Text" isKey="true">
+              <Border>Bottom;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.2,4.7,3.2,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <LinesOfUnderline>None</LinesOfUnderline>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text143</Name>
+              <Page isRef="6" />
+              <Parent isRef="370" />
+              <TextBrush>Black</TextBrush>
+              <TextFormat Ref="464" type="GeneralFormat" isKey="true" />
+            </Text143>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>Header4</Name>
+          <Page isRef="6" />
+          <Parent isRef="6" />
+          <PrintIfEmpty>True</PrintIfEmpty>
+        </Header4>
+        <Data4 Ref="465" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,21.3,7.49,0</ClientRectangle>
+          <Components isList="true" count="0" />
+          <Conditions isList="true" count="0" />
+          <DataRelationName />
+          <DataSourceName>DsBlank</DataSourceName>
+          <Filters isList="true" count="0" />
+          <MasterComponent isRef="8" />
+          <Name>Data4</Name>
+          <Page isRef="6" />
+          <Parent isRef="6" />
+          <Sort isList="true" count="0" />
+        </Data4>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>246a9f62e25a496e81f8167a7ff22932</Guid>
+      <Margins>0.39,0.39,0.39,0.39</Margins>
+      <Name>Page1</Name>
+      <Page isRef="6" />
+      <PageHeight>11.3</PageHeight>
+      <PageWidth>8.27</PageWidth>
+      <Report isRef="0" />
+      <Watermark Ref="466" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings Ref="467" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Candidate Registration</ReportAlias>
+  <ReportChanged>11/14/2009 4:44:25 PM</ReportChanged>
+  <ReportCreated>2/17/2009 10:22:30 PM</ReportCreated>
+  <ReportGuid>6b6cf846d1c14b6ba553293be548da19</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Inches</ReportUnit>
+  <ReportVersion>2008.1.132</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        
+        public Report()
+        {
+            this.InitializeComponent();
+        }
+        #region StiReport Designer generated code - do not modify#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

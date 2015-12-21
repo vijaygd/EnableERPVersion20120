@@ -1,0 +1,442 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.HtmlControls;
+
+using MySql.Data.MySqlClient;
+
+public partial class Company_AssignedList : System.Web.UI.Page
+{
+    public string EmploymentProjectID
+    {
+        get;
+        set;
+    }
+
+    public string CompanyID
+    {
+        get;
+        set;
+    }
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        Global.AuthenticateUser();
+        Global.SetDefaultButtonOfTheForm(this.Form, BtnSubmit);
+        DdlCandidateCallingStep.Focus();
+
+        if(Request.QueryString["emp_proj"] != null)
+        {
+            this.EmploymentProjectID = Global.DecryptID(Convert.ToDouble(Request.QueryString["emp_proj"])).ToString();
+            if(Request.QueryString["emp_proj"].ToString() == "0")
+            {
+                TblBlankMessage.Visible = true;
+                TblEmploymentProjectFrNoData.Visible = false;
+            }
+        }
+        else
+        {
+            this.EmploymentProjectID = "-2";
+        }
+
+        if (Request.QueryString["comp"] != null)
+        {
+            this.CompanyID = Global.DecryptID(Convert.ToDouble(Request.QueryString["comp"])).ToString();
+        }
+        else
+        {
+            this.CompanyID = "-2";
+        }
+
+        EmploymentProjectBAL proj = new EmploymentProjectBAL();
+        MySqlDataReader drEmploymentProjectDetails = proj.GetEmploymentProjectDetails(this.EmploymentProjectID);
+        if (drEmploymentProjectDetails.HasRows)
+        {
+            drEmploymentProjectDetails.Read();
+            SpnEmploymentProjectName.InnerText = drEmploymentProjectDetails["employment_project_name"].ToString();
+            SpnCurrentDemand.InnerText = drEmploymentProjectDetails["current_demand_of_people"].ToString();
+
+            if (drEmploymentProjectDetails["cand_completed_count"].ToString() == "0")
+            {
+                BtnCloseTrainingProject.Visible = false;
+            }
+            else if (drEmploymentProjectDetails["cand_completed_count"].Equals(drEmploymentProjectDetails["cand_assign_count"]))
+            {
+                BtnCloseTrainingProject.Visible = true;
+            }
+            if(drEmploymentProjectDetails["is_closed"].ToString().Equals("1"))
+            {
+                BtnCloseTrainingProject.Visible = false;
+            }
+        }
+       
+        drEmploymentProjectDetails.Close();
+        drEmploymentProjectDetails.Dispose();
+        if(!Page.IsPostBack)
+        {
+            LnkBtnCompanyDetails.HRef += "?comp=" + Request.QueryString["comp"].ToString();
+            LnkBtnEmploymentProjectDetails.HRef += "?emp_proj=" + Request.QueryString["emp_proj"].ToString();
+
+            LnkBtnAddRecommendedCandidates.PostBackUrl += "?emp_proj=" + Request.QueryString["emp_proj"].ToString() + "&comp=" + Request.QueryString["comp"].ToString();
+            LnkBtnAddNonRecommendedCandidates.PostBackUrl += "?emp_proj=" + Request.QueryString["emp_proj"].ToString() + "&comp=" + Request.QueryString["comp"].ToString();
+
+            Global.ShowMessageInAlert(this.Form);
+            Request.Cookies["grid_page_number"].Value = "1";
+            GetCandidatesAssignedToEmploymentProject();
+        }
+    }
+
+    private void GetCandidatesAssignedToEmploymentProject()
+    {
+        EmploymentProjectBAL proj = new EmploymentProjectBAL();
+        LstViewAssignedList.DataSource = proj.GetCandidatesAssignedToEmploymentProjects(this.EmploymentProjectID,25);
+        LstViewAssignedList.DataBind();
+        if(LstViewAssignedList.Items.Count.Equals(0))
+        {
+            BtnSubmit.Visible = false;
+            BtnResetCandidate.Visible = false;
+            TblCloseParticularStep.Visible = false;
+            TblCandidateCaliingFromStep.Visible = false;
+            TblTextAssignlistCandidate.Visible = false;
+            HttpContext.Current.Request.Cookies["grid_page_number"].Value = (Convert.ToInt32(HttpContext.Current.Request.Cookies["grid_page_number"].Value) - 1).ToString();
+            if(!HttpContext.Current.Request.Cookies["grid_page_number"].Value.Equals("0"))
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), Guid.NewGuid().ToString(), "PageClick(" + HttpContext.Current.Request.Cookies["grid_page_number"].Value + ");", true);
+            }
+        }
+        else
+        {
+            BtnSubmit.Visible = true;
+            BtnResetCandidate.Visible = true;
+            TblCloseParticularStep.Visible = true;
+            TblCandidateCaliingFromStep.Visible = true;
+            TblTextAssignlistCandidate.Visible = true;
+        }
+    }
+
+    protected void BtnSearchCandidates_Click(object sender, EventArgs e)
+    {
+        Request.Cookies["grid_page_number"].Value = HttpContext.Current.Request.Cookies["grid_page_number"].Value;
+        GetCandidatesAssignedToEmploymentProject();
+    }
+
+    protected void LstViewAssignedList_ItemDataBound(object sender, ListViewItemEventArgs e)
+    {
+        if(e.Item.ItemType.Equals(ListViewItemType.DataItem))
+        {
+            CheckBox ChkSelectCandidate = (CheckBox)e.Item.FindControl("ChkSelectCandidate");
+            HtmlGenericControl LblCandidateName = (HtmlGenericControl)e.Item.FindControl("LblCandidateName");
+
+            ImageButton  BtnGotJob = (ImageButton)e.Item.FindControl("BtnGotJob");
+            ImageButton BtnNotes = (ImageButton)e.Item.FindControl("BtnNotes");
+
+            LblCandidateName.Attributes.Add("for", ChkSelectCandidate.ClientID);
+
+            HtmlGenericControl SpnIsFreeze = (HtmlGenericControl)e.Item.FindControl("SpnIsFreeze");
+
+            if(SpnIsFreeze.InnerText.Contains("1"))
+            {
+                ChkSelectCandidate.Visible = false;
+                BtnGotJob.Visible = false;
+                BtnNotes.Visible = false;
+            }
+            HtmlSelect DdlWorkPlaceSolutionDone = (HtmlSelect)e.Item.FindControl("DdlWorkPlaceSolutionDone");
+        }
+    }
+
+    protected void BtnCloseTrainingProject_Click(object sender, EventArgs e)
+    {
+        MySqlConnection conn = Global.GetConnectionString();
+        conn.Open();
+        MySqlTransaction trans = conn.BeginTransaction();
+        MySqlCommand cmd = new MySqlCommand("", conn,trans);
+        cmd.CommandText = "";
+        try
+        {
+            EmploymentProjectBAL empProj = new EmploymentProjectBAL();
+            DataTable dtAssignedCandidates = empProj.GetCandidatesAssignedToEmploymentProjects(this.EmploymentProjectID, 25);
+
+            cmd.CommandText = "update employment_projects set is_closed=1 where employment_project_id=" + this.EmploymentProjectID;
+            cmd.ExecuteNonQuery();
+            foreach(DataRow dr in dtAssignedCandidates.Rows)
+            {
+                int candidateID = Convert.ToInt32(dr["candidate_id"]);
+                cmd.CommandText = string.Format("CALL update_candidate_other_details({0})", candidateID);
+                cmd.ExecuteNonQuery();
+            }
+            
+            string url = "~/Company/ListOfOpenEmploymentProject.aspx?msg=" + Global.EncryptQueryString("Employment project closed successfully.");
+            url += "&foc=" + Global.EncryptQueryString("null");
+            Response.Redirect(url,false);
+            trans.Commit();
+        }
+        catch(Exception ex)
+        {
+            trans.Rollback();
+        }
+        finally
+        {
+            conn.Close();
+            cmd.Dispose();
+            conn.Dispose();
+        }
+    }
+
+    protected void BtnSubmit_click(object sender, EventArgs e)
+    {
+        string message = String.Empty;
+        MySqlConnection conn = Global.GetConnectionString();
+        conn.Open();
+        MySqlTransaction trans = conn.BeginTransaction();
+        MySqlCommand cmd = new MySqlCommand("", conn, trans);
+        int deletedCandidates = 0;
+
+        EmploymentProjectBAL employee = new EmploymentProjectBAL();
+        try
+        {
+            foreach(ListViewDataItem item in LstViewAssignedList.Items)
+            {
+                CheckBox ChkSelectCandidate = (CheckBox)item.FindControl("ChkSelectCandidate");
+                if(ChkSelectCandidate.Checked)
+                {
+                    cmd = new MySqlCommand("", conn, trans);
+                    int candidateID = Global.DecryptID(Convert.ToDouble(ChkSelectCandidate.Attributes["CandidateID"]));
+                    
+                    HtmlSelect DdlInterestedInJob = (HtmlSelect)item.FindControl("DdlInterestedInJob");
+                    HtmlSelect DdlCretificatesVerified = (HtmlSelect)item.FindControl("DdlCretificatesVerified");
+                    HtmlSelect DdlProfileSent = (HtmlSelect)item.FindControl("DdlProfileSent");
+                    HtmlSelect DdlInterviewScheduled = (HtmlSelect)item.FindControl("DdlInterviewScheduled");
+                    HtmlSelect DdlConfirmedForInterview = (HtmlSelect)item.FindControl("DdlConfirmedForInterview");
+                    HtmlSelect DdlPreparedForInterview = (HtmlSelect)item.FindControl("DdlPreparedForInterview");
+                    HtmlSelect DdlInterviewSupportRequired = (HtmlSelect)item.FindControl("DdlInterviewSupportRequired");
+                    HtmlSelect DdlInterviewProcessCompleted = (HtmlSelect)item.FindControl("DdlInterviewProcessCompleted");
+                    HtmlSelect DdlGotJob = (HtmlSelect)item.FindControl("DdlGotJob");
+                    HtmlSelect DdlAcceptedJob = (HtmlSelect)item.FindControl("DdlAcceptedJob");
+                    HtmlSelect DdlOfferLetterReceived = (HtmlSelect)item.FindControl("DdlOfferLetterReceived");
+                    HtmlSelect DdlEmploymentProofReceived = (HtmlSelect)item.FindControl("DdlEmploymentProofReceived");
+                    HtmlSelect DdlWorkPlaceSolutionDone = (HtmlSelect)item.FindControl("DdlWorkPlaceSolutionDone");
+
+                    employee.EmploymentProjectID = Convert.ToInt32(this.EmploymentProjectID);
+                    employee.CandidateID = Convert.ToInt32(candidateID);
+                    employee.InterestedInJob = Convert.ToInt32(DdlInterestedInJob.Value);
+                    employee.CertificatesVerified = Convert.ToInt32(DdlCretificatesVerified.Value);
+                    employee.ProfileSent = Convert.ToInt32(DdlProfileSent.Value);
+                    employee.InterviewScheduled = Convert.ToInt32(DdlInterviewScheduled.Value);
+                    employee.ConfirmedForInterview = Convert.ToInt32(DdlConfirmedForInterview.Value);
+                    employee.PreparedForInterview = Convert.ToInt32(DdlPreparedForInterview.Value);
+                    employee.InterviewSupportRequired = Convert.ToInt32(DdlInterviewSupportRequired.Value);
+                    employee.InterviewProcessCompleted = Convert.ToInt32(DdlInterviewProcessCompleted.Value);
+                    employee.GotJob = Convert.ToInt32(DdlGotJob.Value);
+                    employee.CandidateInformedAcceptedJob = Convert.ToInt32(DdlAcceptedJob.Value);
+                    employee.OfferLetterReceived = Convert.ToInt32(DdlOfferLetterReceived.Value);
+                    employee.EmploymentProofReceived = Convert.ToInt32(DdlEmploymentProofReceived.Value);
+                    employee.WorkPlaceSolutionToBeDone = Convert.ToInt32(DdlWorkPlaceSolutionDone.Value);
+
+                    if(employee.GotJob == 0 || employee.InterestedInJob == 0 || employee.CandidateInformedAcceptedJob == 0 )
+                    {
+                        employee.UpdateCandidateAssignedList(cmd, employee);
+
+                        cmd = new MySqlCommand("", conn, trans);
+                        cmd.CommandType = CommandType.Text;
+                        cmd.CommandText = "update candidates_assigned_to_employment_project set is_candidate_deleted=1 where candidate_id=" + candidateID;
+                        cmd.CommandText += " and employment_project_id=" + this.EmploymentProjectID;
+                        cmd.ExecuteNonQuery();
+                        deletedCandidates++;
+                    }
+                    else
+                    {
+                        if(employee.WorkPlaceSolutionToBeDone == 1)
+                        {
+                            CompaniesBAL company = new CompaniesBAL();
+                            company.HistoryDate = DateTime.Now.ToString("yyyy/MM/dd");
+
+                            if(Request.QueryString["comp_hist"] == null)
+                            {
+                                company.CompanyID = Convert.ToInt32(this.CompanyID);
+                                MySqlDataReader drCompany = company.GetcompanyDetails(this.CompanyID.ToString());
+                                if(drCompany.Read())
+                                {
+                                    company.ParentCompanyID = Convert.ToInt32(drCompany["parent_company_id"]);
+                                }
+                                drCompany.Close();
+                                drCompany.Dispose();
+                            }
+
+                            company.Details = "";
+                            company.CandidateID = candidateID;
+                            company.CandidateFlagID = company.GetIDOfWorkplacesolution();
+                            company.EmployemntProjectID = Convert.ToInt32(this.EmploymentProjectID);
+                            MySqlDataReader drTaskdetail = company.GetCandidateNameRidForAddTask(company);
+                            if(drTaskdetail.Read())
+                            {
+                                company.Details = drTaskdetail["candidate_name"].ToString() + ", ";
+                                company.Details += drTaskdetail["RID"].ToString() + ", ";
+                                company.Details += drTaskdetail["employment_project_name"].ToString() + ", ";
+                                company.Details += drTaskdetail["disability_type"].ToString() + " ";
+                            }
+                            drTaskdetail.Close();
+                            drTaskdetail.Dispose();
+
+                            company.IsHistory = 0;
+                            company.RecommendedAction = "";
+                            company.FollowUpDate = "1900/01/01";
+                            company.Status = "Open";
+
+                            if(Request.QueryString["comp_hist"] != null)
+                            {
+                                bool rowsUpdated = company.UpdateCompanyHistory(company);
+
+                                if(rowsUpdated.Equals(true))
+                                {
+                                    //  Global.RedirectAfterSubmit("Company History Updated Successfully.", BtnAddUpdateCompanyHistory.ID);
+                                }
+                            }
+                            else
+                            {
+                                int isTask = company.CheckForDuplicationTask(company);
+                                if(isTask == 0)
+                                {
+                                    bool rowsAdded = company.AddCompanyHistory(company);
+                                    if(rowsAdded.Equals(true))
+                                    {
+
+                                    }
+                                }
+                            }
+                        }
+                        employee.UpdateCandidateAssignedList(cmd, employee);
+                    }
+
+                    /* Update candidate other details */
+                    cmd = new MySqlCommand("", conn, trans);
+                    cmd.CommandText += " CALL update_candidate_other_details(" + candidateID + "); ";
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            message = "Assigned list updated successfully.";
+
+            cmd = new MySqlCommand("", conn, trans);
+            cmd.CommandType = CommandType.Text;
+            employee.UpdateEmploymentProjectStatus(cmd, Global.DecryptID(Convert.ToDouble(Request.QueryString["emp_proj"])));
+            trans.Commit();
+        }
+        catch(Exception ex)
+        {
+            trans.Rollback();
+        }
+        finally
+        {
+            if (deletedCandidates == 1)
+            {
+                message = deletedCandidates.ToString() + " candidate being deassigned from the list.";
+            }
+            else if (deletedCandidates > 1)
+            {
+                message = deletedCandidates.ToString() + " candidates being deassigned from the list.";
+            }
+            conn.Close();
+            cmd.Dispose();
+            conn.Dispose();
+            BtnSearchCandidates_Click(BtnSearchCandidates, new EventArgs());
+            ClientScript.RegisterClientScriptBlock(this.GetType(), "__maessage", "alert(\"" + message + "\");$('#ctl00_ContentPlaceHolder2_DdlEditParticularStepFrom').attr('selectedIndex',0);", true);
+            ClientScript.RegisterStartupScript(this.GetType(), Guid.NewGuid().ToString(), " $('#ctl00_ContentPlaceHolder2_DdlEditParticularStepFrom').attr('selectedIndex',0);", true);
+        }
+    }
+
+    protected void BtnDeleteCandidate_Click(object sender, EventArgs e)
+    {
+        MySqlConnection conn = Global.GetConnectionString();
+        conn.Open();
+        MySqlTransaction trans = conn.BeginTransaction();
+        MySqlCommand cmd = new MySqlCommand("", conn, trans);
+        EmploymentProjectBAL proj = new EmploymentProjectBAL();
+        try
+        {
+            foreach(ListViewItem item in LstViewAssignedList.Items)
+            {
+                CheckBox ChkSelectCandidate = (CheckBox)item.FindControl("ChkSelectCandidate");
+                if(ChkSelectCandidate.Checked)
+                {
+                    cmd = new MySqlCommand("", conn, trans);
+                    string empProjectGroupID = Global.DecryptID(Convert.ToDouble(ChkSelectCandidate.Attributes["EmpProjectGrpID"])).ToString();
+                    proj.DeleteAssignedCandidate(cmd, empProjectGroupID);
+                    int candidateID = Global.DecryptID(Convert.ToDouble(ChkSelectCandidate.Attributes["CandidateID"]));
+
+                    /* Update candidate other details */
+                    cmd = new MySqlCommand("", conn, trans);
+                    cmd.CommandText += " CALL update_candidate_other_details(" + candidateID + "); ";
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            cmd = new MySqlCommand("", conn, trans);
+            cmd.CommandType = CommandType.Text;
+            proj.UpdateEmploymentProjectStatus(cmd, Global.DecryptID(Convert.ToDouble(Request.QueryString["emp_proj"])));
+            trans.Commit();
+            string message = "Candidate deleted successfully.";
+            ClientScript.RegisterClientScriptBlock(this.GetType(), "__maessage", "alert(\"" + message + "\");", true);
+        }
+        catch(Exception ex)
+        {
+            trans.Rollback();
+        }
+        finally
+        {
+            conn.Close();
+            cmd.Dispose();
+            conn.Dispose();
+            GetCandidatesAssignedToEmploymentProject();
+        }
+    }
+
+    protected void BtnPrint_click(object sender, EventArgs e)
+    {
+        if(Request.Cookies["candidate_calling"] != null && Request.Cookies["candidate_calling"].Value != null && !Request.Cookies["candidate_calling"].Value.Equals(""))
+        {
+            string selectedCandidates = String.Empty;
+            string[] encryptedCandidateIDs = Request.Cookies["candidate_calling"].Value.Trim().Split('_');
+            string decryptedCandidateIDs = String.Empty;
+
+            for (int counter = 0; counter < encryptedCandidateIDs.Length; counter++)
+            {
+                selectedCandidates += Global.DecryptID(Convert.ToDouble(encryptedCandidateIDs[counter])).ToString() + ",";
+            }
+            Session["SelectedCandidates"] = selectedCandidates.Substring(0, selectedCandidates.Length - 1);
+            ClientScript.RegisterStartupScript(this.GetType(), "__Popup", "ShowPopUp('../candidate/CandidateCallingListPrintForm.aspx',1024,768);", true);
+        }
+    }
+
+    protected void BtnGotJob_click(object sender, EventArgs e)
+    {
+        MySqlConnection conn = Global.GetConnectionString();
+        conn.Open();
+        MySqlTransaction trans = conn.BeginTransaction();
+        MySqlCommand cmd = new MySqlCommand("", conn, trans);
+        EmploymentProjectBAL proj = new EmploymentProjectBAL();
+        try
+        {
+            cmd = new MySqlCommand("", conn, trans);
+            cmd.CommandType = CommandType.Text;
+            proj.UpdateEmploymentProjectStatus(cmd, Global.DecryptID(Convert.ToDouble(Request.QueryString["emp_proj"])));
+            trans.Commit();
+        }
+        catch (Exception ex)
+        {
+            trans.Rollback();
+        }
+        finally
+        {
+            conn.Close();
+            cmd.Dispose();
+            conn.Dispose();
+        }
+        BtnSubmit_click(BtnSubmit, new EventArgs());
+    }
+
+    protected void BtnNotes_click(object sender, EventArgs e)
+    {
+        BtnSearchCandidates_Click(BtnSearchCandidates, new EventArgs());
+    }
+}

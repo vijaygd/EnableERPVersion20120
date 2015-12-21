@@ -1,0 +1,928 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.HtmlControls;
+using MySql;
+using MySql.Data;
+using MySql.Data.MySqlClient;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Web.UI.DataVisualization;
+using System.Web.UI.DataVisualization.Charting;
+using EnableIndia.App_Code.BAL;
+using EnableIndia.App_Code.DAL;
+using System.Data;
+using System.Threading;
+using System.Threading.Tasks;
+using System.ComponentModel;
+using System.Runtime;
+using System.Runtime.InteropServices;
+using Microsoft.Practices.EnterpriseLibrary.Caching;
+using Microsoft.Practices.EnterpriseLibrary.Caching.Expirations;
+using Microsoft.Practices.EnterpriseLibrary.Common;
+
+
+
+namespace EnableIndia.Candidate
+{
+    public partial class dashBoard : System.Web.UI.Page
+    {
+        public struct searchDates
+        {
+            public string stDate;
+            public string edDate;
+            public int noc;
+        }
+        searchDates[] gotJobDates = new searchDates[6];
+        searchDates[] placedDates = new searchDates[6];
+        searchDates[] regcanDates = new searchDates[6];
+        searchDates[] triprjDates = new searchDates[6];
+        searchDates[] empprjDates = new searchDates[6];
+        searchDates[] tripEdDates = new searchDates[6];
+        searchDates[] regCands = new searchDates[6];
+        searchDates[] udtCands = new searchDates[6];
+        searchDates[] trnCands = new searchDates[6];
+
+        public string[] xLabels = new string[6];
+        public string[] alphaMonhts = { "", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
+        BackgroundWorker bw;
+        public int[] noDaysPerMonth = { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+        public System.Globalization.CultureInfo cultureinfo = new System.Globalization.CultureInfo("en-gb");
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!Page.IsPostBack)
+            {
+
+                ////worker.DoWork += new DoWorkEventHandler(DoWork);
+                ////worker.WorkerReportsProgress = false;
+                ////worker.WorkerSupportsCancellation = true;
+                ////worker.RunWorkerCompleted +=
+                ////       new RunWorkerCompletedEventHandler(WorkerCompleted);
+
+                //////Add this BackgroundWorker object instance to the cache (custom cache implementation)
+                //////so it can be cleared when the Application_End event fires.
+                ////CacheManager.Add("BackgroundWorker", worker);
+
+                ////// Calling the DoWork Method Asynchronously
+                ////worker.RunWorkerAsync(); //we can also pass parameters to the async method....
+                ////dispCharts();
+
+
+          //      bw = new BackgroundWorker();
+          //      bw.DoWork += new DoWorkEventHandler(dispCharts);
+          //      bw.WorkerReportsProgress = false;
+          //      bw.WorkerSupportsCancellation = true;
+          //      bw.RunWorkerCompleted += new RunWorkerCompletedEventHandler(dispChartsCompleted);
+          ////      ICacheManager cm = CacheFactory.GetCacheManager();
+          ////      cm.Add("dispCharts", bw);
+          //      bw.RunWorkerAsync();
+                dispCharts();
+       //         this.gotJobChart.RenderGraph+=new ZedGraphWebControlEventHandler(gotJobChart_RenderGraph);
+            }
+            if (Page.IsPostBack)
+            {
+                setDates();
+            }
+           
+        }
+        public void dispCharts()
+        {
+            
+            setDates();
+            fillCharts();
+            getAllActiveRegisteredCandidates();
+            getTrainingProjectsStDateWise();
+            getTrainingProjectsEDDateWise();
+            getEmploymentProjects();
+            getRegCandidates();
+            getTrnCandidates();
+            getUnderTraining();
+        }
+        //public void dispCharts(object sender, DoWorkEventArgs de)
+        //{
+        //    setDates();
+        //    fillCharts();
+        //    getAllActiveRegisteredCandidates();
+        //    getTrainingProjectsStDateWise();
+        //    getTrainingProjectsEDDateWise();
+        //    getEmploymentProjects();
+        //    getRegCandidates();
+        //    getTrnCandidates();
+        //    getUnderTraining();
+        //}
+        public void dispChartsCompleted(object sender, RunWorkerCompletedEventArgs re)
+        {
+            BackgroundWorker worker = sender as BackgroundWorker;
+            if (worker != null)
+            {
+                // sleep for 20 secs and again call DoWork to get FxRates..we can increase the time to sleep and make it configurable to the needs
+                System.Threading.Thread.Sleep(20000);
+                worker.RunWorkerAsync();
+            }
+        }
+        public void setDates()
+        {
+            int i = 0;
+            DateTime Today = DateTime.Today;
+            // Calculate 6 Months before perid.
+            DateTime stDate = Today; // AddYears(-3);
+            DateTime tDate = DateTime.Today;
+            tDate = tDate.AddDays(-1);
+            stDate = tDate;
+            int dpm = 0;
+            for (i = 5; i >= 0; i--)
+            {
+                gotJobDates[i].edDate = stDate.Year.ToString() + "-" + stDate.Month.ToString("00") + "-" + stDate.Day.ToString("00");
+                placedDates[i].edDate = stDate.Year.ToString() + "-" + stDate.Month.ToString("00") + "-" + stDate.Day.ToString("00");
+                regcanDates[i].edDate = stDate.Year.ToString() + "/" + stDate.Month.ToString("00") + "/" + stDate.Day.ToString("00");
+                triprjDates[i].edDate = stDate.Year.ToString() + "/" + stDate.Month.ToString("00") + "/" + stDate.Day.ToString("00");
+                empprjDates[i].edDate = stDate.Year.ToString() + "/" + stDate.Month.ToString("00") + "/" + stDate.Day.ToString("00");
+                tripEdDates[i].edDate = stDate.Year.ToString() + "/" + stDate.Month.ToString("00") + "/" + stDate.Day.ToString("00");
+                trnCands[i].edDate = stDate.Year.ToString() + "-" + stDate.Month.ToString("00") + "-" + stDate.Day.ToString("00");
+
+                if ((stDate.Year) % 4 == 0 && stDate.Month == 2)
+                {
+                    dpm = 29;
+                }
+                else
+                {
+                    dpm = noDaysPerMonth[stDate.Month];
+                }
+                stDate = stDate.AddDays(-dpm);
+                //stDate = stDate.AddMonths(-1);
+                tDate = stDate.AddDays(1); gotJobDates[i].stDate = tDate.Year.ToString() + "-" + tDate.Month.ToString("00") + "-" + tDate.Day.ToString("00");
+                placedDates[i].stDate = stDate.Year.ToString() + "-" + tDate.Month.ToString("00") + "-" + tDate.Day.ToString("00");
+                regcanDates[i].stDate = stDate.Year.ToString() + "/" + tDate.Month.ToString("00") + "/" + tDate.Day.ToString("00");
+                triprjDates[i].stDate = stDate.Year.ToString() + "/" + tDate.Month.ToString("00") + "/" + tDate.Day.ToString("00");
+                empprjDates[i].stDate = stDate.Year.ToString() + "/" + tDate.Month.ToString("00") + "/" + tDate.Day.ToString("00");
+                tripEdDates[i].stDate = stDate.Year.ToString() + "/" + tDate.Month.ToString("00") + "/" + tDate.Day.ToString("00");
+                trnCands[i].stDate = tDate.Year.ToString() + "-" + tDate.Month.ToString("00") + "-" + tDate.Day.ToString("00");
+
+            }
+
+        }
+        private void fillCharts()
+        {
+            MySqlConnection conn = null;
+            MySqlCommand cmd = null;
+            int i = 0;
+            int j = 0;
+            int iCount = 0;
+            // ------------------------
+            // First fill got jobs.....
+            // ------------------------
+
+            string gotJobQuery = "select count(*) from ((select count(*) " +
+                                   " FROM (select * from candidate_work_experience where mark_deleted=0   " +
+                                   " and designation_to_date ='5000-01-01') as cand_work_expr  " +
+                                   " left join candidates cand on cand_work_expr.candidate_id= cand.candidate_id  and is_registration_completed=1 and cand.is_active=1 " +
+                                   " left JOIN candidate_other_details cand_other_detl ON cand_other_detl.candidate_id=cand.candidate_id  " +
+                                   " left JOIN ngos ngo ON cand.ngo_id=ngo.ngo_id  " +
+                                   " left JOIN disability_types disability ON cand.disability_id=disability.disability_id " +
+                                   " left JOIN disability_sub_types disab_sub_type ON cand.disability_sub_type_id=disab_sub_type.disability_sub_type_id " +
+                                   " left JOIN states state ON cand.present_address_state_id=state.state_id " +
+                                   " left JOIN cities city ON cand.present_address_city_id=city.city_id " +
+                                   " left join candidate_recommended_roles c_rol on cand.candidate_id= c_rol.candidate_id   " +
+                                   " left join job_roles jb_rl on cand_work_expr.job_role_id=jb_rl.job_role_id " +
+                                   " left join jobs on jb_rl.job_id=jobs.job_id   " +
+                                   " left join companies comp on cand_work_expr.company_id=comp.company_id   " +
+                                   " left join parent_companies par_comp on cand_work_expr.parent_company_id=par_comp.company_id " +
+                                   " left join industry_segments ind on comp.industry_segment_id=ind.industry_segment_id  " +
+                                   " left join candidates_assigned_to_employment_project   cand_ass_emp_proj on cand_work_expr.candidate_id=cand_ass_emp_proj.candidate_id   and cand_ass_emp_proj.employment_project_id " +
+                                   " left join employment_projects emp_proj on cand_ass_emp_proj.employment_project_id=emp_proj.employment_project_id and emp_proj.is_closed=0  or (cand_work_expr.company_id=emp_proj.company_id and cand_work_expr.parent_company_id=emp_proj.parent_company_id and cand_work_expr.job_role_id=emp_proj.job_role_id ) left join vacancies vac on emp_proj.vacancy_id=vac.vacancy_id where cand.registration_id is not null and cand_work_expr.designation_to_date > curdate()  and cand_work_expr.designation_from_date ";
+
+            string placementQuery = " select count(*) from ((select count(*) " +
+                                    "  FROM (select * from candidate_work_experience where mark_deleted=0  and is_entered_from_employment_project=1 ) as cand_work_expr  left join   candidates cand on cand_work_expr.candidate_id= cand.candidate_id and is_registration_completed=1 and cand.is_active=1  " +
+                                    "  left JOIN candidate_other_details cand_other_detl ON cand_other_detl.candidate_id=cand.candidate_id  " +
+                                    "  left JOIN ngos ngo ON cand.ngo_id=ngo.ngo_id " +
+                                    "  left JOIN disability_types disability ON cand.disability_id=disability.disability_id " +
+                                    "  left JOIN disability_sub_types disab_sub_type ON cand.disability_sub_type_id=disab_sub_type.disability_sub_type_id  " +
+                                    "  left JOIN states state ON cand.present_address_state_id=state.state_id left JOIN cities city ON cand.present_address_city_id=city.city_id " +
+                                    "  left join candidate_recommended_roles c_rol on cand.candidate_id= c_rol.candidate_id " +
+                                    "  left join job_roles jb_rl on cand_work_expr.job_role_id=jb_rl.job_role_id " +
+                                    "  left join jobs on jb_rl.job_id=jobs.job_id " +
+                                    "  left join companies comp on cand_work_expr.company_id=comp.company_id  " +
+                                    "  left join parent_companies par_comp on cand_work_expr.parent_company_id=par_comp.company_id " +
+                                    "  left join industry_segments ind on comp.industry_segment_id=ind.industry_segment_id" +
+                                    "  left join candidates_assigned_to_employment_project   cand_ass_emp_proj on cand_work_expr.candidate_id=cand_ass_emp_proj.candidate_id  and " +
+                                    "  cand_ass_emp_proj.got_job=1 and cand_ass_emp_proj.is_candidate_deleted=0  and cand_ass_emp_proj.employment_project_id " +
+                                    "  left join employment_projects emp_proj on cand_ass_emp_proj.employment_project_id=emp_proj.employment_project_id and emp_proj.is_closed=0 or (" +
+                                    "  cand_work_expr.company_id=emp_proj.company_id and cand_work_expr.parent_company_id=emp_proj.parent_company_id and cand_work_expr.job_role_id=emp_proj.job_role_id )  " +
+                                    "  left join vacancies vac on emp_proj.vacancy_id=vac.vacancy_id  " +
+                                    "  where cand.registration_id is not null  and cand_work_expr.is_entered_from_employment_project=1 ";
+            string s2;
+            string s3 = " group by cand_work_expr.candidate_id  order by cand.first_name )) as t";
+
+
+            string sqlStr = "";
+            try
+            {
+                conn = Global.GetConnectionString();
+                conn.Open();
+                cmd = new MySqlCommand("", conn);
+                // ----------------------------------------------
+                // Fill the base information.......
+                // ---------------------------------------------
+                 sqlStr = "select count(*)  from (SELECT a.registration_id,a.registration_date,b.candidate_name_with_status ";
+                 sqlStr += "FROM candidates a, candidate_other_details b where a.candidate_id=b.candidate_id and a.is_active=1 ";
+                 sqlStr += " and b.unemployed_days>0 and b.candidate_name_with_status!='' limit  50000) as g";
+                 try
+                 {
+                     //MySqlDataReader reader;
+                     //cmd.CommandText = sqlStr;
+                     //reader = cmd.ExecuteReader();
+                     //if (reader.HasRows)
+                     //{
+                     //    reader.Read();
+                     //    this.lbUnmpAc.Text = reader.GetInt32(0).ToString();
+                     //}
+                     //reader.Close();
+                     //reader = null;
+                     using (MySqlCommand cmd1 = new MySqlCommand("search_to_be_profiled_candidates", conn))
+                     {
+                         cmd1.CommandType = CommandType.StoredProcedure;
+                         cmd1.Parameters.Add("@para_search_for",MySqlDbType.VarChar).Value = "".ToString();
+                         cmd1.Parameters["@para_search_for"].Direction = ParameterDirection.Input;
+                         cmd1.Parameters.Add("@para_search_in", MySqlDbType.VarChar).Value = "name";
+                         cmd1.Parameters["@para_search_in"].Direction = ParameterDirection.Input;
+                         cmd1.Parameters.Add("@para_registration_date_from", MySqlDbType.Date).Value = Convert.ToDateTime(gotJobDates[0].stDate, cultureinfo).ToString("yyyy/MM/dd");
+                         cmd1.Parameters["@para_registration_date_from"].Direction = ParameterDirection.Input;
+                         cmd1.Parameters.Add("@para_registration_date_to", MySqlDbType.Date).Value = Convert.ToDateTime(gotJobDates[5].edDate, cultureinfo).ToString("yyyy/MM/dd");
+                         cmd1.Parameters["@para_registration_date_to"].Direction = ParameterDirection.Input;
+                         cmd1.Parameters.Add("@para_city_id", MySqlDbType.Int32).Value = -1;
+                         cmd1.Parameters["@para_city_id"].Direction = ParameterDirection.Input;
+                         cmd1.Parameters.Add("@para_current_date", MySqlDbType.Date).Value = DateTime.Today.ToString("yyyy/MM/dd");
+                         cmd1.Parameters["@para_current_date"].Direction = ParameterDirection.Input;
+                         cmd1.Parameters.Add("@para_current_page_index", MySqlDbType.Int32).Value = 0;
+                         cmd1.Parameters["@para_current_page_index"].Direction = ParameterDirection.Input;
+                         cmd1.Parameters.AddWithValue("@para_page_size", 37620);
+                         cmd1.Parameters["@para_page_size"].Direction = ParameterDirection.Input;
+                         cmd1.Parameters.Add("@para_old_registration_number", MySqlDbType.VarChar).Value = "".ToString();
+                         cmd1.Parameters["@para_old_registration_number"].Direction = ParameterDirection.Input;
+                         cmd1.Parameters.Add("@para_date_of_birth", MySqlDbType.Date).Value = "1900/01/01";
+                         cmd1.Parameters["@para_date_of_birth"].Direction = ParameterDirection.Input;
+                         cmd1.Parameters.Add("@para_disability_id", MySqlDbType.Int32).Value = -1;
+                         cmd1.Parameters["@para_disability_id"].Direction = ParameterDirection.Input;
+                         MySqlDataAdapter da = new MySqlDataAdapter(cmd1);
+                         DataSet ds = new DataSet();
+                         ds.Locale = System.Globalization.CultureInfo.InvariantCulture;
+                         da.Fill(ds);
+
+                         if(ds != null)
+                         {
+                             int count = ds.Tables[0].Rows.Count;
+                             this.lbToBep.Text = count.ToString();
+                             ds.Clear();
+                         }
+                         ds = null;
+                         cmd1.Dispose();
+
+                     }
+                 }
+                 catch (System.Exception ex)
+                 {
+                     string err = ex.Message;
+                 }
+ 
+
+            this.lbStatusDate.Text = Convert.ToDateTime(gotJobDates[0].stDate).ToString("dd/MM/yyyy") + " to " + Convert.ToDateTime(gotJobDates[5].edDate).ToString("dd/MM/yyyy");
+            for (i = 5; i >= 0; i--)
+            {
+                MySqlDataReader reader;
+                s2 = " and cand_work_expr.designation_from_date between '" + gotJobDates[i].stDate + "' and '" + gotJobDates[i].edDate + "' ";
+                sqlStr = gotJobQuery + s2 + s3;
+                cmd.CommandText = sqlStr;
+                reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    reader.Read();
+                    gotJobDates[i].noc = reader.GetInt32(0);
+
+                }
+                reader.Close();
+            }
+            for (i = 5; i >= 0; i--)
+            {
+                MySqlDataReader reader;
+                s2 = " and cand_work_expr.designation_from_date between '" + placedDates[i].stDate + "' and '" + placedDates[i].edDate + "' ";
+                sqlStr = placementQuery + s2 + " group by cand_work_expr.candidate_id  order by cand.first_name )) as t";   // s3;
+                cmd.CommandText = sqlStr;
+                reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    reader.Read();
+                    placedDates[i].noc = reader.GetInt32(0);
+                }
+                reader.Close();
+            }
+            cmd.Dispose();
+            conn.Close();
+            conn = null;
+            fillXlabels();
+            // -----------------------------------------------
+            // Populate the graphs.....
+            // -----------------------------------------------
+            try
+            {
+
+                this.gotJobsChart.AntiAliasing = AntiAliasingStyles.None;
+                this.gotJobsChart.Series["gotJobSeries"].SmartLabelStyle.Enabled = false;
+                this.gotJobsChart.ChartAreas[0].AxisX.Title = "Months";
+                this.gotJobsChart.ChartAreas[0].AxisY.Title = " Candidate Numbers";
+                this.gotJobsChart.ChartAreas[0].AxisX.TitleForeColor = System.Drawing.Color.Blue;
+                this.gotJobsChart.ChartAreas[0].AxisY.TitleForeColor = System.Drawing.Color.Blue;
+                this.gotJobsChart.ChartAreas[0].AxisY.TitleFont = new System.Drawing.Font("Consolas", 10, System.Drawing.FontStyle.Bold);
+                this.gotJobsChart.ChartAreas[0].AxisX.TitleFont = new System.Drawing.Font("Consolas", 10, System.Drawing.FontStyle.Bold);
+                this.gotJobsChart.ChartAreas[0].AxisX.IsLabelAutoFit = false;
+                this.gotJobsChart.ChartAreas[0].AxisX.LabelStyle.Angle = -30;
+                this.gotJobsChart.ChartAreas[0].AxisX.LabelStyle.ForeColor = System.Drawing.Color.Blue;
+                this.gotJobsChart.ChartAreas[0].AxisX.LabelStyle.Font = new System.Drawing.Font("Consolas", 10, System.Drawing.FontStyle.Bold);
+                this.gotJobsChart.ChartAreas[0].AxisX.Interval = 1;
+                this.gotJobsChart.BorderSkin.SkinStyle = BorderSkinStyle.Emboss;
+                iCount = 0;
+                double dnoCandidates = 0;
+                for (i = 0; i < 6; i++)
+                {
+                    dnoCandidates = Convert.ToDouble(gotJobDates[i].noc);
+                    this.gotJobsChart.Series[0].Points.AddXY(xLabels[i], dnoCandidates);
+                    this.gotJobsChart.Series[0].Points[i].Label = dnoCandidates.ToString();
+                    iCount += gotJobDates[i].noc;
+                }
+                this.lbJobObtainedTot.Text = iCount.ToString();
+            }
+            catch (System.Exception ex)
+            {
+                // his.lbStatus.Text = ex.Message;
+                MsgBox("Error: " + ex.Message);
+                return;
+            }
+            // ------------------------------------------------
+            // Fill placements......
+            // ------------------------------------------------
+            try
+            {
+                this.placements.AntiAliasing = AntiAliasingStyles.None;
+                this.placements.Series["placementsSeries"].SmartLabelStyle.Enabled = false;
+                this.placements.ChartAreas[0].AxisX.Title = "Months";
+                this.placements.ChartAreas[0].AxisY.Title = " Candidate Numbers";
+                this.placements.ChartAreas[0].AxisX.TitleForeColor = System.Drawing.Color.Blue;
+                this.placements.ChartAreas[0].AxisY.TitleForeColor = System.Drawing.Color.Blue;
+                this.placements.ChartAreas[0].AxisY.TitleFont = new System.Drawing.Font("Consolas", 10, System.Drawing.FontStyle.Bold);
+                this.placements.ChartAreas[0].AxisX.TitleFont = new System.Drawing.Font("Consolas", 10, System.Drawing.FontStyle.Bold);
+                this.placements.ChartAreas[0].AxisX.IsLabelAutoFit = false;
+                this.placements.ChartAreas[0].AxisX.LabelStyle.Angle = -30;
+                this.placements.ChartAreas[0].AxisX.LabelStyle.ForeColor = System.Drawing.Color.Blue;
+                this.placements.ChartAreas[0].AxisX.LabelStyle.Font = new System.Drawing.Font("Consolas", 10, System.Drawing.FontStyle.Bold);
+                this.placements.ChartAreas[0].AxisX.Interval = 1;
+                this.placements.BorderSkin.SkinStyle = BorderSkinStyle.Emboss;
+                double dnoCandidates = 0;
+                iCount = 0;
+                for (i = 0; i < 6; i++)
+                {
+                    dnoCandidates = Convert.ToDouble(placedDates[i].noc);
+                    this.placements.Series[0].Points.AddXY(xLabels[i], dnoCandidates);
+                    this.placements.Series[0].Points[i].Label = dnoCandidates.ToString();
+                    iCount += placedDates[i].noc;
+                }
+                this.lbPlacementsTot.Text = iCount.ToString();
+            }
+            catch (System.Exception ex)
+            {
+                // his.lbStatus.Text = ex.Message;
+                MsgBox("Error: " + ex.Message);
+                return;
+ 
+            }
+
+            }
+             catch (System.Exception ex)
+             {
+                 MsgBox("Error: " + ex.Message);
+                 return;
+             }
+        }
+        private void fillXlabels()
+        {
+            int i = 0;
+            DateTime d1;
+            DateTime d2;
+            for (i = 0; i < 6; i++)
+            {
+                d1 = Convert.ToDateTime(gotJobDates[i].stDate);
+                d2 = Convert.ToDateTime(gotJobDates[i].edDate);
+                xLabels[i] = alphaMonhts[d1.Month] + "-" + alphaMonhts[d2.Month];
+            }
+
+        }
+        private void getAllActiveRegisteredCandidates()
+        {
+            int iCount = 0;
+            int i = 0;
+            CandidatesBAL cand = new CandidatesBAL();
+            cand.CandidateID = -1;
+            cand.IsProfiled = "All";
+            cand.EmploymentStatus = 1;
+            cand.Assignment = "All";
+            cand.StateID = -1;
+            cand.CityID = -1;
+            cand.AgeGroup = -1;
+            cand.ContractExpiryDate = "0";
+            cand.NgoID = -1;
+            cand.SearchFor = "";
+            cand.SearchIn = "registration_id";
+            cand.DisabilityID = -1;
+            cand.DisabilitySubTypeID = -1;
+            cand.RecommendedJobID = -1;
+            cand.RecommendedJobRoleID = -1;
+            cand.MissingDataProfile = "All";
+            cand.GroupID = -1;
+            cand.LanguageID = -1;
+            cand.Gender = "All";
+            cand.CompanyID =  -1;
+            cand.QualificationID = -1;
+            cand.RegistrationFrom = "1900/01/01";
+            cand.RegistrationTo = "5000/01/01";
+            cand.DateOfBirth = "1900/01/01";
+            cand.SalaryFrom = 0;
+            cand.SalaryTo = 999999;
+            cand.EmployentProjectStartDateFrom = "1900/01/01";
+            cand.EmployentProjectStartDateTo = "5000/01/01";
+            cand.EmployentProjectEndDateFrom = "1900/01/01";
+            cand.EmployentProjectEndDateTo = "5000/01/01";
+            DataTable dt = cand.GetAllActiveRegisteredCandidate(cand);
+            this.lbUnmpAc.Text = dt.Rows.Count.ToString();
+            dt.Clear();
+            dt.Dispose();
+             
+            //for (i = 5; i >= 0; i--)
+            //{
+            //    cand.RegistrationFrom = regcanDates[i].stDate;
+            //    cand.RegistrationTo = regcanDates[i].edDate;
+            //    DataTable dt = cand.GetAllActiveRegisteredCandidate(cand);
+            //    regcanDates[i].noc = dt.Rows.Count;
+            //}
+            //try
+            //{
+            //    this.activeCandidates.Series["acSeries"].SmartLabelStyle.Enabled = false;
+            //    this.activeCandidates.ChartAreas[0].AxisX.Title = "Months";
+            //    this.activeCandidates.ChartAreas[0].AxisY.Title = " Candidate Numbers";
+            //    this.activeCandidates.ChartAreas[0].AxisX.TitleForeColor = System.Drawing.Color.Blue;
+            //    this.activeCandidates.ChartAreas[0].AxisY.TitleForeColor = System.Drawing.Color.Blue;
+            //    this.activeCandidates.ChartAreas[0].AxisY.TitleFont = new System.Drawing.Font("Consolas", 10, System.Drawing.FontStyle.Bold);
+            //    this.activeCandidates.ChartAreas[0].AxisX.TitleFont = new System.Drawing.Font("Consolas", 10, System.Drawing.FontStyle.Bold);
+            //    this.activeCandidates.ChartAreas[0].AxisX.IsLabelAutoFit = false;
+            //    this.activeCandidates.ChartAreas[0].AxisX.LabelStyle.Angle = -30;
+            //    this.activeCandidates.ChartAreas[0].AxisX.LabelStyle.ForeColor = System.Drawing.Color.Blue;
+            //    this.activeCandidates.ChartAreas[0].AxisX.LabelStyle.Font = new System.Drawing.Font("Consolas", 10, System.Drawing.FontStyle.Bold);
+            //    this.activeCandidates.ChartAreas[0].AxisX.Interval = 1;
+            //    this.activeCandidates.BorderSkin.SkinStyle = BorderSkinStyle.Emboss;
+            //    double dnoCandidates = 0;
+            //    for (i = 0; i < 6; i++)
+            //    {
+            //        dnoCandidates = Convert.ToDouble(regcanDates[i].noc);
+            //        this.activeCandidates.Series[0].Points.AddXY(xLabels[i], dnoCandidates);
+            //        this.activeCandidates.Series[0].Points[i].Label = dnoCandidates.ToString();
+            //        iCount += regcanDates[i].noc;
+            //    }
+            //    this.lbActiveCandidatesTot.Text = iCount.ToString();
+            //}
+            //catch (System.Exception ex)
+            //{
+            //    // his.lbStatus.Text = ex.Message;
+            //}
+        }
+        private void getTrainingProjectsStDateWise()
+        {
+            int iCount = 0;
+            int i = 0;
+            int[] projectTypes = new int[] { 0, 0 };
+            EnableIndia.App_Code.BAL.TrainingProjectBAL proj = new EnableIndia.App_Code.BAL.TrainingProjectBAL();
+            proj.DateType = "start";
+            proj.status = -1;
+            proj.TrainingProgramID = -1;
+            proj.EmployeeID = -1;
+            for (i = 5; i >= 0; i--)
+            {
+                proj.DateFrom = triprjDates[i].stDate;
+                proj.DateTo = triprjDates[i].edDate;
+                DataTable dtTrainingProject = proj.GetTrainingProjectInReports(proj, ref projectTypes);
+                triprjDates[i].noc = dtTrainingProject.Rows.Count;
+            }
+            //try
+            //{
+            //    this.traingProgramsStDate.Series["tpSeriesStDate"].SmartLabelStyle.Enabled = false;
+            //    this.traingProgramsStDate.ChartAreas[0].AxisX.Title = "Months";
+            //    this.traingProgramsStDate.ChartAreas[0].AxisY.Title = " Candidate Numbers";
+            //    this.traingProgramsStDate.ChartAreas[0].AxisX.TitleForeColor = System.Drawing.Color.Blue;
+            //    this.traingProgramsStDate.ChartAreas[0].AxisY.TitleForeColor = System.Drawing.Color.Blue;
+            //    this.traingProgramsStDate.ChartAreas[0].AxisY.TitleFont = new System.Drawing.Font("Consolas", 10, System.Drawing.FontStyle.Bold);
+            //    this.traingProgramsStDate.ChartAreas[0].AxisX.TitleFont = new System.Drawing.Font("Consolas", 10, System.Drawing.FontStyle.Bold);
+            //    this.traingProgramsStDate.ChartAreas[0].AxisX.IsLabelAutoFit = false;
+            //    this.traingProgramsStDate.ChartAreas[0].AxisX.LabelStyle.Angle = -30;
+            //    this.traingProgramsStDate.ChartAreas[0].AxisX.LabelStyle.ForeColor = System.Drawing.Color.Blue;
+            //    this.traingProgramsStDate.ChartAreas[0].AxisX.LabelStyle.Font = new System.Drawing.Font("Consolas", 10, System.Drawing.FontStyle.Bold);
+            //    this.traingProgramsStDate.ChartAreas[0].AxisX.Interval = 1;
+            //    this.traingProgramsStDate.BorderSkin.SkinStyle = BorderSkinStyle.Emboss;
+            //    double dnoCandidates = 0;
+            //    for (i = 0; i < 6; i++)
+            //    {
+            //        dnoCandidates = Convert.ToDouble(triprjDates[i].noc);
+            //        this.traingProgramsStDate.Series[0].Points.AddXY(xLabels[i], dnoCandidates);
+            //        this.traingProgramsStDate.Series[0].Points[i].Label = dnoCandidates.ToString();
+            //        iCount += triprjDates[i].noc;
+            //    }
+            //    this.lbTrainProjStDateTot.Text = iCount.ToString();
+            //}
+            //catch (System.Exception ex)
+            //{
+            //    // his.lbStatus.Text = ex.Message;
+            //}
+
+        }
+        private void getTrainingProjectsEDDateWise()
+        {
+            int i = 0;
+            int iCount = 0;
+            int[] projectTypes = new int[] { 0, 0 };
+            EnableIndia.App_Code.BAL.TrainingProjectBAL proj = new EnableIndia.App_Code.BAL.TrainingProjectBAL();
+            proj.DateType = "end";
+            proj.status = -1;
+            proj.TrainingProgramID = -1;
+            proj.EmployeeID = -1;
+            for (i = 5; i >= 0; i--)
+            {
+                proj.DateFrom = tripEdDates[i].stDate;
+                proj.DateTo = tripEdDates[i].edDate;
+                DataTable dtTrainingProject = proj.GetTrainingProjectInReports(proj, ref projectTypes);
+                tripEdDates[i].noc = dtTrainingProject.Rows.Count;
+            }
+            //try
+            //{
+            //    this.traingProgramsEdDate.Series["edSeries"].SmartLabelStyle.Enabled = false;
+            //    this.traingProgramsEdDate.ChartAreas[0].AxisX.Title = "Months";
+            //    this.traingProgramsEdDate.ChartAreas[0].AxisY.Title = " Candidate Numbers";
+            //    this.traingProgramsEdDate.ChartAreas[0].AxisX.TitleForeColor = System.Drawing.Color.Blue;
+            //    this.traingProgramsEdDate.ChartAreas[0].AxisY.TitleForeColor = System.Drawing.Color.Blue;
+            //    this.traingProgramsEdDate.ChartAreas[0].AxisY.TitleFont = new System.Drawing.Font("Consolas", 10, System.Drawing.FontStyle.Bold);
+            //    this.traingProgramsEdDate.ChartAreas[0].AxisX.TitleFont = new System.Drawing.Font("Consolas", 10, System.Drawing.FontStyle.Bold);
+            //    this.traingProgramsEdDate.ChartAreas[0].AxisX.IsLabelAutoFit = false;
+            //    this.traingProgramsEdDate.ChartAreas[0].AxisX.LabelStyle.Angle = -30;
+            //    this.traingProgramsEdDate.ChartAreas[0].AxisX.LabelStyle.ForeColor = System.Drawing.Color.Blue;
+            //    this.traingProgramsEdDate.ChartAreas[0].AxisX.LabelStyle.Font = new System.Drawing.Font("Consolas", 10, System.Drawing.FontStyle.Bold);
+            //    this.traingProgramsEdDate.ChartAreas[0].AxisX.Interval = 1;
+            //    this.traingProgramsEdDate.BorderSkin.SkinStyle = BorderSkinStyle.Emboss;
+            //    double dnoCandidates = 0;
+            //    for (i = 0; i < 6; i++)
+            //    {
+            //        dnoCandidates = Convert.ToDouble(tripEdDates[i].noc);
+            //        this.traingProgramsEdDate.Series[0].Points.AddXY(xLabels[i], dnoCandidates);
+            //        this.traingProgramsEdDate.Series[0].Points[i].Label = dnoCandidates.ToString();
+            //        iCount += tripEdDates[i].noc;
+            //    }
+            //    this.lbTrinProjEdDateTot.Text = iCount.ToString();
+            //}
+            //catch (System.Exception ex)
+            //{
+            //    // his.lbStatus.Text = ex.Message;
+            //}
+
+        }
+        private void getEmploymentProjects()
+        {
+            int i = 0;
+            int iCount = 0;
+            EnableIndia.App_Code.BAL.EmploymentProjectBAL emplProj = new EnableIndia.App_Code.BAL.EmploymentProjectBAL();
+            emplProj.ProjectStatus = "-1";
+            emplProj.EmploymentProjectID = -1;
+            emplProj.EmploymentDateEndDateFrom = "1900/01/01";
+            emplProj.EmploymentDateEndDateTo = "5000/01/01";
+            emplProj.VacancyID = -1;
+            emplProj.JobID = -1;
+            emplProj.JobRoleID = -1;
+            emplProj.GroupID = -1;
+            emplProj.CompanyID = -1;
+            emplProj.StateID = -1;
+            emplProj.CityID = -1;
+            int[] projectTypes = new int[] { 0, 0 };
+            for (i = 5; i >= 0; i--)
+            {
+                emplProj.EmploymentDateStartDateFrom = empprjDates[i].stDate;
+                emplProj.EmploymentDateStartDateTo = empprjDates[i].edDate;
+                DataTable dtEmployProject = emplProj.GetEmploymentProjectsWithEmploymentStatus(emplProj, ref projectTypes);
+                empprjDates[i].noc = dtEmployProject.Rows.Count;
+            }
+            //try
+            //{
+            //    this.employmentProjects.Series["epSeries"].SmartLabelStyle.Enabled = false;
+            //    this.employmentProjects.ChartAreas[0].AxisX.Title = "Months";
+            //    this.employmentProjects.ChartAreas[0].AxisY.Title = " Candidate Numbers";
+            //    this.employmentProjects.ChartAreas[0].AxisX.TitleForeColor = System.Drawing.Color.Blue;
+            //    this.employmentProjects.ChartAreas[0].AxisY.TitleForeColor = System.Drawing.Color.Blue;
+            //    this.employmentProjects.ChartAreas[0].AxisY.TitleFont = new System.Drawing.Font("Consolas", 10, System.Drawing.FontStyle.Bold);
+            //    this.employmentProjects.ChartAreas[0].AxisX.TitleFont = new System.Drawing.Font("Consolas", 10, System.Drawing.FontStyle.Bold);
+            //    this.employmentProjects.ChartAreas[0].AxisX.IsLabelAutoFit = false;
+            //    this.employmentProjects.ChartAreas[0].AxisX.LabelStyle.Angle = -30;
+            //    this.employmentProjects.ChartAreas[0].AxisX.LabelStyle.ForeColor = System.Drawing.Color.Blue;
+            //    this.employmentProjects.ChartAreas[0].AxisX.LabelStyle.Font = new System.Drawing.Font("Consolas", 10, System.Drawing.FontStyle.Bold);
+            //    this.employmentProjects.ChartAreas[0].AxisX.Interval = 1;
+            //    this.employmentProjects.BorderSkin.SkinStyle = BorderSkinStyle.Emboss;
+            //    double dnoCandidates = 0;
+            //    for (i = 0; i < 6; i++)
+            //    {
+            //        dnoCandidates = Convert.ToDouble(empprjDates[i].noc);
+            //        this.employmentProjects.Series[0].Points.AddXY(xLabels[i], dnoCandidates);
+            //        this.employmentProjects.Series[0].Points[i].Label = dnoCandidates.ToString();
+            //        iCount += empprjDates[i].noc;
+            //    }
+            //    this.lbEmpProjTot.Text = iCount.ToString();
+            //}
+            //catch (System.Exception ex)
+            //{
+            //    // his.lbStatus.Text = ex.Message;
+            //}
+
+        }
+        private void getRegCandidates()
+        {
+            int iCount = 0;
+            int i = 0;
+            CandidatesBAL cand = new CandidatesBAL();
+            cand.CandidateID = -1;
+            cand.IsProfiled = "All";
+            cand.EmploymentStatus = -1;
+            cand.Assignment = "All";
+            cand.StateID = -1;
+            cand.CityID = -1;
+            cand.AgeGroup = -1;
+            cand.ContractExpiryDate = "0";
+            cand.NgoID = -1;
+            cand.SearchFor = "";
+            cand.SearchIn = "registration_id";
+            cand.DisabilityID = -1;
+            cand.DisabilitySubTypeID = -1;
+            cand.RecommendedJobID = -1;
+            cand.RecommendedJobRoleID = -1;
+            cand.MissingDataProfile = "All";
+            cand.GroupID = -1;
+            cand.LanguageID = -1;
+            cand.Gender = "All";
+            cand.CompanyID = -1;
+            cand.QualificationID = -1;
+            cand.RegistrationFrom = regcanDates[0].stDate;
+            cand.RegistrationTo = regcanDates[5].edDate;
+            cand.DateOfBirth = "1900/01/01";
+            cand.SalaryFrom = 0;
+            cand.SalaryTo = 1000000;
+            cand.EmployentProjectStartDateFrom = "1900/01/01";
+            cand.EmployentProjectStartDateTo = "5000/01/01";
+            cand.EmployentProjectEndDateFrom = "1900/01/01";
+            cand.EmployentProjectEndDateTo = "5000/01/01";
+            string regQuery = "SELECT * FROM candidates where ";
+            string s2= "";
+            string s3 = " and is_registration_completed=1  ";
+            //int i = 0;
+            //int iCount = 0;
+            DateTime Today = DateTime.Today;
+            // Calculate 6 Months before perid.
+            DateTime stDate = Today; // AddYears(-3);
+            DateTime tDate = DateTime.Today;
+            string sqlStr = "";
+            MySqlConnection conn = Global.GetConnectionString();
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand("", conn);
+            regQuery = "SELECT Count(*) FROM candidates where   ";
+            //  DataTable dt = cand.GetAllActiveRegisteredCandidate(cand);
+            DataTable dt = new DataTable();
+            int count = 0;
+            for (i = 5; i >= 0; i--)
+            {
+                cand.RegistrationFrom = regcanDates[i].stDate;
+                cand.RegistrationTo = regcanDates[i].edDate;
+                dt = cand.GetAllActiveRegisteredCandidate(cand);
+                regCands[i].noc = dt.Rows.Count;
+                count += regCands[i].noc;
+                dt.Clear();
+                dt.Dispose();
+                //MySqlDataReader reader;
+                //s2 = " registration_date between '" + regcanDates[i].stDate + "' and '" + regcanDates[i].edDate + "' ";
+                //sqlStr = regQuery + s2 + s3;
+                //cmd.CommandText = sqlStr;
+                //reader = cmd.ExecuteReader();
+                //if (reader.HasRows)
+                //{
+                //    reader.Read();
+                //    regCands[i].noc = reader.GetInt32(0);
+
+                //}
+                //reader.Close();
+            }
+            this.lbRegCandidates.Text = count.ToString();
+            try
+            {
+                this.chartRegCand.AntiAliasing = AntiAliasingStyles.None;
+                this.chartRegCand.Series["regCandSeries"].SmartLabelStyle.Enabled = false;
+                this.chartRegCand.ChartAreas[0].AxisX.Title = "Months";
+                this.chartRegCand.ChartAreas[0].AxisY.Title = " Candidate Numbers";
+                this.chartRegCand.ChartAreas[0].AxisX.TitleForeColor = System.Drawing.Color.Blue;
+                this.chartRegCand.ChartAreas[0].AxisY.TitleForeColor = System.Drawing.Color.Blue;
+                this.chartRegCand.ChartAreas[0].AxisY.TitleFont = new System.Drawing.Font("Consolas", 10, System.Drawing.FontStyle.Bold);
+                this.chartRegCand.ChartAreas[0].AxisX.TitleFont = new System.Drawing.Font("Consolas", 10, System.Drawing.FontStyle.Bold);
+                this.chartRegCand.ChartAreas[0].AxisX.IsLabelAutoFit = false;
+                this.chartRegCand.ChartAreas[0].AxisX.LabelStyle.Angle = -30;
+                this.chartRegCand.ChartAreas[0].AxisX.LabelStyle.ForeColor = System.Drawing.Color.Blue;
+                this.chartRegCand.ChartAreas[0].AxisX.LabelStyle.Font = new System.Drawing.Font("Consolas", 10, System.Drawing.FontStyle.Bold);
+                this.chartRegCand.ChartAreas[0].AxisX.Interval = 1;
+                this.chartRegCand.BorderSkin.SkinStyle = BorderSkinStyle.Emboss;
+                double dnoCandidates = 0;
+                for (i = 0; i < 6; i++)
+                {
+                    dnoCandidates = Convert.ToDouble(regCands[i].noc);
+                    this.chartRegCand.Series[0].Points.AddXY(xLabels[i], dnoCandidates);
+                    this.chartRegCand.Series[0].Points[i].Label = dnoCandidates.ToString();
+                    iCount += regCands[i].noc;
+                }
+                this.lbRegCandidates.Text = iCount.ToString();
+            }
+            catch (System.Exception ex)
+            {
+                // his.lbStatus.Text = ex.Message;
+            }
+
+        }
+        private void getTrnCandidates()
+        {
+            string trnQuery = "SELECT count(*) FROM candidates_assigned_to_training_projects  a join training_projects  b on  a.training_project_id=b.training_project_id where a.passed_training > 0  ";
+            string s2 = "";
+            int i = 0;
+            int iCount = 0;
+            DateTime Today = DateTime.Today;
+            // Calculate 6 Months before perid.
+            DateTime stDate = Today; // AddYears(-3);
+            DateTime tDate = DateTime.Today;
+            string sqlStr = "";
+            MySqlConnection conn = Global.GetConnectionString();
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand("", conn);
+            //for (i = 5; i >= 0; i--)
+            //{
+            //    trnCands[i].edDate = stDate.Year.ToString() + "-" + stDate.Month.ToString("00") + "-" + stDate.Day.ToString("00");
+            //    stDate = stDate.AddMonths(-1);
+            //    tDate = stDate.AddDays(1);
+            //    trnCands[i].stDate = tDate.Year.ToString() + "-" + tDate.Month.ToString("00") + "-" + tDate.Day.ToString("00");
+            //}
+            for (i = 5; i >= 0; i--)
+            {
+                MySqlDataReader reader;
+                s2 = " and end_date_time between '" +  trnCands[i].stDate + "' and '" + trnCands[i].edDate + "' ";
+                sqlStr = trnQuery + s2;
+                cmd.CommandText = sqlStr;
+                reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    reader.Read();
+                    trnCands[i].noc = reader.GetInt32(0);
+
+                }
+                reader.Close();
+            }
+            try
+            {
+                this.chartTrained.AntiAliasing = AntiAliasingStyles.None;
+                this.chartTrained.Series["trnSeries"].SmartLabelStyle.Enabled = false;
+                this.chartTrained.ChartAreas[0].AxisX.Title = "Months";
+                this.chartTrained.ChartAreas[0].AxisY.Title = " Candidate Numbers";
+                this.chartTrained.ChartAreas[0].AxisX.TitleForeColor = System.Drawing.Color.Blue;
+                this.chartTrained.ChartAreas[0].AxisY.TitleForeColor = System.Drawing.Color.Blue;
+                this.chartTrained.ChartAreas[0].AxisY.TitleFont = new System.Drawing.Font("Consolas", 10, System.Drawing.FontStyle.Bold);
+                this.chartTrained.ChartAreas[0].AxisX.TitleFont = new System.Drawing.Font("Consolas", 10, System.Drawing.FontStyle.Bold);
+                this.chartTrained.ChartAreas[0].AxisX.IsLabelAutoFit = false;
+                this.chartTrained.ChartAreas[0].AxisX.LabelStyle.Angle = -30;
+                this.chartTrained.ChartAreas[0].AxisX.LabelStyle.ForeColor = System.Drawing.Color.Blue;
+                this.chartTrained.ChartAreas[0].AxisX.LabelStyle.Font = new System.Drawing.Font("Consolas", 10, System.Drawing.FontStyle.Bold);
+                this.chartTrained.ChartAreas[0].AxisX.Interval = 1;
+                this.chartTrained.BorderSkin.SkinStyle = BorderSkinStyle.Emboss;
+                double dnoCandidates = 0;
+                for (i = 0; i < 6; i++)
+                {
+                    dnoCandidates = Convert.ToDouble(trnCands[i].noc);
+                    this.chartTrained.Series[0].Points.AddXY(xLabels[i], dnoCandidates);
+                    this.chartTrained.Series[0].Points[i].Label = dnoCandidates.ToString();
+                    iCount += trnCands[i].noc;
+                }
+                this.lbTrained.Text = iCount.ToString();
+            }
+            catch (System.Exception ex)
+            {
+                // his.lbStatus.Text = ex.Message;
+            }
+
+        }
+        private void getUnderTraining()
+        {
+            string udtQuery = "SELECT COUNT(*) FROM candidates_assigned_to_training_projects  a join training_projects  b on  a.training_project_id=b.training_project_id where   a.passed_training < 1 ";
+            string s2 = "";
+            int i = 0;
+            int iCount = 0;
+            DateTime Today = DateTime.Today;
+            // Calculate 6 Months before perid.
+            DateTime stDate = Today; // AddYears(-3);
+            DateTime tDate = DateTime.Today;
+            string sqlStr = "";
+            MySqlConnection conn = Global.GetConnectionString();
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand("", conn);
+            for (i = 5; i >= 0; i--)
+            {
+                udtCands[i].edDate = stDate.Year.ToString() + "-" + stDate.Month.ToString("00") + "-" + stDate.Day.ToString("00");
+                stDate = stDate.AddMonths(-1);
+                tDate = stDate.AddDays(1);
+                udtCands[i].stDate = tDate.Year.ToString() + "-" + tDate.Month.ToString("00") + "-" + tDate.Day.ToString("00");
+            }
+            for (i = 5; i >= 0; i--)
+            {
+                MySqlDataReader reader;
+                s2 = " and end_date_time between '" + udtCands[i].stDate + "' and '" + udtCands[i].edDate + "' ";
+                sqlStr = udtQuery + s2;
+                cmd.CommandText = sqlStr;
+                reader = cmd.ExecuteReader();
+                if (reader.HasRows)
+                {
+                    reader.Read();
+                    udtCands[i].noc = reader.GetInt32(0);
+
+                }
+                reader.Close();
+            }
+            try
+            {
+                this.ChartUnderTraining.AntiAliasing = AntiAliasingStyles.None;
+                this.ChartUnderTraining.Series["udtSeries"].SmartLabelStyle.Enabled = false;
+                this.ChartUnderTraining.ChartAreas[0].AxisX.Title = "Months";
+                this.ChartUnderTraining.ChartAreas[0].AxisY.Title = " Candidate Numbers";
+                this.ChartUnderTraining.ChartAreas[0].AxisX.TitleForeColor = System.Drawing.Color.Blue;
+                this.ChartUnderTraining.ChartAreas[0].AxisY.TitleForeColor = System.Drawing.Color.Blue;
+                this.ChartUnderTraining.ChartAreas[0].AxisY.TitleFont = new System.Drawing.Font("Consolas", 10, System.Drawing.FontStyle.Bold);
+                this.ChartUnderTraining.ChartAreas[0].AxisX.TitleFont = new System.Drawing.Font("Consolas", 10, System.Drawing.FontStyle.Bold);
+                this.ChartUnderTraining.ChartAreas[0].AxisX.IsLabelAutoFit = false;
+                this.ChartUnderTraining.ChartAreas[0].AxisX.LabelStyle.Angle = -30;
+                this.ChartUnderTraining.ChartAreas[0].AxisX.LabelStyle.ForeColor = System.Drawing.Color.Blue;
+                this.ChartUnderTraining.ChartAreas[0].AxisX.LabelStyle.Font = new System.Drawing.Font("Consolas", 10, System.Drawing.FontStyle.Bold);
+                this.ChartUnderTraining.ChartAreas[0].AxisX.Interval = 1;
+                this.ChartUnderTraining.BorderSkin.SkinStyle = BorderSkinStyle.Emboss;
+                double dnoCandidates = 0;
+                for (i = 0; i < 6; i++)
+                {
+                    dnoCandidates = Convert.ToDouble(udtCands[i].noc);
+                    this.ChartUnderTraining.Series[0].Points.AddXY(xLabels[i], dnoCandidates);
+                    this.ChartUnderTraining.Series[0].Points[i].Label = dnoCandidates.ToString();
+                    iCount += udtCands[i].noc;
+                }
+                this.lbUnderTraining.Text = iCount.ToString();
+            }
+            catch (System.Exception ex)
+            {
+                // his.lbStatus.Text = ex.Message;
+            }
+
+
+        }
+        protected void lbGotJobsClicked(object sender, EventArgs e)
+        {
+            Response.Redirect("~/ReportSection/GotJobN.aspx", false);
+        }
+
+        protected void lbPlacementsClicked(object sender, EventArgs e)
+        {
+            Response.Redirect("~/ReportSection/PlacementsN.aspx", false);
+        }
+
+        protected void lbActiveCandidatesClicked(object sender, EventArgs e)
+        {
+            Response.Redirect("~/ReportSection/AllActiveRegisteredCandidateReport.aspx", false);
+        }
+
+        protected void trainingProjectsClicked(object sender, EventArgs e)
+        {
+            Response.Redirect("~//ReportSection/TrainingProjectReports.aspx", false);
+        }
+
+        protected void employmentProjectsClicked(object sender, EventArgs e)
+        {
+            Response.Redirect("~/ReportSection/EmploymentProjectsWithEmploymentStatus.aspx", false);
+        }
+
+        protected void trainingProjectsEDClicked(object sender, EventArgs e)
+        {
+            Response.Redirect("~//ReportSection/TrainingProjectReports.aspx", false);
+        }
+        private void MsgBox(string message)
+        {
+            webMessageBox wb = new webMessageBox();
+            wb.Show(message);
+        }
+    }
+}

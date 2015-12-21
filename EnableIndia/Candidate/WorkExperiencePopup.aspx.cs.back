@@ -1,0 +1,469 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+using MySql.Data.MySqlClient;
+
+public partial class Candidate_WorkExperiencePopup : System.Web.UI.Page
+{
+    public string CandidateID
+    {
+        get;
+        set;
+    }
+
+    public string EmploymentProjectID
+    {
+        get;
+        set;
+    }
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        Global.SetDefaultButtonOfTheForm(this.Form, BtnManageWorkExperience);
+        Global.SetUICulture(this.Page);
+
+        CompaniesBAL company = new CompaniesBAL();
+        MySqlDataReader drCompany = company.GetCompanies("-1");
+        while(drCompany.Read())
+        {
+            ListItem li = new ListItem(drCompany["company_code"].ToString(), drCompany["company_id"].ToString());
+            li.Attributes.Add("ParentCompanyID", drCompany["parent_company_id"].ToString());
+            DdlHiddenCompany.Items.Add(li);
+        }
+        drCompany.Close();
+        drCompany.Dispose();
+        DdlHiddenCompany.Items.Insert(0, new ListItem("Select", "-2"));
+        DdlHiddenCompany.Items.Add(new ListItem("Not Available", "-3"));
+
+        if(Request.QueryString["cand"] != null)
+        {
+            this.CandidateID = Global.DecryptID(Convert.ToDouble(Request.QueryString["cand"])).ToString();
+        }
+        else
+        {
+            this.CandidateID = "0";
+        }
+
+        if(Request.QueryString[1.4em] != null)
+        {
+            this.EmploymentProjectID = Global.DecryptID(Convert.ToDouble(Request.QueryString["emp_proj"])).ToString();
+        }
+        else
+        {
+            this.EmploymentProjectID = "-2";
+        }
+
+        //added for show name and Rid in Got Job Popup
+        if(Request.RawUrl.Contains("train_proj"))
+        {
+            TblCandidateDetail.Visible = true;
+            TblGotJobDetail.Visible = true;
+            this.Page.Title = "Got Job";
+            CandidatesBAL candidate = new CandidatesBAL();
+            MySqlDataReader drCandidate = candidate.GetCandidateDetails(this.CandidateID.ToString());
+            if(drCandidate.Read())
+            {
+                SpnCandidateName.InnerText = drCandidate["first_name"].ToString() + " " + drCandidate["middle_name"].ToString() + "  " + drCandidate["last_name"].ToString();
+                SpnCandidateRID.InnerText = drCandidate["registration_id"].ToString();
+            }
+            drCandidate.Close();
+            drCandidate.Dispose();
+            GetCandidateWorkExperience();
+            if(LstViewExistingWorkExperience.Items.Count.Equals(0))
+            {
+                SpnStatus.Visible = true;
+            }
+            else
+            {
+                SpnStatus.Visible = false;
+            }
+        }
+
+        if(!Page.IsPostBack)
+        {
+            //Gets parent companies
+            ParentCompaniesBAL parentComp = new ParentCompaniesBAL();
+            MySqlDataReader drParentCompanies = parentComp.GetParentCompanies();
+            Global.FillDropDown(DdlParentCompanies, drParentCompanies, "company_name", "company_id");
+
+            JobRolesBAL role = new JobRolesBAL();
+            MySqlDataReader drRole = role.GetJobRoles("-1");
+            Global.FillDropDown(DdlJobRoles, drRole, "job_role_name", "job_role_id");
+            CandidateWorkExperienceBAL can = new CandidateWorkExperienceBAL();
+            if(Request.QueryString["work_exp"] != null)
+            {
+                GetWorkExperienceDetail();
+                BtnDeleteWorkExperience.Visible = true;
+            }
+            else
+            {
+                CandidatesBAL cand = new CandidatesBAL();
+                MySqlDataReader drCandidateDetails = cand.GetCandidateDetails(Global.DecryptID(Convert.ToDouble(Request.QueryString["cand"])).ToString());
+                if(drCandidateDetails.Read())
+                {
+                    if(drCandidateDetails["contract_expiry_date"].ToString().Contains("1900"))
+                    {
+                        TxtExpiryDate.Text = "";
+                    }
+                    else
+                    {
+                        TxtExpiryDate.Text = Convert.ToDateTime(drCandidateDetails["contract_expiry_date"]).ToString("dd/MM/yyyy");
+                    }
+                }
+            }
+            Global.ShowMessageInAlert(this.Form);
+        }
+        //added for employment project
+        if(Request.RawUrl.Contains("emp_proj"))
+        {
+            RdbDesignationTo.Enabled = false;
+            RdbDesignationTillCurrentDate.Enabled = false;
+            RdbDesignationTillCurrentDate.Checked = true;
+            TblEmploymentProjectDetail.Visible = true;
+            TblCandidateDetailForEmployment.Visible = true;
+            TdSelectCompany.Visible = false;
+            TdSelectRole.Visible = false;
+            TdBlankUnlistedCompany.Visible = false;
+            TdUnlistedCompany.Visible = false;
+            TblEmploymentComany.Visible = true;
+            LblCompany.Visible = false;
+            TdDesignation.Visible = false;
+            TblEmploymentDesignation.Visible = true;
+            GetWorkExperienceDetailForEmploymentProject();
+            TblParentCompanydetail.Attributes.Add("style", "margin-top:5px");
+            TblRole.Attributes.Add("style", "margin-top:5px");
+            
+            EmploymentProjectBAL proj = new EmploymentProjectBAL();
+            MySqlDataReader drEmploymentProjectDetails = proj.GetEmploymentProjectDetails(this.EmploymentProjectID);
+            if (drEmploymentProjectDetails.HasRows)
+            {
+                drEmploymentProjectDetails.Read();
+                SpnEmploymentProjectName.InnerText = drEmploymentProjectDetails["employment_project_name"].ToString();
+                SpnCurrentDemand.InnerText = drEmploymentProjectDetails["current_demand_of_people"].ToString();
+            }
+            drEmploymentProjectDetails.Close();
+            drEmploymentProjectDetails.Dispose();
+
+            CandidatesBAL candidate = new CandidatesBAL();
+            MySqlDataReader drCandidate = candidate.GetCandidateDetails(this.CandidateID.ToString());
+            if (drCandidate.Read())
+            {
+                SpnCandidateNameEmployment.InnerText = drCandidate["first_name"].ToString() + " " + drCandidate["middle_name"].ToString() + "  " + drCandidate["last_name"].ToString();
+                SpnCandidateRIDEmployment.InnerText = drCandidate["registration_id"].ToString();
+            }
+            drCandidate.Close();
+            drCandidate.Dispose();
+        }
+    }
+
+    //added for to show listview in dropdown in Got Job Page
+    private void GetCandidateWorkExperience()
+    {
+        CandidateWorkExperienceBAL candidate = new CandidateWorkExperienceBAL();
+        LstViewExistingWorkExperience.DataSource = candidate.GetCandidateWorkExperience(this.CandidateID);
+        LstViewExistingWorkExperience.DataBind();
+    }
+
+    private void GetWorkExperienceDetailForEmploymentProject()
+    {
+        EmploymentProjectBAL employment = new EmploymentProjectBAL();
+        string employmentProjectID = Global.DecryptID(Convert.ToDouble(Request.QueryString["emp_proj"])).ToString();
+        MySqlDataReader drWorkExperienceEmployment = employment.GetEmploymentProjectDetails(employmentProjectID);
+
+        if(drWorkExperienceEmployment.Read())
+        {
+            DdlSelectCompany.Visible = false;
+            DdlParentCompanies.Value = drWorkExperienceEmployment["parent_company_id"].ToString();
+            DdlParentCompanies.Attributes.Add("style", "display:none");
+            DdlCompanies.Attributes.Add("style", "display:none");
+            SpnHiddenCompanyID.InnerText = drWorkExperienceEmployment["company_id"].ToString();
+            DdlHiddenCompany.Value = drWorkExperienceEmployment["company_id"].ToString();
+            TxtUnlistedCompany.Visible = false;
+            TxtDesignation.Visible = false;
+            SpnSelectCompany.Visible = true;
+            SpnParentCompnies.Visible = true;
+            SpnCompanies.Visible = true;
+            SpnJobRoles.Visible = true;
+            SpnDesignation.Visible = true;
+            SpnSelectCompany.InnerText = "Listed Company :";
+            SpnParentCompnies.InnerText = " : "+ DdlParentCompanies.Items.FindByValue(drWorkExperienceEmployment["parent_company_id"].ToString()).Text;
+            SpnCompanies.InnerText = DdlHiddenCompany.Items.FindByValue(drWorkExperienceEmployment["company_id"].ToString()).Text;
+            string te = drWorkExperienceEmployment["job_role_id"].ToString();
+            if(drWorkExperienceEmployment["job_role_id"].ToString() != "0")
+            {
+                TxtUnlistedRole.Visible = false;
+                DdlJobRoles.Visible = false;
+                DdlRoles.Visible = false;
+                SpnSelectRole.Visible = true;
+                SpnSelectRole.InnerText = "Listed Role :";
+                SpnJobRoles.InnerText = DdlJobRoles.Items.FindByValue(drWorkExperienceEmployment["job_role_id"].ToString()).Text;
+            }
+            else
+            {
+                TdSelectRole.Visible = true;
+            }
+            SpnDesignation.InnerText = drWorkExperienceEmployment["designation"].ToString();
+            drWorkExperienceEmployment.Close();
+            drWorkExperienceEmployment.Dispose();
+        }
+    }
+
+    private void GetWorkExperienceDetail()
+    {
+        CandidateWorkExperienceBAL exprienceDetail = new CandidateWorkExperienceBAL();
+        string workexperienceID = Global.DecryptID(Convert.ToDouble(Request.QueryString["work_exp"])).ToString();
+        MySqlDataReader drWorkExperience = exprienceDetail.GetCandidateWorkExperienceDetails(workexperienceID);
+
+        if(drWorkExperience.Read())
+        {
+            DdlParentCompanies.Value = drWorkExperience["parent_company_id"].ToString();
+            SpnHiddenCompanyID.InnerText = drWorkExperience["company_id"].ToString();
+            TxtUnlistedCompany.Text = drWorkExperience["unlisted_company"].ToString();
+            if(TxtUnlistedCompany.Text.Trim().Equals(""))
+            {
+                DdlSelectCompany.Value = "1";
+            }
+            else
+            {
+                DdlSelectCompany.Value = "2";
+            }
+            DdlJobRoles.Value = drWorkExperience["job_role_id"].ToString();
+            TxtUnlistedRole.Text = drWorkExperience["unlisted_job_role"].ToString();
+            if(TxtUnlistedRole.Text.Trim().Equals(""))
+            {
+                DdlRoles.Value = "1";
+            }
+            else
+            {
+                DdlRoles.Value = "2";
+            }
+            TxtDesignation.Text = drWorkExperience["designation"].ToString();
+            TxtDesignationFrom.Text = Convert.ToDateTime(drWorkExperience["designation_from_date"]).ToString("MM/yyyy");
+            if(drWorkExperience["designation_to_date"].ToString().Contains("5000"))
+            {
+                RdbDesignationTillCurrentDate.Checked = true;
+            }
+            else
+            {
+                RdbDesignationTo.Checked = true;
+                TxtDesignationTo.Text = Convert.ToDateTime(drWorkExperience["designation_to_date"]).ToString("MM/yyyy");
+            }
+            if (drWorkExperience["monthly_salary"].ToString() == "0.00")
+            {
+                TxtMonthlySalary.Text = "";
+            }
+            else
+            {
+                TxtMonthlySalary.Text = Convert.ToInt32(drWorkExperience["monthly_salary"]).ToString();
+            }
+            if(drWorkExperience["years"].ToString().Contains("-"))
+            {
+                SpnYear.InnerText = "0Y 0M";
+            }
+            else
+            {
+                SpnYear.InnerText = drWorkExperience["years"].ToString();
+            }
+            if(drWorkExperience["contract_expiry_date"].ToString().Contains("1900"))
+            {
+                TxtExpiryDate.Text = "";
+            }
+            else
+            {
+                TxtExpiryDate.Text = Convert.ToDateTime(drWorkExperience["contract_expiry_date"]).ToString("dd/MM/yyyy");
+            }
+            BtnManageWorkExperience.Text = BtnManageWorkExperience.Text.Replace("Add", "Update");
+            BtnManageWorkExperience.ToolTip = BtnManageWorkExperience.ToolTip.Replace("Add", "Update");
+
+            drWorkExperience.Close();
+            drWorkExperience.Dispose();
+        }
+    }
+
+    protected void BtnPopulateParentCompanies_Click(object sender, EventArgs e)
+    {
+        CompaniesBAL comp = new CompaniesBAL();
+        MySqlDataReader drCompanies = comp.GetCompanies(DdlParentCompanies.Value);
+        Global.FillDropDown(DdlCompanies, drCompanies, "company_code", "company_id");
+    }
+
+    protected void BtnDeleteWorkExperience_Click(object sender, EventArgs e)
+    {
+        string errorMessage = String.Empty;
+        CandidateWorkExperienceBAL work = new CandidateWorkExperienceBAL();
+        bool isDeleted = work.DeleteWorkExperience(Global.DecryptID(Convert.ToDouble(Request.QueryString["work_exp"])).ToString(), this.CandidateID, out errorMessage);
+        string script = String.Empty;
+
+        if(isDeleted.Equals(true))
+        {
+            script = "alert('Work experience deleted successfully.');self.close();";
+            ClientScript.RegisterStartupScript(this.GetType(), "__key", script, true);
+        }
+        else
+        {
+            script = "alert('" + Global.GetGlobalErrorMessage() + "');";
+            ClientScript.RegisterStartupScript(this.GetType(), "__key", script, true);
+        }
+    }
+
+    protected void BtnManageWorkExperience_Click(object sender, EventArgs e)
+    {
+        CandidateWorkExperienceBAL work = new CandidateWorkExperienceBAL();
+        string message = String.Empty;
+        if(Request.QueryString["work_exp"] != null)
+        {
+            work.CandidateWorkExperienceID = Global.DecryptID(Convert.ToDouble(Request.QueryString["work_exp"]));
+        }
+        work.CandidateID = Global.DecryptID(Convert.ToDouble(Request.QueryString["cand"]));
+        if(!Request.RawUrl.Contains("emp_proj"))
+        {
+            if(DdlSelectCompany.Value.Equals("1"))
+            {
+                work.ParentCompanyID = Convert.ToInt32(DdlParentCompanies.Value);
+                work.CompanyID = Convert.ToInt32(DdlHiddenCompany.Value);
+                work.UnlistedCompany = "";
+            }
+            else
+            {
+                work.UnlistedCompany = TxtUnlistedCompany.Text.Trim();
+                work.ParentCompanyID = -1;
+                work.CompanyID = -1;
+            }
+            if(DdlRoles.Value.Equals("1"))
+            {
+                work.JobRoleID = Convert.ToInt32(DdlJobRoles.Value);
+                work.UnlistedJobRole = "";
+            }
+            else
+            {
+                work.UnlistedJobRole = TxtUnlistedRole.Text.Trim();
+                work.JobRoleID = -1;
+            }
+            work.Designation = TxtDesignation.Text.Trim();
+        }
+        else
+        {
+            EmploymentProjectBAL employment = new EmploymentProjectBAL();
+            string employmentProjectID = Global.DecryptID(Convert.ToDouble(Request.QueryString["emp_proj"])).ToString();
+            MySqlDataReader drWorkExperienceEmployment = employment.GetEmploymentProjectDetails(employmentProjectID);
+
+            if(drWorkExperienceEmployment.Read())
+            {
+                work.ParentCompanyID = Convert.ToInt32(drWorkExperienceEmployment["parent_company_id"]);
+                work.CompanyID = Convert.ToInt32(drWorkExperienceEmployment["company_id"]);
+                work.UnlistedCompany = "";
+                if(drWorkExperienceEmployment["job_role_id"].ToString() != "0")
+                {
+                    work.UnlistedJobRole = "";
+                    work.JobRoleID = Convert.ToInt32(drWorkExperienceEmployment["job_role_id"]);
+                }
+                else
+                {
+                    if(DdlRoles.Value.Equals("1"))
+                    {
+                        work.JobRoleID = Convert.ToInt32(DdlJobRoles.Value);
+                        work.UnlistedJobRole = "";
+                    }
+                    else
+                    {
+                        work.UnlistedJobRole = TxtUnlistedRole.Text.Trim();
+                        work.JobRoleID = -1;
+                    }
+                }
+                work.Designation = SpnDesignation.InnerText;
+            }
+            drWorkExperienceEmployment.Close();
+            drWorkExperienceEmployment.Dispose();
+        }
+        if(RdbDesignationTillCurrentDate.Checked == true)
+        {
+            work.DesignationToDate = "5000/01/01";
+        }
+        else
+        {
+            try
+            {
+                work.DesignationToDate = Convert.ToDateTime(TxtDesignationTo.Text.Trim()).ToString("yyyy/MM/dd");
+            }
+            catch
+            {
+                work.DesignationToDate = DateTime.Now.ToString("yyyy/MM/dd");
+            }
+        }
+
+        try
+        {
+            work.DesignationFromDate = Convert.ToDateTime(TxtDesignationFrom.Text.Trim()).ToString("yyyy/MM/dd");
+        }
+        catch
+        {
+            work.DesignationFromDate = DateTime.Now.ToString("yyyy/MM/dd");
+        }
+
+        try
+        {
+            work.MonthlySalary = Convert.ToDecimal(TxtMonthlySalary.Text.Trim());
+        }
+        catch
+        {
+            work.MonthlySalary = 0;
+        }
+        try
+        {
+            work.ContractExpiryDate = Convert.ToDateTime(TxtExpiryDate.Text.Trim()).ToString("yyyy/MM/dd");
+        }
+        catch
+        {
+            work.ContractExpiryDate = "1900/01/01";
+        }
+
+        if(Request.QueryString["work_exp"] == null)
+        {
+            int rowAdded = work.AddCandidateWorkExperience(work);
+            if(Request.RawUrl.Contains("emp_proj"))
+            {
+                MySqlConnection conn = Global.GetConnectionString();
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("", conn);
+                cmd.CommandText = "update candidate_work_experience set is_entered_from_employment_project=1 ";
+                cmd.CommandText+= "where candidate_work_experience_id="+ rowAdded;
+                cmd.ExecuteNonQuery();
+
+                cmd = new MySqlCommand("", conn);
+                cmd.CommandText = "update candidates_assigned_to_employment_project set got_job_details_entered=1 ";
+                cmd.CommandText += "where candidate_id=" + this.CandidateID +" and employment_project_id="+this.EmploymentProjectID;
+                cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+            if(rowAdded>0)
+            {
+                message = "Work experience added successfully.";
+                Global.RedirectAfterSubmit(message, BtnManageWorkExperience.ID);
+            }
+            else
+            {
+                message = "Error occurred. Please contact the administrator.";
+                Global.RedirectAfterSubmit(message, BtnManageWorkExperience.ID);
+            }
+        }
+        else
+        {
+            string errorMessage = String.Empty;
+            bool rowUpdated = work.UpdateCandidateWorkExperience(work, out errorMessage);
+            if(rowUpdated.Equals(true))
+            {
+                message = "Work experience updated successfully.";
+                Global.RedirectAfterSubmit(message, BtnManageWorkExperience.ID);
+            }
+            else
+            {
+                message = "Error occurred. Please contact the administrator.";
+                Global.RedirectAfterSubmit(message, BtnManageWorkExperience.ID);
+            }
+        }
+    }
+}

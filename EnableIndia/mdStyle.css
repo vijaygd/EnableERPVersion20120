@@ -1,0 +1,33 @@
+﻿html{
+            margin:0 auto;
+            background-repeat:repeat-x;
+            background-attachment:fixed;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            scrollbar-face-color:#5e80fd; 
+            scrollbar-track-color:#aabcfe; 
+            scrollbar-arrow-color:#0066FF; 
+            scrollbar-track-color:#e9eefe; 
+            scrollbar-shadow-color:#aabcfe; 
+            -scrollbar-dark-shadow-color:#cccccc; 
+            scrollbar-3dlight-color:#ffffff; 
+            scrollbar-highlight-color:#00ffcc;
+            -ms-scrollbar-base-color: blue; 
+            scrollbar-base-color: blue; /* Always use the standard when available. */            font-family: Consolas, arial, 'lucida console';
+            font-size:11px;
+            color:#00008B;
+            overflow-x:hidden;
+            overflow-y:scroll;
+
+}
+.mainContainer
+{
+    width:100%;
+    height:auto;
+}
+.auxContainer
+{
+    width:95%;
+    height:auto;
+    margin:auto;
+}

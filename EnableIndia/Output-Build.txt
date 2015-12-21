@@ -1,0 +1,19 @@
+﻿------ Build started: Project: C:\EnableIndia\, Configuration: Debug Any CPU ------
+Validating Web Site
+Building directory '/EnableIndia/Admin/'.
+Building directory '/EnableIndia/Candidate/ProfileHistory/'.
+Building directory '/EnableIndia/Candidate/Registration/'.
+Building directory '/EnableIndia/Candidate/'.
+Building directory '/EnableIndia/Company/'.
+Building directory '/EnableIndia/EVidya/Proto_Workplace_Solutions_V5/jscripts/'.
+Building directory '/EnableIndia/EVidya/Proto_Workplace_Solutions_V5/'.
+Building directory '/EnableIndia/EVidya/'.
+Building directory '/EnableIndia/NGO/'.
+Building directory '/EnableIndia/ReportSection/'.
+Building directory '/EnableIndia/Scripts/ui/i18n/'.
+Building directory '/EnableIndia/Scripts/'.
+Building directory '/EnableIndia/Training/'.
+Building directory '/EnableIndia/'.
+
+Validation Complete
+========== Build: 1 succeeded or up-to-date, 0 failed, 0 skipped ==========

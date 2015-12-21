@@ -1,0 +1,45 @@
+----------------------------
+[Customer Explanation]
+
+
+
+----------------------------
+[General Info]
+
+Application: Stimulsoft Reports.Net
+Framework:   v4.0.30319
+Version:     Version: 2013.1.1600 from 2 April 2013
+MachineName: VIJAY-PC
+OSVersion:   Microsoft Windows NT 6.1.7601 Service Pack 1
+UserName:    Vijay
+
+----------------------------
+[Exception Info]
+Message:     The 'DataSources' start tag on line 5 position 6 does not match the end tag of 'Dictionary'. Line 87, position 5.
+
+Source:      System.Xml
+
+StackTrace:
+   at System.Xml.XmlTextReaderImpl.Throw(String res, String[] args)
+   at System.Xml.XmlTextReaderImpl.ThrowTagMismatch(NodeData startTag)
+   at System.Xml.XmlTextReaderImpl.ParseEndElement()
+   at System.Xml.XmlTextReaderImpl.ParseElementContent()
+   at System.Xml.XmlReader.MoveToContent()
+   at System.Xml.XmlReader.IsStartElement()
+   at Stimulsoft.Base.Serializing.StiSerializing.DeserializeObject(XmlTextReader tr, String parentPropName)
+   at Stimulsoft.Base.Serializing.StiSerializing.DeserializeObject(XmlTextReader tr, String parentPropName)
+   at Stimulsoft.Base.Serializing.StiSerializing.Deserialize(Object obj, Stream stream, String application)
+   at Stimulsoft.Report.SaveLoad.StiXmlReportSLService.Load(StiReport report, Stream stream)
+   at Stimulsoft.Report.StiReport.Load(StiReportSLService service, Stream stream)
+   at Stimulsoft.Report.StiReport.Load(Stream stream)
+   at Stimulsoft.Report.StiReport.Load(String path)
+   at Stimulsoft.Report.Design.StiDesignerControl.OpenFile(String name)
+   at Stimulsoft.Report.Design.StiActions.MainMenu.InvokeRecentFile(StiDesignerControl designer, StiRecentFile recentFile)
+
+----------------------------
+[Assemblies]
+mscorlib, Version = 2.0.0.0
+Stimulsoft.Base, Version = 2013.1.1600.0
+Stimulsoft.Report, Version = 2013.1.1600.0
+Stimulsoft.Report.Design, Version = 2013.1.1600.0
+System.Windows.Forms, Version = 2.0.0.0
